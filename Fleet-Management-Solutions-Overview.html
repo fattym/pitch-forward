@@ -1,0 +1,1667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fleet Management Solutions - TechSolutions</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0056b3',secondary:'#00a3e0'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<script src="js.js"></script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+.group:hover .group-hover\:block {
+display: block;
+}
+@keyframes fadeIn {
+from { opacity: 0; transform: translateY(20px); }
+to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideIn {
+from { transform: translateX(-20px); opacity: 0; }
+to { transform: translateX(0); opacity: 1; }
+}
+@keyframes scaleIn {
+from { transform: scale(0.95); opacity: 0; }
+to { transform: scale(1); opacity: 1; }
+}
+@keyframes bounceIn {
+0% { transform: scale(0.3); opacity: 0; }
+50% { transform: scale(1.05); }
+70% { transform: scale(0.9); }
+100% { transform: scale(1); opacity: 1; }
+}
+.animate-fadeIn {
+animation: fadeIn 0.6s ease-out forwards;
+}
+.animate-slideIn {
+animation: slideIn 0.6s ease-out forwards;
+}
+.animate-scaleIn {
+animation: scaleIn 0.5s ease-out forwards;
+}
+.animate-bounceIn {
+animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) forwards;
+}
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=modern%2520fleet%2520management%2520control%2520center%2520with%2520digital%2520displays%2520showing%2520vehicle%2520tracking%2520maps%2520and%2520analytics%2520dashboards.%2520The%2520room%2520has%2520a%2520professional%2520atmosphere%2520with%2520blue%2520accent%2520lighting%2520and%2520operators%2520monitoring%2520multiple%2520screens.%2520The%2520left%2520side%2520has%2520a%2520darker%2520gradient%2520to%2520allow%2520for%2520text%2520overlay%2520with%2520good%2520contrast%252C%2520while%2520the%2520right%2520side%2520shows%2520the%2520technology%2520clearly.&width=1920&height=800&seq=fleet_hero&orientation=landscape');
+background-size: cover;
+background-position: center;
+animation: fadeIn 1s ease-out;
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(0,20,50,0.85) 0%, rgba(0,20,50,0.7) 50%, rgba(0,20,50,0.4) 100%);
+}
+.feature-card {
+transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+opacity: 0;
+}
+.feature-card.show {
+opacity: 1;
+animation: scaleIn 0.6s ease-out forwards;
+}
+.feature-card:hover {
+transform: translateY(-8px);
+box-shadow: 0 15px 30px -10px rgba(0, 0, 0, 0.15);
+}
+.testimonial-card {
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+transition: all 0.4s ease;
+}
+.testimonial-card:hover {
+transform: translateY(-5px) scale(1.02);
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+.case-study-card {
+transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+opacity: 0;
+}
+.case-study-card.show {
+opacity: 1;
+animation: slideIn 0.6s ease-out forwards;
+}
+.case-study-card:hover {
+transform: translateY(-8px) scale(1.02);
+box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.nav-link {
+position: relative;
+transition: color 0.3s ease;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #0056b3;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after, .nav-link.active::after {
+width: 100%;
+}
+input:focus, button:focus, textarea:focus, select:focus {
+outline: none;
+ring: 2px;
+ring-color: #0056b3;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #0056b3;
+border-color: #0056b3;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+top: 3px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.carousel-container {
+scroll-behavior: smooth;
+}
+.custom-select {
+appearance: none;
+background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23666666'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+background-repeat: no-repeat;
+background-position: right 0.75rem center;
+background-size: 1rem;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Header Navigation -->
+<header class="bg-white shadow-sm fixed w-full z-50">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    
+        <div class="flex items-center">
+          <a href="./index.html" class="text-2xl font-['Righteous'] text-primary">Pitch Forward</a >
+        </div>
+        
+    <nav class="hidden md:flex space-x-8">
+    <a href="./index.html" id="homeLink" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+    <div class="relative" id="solutionsDropdown">
+    <button id="solutionsBtn" class="nav-link text-gray-700 hover:text-primary font-medium flex items-center" aria-expanded="false" aria-haspopup="true">
+    Solutions
+    <i class="ri-arrow-down-s-line ml-1"></i>
+    </button>
+    <div id="solutionsMenu" class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden" role="menu" aria-labelledby="solutionsBtn">
+    <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-footprint-line w-5 h-5 mr-3"></i>
+    Fleet Management
+    </a>
+    <a href="./Fuel-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-gas-station-line w-5 h-5 mr-3"></i>
+    Fuel Management
+    </a>
+    <a href="./Logistics-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-truck-line w-5 h-5 mr-3"></i>
+    Logistics Management
+    </a>
+    <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-phone-line w-5 h-5 mr-3"></i>
+    Telecommunication
+    </a>
+    <a href="./Security-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-shield-keyhole-line w-5 h-5 mr-3"></i>
+    Security
+    </a>
+    <a href="./Data-&-Power-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-database-2-line w-5 h-5 mr-3"></i>
+    Data & Power
+    </a>
+    <a href="./Internet-&-Connectivity-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-wifi-line w-5 h-5 mr-3"></i>
+    Internet & Connectivity
+    </a>
+    <a href="./Mining-Technology-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-mine-line w-5 h-5 mr-3"></i>
+    Mining
+    </a>
+    <a href="./Warehousing-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-store-2-line w-5 h-5 mr-3"></i>
+    Warehousing
+    </a>
+    </div>
+    </div>
+    <a href="#industries" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+    <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
+    </nav>
+    <div class="flex items-center space-x-4">
+    <div class="relative hidden md:block">
+    <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm focus:border-primary">
+    <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+    <i class="ri-search-line"></i>
+    </div>
+    </div>
+    <button id="contactUsBtn" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+    <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
+    <div class="bg-white rounded-lg w-full max-w-xl mx-4 relative">
+    <button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+    <i class="ri-close-line text-2xl"></i>
+    </button>
+    
+    <div class="max-h-[100vh] overflow-x-auto p-4 md:p-8">
+    
+    <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
+    <form id="contactForm" action="" method="POST">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+    <div>
+    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+    </div>
+    <div>
+    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+    </div>
+    <div>
+    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+    </div>
+    <div>
+    <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+    <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+    </div>
+    </div>
+    <div class="mb-4">
+    <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
+    <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary pr-8">
+      <option value="">Select a service</option>
+      <option value="fleet">Fleet Management</option>
+      <option value="fuel">Fuel Management</option>
+      <option value="logistics">Logistics Management</option>
+      <option value="telecommunication">Telecommunication</option>
+      <option value="security">Security</option>
+      <option value="data-power">Data &amp; Power</option>
+      <option value="internet-connectivity">Internet &amp; Connectivity</option>
+      <option value="mining">Mining</option>
+      <option value="warehousing">Warehousing</option>
+      <option value="other">Other</option>
+    </select>
+    </div>
+    <div class="mb-6">
+    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+    <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
+    </div>
+    <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Submit</button>
+    </form>
+    </div>
+    </div>
+    </div>
+    <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
+    <i class="ri-menu-line text-xl"></i>
+    </button>
+    </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-lg">
+    <nav class="container mx-auto px-4 py-4">
+    <a href="index.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
+    <div class="relative">
+    <button id="mobileSolutionsBtn" class="w-full flex items-center justify-between py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">
+    Solutions
+    <i class="ri-arrow-down-s-line"></i>
+    </button>
+    <div id="mobileSolutionsMenu" class="hidden bg-gray-50 px-4 py-2">
+    <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Fleet Management</a>
+    <a href="./Fuel-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Fuel Management</a>
+    <a href="./Logistics-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Logistics Management</a>
+    <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Telecommunication</a>
+    <a href="./Security-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Security</a>
+    <a href="./Data-&-Power-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Data & Power</a>
+    <a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
+    <a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
+    <a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
+    </div>
+    </div>
+    <a href="#industries" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
+    <a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
+    <div class="mt-4">
+    <button class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+    </div>
+    </nav>
+    </div>
+    </header>
+<!-- Breadcrumbs -->
+<div class="bg-gray-100 pt-20">
+<div class="container mx-auto px-4 py-3">
+<div class="flex items-center text-sm text-gray-500">
+<a href="#" class="hover:text-primary">Home</a>
+<i class="ri-arrow-right-s-line mx-2"></i>
+<a href="#" class="hover:text-primary">Solutions</a>
+<i class="ri-arrow-right-s-line mx-2"></i>
+<span class="text-primary font-medium">Fleet Management</span>
+</div>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="hero-section w-full h-[600px] relative" style="background-image: url('https://readdy.ai/api/search-image?query=futuristic%2520transportation%2520control%2520room%2520with%2520holographic%2520displays%2520showing%2520real-time%2520vehicle%2520tracking%2520and%2520logistics%2520data.%2520The%2520scene%2520features%2520a%2520panoramic%2520wall%2520of%2520curved%2520screens%2520displaying%25203D%2520city%2520maps%252C%2520fleet%2520analytics%252C%2520and%2520traffic%2520patterns.%2520The%2520environment%2520has%2520modern%2520architectural%2520elements%2520with%2520blue%2520accent%2520lighting%2520and%2520glass%2520surfaces.%2520The%2520left%2520side%2520has%2520a%2520darker%2520gradient%2520for%2520text%2520overlay%252C%2520while%2520the%2520right%2520shows%2520advanced%2520technology%2520and%2520data%2520visualization.&width=1920&height=800&seq=fleet_hero_v3&orientation=landscape');">
+<div class="hero-overlay absolute inset-0"></div>
+<div class="container mx-auto px-4 h-full flex items-center relative z-10 animate-fadeIn">
+<div class="w-full md:w-1/2 text-white">
+<h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">Intelligent Fleet Management Solutions</h1>
+<p class="text-xl md:text-2xl mb-8 opacity-90">Optimize your fleet operations with real-time tracking, advanced analytics, and comprehensive management tools.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button id="requestDemoBtn" class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 text-lg">Request Demo</button>
+<div id="demoModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+<div class="min-h-screen px-4 flex items-center justify-center">
+<div class="bg-white rounded-lg w-full max-w-xl relative animate-scaleIn">
+<div class="p-6 border-b border-gray-200">
+<h3 class="text-2xl font-semibold text-gray-800">Request a Demo</h3>
+<button id="closeDemoModal" class="absolute top-6 right-6 text-gray-400 hover:text-gray-600">
+<i class="ri-close-line text-2xl"></i>
+</button>
+</div>
+<form id="demoRequestForm" class="p-6">
+<div class="space-y-4">
+<div>
+<label for="demoName" class="block text-gray-700 text-sm font-medium mb-2">Full Name *</label>
+<input type="text" id="demoName" name="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
+</div>
+<div>
+<label for="demoCompany" class="block text-gray-700 text-sm font-medium mb-2">Company Name *</label>
+<input type="text" id="demoCompany" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
+</div>
+<div>
+<label for="demoEmail" class="block text-gray-700 text-sm font-medium mb-2">Email Address *</label>
+<input type="email" id="demoEmail" name="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
+</div>
+<div>
+<label for="demoPhone" class="block text-gray-700 text-sm font-medium mb-2">Phone Number *</label>
+<input type="tel" id="demoPhone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
+</div>
+<div>
+<label for="demoFleetSize" class="block text-gray-700 text-sm font-medium mb-2">Fleet Size *</label>
+<select id="demoFleetSize" name="fleetSize" class="custom-select w-full px-4 py-2 border border-gray-300 rounded focus:border-primary pr-8" required>
+<option value="" disabled selected>Select fleet size</option>
+<option value="1-10">1-10 vehicles</option>
+<option value="11-25">11-25 vehicles</option>
+<option value="26-50">26-50 vehicles</option>
+<option value="51-100">51-100 vehicles</option>
+<option value="101-500">101-500 vehicles</option>
+<option value="500+">500+ vehicles</option>
+</select>
+</div>
+<div>
+<label for="demoDateTime" class="block text-gray-700 text-sm font-medium mb-2">Preferred Demo Date/Time *</label>
+<input type="datetime-local" id="demoDateTime" name="dateTime" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
+</div>
+</div>
+<div class="mt-8 flex justify-end space-x-4">
+<button type="button" id="cancelDemoRequest" class="px-6 py-2 border border-gray-300 text-gray-700 !rounded-button whitespace-nowrap font-medium hover:bg-gray-50 transition duration-300">Cancel</button>
+<button type="submit" class="bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Submit Request</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+<div id="confirmationModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
+<div class="min-h-screen px-4 flex items-center justify-center">
+<div class="bg-white rounded-lg w-full max-w-md p-6 text-center animate-scaleIn">
+<div class="w-16 h-16 mx-auto mb-4 flex items-center justify-center bg-green-100 rounded-full">
+<i class="ri-check-line text-3xl text-green-500"></i>
+</div>
+<h3 class="text-2xl font-semibold text-gray-800 mb-2">Thank You!</h3>
+<p class="text-gray-600 mb-6">Your demo request has been submitted successfully. Our team will contact you shortly to schedule the demo.</p>
+<button id="closeConfirmation" class="bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Close</button>
+</div>
+</div>
+</div>
+<button class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300 text-lg">View Pricing</button>
+</div>
+<div class="mt-12 flex items-center space-x-6">
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3">
+<i class="ri-shield-check-line text-white"></i>
+</div>
+<span class="text-sm md:text-base">ISO 27001 Certified</span>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3">
+<i class="ri-customer-service-2-line text-white"></i>
+</div>
+<span class="text-sm md:text-base">24/7 Support</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Key Features Section -->
+<section id="features" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Comprehensive Fleet Management Features</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our advanced platform provides everything you need to monitor, manage, and optimize your entire fleet operations.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Feature Card 1 -->
+<div class="feature-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 opacity-0">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-map-pin-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Real-time Vehicle Tracking</h3>
+<p class="text-gray-600 mb-6">Monitor your entire fleet in real-time with GPS tracking, geofencing capabilities, and instant location updates.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Feature Card 2 -->
+<div class="feature-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 opacity-0">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-gas-station-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Fuel Consumption Monitoring</h3>
+<p class="text-gray-600 mb-6">Track and analyze fuel usage patterns, identify inefficiencies, and implement strategies to reduce consumption costs.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Feature Card 3 -->
+<div class="feature-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 opacity-0">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-tools-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Maintenance Scheduling</h3>
+<p class="text-gray-600 mb-6">Automate maintenance reminders based on mileage, engine hours, or calendar dates to prevent breakdowns and extend vehicle life.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Feature Card 4 -->
+<div class="feature-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 opacity-0">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-user-settings-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Driver Behavior Analysis</h3>
+<p class="text-gray-600 mb-6">Monitor driving patterns, identify risky behaviors, and implement coaching programs to improve safety and reduce incidents.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Feature Card 5 -->
+<div class="feature-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 opacity-0">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-route-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Route Optimization</h3>
+<p class="text-gray-600 mb-6">Calculate the most efficient routes considering traffic, weather, and delivery windows to minimize fuel usage and maximize productivity.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Feature Card 6 -->
+<div class="feature-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 opacity-0">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-line-chart-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Fleet Analytics</h3>
+<p class="text-gray-600 mb-6">Comprehensive reporting and analytics tools that provide actionable insights to improve efficiency and reduce operational costs.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Measurable Benefits for Your Fleet</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our fleet management solutions deliver quantifiable results that directly impact your operational efficiency and bottom line.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-12 items-center">
+<div class="w-full lg:w-1/2">
+<div id="benefitsChart" class="w-full h-[400px]"></div>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="space-y-8">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mr-4 flex-shrink-0 mt-1">
+<i class="ri-money-dollar-circle-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Reduced Operational Costs</h3>
+<p class="text-gray-600">Customers report an average of 20-30% reduction in overall fleet operational costs through fuel savings, optimized routes, and preventive maintenance.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mr-4 flex-shrink-0 mt-1">
+<i class="ri-timer-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Improved Efficiency</h3>
+<p class="text-gray-600">Increase vehicle utilization by up to 25% and reduce idle time by 40% with real-time monitoring and intelligent route planning.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mr-4 flex-shrink-0 mt-1">
+<i class="ri-shield-check-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Enhanced Safety</h3>
+<p class="text-gray-600">Reduce accidents by up to 65% through driver behavior monitoring, coaching programs, and preventive maintenance alerts.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mr-4 flex-shrink-0 mt-1">
+<i class="ri-customer-service-2-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Improved Customer Satisfaction</h3>
+<p class="text-gray-600">Increase on-time deliveries by 35% and provide accurate ETAs to customers with real-time tracking and status updates.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Studies Section -->
+<section id="case-studies" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Success Stories</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">See how organizations across different industries have transformed their fleet operations with our solutions.</p>
+</div>
+<div class="relative">
+<div class="carousel-container flex space-x-6 overflow-x-auto pb-8 hide-scrollbar">
+<!-- Case Study 1 -->
+<div class="case-study-card flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 bg-white rounded-lg overflow-hidden shadow-sm opacity-0">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=logistics%2520company%2520with%2520a%2520fleet%2520of%2520delivery%2520trucks%2520parked%2520at%2520a%2520distribution%2520center%252C%2520with%2520workers%2520loading%2520packages%2520and%2520digital%2520tracking%2520devices%2520visible.%2520The%2520scene%2520shows%2520an%2520organized%252C%2520modern%2520operation%2520with%2520branded%2520vehicles.&width=600&height=400&seq=case1&orientation=landscape" alt="Logistics Company" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-xl font-semibold">Global Express Logistics</h3>
+<span class="text-sm bg-blue-50 text-primary px-3 py-1 rounded-full">Logistics</span>
+</div>
+<p class="text-gray-600 mb-4">Reduced fuel costs by 28% and improved delivery times by 35% through route optimization and real-time tracking.</p>
+<div class="space-y-2 mb-6">
+<div class="flex items-center justify-between text-sm">
+<span class="text-gray-500">Fuel Savings</span>
+<span class="font-medium">28%</span>
+</div>
+<div class="w-full bg-gray-200 h-2 rounded-full">
+<div class="bg-primary h-2 rounded-full" style="width: 28%"></div>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-gray-500">Delivery Time Improvement</span>
+<span class="font-medium">35%</span>
+</div>
+<div class="w-full bg-gray-200 h-2 rounded-full">
+<div class="bg-primary h-2 rounded-full" style="width: 35%"></div>
+</div>
+</div>
+<a href="#" class="text-primary font-medium flex items-center">
+Read Full Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Case Study 2 -->
+<div class="case-study-card flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 bg-white rounded-lg overflow-hidden shadow-sm opacity-0">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=construction%2520company%2520with%2520heavy%2520machinery%2520and%2520vehicles%2520at%2520a%2520large%2520construction%2520site.%2520Workers%2520are%2520using%2520tablets%2520to%2520track%2520equipment%2520usage%2520and%2520location.%2520The%2520scene%2520shows%2520an%2520organized%252C%2520active%2520construction%2520operation%2520with%2520various%2520types%2520of%2520equipment.&width=600&height=400&seq=case2&orientation=landscape" alt="Construction Company" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-xl font-semibold">BuildRight Construction</h3>
+<span class="text-sm bg-blue-50 text-primary px-3 py-1 rounded-full">Construction</span>
+</div>
+<p class="text-gray-600 mb-4">Improved equipment utilization by 40% and reduced maintenance costs by 32% with preventive maintenance scheduling.</p>
+<div class="space-y-2 mb-6">
+<div class="flex items-center justify-between text-sm">
+<span class="text-gray-500">Equipment Utilization</span>
+<span class="font-medium">40%</span>
+</div>
+<div class="w-full bg-gray-200 h-2 rounded-full">
+<div class="bg-primary h-2 rounded-full" style="width: 40%"></div>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-gray-500">Maintenance Cost Reduction</span>
+<span class="font-medium">32%</span>
+</div>
+<div class="w-full bg-gray-200 h-2 rounded-full">
+<div class="bg-primary h-2 rounded-full" style="width: 32%"></div>
+</div>
+</div>
+<a href="#" class="text-primary font-medium flex items-center">
+Read Full Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Case Study 3 -->
+<div class="case-study-card flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 bg-white rounded-lg overflow-hidden shadow-sm opacity-0">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=municipal%2520service%2520vehicles%2520including%2520garbage%2520trucks%2520and%2520maintenance%2520vehicles%2520with%2520city%2520branding.%2520Workers%2520are%2520using%2520digital%2520devices%2520to%2520track%2520routes%2520and%2520service%2520completions.%2520The%2520scene%2520shows%2520a%2520clean%252C%2520organized%2520municipal%2520operation%2520in%2520an%2520urban%2520setting.&width=600&height=400&seq=case3&orientation=landscape" alt="City Services" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-xl font-semibold">Westlake City Services</h3>
+<span class="text-sm bg-blue-50 text-primary px-3 py-1 rounded-full">Government</span>
+</div>
+<p class="text-gray-600 mb-4">Reduced idle time by 45% and lowered fuel consumption by 25% across their municipal service vehicle fleet.</p>
+<div class="space-y-2 mb-6">
+<div class="flex items-center justify-between text-sm">
+<span class="text-gray-500">Idle Time Reduction</span>
+<span class="font-medium">45%</span>
+</div>
+<div class="w-full bg-gray-200 h-2 rounded-full">
+<div class="bg-primary h-2 rounded-full" style="width: 45%"></div>
+</div>
+<div class="flex items-center justify-between text-sm">
+<span class="text-gray-500">Fuel Consumption Reduction</span>
+<span class="font-medium">25%</span>
+</div>
+<div class="w-full bg-gray-200 h-2 rounded-full">
+<div class="bg-primary h-2 rounded-full" style="width: 25%"></div>
+</div>
+</div>
+<a href="#" class="text-primary font-medium flex items-center">
+Read Full Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+<!-- Navigation Arrows -->
+<button id="prevCaseStudy" class="absolute left-0 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center z-10 -ml-5 focus:outline-none">
+<i class="ri-arrow-left-s-line text-gray-600"></i>
+</button>
+<button id="nextCaseStudy" class="absolute right-0 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center z-10 -mr-5 focus:outline-none">
+<i class="ri-arrow-right-s-line text-gray-600"></i>
+</button>
+</div>
+<!-- Dots Navigation -->
+<div class="flex justify-center mt-8 space-x-2">
+<button class="w-3 h-3 rounded-full bg-primary"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300"></button>
+</div>
+</div>
+</section>
+<!-- Fleet Management Dashboard Demo -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Powerful Fleet Management Dashboard</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Get a comprehensive view of your entire fleet with our intuitive, data-rich dashboard.</p>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6 border-b border-gray-200">
+<div class="flex justify-between items-center">
+<h3 class="text-xl font-semibold">Fleet Overview Dashboard</h3>
+<div class="flex space-x-4">
+<button class="text-gray-500 hover:text-primary">
+<i class="ri-refresh-line"></i>
+</button>
+<button class="text-gray-500 hover:text-primary">
+<i class="ri-download-line"></i>
+</button>
+<button class="text-gray-500 hover:text-primary">
+<i class="ri-more-2-line"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+<div class="bg-blue-50 rounded-lg p-6 opacity-0">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-gray-500 text-sm">Active Vehicles</p>
+<h4 class="text-3xl font-bold">42/45</h4>
+</div>
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full">
+<i class="ri-truck-line text-primary"></i>
+</div>
+</div>
+<div class="flex items-center">
+<span class="text-green-500 text-sm flex items-center mr-2">
+<i class="ri-arrow-up-s-line"></i> 3%
+</span>
+<span class="text-gray-500 text-sm">from last week</span>
+</div>
+</div>
+<div class="bg-green-50 rounded-lg p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-gray-500 text-sm">Fuel Efficiency</p>
+<h4 class="text-3xl font-bold">24.8 mpg</h4>
+</div>
+<div class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-full">
+<i class="ri-gas-station-line text-green-600"></i>
+</div>
+</div>
+<div class="flex items-center">
+<span class="text-green-500 text-sm flex items-center mr-2">
+<i class="ri-arrow-up-s-line"></i> 5.2%
+</span>
+<span class="text-gray-500 text-sm">from last month</span>
+</div>
+</div>
+<div class="bg-orange-50 rounded-lg p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-gray-500 text-sm">Maintenance Alerts</p>
+<h4 class="text-3xl font-bold">3</h4>
+</div>
+<div class="w-10 h-10 flex items-center justify-center bg-orange-100 rounded-full">
+<i class="ri-alert-line text-orange-500"></i>
+</div>
+</div>
+<div class="flex items-center">
+<span class="text-green-500 text-sm flex items-center mr-2">
+<i class="ri-arrow-down-s-line"></i> 2
+</span>
+<span class="text-gray-500 text-sm">from last week</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 bg-white border border-gray-200 rounded-lg p-4">
+<h4 class="font-semibold mb-4">Vehicle Locations</h4>
+<div class="rounded-lg overflow-hidden h-[300px]" style="background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png'); background-size: cover; background-position: center;"></div>
+</div>
+<div class="bg-white border border-gray-200 rounded-lg p-4">
+<h4 class="font-semibold mb-4">Fleet Analytics</h4>
+<div id="fleetAnalyticsChart" class="h-[300px]"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section id="pricing" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Flexible Pricing Plans</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Choose the right plan for your fleet size and management needs.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Basic Plan -->
+<div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+<div class="p-6 border-b border-gray-200">
+<h3 class="text-xl font-semibold mb-2">Basic Fleet Management</h3>
+<p class="text-gray-600 mb-6">Ideal for small fleets up to 25 vehicles</p>
+<div class="flex items-end">
+<span class="text-4xl font-bold">$19</span>
+<span class="text-gray-500 ml-2">/ vehicle / month</span>
+</div>
+</div>
+<div class="p-6">
+<ul class="space-y-4 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>Real-time GPS tracking</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>Basic maintenance alerts</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>Fuel consumption reports</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>Driver behavior monitoring</span>
+</li>
+<li class="flex items-start text-gray-400">
+<i class="ri-close-line mr-3 mt-1"></i>
+<span>Route optimization</span>
+</li>
+<li class="flex items-start text-gray-400">
+<i class="ri-close-line mr-3 mt-1"></i>
+<span>Advanced analytics</span>
+</li>
+<li class="flex items-start text-gray-400">
+<i class="ri-close-line mr-3 mt-1"></i>
+<span>API integration</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Get Started</button>
+</div>
+</div>
+<!-- Professional Plan -->
+<div class="bg-white rounded-lg border-2 border-primary shadow-md overflow-hidden transform scale-105 z-10">
+<div class="bg-primary text-white text-center py-2 text-sm font-medium">
+MOST POPULAR
+</div>
+<div class="p-6 border-b border-gray-200">
+<h3 class="text-xl font-semibold mb-2">Professional Fleet Solutions</h3>
+<p class="text-gray-600 mb-6">Perfect for medium fleets of 25-100 vehicles</p>
+<div class="flex items-end">
+<span class="text-4xl font-bold">$29</span>
+<span class="text-gray-500 ml-2">/ vehicle / month</span>
+</div>
+</div>
+<div class="p-6">
+<ul class="space-y-4 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>Everything in Basic plan</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>Route optimization</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>Advanced maintenance scheduling</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>Driver scoring & gamification</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>Geofencing capabilities</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>Basic API integration</span>
+</li>
+<li class="flex items-start text-gray-400">
+<i class="ri-close-line mr-3 mt-1"></i>
+<span>Custom reporting</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Get Started</button>
+</div>
+</div>
+<!-- Enterprise Plan -->
+<div class="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md">
+<div class="p-6 border-b border-gray-200">
+<h3 class="text-xl font-semibold mb-2">Enterprise Fleet Control</h3>
+<p class="text-gray-600 mb-6">For large fleets of 100+ vehicles</p>
+<div class="flex items-end">
+<span class="text-4xl font-bold">$39</span>
+<span class="text-gray-500 ml-2">/ vehicle / month</span>
+</div>
+</div>
+<div class="p-6">
+<ul class="space-y-4 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>Everything in Professional plan</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>Advanced analytics & reporting</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>Full API access & integration</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>Custom dashboard development</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>Dedicated account manager</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>White-label options</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-500 mr-3 mt-1"></i>
+<span>24/7 priority support</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Sales</button>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<p class="text-gray-600 mb-4">Not sure which plan is right for you? Contact our sales team for a custom quote.</p>
+<button class="bg-white border border-primary text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/5 transition duration-300">Request Custom Quote</button>
+</div>
+</div>
+</section>
+<!-- Integration & Support Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Integration & Support</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our fleet management solutions seamlessly integrate with your existing systems and come with comprehensive support.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+<div>
+<div class="space-y-8">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mr-4 flex-shrink-0 mt-1">
+<i class="ri-car-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Compatible Vehicle Types</h3>
+<p class="text-gray-600 mb-2">Our solution works with all vehicle types including:</p>
+<div class="grid grid-cols-2 gap-2">
+<div class="flex items-center">
+<i class="ri-check-line text-green-500 mr-2"></i>
+<span class="text-gray-600">Passenger cars</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-green-500 mr-2"></i>
+<span class="text-gray-600">Light-duty trucks</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-green-500 mr-2"></i>
+<span class="text-gray-600">Heavy-duty trucks</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-green-500 mr-2"></i>
+<span class="text-gray-600">Specialty vehicles</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-green-500 mr-2"></i>
+<span class="text-gray-600">Construction equipment</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-green-500 mr-2"></i>
+<span class="text-gray-600">Electric vehicles</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mr-4 flex-shrink-0 mt-1">
+<i class="ri-link-m text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Integration Capabilities</h3>
+<p class="text-gray-600 mb-2">Seamlessly connect with your existing systems:</p>
+<div class="grid grid-cols-2 gap-2">
+<div class="flex items-center">
+<i class="ri-check-line text-green-500 mr-2"></i>
+<span class="text-gray-600">ERP systems</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-green-500 mr-2"></i>
+<span class="text-gray-600">Accounting software</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-green-500 mr-2"></i>
+<span class="text-gray-600">Fuel card systems</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-green-500 mr-2"></i>
+<span class="text-gray-600">Maintenance systems</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-green-500 mr-2"></i>
+<span class="text-gray-600">HR platforms</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-green-500 mr-2"></i>
+<span class="text-gray-600">Custom APIs</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mr-4 flex-shrink-0 mt-1">
+<i class="ri-customer-service-2-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">24/7 Support Options</h3>
+<p class="text-gray-600">Our dedicated support team is available around the clock through multiple channels including phone, email, live chat, and an extensive knowledge base.</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div class="bg-white rounded-lg shadow-md p-8">
+<h3 class="text-xl font-semibold mb-6">Implementation Timeline</h3>
+<div class="space-y-6">
+<div class="flex">
+<div class="flex flex-col items-center mr-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full font-semibold">1</div>
+<div class="h-full w-0.5 bg-gray-200 my-2"></div>
+</div>
+<div>
+<h4 class="font-semibold">Initial Consultation</h4>
+<p class="text-gray-600 text-sm">We assess your fleet needs and customize a solution.</p>
+<p class="text-gray-500 text-xs mt-1">1-2 days</p>
+</div>
+</div>
+<div class="flex">
+<div class="flex flex-col items-center mr-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full font-semibold">2</div>
+<div class="h-full w-0.5 bg-gray-200 my-2"></div>
+</div>
+<div>
+<h4 class="font-semibold">Hardware Installation</h4>
+<p class="text-gray-600 text-sm">GPS trackers and sensors are installed in your vehicles.</p>
+<p class="text-gray-500 text-xs mt-1">3-5 days</p>
+</div>
+</div>
+<div class="flex">
+<div class="flex flex-col items-center mr-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full font-semibold">3</div>
+<div class="h-full w-0.5 bg-gray-200 my-2"></div>
+</div>
+<div>
+<h4 class="font-semibold">Software Setup & Integration</h4>
+<p class="text-gray-600 text-sm">We configure the platform and integrate with your systems.</p>
+<p class="text-gray-500 text-xs mt-1">2-3 days</p>
+</div>
+</div>
+<div class="flex">
+<div class="flex flex-col items-center mr-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full font-semibold">4</div>
+<div class="h-full w-0.5 bg-gray-200 my-2"></div>
+</div>
+<div>
+<h4 class="font-semibold">Training</h4>
+<p class="text-gray-600 text-sm">Comprehensive training for administrators and users.</p>
+<p class="text-gray-500 text-xs mt-1">1-2 days</p>
+</div>
+</div>
+<div class="flex">
+<div class="flex flex-col items-center mr-4">
+<div class="w-10 h-10 flex items-center justify-center bg-primary text-white rounded-full font-semibold">5</div>
+</div>
+<div>
+<h4 class="font-semibold">Go Live & Ongoing Support</h4>
+<p class="text-gray-600 text-sm">System goes live with continuous monitoring and support.</p>
+<p class="text-gray-500 text-xs mt-1">Ongoing</p>
+</div>
+</div>
+</div>
+<div class="mt-8 pt-6 border-t border-gray-200">
+<p class="text-gray-600 mb-4">Total implementation time: <span class="font-semibold">7-12 days</span></p>
+<button class="w-full bg-primary text-white py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Schedule Consultation</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
+<p class="text-lg text-gray-600">Have questions about our fleet management solutions? Fill out the form below and our team will contact you shortly.</p>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="grid grid-cols-1 md:grid-cols-3">
+<div class="bg-primary text-white p-8 md:col-span-1">
+<h3 class="text-xl font-semibold mb-6">Contact Information</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
+<i class="ri-map-pin-line text-white"></i>
+</div>
+<div>
+<h4 class="font-medium">Address</h4>
+<p class="text-white/80 text-sm">1250 Technology Plaza, Suite 400<br>San Francisco, CA 94105</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
+<i class="ri-phone-line text-white"></i>
+</div>
+<div>
+<h4 class="font-medium">Phone</h4>
+<p class="text-white/80 text-sm">+1 (415) 555-0123</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
+<i class="ri-mail-line text-white"></i>
+</div>
+<div>
+<h4 class="font-medium">Email</h4>
+<p class="text-white/80 text-sm">fleet@techsolutions.com</p>
+</div>
+</div>
+</div>
+<div class="mt-12">
+<h4 class="font-medium mb-4">Follow Us</h4>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30 transition duration-300">
+<i class="ri-linkedin-fill text-white"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30 transition duration-300">
+<i class="ri-twitter-x-fill text-white"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30 transition duration-300">
+<i class="ri-facebook-fill text-white"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="p-8 md:col-span-2">
+<form>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+<div>
+<label for="firstName" class="block text-gray-700 text-sm font-medium mb-2">First Name *</label>
+<input type="text" id="firstName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
+</div>
+<div>
+<label for="lastName" class="block text-gray-700 text-sm font-medium mb-2">Last Name *</label>
+<input type="text" id="lastName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
+</div>
+<div>
+<label for="companyName" class="block text-gray-700 text-sm font-medium mb-2">Company Name *</label>
+<input type="text" id="companyName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
+</div>
+<div>
+<label for="jobTitle" class="block text-gray-700 text-sm font-medium mb-2">Job Title</label>
+<input type="text" id="jobTitle" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary">
+</div>
+<div>
+<label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email Address *</label>
+<input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
+</div>
+<div>
+<label for="phone" class="block text-gray-700 text-sm font-medium mb-2">Phone Number *</label>
+<input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
+</div>
+</div>
+<div class="mb-6">
+<label for="fleetSize" class="block text-gray-700 text-sm font-medium mb-2">Fleet Size *</label>
+<select id="fleetSize" class="custom-select w-full px-4 py-2 border border-gray-300 rounded focus:border-primary pr-8" required>
+<option value="" disabled selected>Select fleet size</option>
+<option value="1-10">1-10 vehicles</option>
+<option value="11-25">11-25 vehicles</option>
+<option value="26-50">26-50 vehicles</option>
+<option value="51-100">51-100 vehicles</option>
+<option value="101-500">101-500 vehicles</option>
+<option value="500+">500+ vehicles</option>
+</select>
+</div>
+<div class="mb-6">
+<label for="requirements" class="block text-gray-700 text-sm font-medium mb-2">Specific Requirements</label>
+<textarea id="requirements" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary resize-none"></textarea>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 text-sm font-medium mb-2">Preferred Contact Method</label>
+<div class="flex items-center space-x-6">
+<div class="flex items-center">
+<input type="radio" id="contactEmail" name="contactMethod" value="email" class="hidden">
+<label for="contactEmail" class="flex items-center cursor-pointer">
+<span class="w-5 h-5 inline-block mr-2 rounded-full border border-gray-300 flex-shrink-0"></span>
+<span class="text-gray-700">Email</span>
+</label>
+</div>
+<div class="flex items-center">
+<input type="radio" id="contactPhone" name="contactMethod" value="phone" class="hidden">
+<label for="contactPhone" class="flex items-center cursor-pointer">
+<span class="w-5 h-5 inline-block mr-2 rounded-full border border-gray-300 flex-shrink-0"></span>
+<span class="text-gray-700">Phone</span>
+</label>
+</div>
+</div>
+</div>
+<div class="mb-8">
+<div class="flex items-start">
+<input type="checkbox" id="consent" class="custom-checkbox mt-1">
+<label for="consent" class="ml-3 text-gray-600 text-sm">
+I consent to TechSolutions processing my personal data in accordance with the <a href="#" class="text-primary hover:underline">Privacy Policy</a>. *
+</label>
+</div>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Submit Inquiry</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Company Info -->
+<div>
+<a href="#" class="text-2xl font-['Righteous'] text-white mb-6 inline-block">Pitch forward</a>
+<p class="text-gray-400 mb-6">Providing enterprise-grade technology solutions that drive innovation and efficiency since 2005.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Industries</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Case Studies</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Careers</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<span class="text-gray-400">1250 Technology Plaza, Suite 400<br>San Francisco, CA 94105</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<span class="text-gray-400">+1 (415) 555-0123</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<span class="text-gray-400">info@techsolutions.com</span>
+</li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Subscribe to Our Newsletter</h3>
+<p class="text-gray-400 mb-4">Stay updated with the latest technology trends and solutions.</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Your email address" class="bg-gray-800 text-white px-4 py-3 w-full border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary">
+<button type="submit" class="bg-primary text-white px-4 py-3 !rounded-r-lg !rounded-l-none whitespace-nowrap hover:bg-primary/90 transition duration-300">Subscribe</button>
+</div>
+</form>
+<div class="flex items-center space-x-4">
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-visa-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-mastercard-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-paypal-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-apple-fill text-2xl text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 TechSolutions. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Privacy Policy</a>
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Terms of Service</a>
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script id="animationScript">
+document.addEventListener('DOMContentLoaded', function() {
+const observerOptions = {
+root: null,
+rootMargin: '0px',
+threshold: 0.1
+};
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('show');
+observer.unobserve(entry.target);
+}
+});
+}, observerOptions);
+document.querySelectorAll('.feature-card, .case-study-card').forEach(card => {
+observer.observe(card);
+});
+const heroContent = document.querySelector('.hero-section > div');
+if (heroContent) {
+heroContent.classList.add('animate-fadeIn');
+}
+const statsItems = document.querySelectorAll('.bg-blue-50, .bg-green-50, .bg-orange-50');
+statsItems.forEach((item, index) => {
+item.style.animationDelay = `${index * 0.2}s`;
+item.classList.add('animate-bounceIn');
+});
+});
+</script>
+<script id="benefitsChartScript">
+document.addEventListener('DOMContentLoaded', function() {
+const benefitsChart = echarts.init(document.getElementById('benefitsChart'));
+const option = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['With Fleet Management', 'Without Fleet Management'],
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '3%',
+containLabel: true
+},
+xAxis: {
+type: 'category',
+boundaryGap: false,
+data: ['Month 1', 'Month 2', 'Month 3', 'Month 4', 'Month 5', 'Month 6'],
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+color: '#1f2937'
+}
+},
+yAxis: {
+type: 'value',
+name: 'Operational Costs ($)',
+nameTextStyle: {
+color: '#1f2937'
+},
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+color: '#1f2937'
+},
+splitLine: {
+lineStyle: {
+color: '#eee'
+}
+}
+},
+series: [
+{
+name: 'With Fleet Management',
+type: 'line',
+stack: 'Total',
+smooth: true,
+lineStyle: {
+width: 3,
+color: 'rgba(87, 181, 231, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(87, 181, 231, 0.2)'
+}, {
+offset: 1, color: 'rgba(87, 181, 231, 0.05)'
+}]
+}
+},
+emphasis: {
+focus: 'series'
+},
+data: [10000, 9200, 8600, 8100, 7800, 7500],
+showSymbol: false
+},
+{
+name: 'Without Fleet Management',
+type: 'line',
+stack: 'Total',
+smooth: true,
+lineStyle: {
+width: 3,
+color: 'rgba(252, 141, 98, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(252, 141, 98, 0.2)'
+}, {
+offset: 1, color: 'rgba(252, 141, 98, 0.05)'
+}]
+}
+},
+emphasis: {
+focus: 'series'
+},
+data: [10000, 10300, 10600, 10900, 11200, 11500],
+showSymbol: false
+}
+]
+};
+benefitsChart.setOption(option);
+window.addEventListener('resize', function() {
+benefitsChart.resize();
+});
+});
+</script>
+<script id="fleetAnalyticsChartScript">
+document.addEventListener('DOMContentLoaded', function() {
+const fleetAnalyticsChart = echarts.init(document.getElementById('fleetAnalyticsChart'));
+const option = {
+animation: false,
+tooltip: {
+trigger: 'item',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+bottom: '0%',
+left: 'center',
+textStyle: {
+color: '#1f2937'
+}
+},
+series: [
+{
+name: 'Fleet Status',
+type: 'pie',
+radius: ['40%', '70%'],
+avoidLabelOverlap: false,
+itemStyle: {
+borderRadius: 8,
+borderColor: '#fff',
+borderWidth: 2
+},
+label: {
+show: false,
+position: 'center'
+},
+emphasis: {
+label: {
+show: true,
+fontSize: '18',
+fontWeight: 'bold',
+color: '#1f2937'
+}
+},
+labelLine: {
+show: false
+},
+data: [
+{ value: 42, name: 'Active', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+{ value: 3, name: 'Maintenance', itemStyle: { color: 'rgba(251, 191, 114, 1)' } },
+{ value: 2, name: 'Inactive', itemStyle: { color: 'rgba(252, 141, 98, 1)' } },
+{ value: 8, name: 'Scheduled', itemStyle: { color: 'rgba(141, 211, 199, 1)' } }
+]
+}
+]
+};
+fleetAnalyticsChart.setOption(option);
+window.addEventListener('resize', function() {
+fleetAnalyticsChart.resize();
+});
+});
+</script>
+<script id="caseStudyCarouselScript">
+document.addEventListener('DOMContentLoaded', function() {
+const carousel = document.querySelector('.carousel-container');
+const prevBtn = document.getElementById('prevCaseStudy');
+const nextBtn = document.getElementById('nextCaseStudy');
+const cardWidth = document.querySelector('.case-study-card').offsetWidth + 24; // width + margin
+prevBtn.addEventListener('click', function() {
+carousel.scrollLeft -= cardWidth;
+});
+nextBtn.addEventListener('click', function() {
+carousel.scrollLeft += cardWidth;
+});
+});
+</script>
+<script id="radioButtonScript">
+document.addEventListener('DOMContentLoaded', function() {
+const radioButtons = document.querySelectorAll('input[type="radio"]');
+radioButtons.forEach(function(radio) {
+radio.addEventListener('change', function() {
+// Remove selected style from all radio buttons in the same group
+document.querySelectorAll(`input[name="${this.name}"] + label span:first-child`).forEach(function(span) {
+span.classList.remove('bg-primary');
+span.classList.remove('border-primary');
+span.innerHTML = '';
+});
+// Add selected style to the checked radio button
+if (this.checked) {
+const span = this.nextElementSibling.querySelector('span:first-child');
+span.classList.add('bg-primary');
+span.classList.add('border-primary');
+span.innerHTML = '<div class="w-2 h-2 rounded-full bg-white mx-auto"></div>';
+}
+});
+});
+});
+</script>
+<script id="stickyHeaderScript">
+document.addEventListener('DOMContentLoaded', function() {
+const header = document.querySelector('header');
+function updateHeader() {
+if (window.scrollY > 50) {
+header.classList.add('shadow');
+} else {
+header.classList.remove('shadow');
+}
+}
+window.addEventListener('scroll', updateHeader);
+updateHeader();
+});
+</script>
+<script id="demoModalScript">
+document.addEventListener('DOMContentLoaded', function() {
+const requestDemoBtn = document.getElementById('requestDemoBtn');
+const demoModal = document.getElementById('demoModal');
+const closeDemoModal = document.getElementById('closeDemoModal');
+const cancelDemoRequest = document.getElementById('cancelDemoRequest');
+const demoRequestForm = document.getElementById('demoRequestForm');
+const confirmationModal = document.getElementById('confirmationModal');
+const closeConfirmation = document.getElementById('closeConfirmation');
+function showModal(modal) {
+modal.classList.remove('hidden');
+document.body.style.overflow = 'hidden';
+}
+function hideModal(modal) {
+modal.classList.add('hidden');
+document.body.style.overflow = '';
+}
+function hideAllModals() {
+hideModal(demoModal);
+hideModal(confirmationModal);
+}
+requestDemoBtn.addEventListener('click', () => showModal(demoModal));
+closeDemoModal.addEventListener('click', () => hideModal(demoModal));
+cancelDemoRequest.addEventListener('click', () => hideModal(demoModal));
+closeConfirmation.addEventListener('click', () => hideModal(confirmationModal));
+demoRequestForm.addEventListener('submit', function(e) {
+e.preventDefault();
+const formData = new FormData(demoRequestForm);
+const data = Object.fromEntries(formData.entries());
+if (validateForm(data)) {
+hideModal(demoModal);
+showModal(confirmationModal);
+demoRequestForm.reset();
+}
+});
+function validateForm(data) {
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+const phoneRegex = /^\+?[\d\s-]{10,}$/;
+if (!data.name || data.name.length < 2) {
+showError('demoName', 'Please enter a valid name');
+return false;
+}
+if (!data.company || data.company.length < 2) {
+showError('demoCompany', 'Please enter a valid company name');
+return false;
+}
+if (!emailRegex.test(data.email)) {
+showError('demoEmail', 'Please enter a valid email address');
+return false;
+}
+if (!phoneRegex.test(data.phone)) {
+showError('demoPhone', 'Please enter a valid phone number');
+return false;
+}
+if (!data.fleetSize) {
+showError('demoFleetSize', 'Please select your fleet size');
+return false;
+}
+if (!data.dateTime) {
+showError('demoDateTime', 'Please select your preferred date and time');
+return false;
+}
+return true;
+}
+function showError(fieldId, message) {
+const field = document.getElementById(fieldId);
+field.classList.add('border-red-500');
+let errorDiv = field.nextElementSibling;
+if (!errorDiv || !errorDiv.classList.contains('error-message')) {
+errorDiv = document.createElement('div');
+errorDiv.className = 'error-message text-red-500 text-sm mt-1';
+field.parentNode.insertBefore(errorDiv, field.nextSibling);
+}
+errorDiv.textContent = message;
+field.addEventListener('input', function removeError() {
+field.classList.remove('border-red-500');
+if (errorDiv) errorDiv.remove();
+field.removeEventListener('input', removeError);
+});
+}
+window.addEventListener('click', function(e) {
+if (e.target === demoModal || e.target === confirmationModal) {
+hideAllModals();
+}
+});
+document.addEventListener('keydown', function(e) {
+if (e.key === 'Escape') {
+hideAllModals();
+}
+});
+});
+</script>
+</body>
+</html>

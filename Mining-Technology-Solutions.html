@@ -1,0 +1,2811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mining Solutions | Advanced Technology for Mining Industry</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0066cc',secondary:'#ff9900'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+<script id="stickyHeaderScript">
+  document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('header');
+      const headerHeight = header.offsetHeight;
+      const homeLink = document.getElementById('homeLink');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const solutionsBtn = document.getElementById('solutionsBtn');
+      const solutionsMenu = document.getElementById('solutionsMenu');
+      let isDropdownOpen = false;
+      function toggleDropdown() {
+          isDropdownOpen = !isDropdownOpen;
+          solutionsMenu.classList.toggle('hidden');
+          solutionsBtn.setAttribute('aria-expanded', isDropdownOpen);
+      }
+      solutionsBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          toggleDropdown();
+      });
+      solutionsBtn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggleDropdown();
+          } else if (e.key === 'Escape' && isDropdownOpen) {
+              toggleDropdown();
+          }
+      });
+      document.addEventListener('click', function(e) {
+          if (!solutionsBtn.contains(e.target) && isDropdownOpen) {
+              toggleDropdown();
+          }
+      });
+      const menuItems = solutionsMenu.querySelectorAll('a');
+      menuItems.forEach((item, index) => {
+          item.setAttribute('role', 'menuitem');
+          item.setAttribute('tabindex', '-1');
+          item.addEventListener('keydown', function(e) {
+              const items = Array.from(menuItems);
+              const currentIndex = items.indexOf(e.target);
+              if (e.key === 'ArrowDown') {
+                  e.preventDefault();
+                  const nextItem = items[(currentIndex + 1) % items.length];
+                  nextItem.focus();
+              } else if (e.key === 'ArrowUp') {
+                  e.preventDefault();
+                  const prevItem = items[(currentIndex - 1 + items.length) % items.length];
+                  prevItem.focus();
+              } else if (e.key === 'Escape') {
+                  toggleDropdown();
+                  solutionsBtn.focus();
+              }
+          });
+      });
+      homeLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
+          mobileMenu.classList.add('hidden');
+      });
+      function updateHeader() {
+          if (window.scrollY > 50) {
+              header.classList.add('shadow');
+          } else {
+              header.classList.remove('shadow');
+          }
+      }
+      window.addEventListener('scroll', updateHeader);
+      updateHeader();
+  });
+  </script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+.hero-section {
+background-image: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.1)), url('https://readdy.ai/api/search-image?query=aerial%20view%20of%20a%20modern%20open%20pit%20mining%20operation%20with%20large%20mining%20trucks%20and%20excavators%20working%20in%20a%20terraced%20mine%20pit%2C%20professional%20industrial%20photography%2C%20realistic%2C%20high%20detail%2C%20mining%20technology%2C%20golden%20hour%20lighting%2C%20no%20people%20visible%2C%20dramatic%20perspective&width=1920&height=800&seq=123&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.solutions-grid-item:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+input:focus, textarea:focus {
+outline: none;
+border-color: #0066cc;
+}
+.tab-content {
+display: none;
+}
+.tab-content.active {
+display: block;
+}
+.case-study-card {
+scroll-snap-align: start;
+}
+.case-studies-container {
+scroll-snap-type: x mandatory;
+}
+.custom-checkbox {
+position: relative;
+padding-left: 2rem;
+cursor: pointer;
+}
+.custom-checkbox input {
+position: absolute;
+opacity: 0;
+cursor: pointer;
+}
+.checkmark {
+position: absolute;
+top: 0;
+left: 0;
+height: 1.25rem;
+width: 1.25rem;
+background-color: #fff;
+border: 1px solid #d1d5db;
+border-radius: 4px;
+}
+.custom-checkbox:hover input ~ .checkmark {
+background-color: #f3f4f6;
+}
+.custom-checkbox input:checked ~ .checkmark {
+background-color: #0066cc;
+border-color: #0066cc;
+}
+.checkmark:after {
+content: "";
+position: absolute;
+display: none;
+}
+.custom-checkbox input:checked ~ .checkmark:after {
+display: block;
+}
+.custom-checkbox .checkmark:after {
+left: 0.45rem;
+top: 0.2rem;
+width: 0.3rem;
+height: 0.6rem;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+</style>
+</head>
+<body class="bg-white">
+<!-- Header Navigation -->
+<header class="bg-white shadow-sm fixed w-full z-50">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+    
+        <div class="flex items-center">
+          <a href="./index.html" class="text-2xl font-['Righteous'] text-primary">Pitch Forward</a >
+        </div>
+        
+    <nav class="hidden md:flex space-x-8">
+    <a href="./index.html" id="homeLink" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+    <div class="relative" id="solutionsDropdown">
+    <button id="solutionsBtn" class="nav-link text-gray-700 hover:text-primary font-medium flex items-center" aria-expanded="false" aria-haspopup="true">
+    Solutions
+    <i class="ri-arrow-down-s-line ml-1"></i>
+    </button>
+    <div id="solutionsMenu" class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden" role="menu" aria-labelledby="solutionsBtn">
+    <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-footprint-line w-5 h-5 mr-3"></i>
+    Fleet Management
+    </a>
+    <a href="./Fuel-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-gas-station-line w-5 h-5 mr-3"></i>
+    Fuel Management
+    </a>
+    <a href="./Logistics-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-truck-line w-5 h-5 mr-3"></i>
+    Logistics Management
+    </a>
+    <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-phone-line w-5 h-5 mr-3"></i>
+    Telecommunication
+    </a>
+    <a href="./Security-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-shield-keyhole-line w-5 h-5 mr-3"></i>
+    Security
+    </a>
+    <a href="./Data-&-Power-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-database-2-line w-5 h-5 mr-3"></i>
+    Data & Power
+    </a>
+    <a href="./Internet-&-Connectivity-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-wifi-line w-5 h-5 mr-3"></i>
+    Internet & Connectivity
+    </a>
+    <a href="./Mining-Technology-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-mine-line w-5 h-5 mr-3"></i>
+    Mining
+    </a>
+    <a href="./Warehousing-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-store-2-line w-5 h-5 mr-3"></i>
+    Warehousing
+    </a>
+    </div>
+    </div>
+    <a href="#industries" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+    <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
+    </nav>
+    <div class="flex items-center space-x-4">
+    <div class="relative hidden md:block">
+    <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm focus:border-primary">
+    <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+    <i class="ri-search-line"></i>
+    </div>
+    </div>
+    <button id="contactUsBtn" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+    <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
+    <div class="bg-white rounded-lg w-full max-w-xl mx-4 relative">
+    <button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+    <i class="ri-close-line text-2xl"></i>
+    </button>
+    
+    <div class="max-h-[100vh] overflow-x-auto p-4 md:p-8">
+    
+    <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
+    <form id="contactForm" action="" method="POST">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+    <div>
+    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+    </div>
+    <div>
+    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+    </div>
+    <div>
+    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+    </div>
+    <div>
+    <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+    <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+    </div>
+    </div>
+    <div class="mb-4">
+    <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
+    <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary pr-8">
+    <option value="">Select a service</option>
+    <option value="">Select a service</option>
+    <option value="fleet">Fleet Management</option>
+    <option value="fuel">Fuel Management</option>
+    <option value="logistics">Logistics Management</option>
+    <option value="telecommunication">Telecommunication</option>
+    <option value="security">Security</option>
+    <option value="data-power">Data &amp; Power</option>
+    <option value="internet-connectivity">Internet &amp; Connectivity</option>
+    <option value="mining">Mining</option>
+    <option value="warehousing">Warehousing</option>
+    <option value="other">Other</option>
+    </select>
+    </div>
+    <div class="mb-6">
+    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+    <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
+    </div>
+    <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Submit</button>
+    </form>
+    </div>
+    </div>
+    </div>
+    <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
+    <i class="ri-menu-line text-xl"></i>
+    </button>
+    </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-lg">
+    <nav class="container mx-auto px-4 py-4">
+    <a href="index.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
+    <div class="relative">
+    <button id="mobileSolutionsBtn" class="w-full flex items-center justify-between py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">
+    Solutions
+    <i class="ri-arrow-down-s-line"></i>
+    </button>
+    <div id="mobileSolutionsMenu" class="hidden bg-gray-50 px-4 py-2">
+    <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Fleet Management</a>
+    <a href="./Fuel-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Fuel Management</a>
+    <a href="./Logistics-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Logistics Management</a>
+    <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Telecommunication</a>
+    <a href="./Security-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Security</a>
+    <a href="./Data-&-Power-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Data & Power</a>
+    <a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
+    <a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
+    <a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
+    </div>
+    </div>
+    <a href="#industries" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
+    <a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
+    <div class="mt-4">
+    <button class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+    </div>
+    </nav>
+    </div>
+    </header>
+<!-- Hero Section -->
+<section class="hero-section w-full">
+<div class="container mx-auto px-6 py-24 md:py-32">
+<div class="w-full max-w-2xl">
+<h1 class="text-4xl md:text-5xl font-bold text-white mb-6">Premium Mineral Resources</h1>
+<p class="text-xl text-gray-100 mb-8">Your trusted partner in mineral trading, offering high-quality coal, bauxite, iron ore, quartz, and graphite from Tanzania and South Africa. Available on FOB and CIF bases.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="#products" class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors text-center">View Products</a>
+<a href="#contact" class="bg-white text-primary px-6 py-3 !rounded-button whitespace-nowrap hover:bg-gray-100 transition-colors text-center">Request Quote</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Products Section -->
+<section id="products" class="py-16 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Our Mineral Products</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">In partnership with leading mining companies in Tanzania and South Africa, we offer premium quality minerals for global export.</p>
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Coal -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-64 relative">
+<img src="https://readdy.ai/api/search-image?query=high%20quality%20coal%20mining%20site%20with%20exposed%20black%20coal%20seams%2C%20professional%20industrial%20photography%2C%20clean%20and%20clear%20view%20of%20mineral%20deposits%2C%20natural%20lighting&width=600&height=400&seq=coal1&orientation=landscape" alt="Premium Coal" class="w-full h-full object-cover">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-2xl font-bold text-white">Coal</h3>
+</div>
+</div>
+<div class="p-6">
+<div class="mb-4">
+<h4 class="font-semibold text-gray-900 mb-2">Specifications:</h4>
+<ul class="space-y-2 text-gray-600">
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span>Calorific Value: 5500-6500 kcal/kg</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span>Total Moisture: 8-15%</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span>Ash Content: 10-15%</span>
+</li>
+</ul>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-sm text-gray-500">Available Basis:</span>
+<div class="flex gap-2 mt-1">
+<span class="px-2 py-1 bg-primary/10 text-primary text-sm rounded">FOB</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-sm rounded">CIF</span>
+</div>
+</div>
+<a href="#contact" class="text-primary hover:text-primary/80 font-medium flex items-center">
+Get Quote
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Bauxite -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-64 relative">
+<img src="https://readdy.ai/api/search-image?query=bauxite%20mining%20operation%20with%20rich%20red-brown%20ore%20deposits%2C%20professional%20industrial%20photography%2C%20clear%20view%20of%20mineral%20quality%2C%20natural%20lighting&width=600&height=400&seq=bauxite1&orientation=landscape" alt="Premium Bauxite" class="w-full h-full object-cover">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-2xl font-bold text-white">Bauxite</h3>
+</div>
+</div>
+<div class="p-6">
+<div class="mb-4">
+<h4 class="font-semibold text-gray-900 mb-2">Specifications:</h4>
+<ul class="space-y-2 text-gray-600">
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span>Al2O3: 45-55%</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span>SiO2: 2-8%</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span>Fe2O3: 15-25%</span>
+</li>
+</ul>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-sm text-gray-500">Available Basis:</span>
+<div class="flex gap-2 mt-1">
+<span class="px-2 py-1 bg-primary/10 text-primary text-sm rounded">FOB</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-sm rounded">CIF</span>
+</div>
+</div>
+<a href="#contact" class="text-primary hover:text-primary/80 font-medium flex items-center">
+Get Quote
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Iron Ore -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-64 relative">
+<img src="https://readdy.ai/api/search-image?query=iron%20ore%20mining%20with%20rich%20reddish-brown%20ore%20deposits%2C%20professional%20industrial%20photography%2C%20clear%20view%20of%20high-grade%20iron%20ore%2C%20natural%20lighting&width=600&height=400&seq=iron1&orientation=landscape" alt="Premium Iron Ore" class="w-full h-full object-cover">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-2xl font-bold text-white">Iron Ore</h3>
+</div>
+</div>
+<div class="p-6">
+<div class="mb-4">
+<h4 class="font-semibold text-gray-900 mb-2">Specifications:</h4>
+<ul class="space-y-2 text-gray-600">
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span>Fe Content: 62-65%</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span>Silica: 4-6%</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span>Alumina: 2-4%</span>
+</li>
+</ul>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-sm text-gray-500">Available Basis:</span>
+<div class="flex gap-2 mt-1">
+<span class="px-2 py-1 bg-primary/10 text-primary text-sm rounded">FOB</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-sm rounded">CIF</span>
+</div>
+</div>
+<a href="#contact" class="text-primary hover:text-primary/80 font-medium flex items-center">
+Get Quote
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Quartz -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-64 relative">
+<img src="https://readdy.ai/api/search-image?query=high%20purity%20quartz%20mining%20with%20white%20crystalline%20deposits%2C%20professional%20industrial%20photography%2C%20clear%20view%20of%20premium%20quality%20quartz%2C%20natural%20lighting&width=600&height=400&seq=quartz1&orientation=landscape" alt="Premium Quartz" class="w-full h-full object-cover">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-2xl font-bold text-white">Quartz</h3>
+</div>
+</div>
+<div class="p-6">
+<div class="mb-4">
+<h4 class="font-semibold text-gray-900 mb-2">Specifications:</h4>
+<ul class="space-y-2 text-gray-600">
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span>SiO2: 99.5-99.9%</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span>Fe2O3: &lt;0.01%</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span>Al2O3: &lt;0.1%</span>
+</li>
+</ul>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-sm text-gray-500">Available Basis:</span>
+<div class="flex gap-2 mt-1">
+<span class="px-2 py-1 bg-primary/10 text-primary text-sm rounded">FOB</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-sm rounded">CIF</span>
+</div>
+</div>
+<a href="#contact" class="text-primary hover:text-primary/80 font-medium flex items-center">
+Get Quote
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+
+<!-- Graphite -->
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-64 relative">
+<img src="https://readdy.ai/api/search-image?query=natural%20graphite%20mining%20operation%20with%20dark%20lustrous%20mineral%20deposits%2C%20professional%20industrial%20photography%2C%20clear%20view%20of%20high-grade%20graphite%2C%20natural%20lighting&width=600&height=400&seq=graphite1&orientation=landscape" alt="Premium Graphite" class="w-full h-full object-cover">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute bottom-4 left-4">
+<h3 class="text-2xl font-bold text-white">Graphite</h3>
+</div>
+</div>
+<div class="p-6">
+<div class="mb-4">
+<h4 class="font-semibold text-gray-900 mb-2">Specifications:</h4>
+<ul class="space-y-2 text-gray-600">
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span>Carbon Content: 94-97%</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span>Ash Content: &lt;3%</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span>Moisture: &lt;1%</span>
+</li>
+</ul>
+</div>
+<div class="flex justify-between items-center">
+<div>
+<span class="text-sm text-gray-500">Available Basis:</span>
+<div class="flex gap-2 mt-1">
+<span class="px-2 py-1 bg-primary/10 text-primary text-sm rounded">FOB</span>
+<span class="px-2 py-1 bg-primary/10 text-primary text-sm rounded">CIF</span>
+</div>
+</div>
+<a href="#contact" class="text-primary hover:text-primary/80 font-medium flex items-center">
+Get Quote
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+
+</div>
+
+<!-- Partnership Section -->
+<div class="mt-16 bg-gray-50 rounded-lg p-8">
+<div class="flex flex-col lg:flex-row items-center gap-8">
+<div class="flex-1">
+<h3 class="text-2xl font-bold text-gray-900 mb-4">Our Mining Partnerships</h3>
+<p class="text-gray-600 mb-6">We have established strong partnerships with leading mining companies in Tanzania and South Africa, ensuring reliable supply and premium quality minerals for our global customers.</p>
+<ul class="space-y-3">
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-shield-check-line"></i>
+</div>
+<span class="text-gray-700">Direct access to high-grade mineral deposits</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-shield-check-line"></i>
+</div>
+<span class="text-gray-700">Rigorous quality control standards</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-shield-check-line"></i>
+</div>
+<span class="text-gray-700">Sustainable mining practices</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary mr-2">
+<i class="ri-shield-check-line"></i>
+</div>
+<span class="text-gray-700">Efficient logistics and delivery</span>
+</li>
+</ul>
+</div>
+<div class="flex-1">
+<img src="https://readdy.ai/api/search-image?query=modern%20mining%20operation%20aerial%20view%20with%20equipment%20and%20facilities%2C%20professional%20industrial%20photography%2C%20showing%20scale%20of%20operations%2C%20golden%20hour%20lighting&width=600&height=400&seq=partnership1&orientation=landscape" alt="Mining Operations" class="w-full h-64 object-cover rounded-lg">
+</div>
+</div>
+</div>
+
+</div>
+</section>
+<!-- Export Capabilities -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Comprehensive Mining Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our integrated technology ecosystem addresses the unique challenges of modern mining operations, delivering measurable improvements in safety, productivity, and environmental compliance.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Mine Safety Systems -->
+<div class="solutions-grid-item bg-white p-8 rounded-lg shadow-md transition-all duration-300">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-shield-check-line"></i>
+</div>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Mine Safety Systems</h3>
+<p class="text-gray-600 mb-4">Comprehensive safety monitoring and alert systems designed to protect personnel and assets in hazardous mining environments.</p>
+<ul class="mb-6 space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Real-time gas detection and monitoring</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Personnel tracking and emergency response</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Structural integrity monitoring</span>
+</li>
+</ul>
+<a href="#safety-tab" class="tab-link inline-flex items-center text-primary hover:text-primary/80 font-medium">
+Learn More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<!-- Equipment Monitoring -->
+<div class="solutions-grid-item bg-white p-8 rounded-lg shadow-md transition-all duration-300">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-radar-line"></i>
+</div>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Equipment Monitoring</h3>
+<p class="text-gray-600 mb-4">Advanced IoT-based monitoring systems that track equipment performance, predict maintenance needs, and prevent costly downtime.</p>
+<ul class="mb-6 space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Predictive maintenance analytics</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Real-time performance optimization</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Fleet management and utilization</span>
+</li>
+</ul>
+<a href="#equipment-tab" class="tab-link inline-flex items-center text-primary hover:text-primary/80 font-medium">
+Learn More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<!-- Automated Operations -->
+<div class="solutions-grid-item bg-white p-8 rounded-lg shadow-md transition-all duration-300">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-robot-line"></i>
+</div>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Automated Operations</h3>
+<p class="text-gray-600 mb-4">Autonomous and semi-autonomous systems that enhance operational efficiency, reduce human exposure to hazards, and optimize resource extraction.</p>
+<ul class="mb-6 space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Autonomous drilling and haulage</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Remote operations centers</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">AI-powered decision support</span>
+</li>
+</ul>
+<a href="#automation-tab" class="tab-link inline-flex items-center text-primary hover:text-primary/80 font-medium">
+Learn More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<!-- Environmental Compliance -->
+<div class="solutions-grid-item bg-white p-8 rounded-lg shadow-md transition-all duration-300">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-plant-line"></i>
+</div>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Environmental Compliance</h3>
+<p class="text-gray-600 mb-4">Integrated systems for monitoring, reporting, and mitigating environmental impacts to ensure regulatory compliance and sustainable operations.</p>
+<ul class="mb-6 space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Water quality monitoring and management</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Emissions tracking and reduction</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Automated compliance reporting</span>
+</li>
+</ul>
+<a href="#environmental-tab" class="tab-link inline-flex items-center text-primary hover:text-primary/80 font-medium">
+Learn More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<!-- Data Analytics -->
+<div class="solutions-grid-item bg-white p-8 rounded-lg shadow-md transition-all duration-300">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-bar-chart-line"></i>
+</div>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Data Analytics</h3>
+<p class="text-gray-600 mb-4">Powerful analytics platforms that transform operational data into actionable insights for resource management, process optimization, and strategic planning.</p>
+<ul class="mb-6 space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Resource estimation and modeling</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Production optimization algorithms</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Integrated business intelligence</span>
+</li>
+</ul>
+<a href="#analytics-tab" class="tab-link inline-flex items-center text-primary hover:text-primary/80 font-medium">
+Learn More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<!-- Integration Services -->
+<div class="solutions-grid-item bg-white p-8 rounded-lg shadow-md transition-all duration-300">
+<div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+<div class="w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-links-line"></i>
+</div>
+</div>
+<h3 class="text-xl font-semibold text-gray-900 mb-3">Integration Services</h3>
+<p class="text-gray-600 mb-4">Expert services to seamlessly integrate our solutions with your existing systems and processes, ensuring maximum value and minimal disruption.</p>
+<ul class="mb-6 space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Legacy system integration</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Custom API development</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">End-to-end implementation support</span>
+</li>
+</ul>
+<a href="#integration-tab" class="tab-link inline-flex items-center text-primary hover:text-primary/80 font-medium">
+Learn More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specifications -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Technical Specifications</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Detailed information about our mining technology solutions, including system requirements, performance metrics, and integration capabilities.</p>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<!-- Tabs Navigation -->
+<div class="flex overflow-x-auto border-b">
+<button id="safety-tab-btn" class="tab-button px-6 py-4 text-gray-700 hover:text-primary whitespace-nowrap font-medium border-b-2 border-primary">Mine Safety Systems</button>
+<button id="equipment-tab-btn" class="tab-button px-6 py-4 text-gray-500 hover:text-primary whitespace-nowrap font-medium border-b-2 border-transparent">Equipment Monitoring</button>
+<button id="automation-tab-btn" class="tab-button px-6 py-4 text-gray-500 hover:text-primary whitespace-nowrap font-medium border-b-2 border-transparent">Automated Operations</button>
+<button id="environmental-tab-btn" class="tab-button px-6 py-4 text-gray-500 hover:text-primary whitespace-nowrap font-medium border-b-2 border-transparent">Environmental Compliance</button>
+<button id="analytics-tab-btn" class="tab-button px-6 py-4 text-gray-500 hover:text-primary whitespace-nowrap font-medium border-b-2 border-transparent">Data Analytics</button>
+<button id="integration-tab-btn" class="tab-button px-6 py-4 text-gray-500 hover:text-primary whitespace-nowrap font-medium border-b-2 border-transparent">Integration Services</button>
+</div>
+<!-- Tab Content -->
+<div class="p-6">
+<!-- Mine Safety Systems Tab -->
+<div id="safety-tab" class="tab-content active">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">SafetyGuard™ Mine Safety Platform</h3>
+<p class="text-gray-600 mb-6">Our comprehensive safety monitoring system provides real-time hazard detection, personnel tracking, and emergency response coordination to protect your workforce and assets.</p>
+<div class="mb-6">
+<h4 class="text-lg font-medium text-gray-900 mb-3">Key Specifications:</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Gas Detection:</span>
+<span class="text-gray-600"> Multi-gas sensors (CH₄, CO, CO₂, H₂S, O₂) with ±1 ppm accuracy</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Personnel Tracking:</span>
+<span class="text-gray-600"> RFID and UWB technology with sub-meter accuracy, up to 2,000 tags per site</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Structural Monitoring:</span>
+<span class="text-gray-600"> Distributed fiber optic sensing with 0.01% strain detection</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Communication:</span>
+<span class="text-gray-600"> Mesh network with 99.9% uptime, redundant connectivity options</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Alert System:</span>
+<span class="text-gray-600"> Multi-channel notifications with &lt;3 second latency</span>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-3">Compliance Standards:</h4>
+<ul class="grid grid-cols-2 gap-2">
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">MSHA Part 75</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">IEC 60079</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">ISO 45001</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">ATEX Directive</span>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<div class="bg-gray-50 rounded-lg p-6 h-full">
+<h4 class="text-lg font-medium text-gray-900 mb-4">System Performance Metrics</h4>
+<div id="safety-chart" class="h-80 w-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Equipment Monitoring Tab -->
+<div id="equipment-tab" class="tab-content">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">MineFleet™ Equipment Monitoring System</h3>
+<p class="text-gray-600 mb-6">Our IoT-based equipment monitoring platform delivers real-time performance data, predictive maintenance alerts, and fleet optimization insights to maximize equipment uptime and efficiency.</p>
+<div class="mb-6">
+<h4 class="text-lg font-medium text-gray-900 mb-3">Key Specifications:</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Sensor Network:</span>
+<span class="text-gray-600"> Up to 500 sensors per equipment unit, 10ms sampling rate</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Data Processing:</span>
+<span class="text-gray-600"> Edge computing with 95% data reduction, 100TB cloud storage</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Predictive Analytics:</span>
+<span class="text-gray-600"> 92% failure prediction accuracy, 2-4 week advance warning</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Fleet Management:</span>
+<span class="text-gray-600"> Real-time tracking for up to 500 vehicles, dynamic route optimization</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Integration:</span>
+<span class="text-gray-600"> Compatible with all major OEM equipment, open API architecture</span>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-3">Equipment Compatibility:</h4>
+<ul class="grid grid-cols-2 gap-2">
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">Haul Trucks (All Classes)</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">Excavators & Loaders</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">Drilling Equipment</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">Conveyor Systems</span>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<div class="bg-gray-50 rounded-lg p-6 h-full">
+<h4 class="text-lg font-medium text-gray-900 mb-4">Maintenance Cost Reduction</h4>
+<div id="equipment-chart" class="h-80 w-full"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Other tabs content would be similar structure -->
+<div id="automation-tab" class="tab-content">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">AutoMine™ Autonomous Mining System</h3>
+<p class="text-gray-600 mb-6">Our autonomous mining platform enables remote operation and automation of key mining processes, increasing productivity while reducing personnel exposure to hazardous environments.</p>
+<div class="mb-6">
+<h4 class="text-lg font-medium text-gray-900 mb-3">Key Specifications:</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Autonomous Navigation:</span>
+<span class="text-gray-600"> LiDAR and GPS fusion with 10cm positioning accuracy</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Remote Operations:</span>
+<span class="text-gray-600"> Low-latency control systems (&lt;100ms), 4K video feeds</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">AI Decision Support:</span>
+<span class="text-gray-600"> Machine learning algorithms with 98% accuracy for operational decisions</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Safety Systems:</span>
+<span class="text-gray-600"> Triple-redundant obstacle detection, fail-safe protocols</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Scalability:</span>
+<span class="text-gray-600"> Support for up to 50 autonomous units per site</span>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-3">Automation Capabilities:</h4>
+<ul class="grid grid-cols-2 gap-2">
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">Autonomous Haulage</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">Precision Drilling</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">Remote Blasting</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">Automated Sampling</span>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<div class="bg-gray-50 rounded-lg p-6 h-full">
+<h4 class="text-lg font-medium text-gray-900 mb-4">Productivity Improvement</h4>
+<div id="automation-chart" class="h-80 w-full"></div>
+</div>
+</div>
+</div>
+</div>
+<div id="environmental-tab" class="tab-content">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">EcoTrack™ Environmental Monitoring System</h3>
+<p class="text-gray-600 mb-6">Our comprehensive environmental monitoring platform helps mining operations maintain regulatory compliance, reduce environmental impact, and implement sustainable practices.</p>
+<div class="mb-6">
+<h4 class="text-lg font-medium text-gray-900 mb-3">Key Specifications:</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Water Monitoring:</span>
+<span class="text-gray-600"> Real-time analysis of 25+ parameters, parts-per-billion sensitivity</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Air Quality:</span>
+<span class="text-gray-600"> Continuous monitoring of particulate matter, VOCs, and greenhouse gases</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Noise & Vibration:</span>
+<span class="text-gray-600"> 3D seismic monitoring with real-time alerts</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Reporting:</span>
+<span class="text-gray-600"> Automated compliance reporting for major global regulations</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Remediation:</span>
+<span class="text-gray-600"> AI-powered recommendations for environmental impact reduction</span>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-3">Regulatory Compliance:</h4>
+<ul class="grid grid-cols-2 gap-2">
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">EPA Standards</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">ISO 14001</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">EU Water Framework</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">ICMM Principles</span>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<div class="bg-gray-50 rounded-lg p-6 h-full">
+<h4 class="text-lg font-medium text-gray-900 mb-4">Environmental Impact Reduction</h4>
+<div id="environmental-chart" class="h-80 w-full"></div>
+</div>
+</div>
+</div>
+</div>
+<div id="analytics-tab" class="tab-content">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">MineInsight™ Analytics Platform</h3>
+<p class="text-gray-600 mb-6">Our advanced analytics platform transforms operational data into actionable insights, enabling optimized resource management, process efficiency, and strategic decision-making.</p>
+<div class="mb-6">
+<h4 class="text-lg font-medium text-gray-900 mb-3">Key Specifications:</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Data Processing:</span>
+<span class="text-gray-600"> Handles 10+ TB daily, real-time and batch processing capabilities</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Resource Modeling:</span>
+<span class="text-gray-600"> 3D geological modeling with 95% confidence intervals</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Optimization Algorithms:</span>
+<span class="text-gray-600"> AI-powered production optimization with 15-20% efficiency gains</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Visualization:</span>
+<span class="text-gray-600"> Interactive dashboards, 3D visualizations, and augmented reality interfaces</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Integration:</span>
+<span class="text-gray-600"> Connects with all major mining software and ERP systems</span>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-3">Analytics Capabilities:</h4>
+<ul class="grid grid-cols-2 gap-2">
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">Predictive Modeling</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">Process Optimization</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">Resource Estimation</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">Financial Modeling</span>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<div class="bg-gray-50 rounded-lg p-6 h-full">
+<h4 class="text-lg font-medium text-gray-900 mb-4">Production Optimization Results</h4>
+<div id="analytics-chart" class="h-80 w-full"></div>
+</div>
+</div>
+</div>
+</div>
+<div id="integration-tab" class="tab-content">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<div>
+<h3 class="text-xl font-semibold text-gray-900 mb-4">MineConnect™ Integration Services</h3>
+<p class="text-gray-600 mb-6">Our comprehensive integration services ensure seamless connectivity between our solutions and your existing systems, minimizing disruption while maximizing value.</p>
+<div class="mb-6">
+<h4 class="text-lg font-medium text-gray-900 mb-3">Key Specifications:</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Legacy Integration:</span>
+<span class="text-gray-600"> Support for 200+ legacy systems and protocols</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">API Framework:</span>
+<span class="text-gray-600"> RESTful and GraphQL APIs with comprehensive documentation</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Implementation Timeline:</span>
+<span class="text-gray-600"> Typical deployment in 8-12 weeks, phased approach available</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Support Services:</span>
+<span class="text-gray-600"> 24/7 technical support, on-site implementation assistance</span>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium text-gray-800">Training:</span>
+<span class="text-gray-600"> Comprehensive training programs for all user levels</span>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-3">Integration Capabilities:</h4>
+<ul class="grid grid-cols-2 gap-2">
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">ERP Systems</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">SCADA Systems</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">Mine Planning Software</span>
+</li>
+<li class="flex items-center bg-gray-50 px-3 py-2 rounded">
+<div class="w-4 h-4 flex items-center justify-center text-primary mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">Equipment OEM Systems</span>
+</li>
+</ul>
+</div>
+</div>
+<div>
+<div class="bg-gray-50 rounded-lg p-6 h-full">
+<h4 class="text-lg font-medium text-gray-900 mb-4">Implementation Timeline</h4>
+<div id="integration-chart" class="h-80 w-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Studies -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Success Stories</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Real-world examples of how our mining technology solutions have transformed operations for leading mining companies worldwide.</p>
+</div>
+<div class="relative">
+<div class="case-studies-container flex overflow-x-auto pb-8 gap-6 snap-x">
+<!-- Case Study 1 -->
+<div class="case-study-card flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-48 bg-gray-200 relative">
+<img src="https://readdy.ai/api/search-image?query=aerial%20view%20of%20a%20large%20open%20pit%20copper%20mine%20with%20terraced%20walls%20and%20mining%20equipment%2C%20professional%20photography%2C%20high%20resolution%2C%20industrial%20mining%20operation%2C%20no%20people%20visible%2C%20daytime%2C%20clear%20sky&width=600&height=300&seq=1&orientation=landscape" alt="Copper Mountain Mining Operations" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="text-white font-semibold">Copper Mountain Mining</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Safety System Implementation</h3>
+<p class="text-gray-600 mb-4">Implemented comprehensive safety monitoring system across three open-pit copper mines, reducing safety incidents by 78% and improving emergency response times.</p>
+<div class="mb-4">
+<h4 class="text-sm font-medium text-gray-900 mb-2">Key Results:</h4>
+<ul class="space-y-1">
+<li class="flex items-start">
+<div class="w-4 h-4 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">78% reduction in safety incidents</span>
+</li>
+<li class="flex items-start">
+<div class="w-4 h-4 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">92% faster emergency response</span>
+</li>
+<li class="flex items-start">
+<div class="w-4 h-4 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">$4.2M annual insurance savings</span>
+</li>
+</ul>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 rounded-full bg-gray-100 flex-shrink-0 mr-3 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20middle-aged%20male%20mining%20executive%20with%20short%20gray%20hair%20and%20safety%20helmet%2C%20serious%20expression%2C%20corporate%20portrait%2C%20studio%20lighting&width=80&height=80&seq=2&orientation=squarish" alt="Robert Harrington" class="w-full h-full object-cover">
+</div>
+<div>
+<p class="text-sm text-gray-600 italic">"The implementation of the SafetyGuard system has transformed our safety culture and operational efficiency. The real-time monitoring capabilities have given us unprecedented visibility into potential hazards."</p>
+<p class="text-sm font-medium text-gray-900 mt-2">Robert Harrington, Safety Director</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Case Study 2 -->
+<div class="case-study-card flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-48 bg-gray-200 relative">
+<img src="https://readdy.ai/api/search-image?query=underground%20gold%20mining%20operation%20with%20modern%20equipment%20and%20well-lit%20tunnels%2C%20professional%20photography%2C%20high%20resolution%2C%20industrial%20mining%20operation%2C%20no%20people%20visible%2C%20advanced%20technology%20visible&width=600&height=300&seq=3&orientation=landscape" alt="GoldCorp Mining Operations" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="text-white font-semibold">Newmont GoldCorp</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Autonomous Mining Deployment</h3>
+<p class="text-gray-600 mb-4">Implemented autonomous drilling and haulage systems at underground gold mining operation, increasing productivity while reducing operational costs.</p>
+<div class="mb-4">
+<h4 class="text-sm font-medium text-gray-900 mb-2">Key Results:</h4>
+<ul class="space-y-1">
+<li class="flex items-start">
+<div class="w-4 h-4 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">31% increase in production output</span>
+</li>
+<li class="flex items-start">
+<div class="w-4 h-4 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">22% reduction in operational costs</span>
+</li>
+<li class="flex items-start">
+<div class="w-4 h-4 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">85% decrease in workplace injuries</span>
+</li>
+</ul>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 rounded-full bg-gray-100 flex-shrink-0 mr-3 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20female%20mining%20operations%20director%20with%20short%20blonde%20hair%2C%20confident%20expression%2C%20corporate%20portrait%2C%20studio%20lighting&width=80&height=80&seq=4&orientation=squarish" alt="Jennifer Michaels" class="w-full h-full object-cover">
+</div>
+<div>
+<p class="text-sm text-gray-600 italic">"The AutoMine system has revolutionized our underground operations. We've seen dramatic improvements in both safety and productivity, with the added benefit of extending mine life through more efficient resource extraction."</p>
+<p class="text-sm font-medium text-gray-900 mt-2">Jennifer Michaels, Operations Director</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Case Study 3 -->
+<div class="case-study-card flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-48 bg-gray-200 relative">
+<img src="https://readdy.ai/api/search-image?query=modern%20iron%20ore%20mining%20operation%20with%20large%20haul%20trucks%20and%20excavators%2C%20professional%20photography%2C%20high%20resolution%2C%20industrial%20mining%20operation%2C%20no%20people%20visible%2C%20sunset%20lighting&width=600&height=300&seq=5&orientation=landscape" alt="Rio Tinto Iron Ore Operations" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="text-white font-semibold">Rio Tinto Iron Ore</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Predictive Maintenance Implementation</h3>
+<p class="text-gray-600 mb-4">Deployed equipment monitoring and predictive maintenance system across fleet of 150+ haul trucks and excavators, dramatically reducing downtime and maintenance costs.</p>
+<div class="mb-4">
+<h4 class="text-sm font-medium text-gray-900 mb-2">Key Results:</h4>
+<ul class="space-y-1">
+<li class="flex items-start">
+<div class="w-4 h-4 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">62% reduction in unplanned downtime</span>
+</li>
+<li class="flex items-start">
+<div class="w-4 h-4 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">$8.7M annual maintenance savings</span>
+</li>
+<li class="flex items-start">
+<div class="w-4 h-4 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">18% increase in equipment lifespan</span>
+</li>
+</ul>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 rounded-full bg-gray-100 flex-shrink-0 mr-3 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20male%20maintenance%20director%20with%20dark%20hair%20and%20glasses%2C%20confident%20expression%2C%20corporate%20portrait%2C%20studio%20lighting&width=80&height=80&seq=6&orientation=squarish" alt="David Chen" class="w-full h-full object-cover">
+</div>
+<div>
+<p class="text-sm text-gray-600 italic">"The MineFleet system has completely transformed our maintenance operations. We're now able to predict and prevent failures before they occur, which has dramatically improved our operational efficiency."</p>
+<p class="text-sm font-medium text-gray-900 mt-2">David Chen, Maintenance Director</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Case Study 4 -->
+<div class="case-study-card flex-shrink-0 w-full md:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)] bg-white rounded-lg shadow-md overflow-hidden">
+<div class="h-48 bg-gray-200 relative">
+<img src="https://readdy.ai/api/search-image?query=coal%20mining%20operation%20with%20environmental%20monitoring%20equipment%20visible%2C%20professional%20photography%2C%20high%20resolution%2C%20industrial%20mining%20operation%2C%20no%20people%20visible%2C%20clean%20operation&width=600&height=300&seq=7&orientation=landscape" alt="Peabody Energy Coal Operations" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-4">
+<span class="text-white font-semibold">Peabody Energy</span>
+</div>
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold text-gray-900 mb-2">Environmental Monitoring System</h3>
+<p class="text-gray-600 mb-4">Implemented comprehensive environmental monitoring and compliance system across multiple coal mining operations, ensuring regulatory compliance while reducing environmental impact.</p>
+<div class="mb-4">
+<h4 class="text-sm font-medium text-gray-900 mb-2">Key Results:</h4>
+<ul class="space-y-1">
+<li class="flex items-start">
+<div class="w-4 h-4 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">100% regulatory compliance achieved</span>
+</li>
+<li class="flex items-start">
+<div class="w-4 h-4 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">43% reduction in water usage</span>
+</li>
+<li class="flex items-start">
+<div class="w-4 h-4 flex items-center justify-center text-primary mt-0.5 mr-2">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700 text-sm">28% decrease in carbon emissions</span>
+</li>
+</ul>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 rounded-full bg-gray-100 flex-shrink-0 mr-3 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20female%20environmental%20director%20with%20brown%20hair%2C%20confident%20expression%2C%20corporate%20portrait%2C%20studio%20lighting&width=80&height=80&seq=8&orientation=squarish" alt="Sarah Johnson" class="w-full h-full object-cover">
+</div>
+<div>
+<p class="text-sm text-gray-600 italic">"The EcoTrack system has been instrumental in our sustainability efforts. We've not only achieved full compliance with increasingly stringent regulations but have also significantly reduced our environmental footprint."</p>
+<p class="text-sm font-medium text-gray-900 mt-2">Sarah Johnson, Environmental Director</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Controls -->
+<div class="flex justify-center mt-6 gap-2">
+<button id="prev-case-study" class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center text-gray-700 hover:bg-gray-100">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-left-s-line"></i>
+</div>
+</button>
+<div class="flex gap-2" id="case-study-dots">
+<button class="w-3 h-3 rounded-full bg-primary"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300"></button>
+</div>
+<button id="next-case-study" class="w-10 h-10 rounded-full bg-white shadow flex items-center justify-center text-gray-700 hover:bg-gray-100">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-right-s-line"></i>
+</div>
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits & ROI -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Benefits & ROI</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our mining technology solutions deliver measurable value through improved safety, efficiency, and sustainability, with rapid return on investment.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Safety Metric -->
+<div class="bg-white p-6 rounded-lg shadow-md text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-shield-check-fill"></i>
+</div>
+</div>
+<h3 class="text-4xl font-bold text-gray-900 mb-2">78%</h3>
+<p class="text-gray-600">Average reduction in safety incidents after implementation</p>
+</div>
+<!-- Efficiency Metric -->
+<div class="bg-white p-6 rounded-lg shadow-md text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-line-chart-fill"></i>
+</div>
+</div>
+<h3 class="text-4xl font-bold text-gray-900 mb-2">31%</h3>
+<p class="text-gray-600">Average increase in operational efficiency and productivity</p>
+</div>
+<!-- Cost Reduction Metric -->
+<div class="bg-white p-6 rounded-lg shadow-md text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-money-dollar-circle-fill"></i>
+</div>
+</div>
+<h3 class="text-4xl font-bold text-gray-900 mb-2">24%</h3>
+<p class="text-gray-600">Average reduction in operational and maintenance costs</p>
+</div>
+<!-- ROI Metric -->
+<div class="bg-white p-6 rounded-lg shadow-md text-center">
+<div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+<div class="w-8 h-8 flex items-center justify-center text-primary">
+<i class="ri-calendar-check-fill"></i>
+</div>
+</div>
+<h3 class="text-4xl font-bold text-gray-900 mb-2">9-14</h3>
+<p class="text-gray-600">Average months to achieve full return on investment</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- ROI Calculator -->
+<div class="bg-white p-8 rounded-lg shadow-md">
+<h3 class="text-xl font-semibold text-gray-900 mb-6">ROI Calculator</h3>
+<p class="text-gray-600 mb-6">Estimate your potential return on investment by entering your mining operation details below.</p>
+<div class="space-y-4 mb-6">
+<div>
+<label for="operation-type" class="block text-sm font-medium text-gray-700 mb-1">Mining Operation Type</label>
+<div class="relative">
+<select id="operation-type" class="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded px-4 py-2.5 appearance-none pr-8">
+<option value="open-pit">Open-pit Mining</option>
+<option value="underground">Underground Mining</option>
+<option value="solution">Solution Mining</option>
+<option value="quarry">Quarry Operations</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+<div class="w-4 h-4 flex items-center justify-center text-gray-500">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</div>
+</div>
+</div>
+<div>
+<label for="production-volume" class="block text-sm font-medium text-gray-700 mb-1">Annual Production Volume (tons)</label>
+<input type="text" id="production-volume" class="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded px-4 py-2.5" placeholder="e.g., 1,000,000">
+</div>
+<div>
+<label for="equipment-fleet" class="block text-sm font-medium text-gray-700 mb-1">Equipment Fleet Size</label>
+<input type="text" id="equipment-fleet" class="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded px-4 py-2.5" placeholder="e.g., 50">
+</div>
+<div>
+<label for="workforce-size" class="block text-sm font-medium text-gray-700 mb-1">Workforce Size</label>
+<input type="text" id="workforce-size" class="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded px-4 py-2.5" placeholder="e.g., 250">
+</div>
+<div>
+<label class="block text-sm font-medium text-gray-700 mb-1">Solutions of Interest</label>
+<div class="space-y-2">
+<label class="custom-checkbox">
+<input type="checkbox" checked>
+<span class="checkmark"></span>
+Safety Systems
+</label>
+<label class="custom-checkbox">
+<input type="checkbox" checked>
+<span class="checkmark"></span>
+Equipment Monitoring
+</label>
+<label class="custom-checkbox">
+<input type="checkbox">
+<span class="checkmark"></span>
+Automated Operations
+</label>
+<label class="custom-checkbox">
+<input type="checkbox">
+<span class="checkmark"></span>
+Environmental Compliance
+</label>
+<label class="custom-checkbox">
+<input type="checkbox">
+<span class="checkmark"></span>
+Data Analytics
+</label>
+</div>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors">Calculate ROI</button>
+</div>
+<!-- Implementation Timeline -->
+<div class="bg-white p-8 rounded-lg shadow-md">
+<h3 class="text-xl font-semibold text-gray-900 mb-6">Implementation Timeline</h3>
+<p class="text-gray-600 mb-6">Our proven implementation methodology ensures minimal disruption to your operations while maximizing value delivery.</p>
+<div class="space-y-6">
+<div class="flex">
+<div class="flex flex-col items-center mr-4">
+<div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold">1</div>
+<div class="h-full w-0.5 bg-gray-200 mt-2"></div>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-1">Assessment & Planning</h4>
+<p class="text-gray-600 mb-1">2-3 Weeks</p>
+<p class="text-sm text-gray-500">Comprehensive site assessment, needs analysis, and detailed implementation planning.</p>
+</div>
+</div>
+<div class="flex">
+<div class="flex flex-col items-center mr-4">
+<div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold">2</div>
+<div class="h-full w-0.5 bg-gray-200 mt-2"></div>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-1">Infrastructure Setup</h4>
+<p class="text-gray-600 mb-1">3-4 Weeks</p>
+<p class="text-sm text-gray-500">Installation of hardware, network infrastructure, and core system components.</p>
+</div>
+</div>
+<div class="flex">
+<div class="flex flex-col items-center mr-4">
+<div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold">3</div>
+<div class="h-full w-0.5 bg-gray-200 mt-2"></div>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-1">Integration & Configuration</h4>
+<p class="text-gray-600 mb-1">2-3 Weeks</p>
+<p class="text-sm text-gray-500">Integration with existing systems and customization to meet specific operational requirements.</p>
+</div>
+</div>
+<div class="flex">
+<div class="flex flex-col items-center mr-4">
+<div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold">4</div>
+<div class="h-full w-0.5 bg-gray-200 mt-2"></div>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-1">Testing & Validation</h4>
+<p class="text-gray-600 mb-1">1-2 Weeks</p>
+<p class="text-sm text-gray-500">Comprehensive testing and validation to ensure all systems function as expected.</p>
+</div>
+</div>
+<div class="flex">
+<div class="flex flex-col items-center mr-4">
+<div class="w-10 h-10 bg-primary text-white rounded-full flex items-center justify-center font-semibold">5</div>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-1">Training & Deployment</h4>
+<p class="text-gray-600 mb-1">2-3 Weeks</p>
+<p class="text-sm text-gray-500">User training, phased deployment, and transition to full operational status.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section id="contact" class="py-16 bg-gray-50">
+<div class="container mx-auto px-6">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold text-gray-900 mb-4">Get Started Today</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Contact our mining technology experts to discuss your specific needs and discover how our solutions can transform your operations.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Contact Form -->
+<div class="bg-white p-8 rounded-lg shadow-md">
+<h3 class="text-xl font-semibold text-gray-900 mb-6">Request a Consultation</h3>
+<form class="space-y-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+<div>
+<label for="first-name" class="block text-sm font-medium text-gray-700 mb-1">First Name</label>
+<input type="text" id="first-name" class="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded px-4 py-2.5" placeholder="Enter first name">
+</div>
+<div>
+<label for="last-name" class="block text-sm font-medium text-gray-700 mb-1">Last Name</label>
+<input type="text" id="last-name" class="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded px-4 py-2.5" placeholder="Enter last name">
+</div>
+</div>
+<div>
+<label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+<input type="text" id="company" class="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded px-4 py-2.5" placeholder="Enter company name">
+</div>
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+<input type="email" id="email" class="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded px-4 py-2.5" placeholder="Enter email address">
+</div>
+<div>
+<label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone</label>
+<input type="tel" id="phone" class="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded px-4 py-2.5" placeholder="Enter phone number">
+</div>
+<div>
+<label for="interest" class="block text-sm font-medium text-gray-700 mb-1">Primary Interest</label>
+<div class="relative">
+<select id="interest" class="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded px-4 py-2.5 appearance-none pr-8">
+<option value="">Select your primary interest</option>
+<option value="safety">Mine Safety Systems</option>
+<option value="equipment">Equipment Monitoring</option>
+<option value="automation">Automated Operations</option>
+<option value="environmental">Environmental Compliance</option>
+<option value="analytics">Data Analytics</option>
+<option value="integration">Integration Services</option>
+</select>
+<div class="absolute inset-y-0 right-0 flex items-center px-2 pointer-events-none">
+<div class="w-4 h-4 flex items-center justify-center text-gray-500">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</div>
+</div>
+</div>
+<div>
+<label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+<textarea id="message" rows="4" class="w-full bg-gray-50 border border-gray-300 text-gray-900 rounded px-4 py-2.5" placeholder="Tell us about your specific needs or questions"></textarea>
+</div>
+<div>
+<label class="custom-checkbox">
+<input type="checkbox">
+<span class="checkmark"></span>
+I agree to receive communications about products, services, and industry updates
+</label>
+</div>
+<button type="submit" class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors">Submit Request</button>
+</form>
+</div>
+<!-- Contact Information -->
+<div class="bg-white p-8 rounded-lg shadow-md">
+<h3 class="text-xl font-semibold text-gray-900 mb-6">Contact Information</h3>
+<div class="space-y-6">
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-3">Global Headquarters</h4>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
+<i class="ri-map-pin-line"></i>
+</div>
+<p class="text-gray-600">
+1250 Mining Technology Plaza<br>
+Denver, CO 80202<br>
+United States
+</p>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-3">Sales & Support</h4>
+<div class="space-y-3">
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
+<i class="ri-phone-line"></i>
+</div>
+<div>
+<p class="text-gray-600">+1 (800) 555-7890</p>
+<p class="text-sm text-gray-500">Monday-Friday, 8am-6pm MT</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
+<i class="ri-mail-line"></i>
+</div>
+<div>
+<p class="text-gray-600">mining.solutions@example.com</p>
+<p class="text-sm text-gray-500">For sales and general inquiries</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
+<i class="ri-customer-service-line"></i>
+</div>
+<div>
+<p class="text-gray-600">support@example.com</p>
+<p class="text-sm text-gray-500">24/7 technical support</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-3">Regional Offices</h4>
+<div class="space-y-3">
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
+<i class="ri-global-line"></i>
+</div>
+<div>
+<p class="font-medium text-gray-800">North America</p>
+<p class="text-gray-600">Denver, Toronto, Mexico City</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
+<i class="ri-global-line"></i>
+</div>
+<div>
+<p class="font-medium text-gray-800">South America</p>
+<p class="text-gray-600">Santiago, Lima, Belo Horizonte</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
+<i class="ri-global-line"></i>
+</div>
+<div>
+<p class="font-medium text-gray-800">Europe & Africa</p>
+<p class="text-gray-600">London, Johannesburg, Moscow</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
+<i class="ri-global-line"></i>
+</div>
+<div>
+<p class="font-medium text-gray-800">Asia Pacific</p>
+<p class="text-gray-600">Perth, Beijing, Jakarta</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-900 mb-3">Emergency Support</h4>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center text-primary mt-0.5 mr-3">
+<i class="ri-alarm-warning-line"></i>
+</div>
+<div>
+<p class="text-gray-600">+1 (800) 555-9111</p>
+<p class="text-sm text-gray-500">24/7 emergency technical support</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="font-['Pacifico'] text-2xl text-white mb-6 inline-block">logo</a>
+<p class="text-gray-400 mb-6">Leading provider of advanced technology solutions for the global mining industry.</p>
+<div class="flex space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-linkedin-fill"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-twitter-x-fill"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-facebook-fill"></i>
+</div>
+</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-youtube-fill"></i>
+</div>
+</a>
+</div>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Solutions</h4>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Mine Safety Systems</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Equipment Monitoring</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Automated Operations</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Environmental Compliance</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Data Analytics</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Integration Services</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Company</h4>
+<ul class="space-y-3">
+<li><a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+<li><a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Leadership</a></li>
+<li><a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+<li><a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">News & Events</a></li>
+<li><a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Sustainability</a></li>
+<li><a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Contact Us</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-6">Subscribe</h4>
+<p class="text-gray-400 mb-4">Stay updated with the latest mining technology trends and news.</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Your email address" class="bg-gray-800 text-white px-4 py-2 rounded-l border-none flex-grow">
+<button type="submit" class="bg-primary text-white px-4 py-2 rounded-r !rounded-button whitespace-nowrap hover:bg-primary/90 transition-colors">Subscribe</button>
+</div>
+</form>
+<p class="text-gray-500 text-sm">By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.</p>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">&copy; 2025 Mining Technology Solutions. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-gray-500 hover:text-gray-400 text-sm">Privacy Policy</a>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-gray-500 hover:text-gray-400 text-sm">Terms of Service</a>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-gray-500 hover:text-gray-400 text-sm">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<!-- Scripts -->
+<script id="tab-navigation">
+document.addEventListener('DOMContentLoaded', function() {
+// Tab Navigation
+const tabButtons = document.querySelectorAll('.tab-button');
+const tabContents = document.querySelectorAll('.tab-content');
+tabButtons.forEach(button => {
+button.addEventListener('click', () => {
+// Remove active class from all buttons and contents
+tabButtons.forEach(btn => {
+btn.classList.remove('text-primary', 'border-primary');
+btn.classList.add('text-gray-500', 'border-transparent');
+});
+tabContents.forEach(content => {
+content.classList.remove('active');
+});
+// Add active class to clicked button
+button.classList.add('text-primary', 'border-primary');
+button.classList.remove('text-gray-500', 'border-transparent');
+// Show corresponding content
+const tabId = button.id.replace('-btn', '');
+document.getElementById(tabId).classList.add('active');
+});
+});
+// Tab links from solution cards
+const tabLinks = document.querySelectorAll('.tab-link');
+tabLinks.forEach(link => {
+link.addEventListener('click', (e) => {
+e.preventDefault();
+const tabId = link.getAttribute('href').substring(1);
+const tabButton = document.getElementById(tabId + '-btn');
+// Scroll to tabs section
+document.querySelector('.tab-button').scrollIntoView({ behavior: 'smooth' });
+// Simulate click on tab button after scroll
+setTimeout(() => {
+tabButton.click();
+}, 500);
+});
+});
+});
+</script>
+<script id="case-study-carousel">
+document.addEventListener('DOMContentLoaded', function() {
+const container = document.querySelector('.case-studies-container');
+const prevButton = document.getElementById('prev-case-study');
+const nextButton = document.getElementById('next-case-study');
+const dots = document.querySelectorAll('#case-study-dots button');
+const cards = document.querySelectorAll('.case-study-card');
+let currentIndex = 0;
+// Set dot indicators
+function updateDots() {
+dots.forEach((dot, index) => {
+if (index === currentIndex) {
+dot.classList.remove('bg-gray-300');
+dot.classList.add('bg-primary');
+} else {
+dot.classList.remove('bg-primary');
+dot.classList.add('bg-gray-300');
+}
+});
+}
+// Scroll to card
+function scrollToCard(index) {
+if (index < 0) index = 0;
+if (index >= cards.length) index = cards.length - 1;
+currentIndex = index;
+cards[index].scrollIntoView({ behavior: 'smooth', inline: 'start', block: 'nearest' });
+updateDots();
+}
+// Next button
+nextButton.addEventListener('click', () => {
+scrollToCard(currentIndex + 1);
+});
+// Previous button
+prevButton.addEventListener('click', () => {
+scrollToCard(currentIndex - 1);
+});
+// Dot navigation
+dots.forEach((dot, index) => {
+dot.addEventListener('click', () => {
+scrollToCard(index);
+});
+});
+// Handle scroll events to update dots
+container.addEventListener('scroll', () => {
+const scrollPosition = container.scrollLeft;
+const cardWidth = cards[0].offsetWidth + 24; // Including gap
+const newIndex = Math.round(scrollPosition / cardWidth);
+if (newIndex !== currentIndex) {
+currentIndex = newIndex;
+updateDots();
+}
+});
+});
+</script>
+<script id="charts-initialization">
+document.addEventListener('DOMContentLoaded', function() {
+// Safety Chart
+const safetyChart = echarts.init(document.getElementById('safety-chart'));
+safetyChart.setOption({
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Before Implementation', 'After Implementation'],
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+top: 40,
+right: 20,
+bottom: 40,
+left: 60
+},
+xAxis: {
+type: 'category',
+data: ['Gas Incidents', 'Structural Issues', 'Personnel Injuries', 'Emergency Response'],
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+color: '#1f2937'
+}
+},
+yAxis: {
+type: 'value',
+name: 'Incidents per Month',
+nameTextStyle: {
+color: '#1f2937'
+},
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+color: '#1f2937'
+},
+splitLine: {
+lineStyle: {
+color: '#eee'
+}
+}
+},
+series: [
+{
+name: 'Before Implementation',
+type: 'bar',
+data: [12, 8, 15, 22],
+itemStyle: {
+color: 'rgba(252, 141, 98, 1)'
+},
+barWidth: '30%',
+barGap: '10%',
+barCategoryGap: '20%'
+},
+{
+name: 'After Implementation',
+type: 'bar',
+data: [3, 2, 4, 5],
+itemStyle: {
+color: 'rgba(87, 181, 231, 1)'
+},
+barWidth: '30%'
+}
+]
+});
+// Equipment Chart
+const equipmentChart = echarts.init(document.getElementById('equipment-chart'));
+equipmentChart.setOption({
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Maintenance Costs'],
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+top: 40,
+right: 20,
+bottom: 40,
+left: 60
+},
+xAxis: {
+type: 'category',
+data: ['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8'],
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+color: '#1f2937'
+}
+},
+yAxis: {
+type: 'value',
+name: 'Cost ($ Thousands)',
+nameTextStyle: {
+color: '#1f2937'
+},
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+color: '#1f2937'
+},
+splitLine: {
+lineStyle: {
+color: '#eee'
+}
+}
+},
+series: [
+{
+name: 'Maintenance Costs',
+type: 'line',
+data: [450, 430, 448, 425, 280, 230, 210, 190],
+smooth: true,
+symbol: 'none',
+lineStyle: {
+width: 3,
+color: 'rgba(87, 181, 231, 1)'
+},
+areaStyle: {
+color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+{
+offset: 0,
+color: 'rgba(87, 181, 231, 0.3)'
+},
+{
+offset: 1,
+color: 'rgba(87, 181, 231, 0.1)'
+}
+])
+},
+markLine: {
+silent: true,
+lineStyle: {
+color: '#ff9900',
+type: 'dashed'
+},
+data: [
+{
+name: 'Implementation',
+xAxis: 3.5,
+label: {
+formatter: 'System Implementation',
+position: 'middle'
+}
+}
+]
+}
+}
+]
+});
+// Automation Chart
+const automationChart = echarts.init(document.getElementById('automation-chart'));
+automationChart.setOption({
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Manual Operations', 'Automated Operations'],
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+top: 40,
+right: 20,
+bottom: 40,
+left: 60
+},
+xAxis: {
+type: 'category',
+data: ['Drilling', 'Haulage', 'Sampling', 'Blasting'],
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+color: '#1f2937'
+}
+},
+yAxis: {
+type: 'value',
+name: 'Productivity Index',
+nameTextStyle: {
+color: '#1f2937'
+},
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+color: '#1f2937'
+},
+splitLine: {
+lineStyle: {
+color: '#eee'
+}
+}
+},
+series: [
+{
+name: 'Manual Operations',
+type: 'bar',
+data: [100, 100, 100, 100],
+itemStyle: {
+color: 'rgba(141, 211, 199, 1)'
+},
+barWidth: '30%',
+barGap: '10%',
+barCategoryGap: '20%'
+},
+{
+name: 'Automated Operations',
+type: 'bar',
+data: [142, 131, 125, 138],
+itemStyle: {
+color: 'rgba(87, 181, 231, 1)'
+},
+barWidth: '30%'
+}
+]
+});
+// Environmental Chart
+const environmentalChart = echarts.init(document.getElementById('environmental-chart'));
+environmentalChart.setOption({
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Before Implementation', 'After Implementation'],
+textStyle: {
+color: '#1f2937'
+}
+},
+radar: {
+indicator: [
+{ name: 'Water Usage', max: 100 },
+{ name: 'Energy Consumption', max: 100 },
+{ name: 'Carbon Emissions', max: 100 },
+{ name: 'Waste Production', max: 100 },
+{ name: 'Land Disturbance', max: 100 }
+],
+splitArea: {
+areaStyle: {
+color: ['rgba(250, 250, 250, 0.1)', 'rgba(240, 240, 240, 0.1)']
+}
+},
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+splitLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+name: {
+textStyle: {
+color: '#1f2937'
+}
+}
+},
+series: [
+{
+name: 'Environmental Impact',
+type: 'radar',
+data: [
+{
+value: [100, 100, 100, 100, 100],
+name: 'Before Implementation',
+itemStyle: {
+color: 'rgba(252, 141, 98, 1)'
+},
+lineStyle: {
+width: 2
+},
+areaStyle: {
+opacity: 0.1
+}
+},
+{
+value: [57, 68, 72, 60, 75],
+name: 'After Implementation',
+itemStyle: {
+color: 'rgba(87, 181, 231, 1)'
+},
+lineStyle: {
+width: 2
+},
+areaStyle: {
+opacity: 0.1
+}
+}
+]
+}
+]
+});
+// Analytics Chart
+const analyticsChart = echarts.init(document.getElementById('analytics-chart'));
+analyticsChart.setOption({
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Actual Production', 'Optimized Production'],
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+top: 40,
+right: 20,
+bottom: 40,
+left: 60
+},
+xAxis: {
+type: 'category',
+data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug'],
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+color: '#1f2937'
+}
+},
+yAxis: {
+type: 'value',
+name: 'Production (tons)',
+nameTextStyle: {
+color: '#1f2937'
+},
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+color: '#1f2937'
+},
+splitLine: {
+lineStyle: {
+color: '#eee'
+}
+}
+},
+series: [
+{
+name: 'Actual Production',
+type: 'line',
+data: [42000, 43500, 41800, 44200, 45100, 46000, 45500, 47200],
+smooth: true,
+symbol: 'none',
+lineStyle: {
+width: 3,
+color: 'rgba(141, 211, 199, 1)'
+},
+areaStyle: {
+color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+{
+offset: 0,
+color: 'rgba(141, 211, 199, 0.3)'
+},
+{
+offset: 1,
+color: 'rgba(141, 211, 199, 0.1)'
+}
+])
+}
+},
+{
+name: 'Optimized Production',
+type: 'line',
+data: [42000, 45000, 48000, 51000, 54000, 57000, 60000, 63000],
+smooth: true,
+symbol: 'none',
+lineStyle: {
+width: 3,
+color: 'rgba(87, 181, 231, 1)'
+},
+areaStyle: {
+color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+{
+offset: 0,
+color: 'rgba(87, 181, 231, 0.3)'
+},
+{
+offset: 1,
+color: 'rgba(87, 181, 231, 0.1)'
+}
+])
+},
+markLine: {
+silent: true,
+lineStyle: {
+color: '#ff9900',
+type: 'dashed'
+},
+data: [
+{
+name: 'Analytics Implementation',
+xAxis: 1.5,
+label: {
+formatter: 'Analytics Implementation',
+position: 'middle'
+}
+}
+]
+}
+}
+]
+});
+// Integration Chart
+const integrationChart = echarts.init(document.getElementById('integration-chart'));
+integrationChart.setOption({
+animation: false,
+tooltip: {
+trigger: 'item',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+orient: 'vertical',
+right: 10,
+top: 'center',
+textStyle: {
+color: '#1f2937'
+}
+},
+series: [
+{
+name: 'Implementation Timeline',
+type: 'pie',
+radius: ['40%', '70%'],
+avoidLabelOverlap: false,
+itemStyle: {
+borderRadius: 10,
+borderColor: '#fff',
+borderWidth: 2
+},
+label: {
+show: false,
+position: 'center'
+},
+emphasis: {
+label: {
+show: true,
+fontSize: 14,
+fontWeight: 'bold'
+}
+},
+labelLine: {
+show: false
+},
+data: [
+{ value: 3, name: 'Assessment & Planning (2-3 weeks)', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+{ value: 4, name: 'Infrastructure Setup (3-4 weeks)', itemStyle: { color: 'rgba(141, 211, 199, 1)' } },
+{ value: 3, name: 'Integration & Config (2-3 weeks)', itemStyle: { color: 'rgba(251, 191, 114, 1)' } },
+{ value: 2, name: 'Testing & Validation (1-2 weeks)', itemStyle: { color: 'rgba(252, 141, 98, 1)' } },
+{ value: 3, name: 'Training & Deployment (2-3 weeks)', itemStyle: { color: 'rgba(179, 205, 227, 1)' } }
+]
+}
+]
+});
+// Handle window resize
+window.addEventListener('resize', function() {
+safetyChart.resize();
+equipmentChart.resize();
+automationChart.resize();
+environmentalChart.resize();
+analyticsChart.resize();
+integrationChart.resize();
+});
+});
+</script>
+<script id="mobileMenuScript">
+  document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileSolutionsBtn = document.getElementById('mobileSolutionsBtn');
+      const mobileSolutionsMenu = document.getElementById('mobileSolutionsMenu');
+      // Toggle mobile menu
+      mobileMenuBtn.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+          const icon = mobileMenuBtn.querySelector('i');
+          icon.classList.toggle('ri-menu-line');
+          icon.classList.toggle('ri-close-line');
+      });
+      // Toggle mobile solutions dropdown
+      mobileSolutionsBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          mobileSolutionsMenu.classList.toggle('hidden');
+          const icon = mobileSolutionsBtn.querySelector('i');
+          icon.classList.toggle('ri-arrow-down-s-line');
+          icon.classList.toggle('ri-arrow-up-s-line');
+      });
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(event) {
+          if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+              mobileMenu.classList.add('hidden');
+              const icon = mobileMenuBtn.querySelector('i');
+              icon.classList.add('ri-menu-line');
+              icon.classList.remove('ri-close-line');
+          }
+      });
+      // Close mobile menu on link click
+      mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function() {
+              mobileMenu.classList.add('hidden');
+              const icon = mobileMenuBtn.querySelector('i');
+              icon.classList.add('ri-menu-line');
+              icon.classList.remove('ri-close-line');
+          });
+      });
+  });
+
+  
+document.addEventListener('DOMContentLoaded', function() {
+  // Modal elements
+  const contactUsBtn = document.getElementById('contactUsBtn');
+  const mobileContactUsBtn = document.getElementById('mobileContactUsBtn');
+  const contactModal = document.getElementById('contactModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+
+  // Open modal
+  function openModal() {
+    contactModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+  // Close modal
+  function closeModal() {
+    contactModal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  if (contactUsBtn) contactUsBtn.addEventListener('click', openModal);
+  if (mobileContactUsBtn) mobileContactUsBtn.addEventListener('click', openModal);
+  if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+
+  // Close modal on outside click
+  contactModal.addEventListener('click', function(e) {
+    if (e.target === contactModal) closeModal();
+  });
+
+  // ESC key closes modal
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !contactModal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+  // Contact form submission (basic UX, no backend)
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      contactForm.reset();
+      closeModal();
+      alert('Thank you for contacting us! We will get back to you soon.');
+    });
+  }
+});
+  </script>
+</body>
+</html>

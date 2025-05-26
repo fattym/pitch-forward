@@ -1,0 +1,147 @@
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+@keyframes fadeInLeft {
+from {
+opacity: 0;
+transform: translateX(-20px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+@keyframes fadeInRight {
+from {
+opacity: 0;
+transform: translateX(20px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+@keyframes scaleIn {
+from {
+opacity: 0;
+transform: scale(0.9);
+}
+to {
+opacity: 1;
+transform: scale(1);
+}
+}
+.animate-fadeInUp {
+animation: fadeInUp 0.6s ease-out forwards;
+}
+.animate-fadeInLeft {
+animation: fadeInLeft 0.6s ease-out forwards;
+}
+.animate-fadeInRight {
+animation: fadeInRight 0.6s ease-out forwards;
+}
+.animate-scaleIn {
+animation: scaleIn 0.5s ease-out forwards;
+}
+.animate-delay-100 {
+animation-delay: 100ms;
+}
+.animate-delay-200 {
+animation-delay: 200ms;
+}
+.animate-delay-300 {
+animation-delay: 300ms;
+}
+.animate-delay-400 {
+animation-delay: 400ms;
+}
+.group:hover .group-hover\:block {
+display: block;
+}
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=modern%20technology%20infrastructure%20with%20server%20racks%2C%20network%20cables%2C%20and%20digital%20displays%20in%20a%20sleek%2C%20futuristic%20environment%20with%20blue%20lighting.%20The%20image%20should%20have%20a%20gradient%20from%20dark%20blue%20to%20lighter%20blue%20on%20the%20left%20side%2C%20transitioning%20to%20a%20clear%20view%20of%20technology%20on%20the%20right.%20The%20left%20side%20should%20have%20enough%20space%20for%20text%20overlay%20with%20good%20contrast.&width=1920&height=800&seq=hero123&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(0,20,50,0.85) 0%, rgba(0,20,50,0.7) 50%, rgba(0,20,50,0.4) 100%);
+}
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.testimonial-card {
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.industry-card {
+transition: transform 0.3s ease;
+}
+.industry-card:hover {
+transform: translateY(-5px);
+}
+.cta-section {
+background-image: url('https://readdy.ai/api/search-image?query=abstract%20technology%20background%20with%20subtle%20blue%20circuit%20patterns%20and%20digital%20elements%2C%20providing%20a%20clean%20backdrop%20for%20text%20overlay.%20The%20image%20should%20be%20light%20and%20airy%20with%20low%20saturation%2C%20creating%20a%20professional%20and%20modern%20feel%20without%20being%20distracting.&width=1920&height=600&seq=cta456&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #0056b3;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+input:focus, button:focus {
+outline: none;
+ring: 2px;
+ring-color: #0056b3;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #0056b3;
+border-color: #0056b3;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+top: 3px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.carousel-container {
+scroll-behavior: smooth;
+}

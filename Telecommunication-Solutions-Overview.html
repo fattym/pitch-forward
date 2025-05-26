@@ -1,0 +1,2745 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Telecommunication Solutions - TechSolutions</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0056b3',secondary:'#00a3e0'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<script src="js copy.js"></script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+.animate-scaleIn {
+  animation: scaleIn 0.5s ease-out forwards;
+}
+.animate-slideInRight {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=modern%2520telecommunication%2520infrastructure%2520with%2520network%2520towers%252C%2520fiber%2520optic%2520cables%252C%2520and%2520advanced%2520communication%2520equipment.%2520The%2520image%2520should%2520have%2520a%2520gradient%2520from%2520dark%2520blue%2520to%2520lighter%2520blue%2520on%2520the%2520left%2520side%252C%2520providing%2520space%2520for%2520text%2520overlay%2520with%2520good%2520contrast%252C%2520while%2520the%2520right%2520side%2520shows%2520clear%2520details%2520of%2520telecommunication%2520technology.&width=1920&height=800&seq=telecomhero123&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(0,20,50,0.85) 0%, rgba(0,20,50,0.7) 50%, rgba(0,20,50,0.4) 100%);
+}
+.solution-card {
+transition: all 0.3s ease;
+}
+.solution-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.coverage-map {
+background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+}
+.case-card {
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #0056b3;
+border-color: #0056b3;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+top: 3px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-radio {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+border-radius: 50%;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-radio:checked {
+border-color: #0056b3;
+}
+.custom-radio:checked::after {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background-color: #0056b3;
+}
+.tab-active {
+color: #0056b3;
+border-color: #0056b3;
+}
+.tab-content {
+display: none;
+}
+.tab-content.active {
+display: block;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Header Navigation -->
+<header class="bg-white shadow-sm fixed w-full z-50">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center">
+          <a href="./index.html" class="text-2xl font-['Righteous'] text-primary">Pitch Forward</a>
+      </div>
+      <nav class="hidden md:flex space-x-8">
+          <a href="./index.html" id="homeLink" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+          <div class="relative" id="solutionsDropdown">
+              <button id="solutionsBtn" class="nav-link text-gray-700 hover:text-primary font-medium flex items-center" aria-expanded="false" aria-haspopup="true">
+                  Solutions
+                  <i class="ri-arrow-down-s-line ml-1"></i>
+              </button>
+              <div id="solutionsMenu" class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden" role="menu" aria-labelledby="solutionsBtn">
+                  <a href="./Fleet-Management-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-footprint-line w-5 h-5 mr-3"></i>
+                      Fleet Management
+                  </a>
+                  <a href="./Fuel-Management-Solutions.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-gas-station-line w-5 h-5 mr-3"></i>
+                      Fuel Management
+                  </a>
+                  <a href="./Logistics-Management-Solutions.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-truck-line w-5 h-5 mr-3"></i>
+                      Logistics Management
+                  </a>
+                  <a href="./Telecommunication-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-phone-line w-5 h-5 mr-3"></i>
+                      Telecommunication
+                  </a>
+                  <a href="./Security-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-shield-keyhole-line w-5 h-5 mr-3"></i>
+                      Security
+                  </a>
+                  <a href="./Data-&-Power-Solutions.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-database-2-line w-5 h-5 mr-3"></i>
+                      Data & Power
+                  </a>
+                  <a href="./Internet-&-Connectivity-Solutions.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-wifi-line w-5 h-5 mr-3"></i>
+                      Internet & Connectivity
+                  </a>
+                  <a href="./Mining-Technology-Solutions.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-mine-line w-5 h-5 mr-3"></i>
+                      Mining
+                  </a>
+                  <a href="./Warehousing-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-store-2-line w-5 h-5 mr-3"></i>
+                      Warehousing
+                  </a>
+              </div>
+          </div>
+          <a href="#industries" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+          <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+          <div class="relative hidden md:block">
+              <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm focus:border-primary">
+              <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+                  <i class="ri-search-line"></i>
+              </div>
+          </div>
+          <!-- Contact Us Button always visible on desktop, and on mobile triggers modal -->
+          <button id="contactUsBtn" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 block md:block">Contact Us</button>
+          <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
+              <div class="bg-white rounded-lg w-full max-w-xl mx-4 relative">
+                  <button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+                      <i class="ri-close-line text-2xl"></i>
+                  </button>
+                  <div class="max-h-[100vh] overflow-x-auto p-4 md:p-8">
+                      <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
+                      <form id="contactForm" action="" method="POST">
+                          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                              <div>
+                                  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                  <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                              </div>
+                              <div>
+                                  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                  <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                              </div>
+                              <div>
+                                  <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                  <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                              </div>
+                              <div>
+                                  <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+                                  <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                              </div>
+                          </div>
+                          <div class="mb-4">
+                              <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
+                              <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary pr-8">
+                                <option value="">Select a service</option>
+                                <option value="fleet">Fleet Management</option>
+                                <option value="fuel">Fuel Management</option>
+                                <option value="logistics">Logistics Management</option>
+                                <option value="telecommunication">Telecommunication</option>
+                                <option value="security">Security</option>
+                                <option value="data-power">Data &amp; Power</option>
+                                <option value="internet-connectivity">Internet &amp; Connectivity</option>
+                                <option value="mining">Mining</option>
+                                <option value="warehousing">Warehousing</option>
+                                <option value="other">Other</option>
+                              </select>
+                          </div>
+                          <div class="mb-6">
+                              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                              <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
+                          </div>
+                          <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Submit</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
+              <i class="ri-menu-line text-xl"></i>
+          </button>
+      </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-lg z-50">
+      <nav class="container mx-auto px-4 py-4">
+          <a href="index.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
+          <div class="relative">
+              <button id="mobileSolutionsBtn" class="w-full flex items-center justify-between py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">
+                  Solutions
+                  <i class="ri-arrow-down-s-line"></i>
+              </button>
+              <div id="mobileSolutionsMenu" class="hidden bg-gray-50 px-4 py-2">
+                  <a href="./Fleet-Management-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Fleet Management</a>
+                  <a href="./Fuel-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Fuel Management</a>
+                  <a href="./Logistics-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Logistics Management</a>
+                  <a href="./Telecommunication-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Telecommunication</a>
+                  <a href="./Security-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Security</a>
+                  <a href="./Data-&-Power-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Data & Power</a>
+                  <a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
+                  <a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
+                  <a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
+              </div>
+          </div>
+          <a href="#industries" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
+          <a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
+          <div class="mt-4">
+              <!-- Contact Us Button in mobile menu triggers modal -->
+              <button id="mobileContactUsBtn" class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+          </div>
+      </nav>
+  </div>
+</header>
+<!-- Breadcrumb -->
+<div class="bg-gray-100 pt-20">
+<div class="container mx-auto px-4 py-3">
+<div class="flex items-center text-sm">
+<a href="#" class="text-gray-600 hover:text-primary">Home</a>
+<i class="ri-arrow-right-s-line mx-2 text-gray-400"></i>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-gray-600 hover:text-primary">Solutions</a>
+<i class="ri-arrow-right-s-line mx-2 text-gray-400"></i>
+<span class="text-primary font-medium">Telecommunication</span>
+</div>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="hero-section w-full min-h-[600px] relative">
+<div class="hero-overlay absolute inset-0"></div>
+<div class="container mx-auto px-4 h-full flex items-center relative z-10 py-20">
+<div class="w-full md:w-1/2 text-white">
+<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fadeInUp">Complete Telecommunication Solutions</h1>
+<p class="text-lg sm:text-xl md:text-2xl mb-8 opacity-90 animate-fadeInUp animate-delay-100">From VoIP to Radio Communication - Enterprise-Grade Solutions</p>
+<div class="flex flex-col sm:flex-row gap-4 animate-fadeInUp animate-delay-200">
+<button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 text-lg">Get Started</button>
+<button class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300 text-lg">Schedule Demo</button>
+</div>
+<div class="mt-12 flex items-center space-x-6">
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3">
+<i class="ri-shield-check-line text-white"></i>
+</div>
+<span class="text-sm md:text-base">ISO 27001 Certified</span>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3">
+<i class="ri-customer-service-2-line text-white"></i>
+</div>
+<span class="text-sm md:text-base">24/7 Support</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Solutions Overview Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Comprehensive Telecommunication Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Advanced communication systems designed to enhance connectivity, improve collaboration, and optimize your business operations.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+<!-- Solution Card 1 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 animate-scaleIn">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-voiceprint-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">VoIP Solutions</h3>
+<ul class="text-gray-600 mb-6 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Cloud-based phone systems</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>SIP trunking services</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Virtual number provisioning</span>
+</li>
+</ul>
+<a href="#voip" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Solution Card 2 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 animate-scaleIn">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-radio-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">POC Radio Communication</h3>
+<ul class="text-gray-600 mb-6 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Push-to-talk over cellular</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Nationwide coverage</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Group communication</span>
+</li>
+</ul>
+<a href="#poc-radio" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Solution Card 3 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 animate-scaleIn">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-phone-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">IP Telephony Systems</h3>
+<ul class="text-gray-600 mb-6 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>On-premise PBX solutions</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Hybrid deployment options</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Advanced call routing</span>
+</li>
+</ul>
+<a href="#ip-telephony" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Solution Card 4 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 animate-scaleIn">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-message-3-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Unified Communications</h3>
+<ul class="text-gray-600 mb-6 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Integrated messaging</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Video conferencing</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Presence management</span>
+</li>
+</ul>
+<a href="#unified-comms" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Solution Card 5 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 animate-scaleIn">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-router-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Network Infrastructure</h3>
+<ul class="text-gray-600 mb-6 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Structured cabling</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Wireless networking</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Network security</span>
+</li>
+</ul>
+<a href="#network" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Solution Card 6 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 animate-scaleIn">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-customer-service-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Call Center Solutions</h3>
+<ul class="text-gray-600 mb-6 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>IVR systems</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Call queuing</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Analytics & reporting</span>
+</li>
+</ul>
+<a href="#call-center" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Solution Card 7 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 animate-scaleIn">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-smartphone-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Mobile Integration</h3>
+<ul class="text-gray-600 mb-6 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Mobile apps</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>BYOD solutions</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Secure mobile access</span>
+</li>
+</ul>
+<a href="#mobile" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- POC Radio Communication Spotlight -->
+<section id="poc-radio" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="flex flex-col lg:flex-row items-center gap-12">
+<div class="w-full lg:w-1/2">
+<div class="mb-6">
+<span class="bg-blue-100 text-primary px-4 py-1 rounded-full text-sm font-medium">Featured Solution</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Push-to-Talk Over Cellular (POC)</h2>
+<p class="text-lg text-gray-600 mb-8">Next-generation radio communication that combines the reliability of traditional two-way radios with the coverage of cellular networks, enabling instant group communication across your entire organization.</p>
+<div class="space-y-6 mb-8">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-global-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Nationwide Coverage</h3>
+<p class="text-gray-600">Communicate across the country without range limitations, utilizing existing cellular infrastructure.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-group-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Group Communication</h3>
+<p class="text-gray-600">Create multiple talk groups for different departments or projects with instant push-to-talk capability.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-alarm-warning-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Emergency Response</h3>
+<p class="text-gray-600">Built-in emergency features including priority override, man-down alerts, and GPS location tracking.</p>
+</div>
+</div>
+</div>
+<button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Request Demo</button>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-semibold mb-4">Coverage Map</h3>
+<div class="coverage-map h-80 w-full rounded mb-6"></div>
+<div class="flex items-center justify-between mb-4">
+<div class="flex items-center">
+<div class="w-4 h-4 bg-green-500 rounded-full mr-2"></div>
+<span class="text-sm">Excellent Coverage</span>
+</div>
+<div class="flex items-center">
+<div class="w-4 h-4 bg-yellow-400 rounded-full mr-2"></div>
+<span class="text-sm">Good Coverage</span>
+</div>
+<div class="flex items-center">
+<div class="w-4 h-4 bg-orange-500 rounded-full mr-2"></div>
+<span class="text-sm">Limited Coverage</span>
+</div>
+</div>
+<p class="text-sm text-gray-500">Coverage based on major cellular carriers. Actual coverage may vary by location.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- VoIP Features Section -->
+<section id="voip" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Advanced VoIP Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Transform your business communications with cloud-based phone systems that reduce costs and enhance flexibility.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<div class="w-full lg:w-1/2">
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div id="voipChart" class="h-96 w-full"></div>
+</div>
+<div class="mt-8 bg-blue-50 rounded-lg p-6">
+<h3 class="text-xl font-semibold mb-4">Cost Savings Calculator</h3>
+<div class="space-y-4">
+<div>
+<label class="block text-gray-700 mb-2">Number of Users</label>
+<input type="range" min="5" max="500" value="50" class="w-full" id="userSlider">
+<div class="flex justify-between">
+<span class="text-sm text-gray-500">5</span>
+<span class="text-sm text-gray-700 font-medium" id="userValue">50</span>
+<span class="text-sm text-gray-500">500</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-gray-700 mb-1">Traditional Phone System</p>
+<p class="text-xl font-bold text-gray-800" id="traditionalCost">$2,500/mo</p>
+</div>
+<div>
+<p class="text-gray-700 mb-1">VoIP System</p>
+<p class="text-xl font-bold text-primary" id="voipCost">$1,000/mo</p>
+</div>
+</div>
+<div class="bg-white rounded p-4">
+<p class="text-gray-700 mb-1">Estimated Annual Savings</p>
+<p class="text-2xl font-bold text-green-600" id="annualSavings">$18,000</p>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mb-4">
+<i class="ri-global-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Global Calling</h3>
+<p class="text-gray-600">Make and receive calls worldwide with competitive international rates and high call quality.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mb-4">
+<i class="ri-settings-3-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Call Management</h3>
+<p class="text-gray-600">Advanced call routing, forwarding, recording, and voicemail-to-email capabilities.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mb-4">
+<i class="ri-plug-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Integration</h3>
+<p class="text-gray-600">Seamlessly connect with CRM, helpdesk, and productivity tools for enhanced workflows.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mb-4">
+<i class="ri-line-chart-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Analytics</h3>
+<p class="text-gray-600">Comprehensive reporting and analytics to monitor usage, quality, and performance metrics.</p>
+</div>
+</div>
+<div class="mt-6 bg-white p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-semibold mb-4">Key Features</h3>
+<div class="grid grid-cols-2 gap-y-3">
+<div class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Auto-attendant</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Call queuing</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Conference calling</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Mobile apps</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Number porting</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Call recording</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Virtual faxing</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>HD voice quality</span>
+</div>
+</div>
+</div>
+<div class="mt-6">
+<button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 w-full">Get Custom Quote</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features & Benefits Matrix -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Features & Benefits</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Comprehensive overview of our telecommunication solutions and their impact on your business.</p>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="flex border-b">
+<button class="tab-btn flex-1 py-4 px-6 font-medium text-center border-b-2 border-transparent hover:bg-gray-50 tab-active" data-tab="voip-tab">VoIP Solutions</button>
+<button class="tab-btn flex-1 py-4 px-6 font-medium text-center border-b-2 border-transparent hover:bg-gray-50" data-tab="poc-tab">POC Radio</button>
+<button class="tab-btn flex-1 py-4 px-6 font-medium text-center border-b-2 border-transparent hover:bg-gray-50" data-tab="unified-tab">Unified Communications</button>
+</div>
+<!-- VoIP Tab Content -->
+<div id="voip-tab" class="tab-content active p-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Technical Specifications</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Codec Support</p>
+<p class="text-sm text-gray-600">G.711, G.722, G.729, Opus</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Network Requirements</p>
+<p class="text-sm text-gray-600">100 Kbps per call, QoS support</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Security</p>
+<p class="text-sm text-gray-600">TLS/SRTP encryption, fraud detection</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Redundancy</p>
+<p class="text-sm text-gray-600">99.999% uptime, geo-redundant data centers</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Protocols</p>
+<p class="text-sm text-gray-600">SIP, H.323, WebRTC</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Key Features</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Auto Attendant</p>
+<p class="text-sm text-gray-600">Customizable IVR menus and call routing</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Voicemail to Email</p>
+<p class="text-sm text-gray-600">Receive voicemails as email attachments</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Call Analytics</p>
+<p class="text-sm text-gray-600">Detailed reporting and call metrics</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Mobile Integration</p>
+<p class="text-sm text-gray-600">iOS and Android apps for remote access</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">CRM Integration</p>
+<p class="text-sm text-gray-600">Connect with Salesforce, HubSpot, etc.</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Business Benefits</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Cost Reduction</p>
+<p class="text-sm text-gray-600">40-60% savings over traditional phone systems</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Scalability</p>
+<p class="text-sm text-gray-600">Add/remove lines instantly as needed</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Business Continuity</p>
+<p class="text-sm text-gray-600">Automatic failover during outages</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Remote Work Support</p>
+<p class="text-sm text-gray-600">Enable productive work from anywhere</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Professional Image</p>
+<p class="text-sm text-gray-600">Enterprise-grade features for businesses of all sizes</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- POC Radio Tab Content -->
+<div id="poc-tab" class="tab-content p-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Technical Specifications</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Network Technology</p>
+<p class="text-sm text-gray-600">4G LTE, 5G compatible</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Latency</p>
+<p class="text-sm text-gray-600">< 500ms push-to-talk time</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Battery Life</p>
+<p class="text-sm text-gray-600">18+ hours standby, 12+ hours active use</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Durability</p>
+<p class="text-sm text-gray-600">IP67 rated, MIL-STD-810G compliant</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Range</p>
+<p class="text-sm text-gray-600">Nationwide coverage via cellular networks</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Key Features</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Group Communication</p>
+<p class="text-sm text-gray-600">Up to 250 users per talk group</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">GPS Tracking</p>
+<p class="text-sm text-gray-600">Real-time location monitoring</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Emergency Alerts</p>
+<p class="text-sm text-gray-600">Man-down detection, panic button</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Dispatch Console</p>
+<p class="text-sm text-gray-600">Web-based management interface</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Message Recording</p>
+<p class="text-sm text-gray-600">Store and replay voice messages</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Business Benefits</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Improved Coordination</p>
+<p class="text-sm text-gray-600">Instant communication across teams</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Enhanced Safety</p>
+<p class="text-sm text-gray-600">Emergency features for worker protection</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Operational Efficiency</p>
+<p class="text-sm text-gray-600">25% reduction in response times</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Reduced Infrastructure</p>
+<p class="text-sm text-gray-600">No need for radio towers or repeaters</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Accountability</p>
+<p class="text-sm text-gray-600">Complete audit trails of communications</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Unified Communications Tab Content -->
+<div id="unified-tab" class="tab-content p-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Technical Specifications</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Video Quality</p>
+<p class="text-sm text-gray-600">Up to 1080p HD video conferencing</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Participant Capacity</p>
+<p class="text-sm text-gray-600">Up to 250 concurrent users per meeting</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Messaging Storage</p>
+<p class="text-sm text-gray-600">Unlimited message history, 20GB file storage</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Security</p>
+<p class="text-sm text-gray-600">End-to-end encryption, SSO integration</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Platforms</p>
+<p class="text-sm text-gray-600">Windows, macOS, iOS, Android, web browser</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Key Features</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Team Messaging</p>
+<p class="text-sm text-gray-600">Channels, direct messages, file sharing</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Video Meetings</p>
+<p class="text-sm text-gray-600">Screen sharing, recording, virtual backgrounds</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Presence</p>
+<p class="text-sm text-gray-600">Real-time status indicators and custom statuses</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Calendar Integration</p>
+<p class="text-sm text-gray-600">Sync with Outlook, Google Calendar</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">App Integrations</p>
+<p class="text-sm text-gray-600">100+ app integrations and API access</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Business Benefits</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Productivity Boost</p>
+<p class="text-sm text-gray-600">32% increase in team productivity</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Simplified Communication</p>
+<p class="text-sm text-gray-600">All channels in one platform</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Remote Collaboration</p>
+<p class="text-sm text-gray-600">Seamless teamwork regardless of location</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Reduced Travel</p>
+<p class="text-sm text-gray-600">Cut travel expenses by up to 30%</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Customer Engagement</p>
+<p class="text-sm text-gray-600">Improved client communication options</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Industry Applications -->
+<section id="industries" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Industry Applications</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our telecommunication solutions are tailored to meet the unique requirements of various industries.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Industry 1 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=emergency%2520services%2520personnel%2520using%2520radio%2520communication%2520equipment%2520during%2520a%2520response%2520operation%252C%2520with%2520emergency%2520vehicles%2520and%2520first%2520responders%2520in%2520the%2520background.%2520The%2520image%2520should%2520show%2520clear%2520communication%2520equipment%2520being%2520used%2520in%2520a%2520professional%2520emergency%2520response%2520context.&width=600&height=400&seq=emergency123&orientation=landscape" alt="Emergency Services" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">Emergency Services</h3>
+<p class="text-gray-600 mb-4">Critical communication solutions for first responders, enabling instant coordination during emergencies.</p>
+<div class="space-y-2">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Push-to-talk priority override</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>GPS location tracking</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Interoperability with existing systems</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Industry 2 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=construction%2520site%2520with%2520workers%2520using%2520radio%2520communication%2520devices%2520to%2520coordinate%2520operations%252C%2520showing%2520a%2520busy%2520construction%2520environment%2520with%2520cranes%2520and%2520equipment%2520in%2520the%2520background.%2520The%2520image%2520should%2520highlight%2520communication%2520equipment%2520being%2520used%2520effectively%2520in%2520a%2520construction%2520setting.&width=600&height=400&seq=construction123&orientation=landscape" alt="Construction Industry" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">Construction</h3>
+<p class="text-gray-600 mb-4">Robust communication systems for construction sites, enhancing safety and operational efficiency.</p>
+<div class="space-y-2">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Rugged handsets for harsh environments</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Noise-cancelling technology</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Site-wide group communications</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Industry 3 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=security%2520personnel%2520using%2520modern%2520communication%2520devices%2520in%2520a%2520professional%2520setting%252C%2520with%2520security%2520monitors%2520and%2520surveillance%2520equipment%2520visible%2520in%2520the%2520background.%2520The%2520image%2520should%2520show%2520clear%2520communication%2520equipment%2520being%2520used%2520in%2520a%2520security%2520operations%2520context.&width=600&height=400&seq=security123&orientation=landscape" alt="Security Industry" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">Security</h3>
+<p class="text-gray-600 mb-4">Secure communication solutions for security teams, enabling discreet and reliable coordination.</p>
+<div class="space-y-2">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Encrypted communications</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Covert earpieces and accessories</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Integration with surveillance systems</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Industry 4 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=transportation%2520and%2520logistics%2520workers%2520using%2520communication%2520devices%2520to%2520coordinate%2520operations%252C%2520with%2520trucks%252C%2520warehouses%252C%2520and%2520shipping%2520containers%2520visible%2520in%2520the%2520background.%2520The%2520image%2520should%2520show%2520clear%2520communication%2520equipment%2520being%2520used%2520in%2520a%2520logistics%2520context.&width=600&height=400&seq=transport123&orientation=landscape" alt="Transportation Industry" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">Transportation</h3>
+<p class="text-gray-600 mb-4">Mobile communication solutions for transportation fleets, improving coordination and efficiency.</p>
+<div class="space-y-2">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Dispatch console integration</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>GPS tracking and geofencing</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Driver safety monitoring</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Industry 5 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=healthcare%2520professionals%2520using%2520modern%2520communication%2520devices%2520in%2520a%2520hospital%2520setting%252C%2520with%2520medical%2520equipment%2520and%2520patient%2520care%2520areas%2520visible%2520in%2520the%2520background.%2520The%2520image%2520should%2520show%2520clear%2520communication%2520equipment%2520being%2520used%2520in%2520a%2520healthcare%2520context.&width=600&height=400&seq=healthcare123&orientation=landscape" alt="Healthcare Industry" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">Healthcare</h3>
+<p class="text-gray-600 mb-4">Specialized communication systems for healthcare facilities, enhancing patient care coordination.</p>
+<div class="space-y-2">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>HIPAA-compliant communications</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Nurse call integration</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Silent operation modes</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Industry 6 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=manufacturing%2520facility%2520with%2520workers%2520using%2520communication%2520devices%2520on%2520the%2520factory%2520floor%252C%2520with%2520production%2520equipment%2520and%2520assembly%2520lines%2520visible%2520in%2520the%2520background.%2520The%2520image%2520should%2520show%2520clear%2520communication%2520equipment%2520being%2520used%2520in%2520a%2520manufacturing%2520context.&width=600&height=400&seq=manufacturing123&orientation=landscape" alt="Manufacturing Industry" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">Manufacturing</h3>
+<p class="text-gray-600 mb-4">Industrial communication solutions for manufacturing facilities, improving production coordination.</p>
+<div class="space-y-2">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Hearing protection integration</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Hazardous environment certified devices</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Machine integration capabilities</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Studies Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Success Stories</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">See how our telecommunication solutions have transformed operations for organizations across industries.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Case Study 1 -->
+<div class="case-card bg-white rounded-lg overflow-hidden animate-fadeInUp">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520logistics%2520company%2520office%2520with%2520dispatch%2520center%2520showing%2520screens%2520with%2520tracking%2520maps%2520and%2520communication%2520systems.%2520Professional%2520environment%2520with%2520staff%2520using%2520communication%2520equipment%2520in%2520a%2520corporate%2520setting.&width=600&height=400&seq=logistics_case123&orientation=landscape" alt="Logistics Company Case Study" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-xs font-medium">Logistics</span>
+<span class="ml-2 text-sm text-gray-500">National Logistics Inc.</span>
+</div>
+<h3 class="text-xl font-semibold mb-3">Nationwide Fleet Communication Overhaul</h3>
+<p class="text-gray-600 mb-4">Implemented POC radio solution for 500+ vehicles across 48 states, replacing outdated two-way radio system.</p>
+<div class="space-y-2 mb-4">
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">42% reduction in coordination delays</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">$380,000 annual operational savings</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">18-month ROI achieved</p>
+</div>
+</div>
+<a href="#" class="text-primary font-medium flex items-center text-sm">
+Read Full Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Case Study 2 -->
+<div class="case-card bg-white rounded-lg overflow-hidden animate-fadeInUp">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520hospital%2520setting%2520with%2520medical%2520staff%2520using%2520communication%2520devices%252C%2520showing%2520healthcare%2520professionals%2520coordinating%2520care%2520with%2520mobile%2520devices%2520and%2520communication%2520systems%2520in%2520a%2520clinical%2520environment.&width=600&height=400&seq=healthcare_case123&orientation=landscape" alt="Healthcare Case Study" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-xs font-medium">Healthcare</span>
+<span class="ml-2 text-sm text-gray-500">Regional Medical Center</span>
+</div>
+<h3 class="text-xl font-semibold mb-3">Unified Communications for Patient Care</h3>
+<p class="text-gray-600 mb-4">Deployed integrated VoIP and secure messaging platform across 3 hospital campuses with 2,000+ staff members.</p>
+<div class="space-y-2 mb-4">
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">23% improvement in response times</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">HIPAA-compliant secure messaging</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">Integration with EHR system</p>
+</div>
+</div>
+<a href="#" class="text-primary font-medium flex items-center text-sm">
+Read Full Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Case Study 3 -->
+<div class="case-card bg-white rounded-lg overflow-hidden animate-fadeInUp">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520construction%2520site%2520with%2520workers%2520using%2520communication%2520devices%252C%2520showing%2520a%2520large%2520commercial%2520construction%2520project%2520with%2520staff%2520coordinating%2520via%2520radio%2520and%2520mobile%2520devices%2520in%2520a%2520professional%2520construction%2520environment.&width=600&height=400&seq=construction_case123&orientation=landscape" alt="Construction Case Study" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-xs font-medium">Construction</span>
+<span class="ml-2 text-sm text-gray-500">Summit Builders Group</span>
+</div>
+<h3 class="text-xl font-semibold mb-3">Multi-Site Construction Communication</h3>
+<p class="text-gray-600 mb-4">Implemented rugged POC devices across 12 active construction sites with centralized dispatch and management.</p>
+<div class="space-y-2 mb-4">
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">35% reduction in safety incidents</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">Improved coordination between sites</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">Integration with project management software</p>
+</div>
+</div>
+<a href="#" class="text-primary font-medium flex items-center text-sm">
+Read Full Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Equipment & Devices Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Equipment & Devices</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">High-quality, durable communication devices designed for various environments and use cases.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Device 1 -->
+<div class="bg-white rounded-lg p-6 shadow-sm animate-fadeIn">
+<div class="h-48 mb-4 flex items-center justify-center">
+<img src="https://readdy.ai/api/search-image?query=professional%2520rugged%2520push-to-talk%2520radio%2520handset%2520with%2520display%2520screen%2520and%2520keypad%252C%2520showing%2520a%2520modern%2520POC%2520radio%2520device%2520on%2520a%2520clean%2520white%2520background.%2520The%2520device%2520should%2520look%2520durable%2520and%2520professional%2520for%2520business%2520use.&width=300&height=300&seq=radio_device1&orientation=squarish" alt="POC Radio Handset" class="max-h-full">
+</div>
+<h3 class="text-lg font-semibold mb-2">TechPro PTX-500</h3>
+<p class="text-gray-600 mb-4">Professional-grade POC radio handset with 4G/LTE connectivity.</p>
+<div class="space-y-1 mb-4">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>IP67 water/dust resistant</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>16-hour battery life</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Emergency button</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">View Specifications</button>
+</div>
+<!-- Device 2 -->
+<div class="bg-white rounded-lg p-6 shadow-sm animate-fadeIn">
+<div class="h-48 mb-4 flex items-center justify-center">
+<img src="https://readdy.ai/api/search-image?query=modern%2520VoIP%2520desk%2520phone%2520with%2520color%2520display%2520screen%2520and%2520multiple%2520line%2520buttons%252C%2520showing%2520a%2520professional%2520office%2520telephone%2520on%2520a%2520clean%2520white%2520background.%2520The%2520device%2520should%2520look%2520sleek%2520and%2520modern%2520for%2520business%2520use.&width=300&height=300&seq=voip_phone1&orientation=squarish" alt="VoIP Desk Phone" class="max-h-full">
+</div>
+<h3 class="text-lg font-semibold mb-2">VoiceConnect VP-200</h3>
+<p class="text-gray-600 mb-4">Executive VoIP desk phone with 4.3" color display and HD audio.</p>
+<div class="space-y-1 mb-4">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>8 programmable line keys</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Built-in Bluetooth</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Power over Ethernet</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">View Specifications</button>
+</div>
+<!-- Device 3 -->
+<div class="bg-white rounded-lg p-6 shadow-sm animate-fadeIn">
+<div class="h-48 mb-4 flex items-center justify-center">
+<img src="https://readdy.ai/api/search-image?query=professional%2520wireless%2520headset%2520with%2520microphone%2520boom%252C%2520showing%2520a%2520modern%2520office%2520headset%2520on%2520a%2520clean%2520white%2520background.%2520The%2520device%2520should%2520look%2520comfortable%2520and%2520professional%2520for%2520business%2520use.&width=300&height=300&seq=headset1&orientation=squarish" alt="Wireless Headset" class="max-h-full">
+</div>
+<h3 class="text-lg font-semibold mb-2">AudioPro WH-100</h3>
+<p class="text-gray-600 mb-4">Professional wireless headset with noise-cancelling microphone.</p>
+<div class="space-y-1 mb-4">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>12-hour talk time</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>100ft wireless range</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Active noise cancellation</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">View Specifications</button>
+</div>
+<!-- Device 4 -->
+<div class="bg-white rounded-lg p-6 shadow-sm animate-fadeIn">
+<div class="h-48 mb-4 flex items-center justify-center">
+<img src="https://readdy.ai/api/search-image?query=professional%2520conference%2520room%2520speakerphone%2520with%2520touch%2520controls%252C%2520showing%2520a%2520modern%2520conference%2520calling%2520device%2520on%2520a%2520clean%2520white%2520background.%2520The%2520device%2520should%2520look%2520sleek%2520and%2520professional%2520for%2520business%2520use.&width=300&height=300&seq=conference1&orientation=squarish" alt="Conference Speakerphone" class="max-h-full">
+</div>
+<h3 class="text-lg font-semibold mb-2">ConferenceHub CH-300</h3>
+<p class="text-gray-600 mb-4">Premium conference room speakerphone with 360° audio pickup.</p>
+<div class="space-y-1 mb-4">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>20ft voice capture range</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>USB/Bluetooth connectivity</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Echo cancellation</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">View Specifications</button>
+</div>
+</div>
+<div class="mt-12 text-center">
+<button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Download Equipment Catalog</button>
+</div>
+</div>
+</section>
+<!-- Pricing Options Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Pricing Options</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Flexible plans designed to meet the needs and budget of your organization.</p>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="flex border-b">
+<button class="pricing-tab flex-1 py-4 px-6 font-medium text-center border-b-2 border-transparent hover:bg-gray-50 tab-active" data-tab="voip-pricing">VoIP Solutions</button>
+<button class="pricing-tab flex-1 py-4 px-6 font-medium text-center border-b-2 border-transparent hover:bg-gray-50" data-tab="poc-pricing">POC Radio</button>
+<button class="pricing-tab flex-1 py-4 px-6 font-medium text-center border-b-2 border-transparent hover:bg-gray-50" data-tab="unified-pricing">Unified Communications</button>
+<button class="pricing-tab flex-1 py-4 px-6 font-medium text-center border-b-2 border-transparent hover:bg-gray-50" data-tab="custom-pricing">Custom Solutions</button>
+</div>
+<!-- VoIP Pricing Tab -->
+<div id="voip-pricing" class="pricing-content active p-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Basic Plan -->
+<div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold mb-2">Basic Communication</h3>
+<p class="text-gray-600 mb-6">Perfect for small businesses and startups</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$19</span>
+<span class="text-gray-600">/user/month</span>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Unlimited internal calling</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>1,000 external minutes/month</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Basic auto-attendant</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Mobile app access</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Standard support (8/5)</span>
+</li>
+<li class="flex items-start text-gray-400">
+<i class="ri-close-line mr-2 mt-1"></i>
+<span>Advanced call routing</span>
+</li>
+<li class="flex items-start text-gray-400">
+<i class="ri-close-line mr-2 mt-1"></i>
+<span>CRM integration</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Get Started</button>
+</div>
+<!-- Professional Plan -->
+<div class="border-2 border-primary rounded-lg p-6 shadow-md relative">
+<div class="absolute top-0 right-0 bg-primary text-white px-4 py-1 text-sm font-medium rounded-bl-lg rounded-tr-lg">Most Popular</div>
+<h3 class="text-xl font-semibold mb-2">Professional Suite</h3>
+<p class="text-gray-600 mb-6">Ideal for growing businesses</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$29</span>
+<span class="text-gray-600">/user/month</span>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Unlimited internal calling</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Unlimited external minutes</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Advanced auto-attendant</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Mobile & desktop apps</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Advanced call routing</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Basic CRM integration</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Priority support (12/7)</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Get Started</button>
+</div>
+<!-- Enterprise Plan -->
+<div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold mb-2">Enterprise Solutions</h3>
+<p class="text-gray-600 mb-6">For large organizations with complex needs</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$49</span>
+<span class="text-gray-600">/user/month</span>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>All Professional features</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Global calling included</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Advanced analytics</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Full API access</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Advanced CRM integration</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Dedicated account manager</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>24/7 premium support</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Sales</button>
+</div>
+</div>
+</div>
+<!-- POC Radio Pricing Tab -->
+<div id="poc-pricing" class="pricing-content p-6 hidden">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Basic Plan -->
+<div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold mb-2">Standard POC</h3>
+<p class="text-gray-600 mb-6">For small teams with basic needs</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$29</span>
+<span class="text-gray-600">/device/month</span>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Unlimited push-to-talk</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>5 talk groups</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Basic dispatch console</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Standard handsets</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Standard support (8/5)</span>
+</li>
+<li class="flex items-start text-gray-400">
+<i class="ri-close-line mr-2 mt-1"></i>
+<span>GPS tracking</span>
+</li>
+<li class="flex items-start text-gray-400">
+<i class="ri-close-line mr-2 mt-1"></i>
+<span>Emergency features</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Get Started</button>
+</div>
+<!-- Professional Plan -->
+<div class="border-2 border-primary rounded-lg p-6 shadow-md relative">
+<div class="absolute top-0 right-0 bg-primary text-white px-4 py-1 text-sm font-medium rounded-bl-lg rounded-tr-lg">Most Popular</div>
+<h3 class="text-xl font-semibold mb-2">Professional POC</h3>
+<p class="text-gray-600 mb-6">For medium-sized teams and operations</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$39</span>
+<span class="text-gray-600">/device/month</span>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Unlimited push-to-talk</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>20 talk groups</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Advanced dispatch console</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Premium rugged handsets</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>GPS tracking</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Basic emergency features</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Priority support (12/7)</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Get Started</button>
+</div>
+<!-- Enterprise Plan -->
+<div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold mb-2">Enterprise POC</h3>
+<p class="text-gray-600 mb-6">For large organizations with complex needs</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$59</span>
+<span class="text-gray-600">/device/month</span>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>All Professional features</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Unlimited talk groups</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Advanced emergency features</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Man-down detection</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Geofencing capabilities</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>API integration</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>24/7 premium support</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Sales</button>
+</div>
+</div>
+</div>
+<!-- Unified Communications Pricing Tab -->
+<div id="unified-pricing" class="pricing-content p-6 hidden">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Basic Plan -->
+<div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold mb-2">Essentials</h3>
+<p class="text-gray-600 mb-6">For small teams with basic needs</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$24</span>
+<span class="text-gray-600">/user/month</span>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Team messaging</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Video meetings (up to 100 participants)</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>File sharing (10GB storage)</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Basic phone system</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Standard support (8/5)</span>
+</li>
+<li class="flex items-start text-gray-400">
+<i class="ri-close-line mr-2 mt-1"></i>
+<span>Advanced integrations</span>
+</li>
+<li class="flex items-start text-gray-400">
+<i class="ri-close-line mr-2 mt-1"></i>
+<span>Analytics</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Get Started</button>
+</div>
+<!-- Professional Plan -->
+<div class="border-2 border-primary rounded-lg p-6 shadow-md relative">
+<div class="absolute top-0 right-0 bg-primary text-white px-4 py-1 text-sm font-medium rounded-bl-lg rounded-tr-lg">Most Popular</div>
+<h3 class="text-xl font-semibold mb-2">Business</h3>
+<p class="text-gray-600 mb-6">For medium-sized teams and operations</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$34</span>
+<span class="text-gray-600">/user/month</span>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>All Essentials features</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Video meetings (up to 200 participants)</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>File sharing (20GB storage)</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Advanced phone system</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Basic integrations</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Basic analytics</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Priority support (12/7)</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Get Started</button>
+</div>
+<!-- Enterprise Plan -->
+<div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold mb-2">Enterprise</h3>
+<p class="text-gray-600 mb-6">For large organizations with complex needs</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$49</span>
+<span class="text-gray-600">/user/month</span>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>All Business features</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Video meetings (up to 250 participants)</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Unlimited file storage</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Advanced analytics</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Advanced integrations</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Single sign-on</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>24/7 premium support</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Sales</button>
+</div>
+</div>
+</div>
+<!-- Custom Solutions Tab -->
+<div id="custom-pricing" class="pricing-content p-6 hidden">
+<div class="max-w-3xl mx-auto text-center">
+<h3 class="text-2xl font-bold mb-4">Tailored Solutions for Your Business</h3>
+<p class="text-lg text-gray-600 mb-8">We understand that every business has unique communication needs. Our team of experts will work with you to design a custom solution that perfectly fits your requirements and budget.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mb-8">
+<div class="bg-gray-50 p-6 rounded-lg">
+<h4 class="text-xl font-semibold mb-4">Custom Solution Benefits</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span>Tailored to your specific requirements</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span>Integration with existing systems</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span>Optimized for your industry</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span>Flexible deployment options</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span>Scalable as your business grows</span>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg">
+<h4 class="text-xl font-semibold mb-4">Our Process</h4>
+<ol class="space-y-3">
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary text-white rounded-full mr-3 flex-shrink-0 font-medium">1</div>
+<span>Initial consultation to understand your needs</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary text-white rounded-full mr-3 flex-shrink-0 font-medium">2</div>
+<span>Solution design and proposal</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary text-white rounded-full mr-3 flex-shrink-0 font-medium">3</div>
+<span>Implementation planning</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary text-white rounded-full mr-3 flex-shrink-0 font-medium">4</div>
+<span>Deployment and testing</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary text-white rounded-full mr-3 flex-shrink-0 font-medium">5</div>
+<span>Ongoing support and optimization</span>
+</li>
+</ol>
+</div>
+</div>
+<button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Schedule a Consultation</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="max-w-5xl mx-auto">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Our Telecommunication Experts</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Have questions about our solutions? Fill out the form below and one of our specialists will get back to you within 24 hours.</p>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-3">
+<div class="bg-primary text-white p-8">
+<h3 class="text-2xl font-semibold mb-6">Get in Touch</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
+<i class="ri-map-pin-line"></i>
+</div>
+<div>
+<h4 class="font-medium mb-1">Address</h4>
+<p class="opacity-80">1250 Technology Plaza, Suite 400<br>San Francisco, CA 94105</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
+<i class="ri-phone-line"></i>
+</div>
+<div>
+<h4 class="font-medium mb-1">Phone</h4>
+<p class="opacity-80">+1 (415) 555-0123</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
+<i class="ri-mail-line"></i>
+</div>
+<div>
+<h4 class="font-medium mb-1">Email</h4>
+<p class="opacity-80">telecom@techsolutions.com</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
+<i class="ri-time-line"></i>
+</div>
+<div>
+<h4 class="font-medium mb-1">Support Hours</h4>
+<p class="opacity-80">24/7 Technical Support<br>8am-6pm PT Sales Inquiries</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 lg:col-span-2">
+<form>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div>
+<label class="block text-gray-700 mb-2" for="firstName">First Name*</label>
+<input type="text" id="firstName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none" required>
+</div>
+<div>
+<label class="block text-gray-700 mb-2" for="lastName">Last Name*</label>
+<input type="text" id="lastName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none" required>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div>
+<label class="block text-gray-700 mb-2" for="email">Email Address*</label>
+<input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none" required>
+</div>
+<div>
+<label class="block text-gray-700 mb-2" for="phone">Phone Number</label>
+<input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none">
+</div>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 mb-2" for="company">Company Name*</label>
+<input type="text" id="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none" required>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 mb-2">Interested In (Select all that apply)</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<div class="flex items-center">
+<input type="checkbox" id="voip" class="custom-checkbox mr-3">
+<label for="voip">VoIP Solutions</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="poc" class="custom-checkbox mr-3">
+<label for="poc">POC Radio Communication</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="ip" class="custom-checkbox mr-3">
+<label for="ip">IP Telephony Systems</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="unified" class="custom-checkbox mr-3">
+<label for="unified">Unified Communications</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="network" class="custom-checkbox mr-3">
+<label for="network">Network Infrastructure</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="callcenter" class="custom-checkbox mr-3">
+<label for="callcenter">Call Center Solutions</label>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 mb-2">Number of Users/Devices</label>
+<div class="flex items-center space-x-6">
+<div class="flex items-center">
+<input type="radio" id="size1" name="companySize" class="custom-radio mr-2">
+<label for="size1">1-10</label>
+</div>
+<div class="flex items-center">
+<input type="radio" id="size2" name="companySize" class="custom-radio mr-2">
+<label for="size2">11-50</label>
+</div>
+<div class="flex items-center">
+<input type="radio" id="size3" name="companySize" class="custom-radio mr-2">
+<label for="size3">51-200</label>
+</div>
+<div class="flex items-center">
+<input type="radio" id="size4" name="companySize" class="custom-radio mr-2">
+<label for="size4">201+</label>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 mb-2" for="message">Project Requirements*</label>
+<textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none" required></textarea>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 mb-2">Preferred Contact Method</label>
+<div class="flex items-center space-x-6">
+<div class="flex items-center">
+<input type="radio" id="contactEmail" name="contactMethod" class="custom-radio mr-2" checked>
+<label for="contactEmail">Email</label>
+</div>
+<div class="flex items-center">
+<input type="radio" id="contactPhone" name="contactMethod" class="custom-radio mr-2">
+<label for="contactPhone">Phone</label>
+</div>
+</div>
+</div>
+<button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Submit Inquiry</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Support Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Support & Services</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">We provide comprehensive support and maintenance services to ensure your telecommunication systems operate at peak performance.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Support Option 1 -->
+<div class="bg-white rounded-lg p-6 shadow-sm animate-fadeIn">
+<div class="w-14 h-14 flex items-center justify-center bg-blue-50 rounded-full mb-6">
+<i class="ri-customer-service-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">24/7 Support</h3>
+<p class="text-gray-600 mb-4">Round-the-clock technical assistance from our expert support team, available via phone, email, or live chat.</p>
+<ul class="space-y-2 text-sm text-gray-700">
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Average response time: 15 minutes</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Dedicated support portal</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Remote troubleshooting</span>
+</li>
+</ul>
+</div>
+<!-- Support Option 2 -->
+<div class="bg-white rounded-lg p-6 shadow-sm animate-fadeIn">
+<div class="w-14 h-14 flex items-center justify-center bg-blue-50 rounded-full mb-6">
+<i class="ri-graduation-cap-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Training Programs</h3>
+<p class="text-gray-600 mb-4">Comprehensive training sessions for administrators and end-users to maximize the value of your communication systems.</p>
+<ul class="space-y-2 text-sm text-gray-700">
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>On-site or virtual options</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Customized curriculum</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Certification programs</span>
+</li>
+</ul>
+</div>
+<!-- Support Option 3 -->
+<div class="bg-white rounded-lg p-6 shadow-sm animate-fadeIn">
+<div class="w-14 h-14 flex items-center justify-center bg-blue-50 rounded-full mb-6">
+<i class="ri-tools-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Maintenance Services</h3>
+<p class="text-gray-600 mb-4">Proactive maintenance and regular system updates to prevent issues and ensure optimal performance.</p>
+<ul class="space-y-2 text-sm text-gray-700">
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Quarterly system audits</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Firmware/software updates</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Performance optimization</span>
+</li>
+</ul>
+</div>
+<!-- Support Option 4 -->
+<div class="bg-white rounded-lg p-6 shadow-sm animate-fadeIn">
+<div class="w-14 h-14 flex items-center justify-center bg-blue-50 rounded-full mb-6">
+<i class="ri-alarm-warning-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Emergency Support</h3>
+<p class="text-gray-600 mb-4">Priority response for critical issues with guaranteed resolution times to minimize business disruption.</p>
+<ul class="space-y-2 text-sm text-gray-700">
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>1-hour response for critical issues</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>On-site emergency support</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Disaster recovery assistance</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="mt-12 bg-white rounded-lg p-8 shadow-sm">
+<h3 class="text-2xl font-semibold mb-6">Service Level Agreements</h3>
+<div class="overflow-x-auto">
+<table class="w-full min-w-full">
+<thead>
+<tr class="bg-gray-50">
+<th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Service Level</th>
+<th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Response Time</th>
+<th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Resolution Time</th>
+<th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Support Hours</th>
+<th class="px-6 py-3 text-left text-sm font-medium text-gray-700">On-Site Support</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200">
+<tr>
+<td class="px-6 py-4 text-sm text-gray-700">Standard</td>
+<td class="px-6 py-4 text-sm text-gray-700">4 hours</td>
+<td class="px-6 py-4 text-sm text-gray-700">Next business day</td>
+<td class="px-6 py-4 text-sm text-gray-700">8/5</td>
+<td class="px-6 py-4 text-sm text-gray-700">Additional fee</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm text-gray-700">Enhanced</td>
+<td class="px-6 py-4 text-sm text-gray-700">2 hours</td>
+<td class="px-6 py-4 text-sm text-gray-700">8 hours</td>
+<td class="px-6 py-4 text-sm text-gray-700">12/7</td>
+<td class="px-6 py-4 text-sm text-gray-700">Quarterly included</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm text-gray-700">Premium</td>
+<td class="px-6 py-4 text-sm text-gray-700">1 hour</td>
+<td class="px-6 py-4 text-sm text-gray-700">4 hours</td>
+<td class="px-6 py-4 text-sm text-gray-700">24/7</td>
+<td class="px-6 py-4 text-sm text-gray-700">Monthly included</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm text-gray-700">Mission Critical</td>
+<td class="px-6 py-4 text-sm text-gray-700">15 minutes</td>
+<td class="px-6 py-4 text-sm text-gray-700">2 hours</td>
+<td class="px-6 py-4 text-sm text-gray-700">24/7/365</td>
+<td class="px-6 py-4 text-sm text-gray-700">Dedicated engineer</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- Call-to-Action Footer -->
+<section class="py-20 bg-primary">
+<div class="container mx-auto px-4">
+<div class="max-w-4xl mx-auto text-center text-white">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Transform Your Business Communications Today</h2>
+<p class="text-xl mb-8 opacity-90">Partner with us to implement cutting-edge telecommunication solutions that enhance connectivity, improve collaboration, and drive business growth.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true">
+<button class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300">Back to Solutions</button>
+</a>
+<button class="bg-transparent text-white border border-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-white/10 transition duration-300">Schedule Free Consultation</button>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a href="#" class="flex items-center bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition duration-300">
+<i class="ri-file-download-line mr-2"></i>
+<span>Download Brochure</span>
+</a>
+<a href="#" class="flex items-center bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition duration-300">
+<i class="ri-vidicon-line mr-2"></i>
+<span>Request Demo</span>
+</a>
+<a href="#" class="flex items-center bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition duration-300">
+<i class="ri-customer-service-2-line mr-2"></i>
+<span>Contact Support</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Company Info -->
+<div>
+<a href="#" class="text-2xl font-['Pacifico'] text-white mb-6 inline-block">logo</a>
+<p class="text-gray-400 mb-6">Providing enterprise-grade technology solutions that drive innovation and efficiency since 2005.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+<li><a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-gray-400 hover:text-white transition duration-300">Solutions</a></li>
+<li><a href="#industries" class="text-gray-400 hover:text-white transition duration-300">Industries</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Case Studies</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Careers</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<span class="text-gray-400">1250 Technology Plaza, Suite 400<br>San Francisco, CA 94105</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<span class="text-gray-400">+1 (415) 555-0123</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<span class="text-gray-400">info@techsolutions.com</span>
+</li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Subscribe to Our Newsletter</h3>
+<p class="text-gray-400 mb-4">Stay updated with the latest technology trends and solutions.</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Your email address" class="bg-gray-800 text-white px-4 py-3 w-full border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary">
+<button type="submit" class="bg-primary text-white px-4 py-3 !rounded-r-lg !rounded-l-none whitespace-nowrap hover:bg-primary/90 transition duration-300">Subscribe</button>
+</div>
+</form>
+<div class="flex items-center space-x-4">
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-visa-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-mastercard-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-paypal-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-apple-fill text-2xl text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 TechSolutions. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Privacy Policy</a>
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Terms of Service</a>
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script id="animationScript">
+document.addEventListener('DOMContentLoaded', function() {
+  // Add animation classes when elements enter viewport
+  const observerOptions = {
+    threshold: 0.2,
+    rootMargin: '50px'
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        if (entry.target.classList.contains('solution-card')) {
+          entry.target.classList.add('animate-scaleIn');
+        } else if (entry.target.classList.contains('case-card')) {
+          entry.target.classList.add('animate-fadeInUp');
+        }
+        observer.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  // Observe solution cards and case studies
+  document.querySelectorAll('.solution-card, .case-card').forEach(card => {
+    observer.observe(card);
+  });
+});
+</script>
+
+<script id="navigationScript">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileSolutionsBtn = document.getElementById('mobileSolutionsBtn');
+const mobileSolutionsMenu = document.getElementById('mobileSolutionsMenu');
+const solutionsBtn = document.getElementById('solutionsBtn');
+const solutionsMenu = document.getElementById('solutionsMenu');
+mobileMenuBtn.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+const icon = mobileMenuBtn.querySelector('i');
+icon.classList.toggle('ri-menu-line');
+icon.classList.toggle('ri-close-line');
+});
+mobileSolutionsBtn.addEventListener('click', function() {
+mobileSolutionsMenu.classList.toggle('hidden');
+const icon = mobileSolutionsBtn.querySelector('i');
+icon.classList.toggle('ri-arrow-down-s-line');
+icon.classList.toggle('ri-arrow-up-s-line');
+});
+solutionsBtn.addEventListener('click', function(e) {
+e.preventDefault();
+solutionsMenu.classList.toggle('hidden');
+});
+document.addEventListener('click', function(event) {
+if (!solutionsBtn.contains(event.target) && !solutionsMenu.contains(event.target)) {
+solutionsMenu.classList.add('hidden');
+}
+if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+mobileMenu.classList.add('hidden');
+const icon = mobileMenuBtn.querySelector('i');
+icon.classList.add('ri-menu-line');
+icon.classList.remove('ri-close-line');
+}
+});
+});
+</script>
+<script id="tabsScript">
+document.addEventListener('DOMContentLoaded', function() {
+// Features & Benefits Tabs
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+tabBtns.forEach(btn => {
+btn.addEventListener('click', function() {
+const tabId = this.getAttribute('data-tab');
+// Remove active class from all buttons and contents
+tabBtns.forEach(btn => btn.classList.remove('tab-active'));
+tabContents.forEach(content => content.classList.remove('active'));
+// Add active class to clicked button and corresponding content
+this.classList.add('tab-active');
+document.getElementById(tabId).classList.add('active');
+});
+});
+// Pricing Tabs
+const pricingTabs = document.querySelectorAll('.pricing-tab');
+const pricingContents = document.querySelectorAll('.pricing-content');
+pricingTabs.forEach(tab => {
+tab.addEventListener('click', function() {
+const tabId = this.getAttribute('data-tab');
+// Remove active class from all tabs and contents
+pricingTabs.forEach(tab => tab.classList.remove('tab-active'));
+pricingContents.forEach(content => {
+content.classList.add('hidden');
+content.classList.remove('active');
+});
+// Add active class to clicked tab and corresponding content
+this.classList.add('tab-active');
+const activeContent = document.getElementById(tabId);
+activeContent.classList.remove('hidden');
+activeContent.classList.add('active');
+});
+});
+});
+</script>
+<script id="costCalculatorScript">
+document.addEventListener('DOMContentLoaded', function() {
+const userSlider = document.getElementById('userSlider');
+const userValue = document.getElementById('userValue');
+const traditionalCost = document.getElementById('traditionalCost');
+const voipCost = document.getElementById('voipCost');
+const annualSavings = document.getElementById('annualSavings');
+function updateCosts() {
+const users = parseInt(userSlider.value);
+userValue.textContent = users;
+// Calculate costs (simplified model)
+const traditionalMonthly = users * 50; // $50 per user for traditional
+const voipMonthly = users * 20; // $20 per user for VoIP
+const monthlySavings = traditionalMonthly - voipMonthly;
+const yearlySavings = monthlySavings * 12;
+traditionalCost.textContent = `$${traditionalMonthly.toLocaleString()}/mo`;
+voipCost.textContent = `$${voipMonthly.toLocaleString()}/mo`;
+annualSavings.textContent = `$${yearlySavings.toLocaleString()}`;
+}
+userSlider.addEventListener('input', updateCosts);
+updateCosts(); // Initialize with default values
+});
+</script>
+<script id="voipChartScript">
+document.addEventListener('DOMContentLoaded', function() {
+const chartDom = document.getElementById('voipChart');
+if (chartDom) {
+const myChart = echarts.init(chartDom);
+const option = {
+animation: false,
+title: {
+text: 'VoIP vs Traditional Phone Costs',
+left: 'center',
+textStyle: {
+color: '#1f2937'
+}
+},
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#e5e7eb',
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Traditional Phone', 'VoIP System'],
+bottom: 10,
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '15%',
+top: '15%',
+containLabel: true
+},
+xAxis: {
+type: 'category',
+boundaryGap: false,
+data: ['5', '10', '25', '50', '100', '200', '500'],
+name: 'Number of Users',
+nameLocation: 'middle',
+nameGap: 30,
+axisLabel: {
+color: '#1f2937'
+},
+axisLine: {
+lineStyle: {
+color: '#e5e7eb'
+}
+}
+},
+yAxis: {
+type: 'value',
+name: 'Monthly Cost ($)',
+nameLocation: 'middle',
+nameGap: 50,
+axisLabel: {
+color: '#1f2937',
+formatter: '${value}'
+},
+axisLine: {
+lineStyle: {
+color: '#e5e7eb'
+}
+},
+splitLine: {
+lineStyle: {
+color: '#f3f4f6'
+}
+}
+},
+series: [
+{
+name: 'Traditional Phone',
+type: 'line',
+smooth: true,
+lineStyle: {
+width: 3,
+color: 'rgba(252, 141, 98, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(252, 141, 98, 0.2)'
+}, {
+offset: 1, color: 'rgba(252, 141, 98, 0.05)'
+}]
+}
+},
+emphasis: {
+focus: 'series'
+},
+data: [250, 500, 1250, 2500, 5000, 10000, 25000]
+},
+{
+name: 'VoIP System',
+type: 'line',
+smooth: true,
+lineStyle: {
+width: 3,
+color: 'rgba(87, 181, 231, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(87, 181, 231, 0.2)'
+}, {
+offset: 1, color: 'rgba(87, 181, 231, 0.05)'
+}]
+}
+},
+emphasis: {
+focus: 'series'
+},
+data: [100, 200, 500, 1000, 2000, 4000, 10000]
+}
+]
+};
+myChart.setOption(option);
+// Resize chart when window size changes
+window.addEventListener('resize', function() {
+myChart.resize();
+});
+}
+});
+</script>
+<script id="mobileMenuScript">
+  document.addEventListener('DOMContentLoaded', function() {
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileSolutionsBtn = document.getElementById('mobileSolutionsBtn');
+  const mobileSolutionsMenu = document.getElementById('mobileSolutionsMenu');
+  mobileMenuBtn.addEventListener('click', function() {
+  mobileMenu.classList.toggle('hidden');
+  const icon = mobileMenuBtn.querySelector('i');
+  icon.classList.toggle('ri-menu-line');
+  icon.classList.toggle('ri-close-line');
+  });
+  mobileSolutionsBtn.addEventListener('click', function() {
+  mobileSolutionsMenu.classList.toggle('hidden');
+  const icon = mobileSolutionsBtn.querySelector('i');
+  icon.classList.toggle('ri-arrow-down-s-line');
+  icon.classList.toggle('ri-arrow-up-s-line');
+  });
+  document.addEventListener('click', function(event) {
+  if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+  mobileMenu.classList.add('hidden');
+  const icon = mobileMenuBtn.querySelector('i');
+  icon.classList.add('ri-menu-line');
+  icon.classList.remove('ri-close-line');
+  }
+  });
+  });
+  </script>
+  <script id="contactModalScript">
+    document.addEventListener('DOMContentLoaded', function() {
+        // Show modal on both desktop and mobile Contact Us buttons
+        function showContactModal() {
+            document.getElementById('contactModal').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+        function hideContactModal() {
+            document.getElementById('contactModal').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+        document.getElementById('contactUsBtn').addEventListener('click', showContactModal);
+        const mobileContactBtn = document.getElementById('mobileContactUsBtn');
+        if (mobileContactBtn) {
+            mobileContactBtn.addEventListener('click', function() {
+                document.getElementById('mobileMenu').classList.add('hidden');
+                showContactModal();
+            });
+        }
+        document.getElementById('closeModalBtn').addEventListener('click', hideContactModal);
+        // Close modal on outside click
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) hideContactModal();
+        });
+    });
+    </script>
+    <script id="mobileMenuScript">
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileSolutionsBtn = document.getElementById('mobileSolutionsBtn');
+        const mobileSolutionsMenu = document.getElementById('mobileSolutionsMenu');
+        // Toggle mobile menu
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('ri-menu-line');
+            icon.classList.toggle('ri-close-line');
+        });
+        // Toggle mobile solutions dropdown
+        mobileSolutionsBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            mobileSolutionsMenu.classList.toggle('hidden');
+            const icon = mobileSolutionsBtn.querySelector('i');
+            icon.classList.toggle('ri-arrow-down-s-line');
+            icon.classList.toggle('ri-arrow-up-s-line');
+        });
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.add('ri-menu-line');
+                icon.classList.remove('ri-close-line');
+            }
+        });
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.add('ri-menu-line');
+                icon.classList.remove('ri-close-line');
+            });
+        });
+    });
+    </script>
+  
+
+</body>
+</html>

@@ -1,0 +1,2346 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fuel Management Solutions | TechSolutions</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+
+    
+
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#0056b3", secondary: "#00a3e0" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+      font-family: 'Inter', sans-serif;
+      }
+      .group:hover .group-hover\:block {
+      display: block;
+      }
+      .hero-section {
+      background-image: url('https://readdy.ai/api/search-image?query=modern%2520industrial%2520fuel%2520storage%2520facility%2520at%2520sunset%2520with%2520sleek%2520metallic%2520fuel%2520tanks%252C%2520advanced%2520monitoring%2520systems%252C%2520and%2520digital%2520displays.%2520Professional%2520lighting%2520with%2520blue%2520and%2520orange%2520gradient%2520sky.%2520The%2520scene%2520includes%2520clean%2520industrial%2520architecture%252C%2520showing%2520both%2520technology%2520and%2520infrastructure.%2520High-end%2520professional%2520photography%2520with%2520dramatic%2520lighting%2520and%2520modern%2520industrial%2520aesthetic.%2520The%2520left%2520side%2520has%2520darker%2520tones%2520for%2520text%2520overlay.&width=1920&height=800&seq=fuel_hero_new123&orientation=landscape');
+      background-size: cover;
+      background-position: center;
+      }
+      .hero-overlay {
+      background: linear-gradient(90deg, rgba(0,20,50,0.85) 0%, rgba(0,20,50,0.7) 50%, rgba(0,20,50,0.4) 100%);
+      }
+      .feature-card {
+      transition: all 0.3s ease;
+      }
+      .feature-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+      }
+      .case-study-card {
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+      .nav-link {
+      position: relative;
+      }
+      .nav-link::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 2px;
+      bottom: -2px;
+      left: 0;
+      background-color: #0056b3;
+      transition: width 0.3s ease;
+      }
+      .nav-link:hover::after {
+      width: 100%;
+      }
+      input:focus, button:focus {
+      outline: none;
+      }
+      .custom-checkbox {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #d1d5db;
+      border-radius: 4px;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+      }
+      .custom-checkbox:checked {
+      background-color: #0056b3;
+      border-color: #0056b3;
+      }
+      .custom-checkbox:checked::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 6px;
+      width: 6px;
+      height: 10px;
+      border: solid white;
+      border-width: 0 2px 2px 0;
+      transform: rotate(45deg);
+      }
+      .custom-range {
+      -webkit-appearance: none;
+      width: 100%;
+      height: 6px;
+      background: #e5e7eb;
+      border-radius: 5px;
+      outline: none;
+      }
+      .custom-range::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 18px;
+      height: 18px;
+      background: #0056b3;
+      border-radius: 50%;
+      cursor: pointer;
+      }
+      .custom-range::-moz-range-thumb {
+      width: 18px;
+      height: 18px;
+      background: #0056b3;
+      border-radius: 50%;
+      cursor: pointer;
+      border: none;
+      }
+      .custom-switch {
+      position: relative;
+      display: inline-block;
+      width: 50px;
+      height: 24px;
+      }
+      .custom-switch input {
+      opacity: 0;
+      width: 0;
+      height: 0;
+      }
+      .switch-slider {
+      position: absolute;
+      cursor: pointer;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: #e5e7eb;
+      transition: .4s;
+      border-radius: 24px;
+      }
+      .switch-slider:before {
+      position: absolute;
+      content: "";
+      height: 18px;
+      width: 18px;
+      left: 3px;
+      bottom: 3px;
+      background-color: white;
+      transition: .4s;
+      border-radius: 50%;
+      }
+      input:checked + .switch-slider {
+      background-color: #0056b3;
+      }
+      input:checked + .switch-slider:before {
+      transform: translateX(26px);
+      }
+      .custom-radio {
+      appearance: none;
+      -webkit-appearance: none;
+      width: 20px;
+      height: 20px;
+      border: 2px solid #d1d5db;
+      border-radius: 50%;
+      outline: none;
+      cursor: pointer;
+      position: relative;
+      }
+      .custom-radio:checked {
+      border-color: #0056b3;
+      }
+      .custom-radio:checked::after {
+      content: '';
+      position: absolute;
+      top: 3px;
+      left: 3px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background-color: #0056b3;
+      }
+      .case-study-container {
+      scroll-behavior: smooth;
+      }
+      .accordion-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      }
+      .accordion-content.active {
+      max-height: 1000px;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-50">
+    <header class="bg-white shadow-sm fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        
+            <div class="flex items-center">
+              <a href="./index.html" class="text-2xl font-['Righteous'] text-primary">Pitch Forward</a >
+            </div>
+            
+        <nav class="hidden md:flex space-x-8">
+        <a href="./index.html" id="homeLink" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+        <div class="relative" id="solutionsDropdown">
+        <button id="solutionsBtn" class="nav-link text-gray-700 hover:text-primary font-medium flex items-center" aria-expanded="false" aria-haspopup="true">
+        Solutions
+        <i class="ri-arrow-down-s-line ml-1"></i>
+        </button>
+        <div id="solutionsMenu" class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden" role="menu" aria-labelledby="solutionsBtn">
+        <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-footprint-line w-5 h-5 mr-3"></i>
+        Fleet Management
+        </a>
+        <a href="./Fuel-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-gas-station-line w-5 h-5 mr-3"></i>
+        Fuel Management
+        </a>
+        <a href="./Logistics-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-truck-line w-5 h-5 mr-3"></i>
+        Logistics Management
+        </a>
+        <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-phone-line w-5 h-5 mr-3"></i>
+        Telecommunication
+        </a>
+        <a href="./Security-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-shield-keyhole-line w-5 h-5 mr-3"></i>
+        Security
+        </a>
+        <a href="./Data-&-Power-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-database-2-line w-5 h-5 mr-3"></i>
+        Data & Power
+        </a>
+        <a href="./Internet-&-Connectivity-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-wifi-line w-5 h-5 mr-3"></i>
+        Internet & Connectivity
+        </a>
+        <a href="./Mining-Technology-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-mine-line w-5 h-5 mr-3"></i>
+        Mining
+        </a>
+        <a href="./Warehousing-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-store-2-line w-5 h-5 mr-3"></i>
+        Warehousing
+        </a>
+        </div>
+        </div>
+        <a href="#industries" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+        <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+        <div class="relative hidden md:block">
+        <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm focus:border-primary">
+        <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+        <i class="ri-search-line"></i>
+        </div>
+        </div>
+        <button id="contactUsBtn" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+        <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg w-full max-w-xl mx-4 relative">
+        <button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+        <i class="ri-close-line text-2xl"></i>
+        </button>
+        
+        <div class="max-h-[100vh] overflow-x-auto p-4 md:p-8">
+        
+        <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
+        <form id="contactForm" action="" method="POST">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div>
+        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+        </div>
+        <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+        </div>
+        <div>
+        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+        <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+        </div>
+        <div>
+        <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+        <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+        </div>
+        </div>
+        <div class="mb-4">
+        <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
+        <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary pr-8">
+          <option value="">Select a service</option>
+          <option value="fleet">Fleet Management</option>
+          <option value="fuel">Fuel Management</option>
+          <option value="logistics">Logistics Management</option>
+          <option value="telecommunication">Telecommunication</option>
+          <option value="security">Security</option>
+          <option value="data-power">Data &amp; Power</option>
+          <option value="internet-connectivity">Internet &amp; Connectivity</option>
+          <option value="mining">Mining</option>
+          <option value="warehousing">Warehousing</option>
+          <option value="other">Other</option>
+        </select>
+        </div>
+        <div class="mb-6">
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Submit</button>
+        </form>
+        </div>
+        </div>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
+        <i class="ri-menu-line text-xl"></i>
+        </button>
+        </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-lg">
+        <nav class="container mx-auto px-4 py-4">
+        <a href="index.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
+        <div class="relative">
+        <button id="mobileSolutionsBtn" class="w-full flex items-center justify-between py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">
+        Solutions
+        <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div id="mobileSolutionsMenu" class="hidden bg-gray-50 px-4 py-2">
+        <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Fleet Management</a>
+        <a href="./Fuel-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Fuel Management</a>
+        <a href="./Logistics-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Logistics Management</a>
+        <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Telecommunication</a>
+        <a href="./Security-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Security</a>
+        <a href="./Data-&-Power-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Data & Power</a>
+        <a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
+        <a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
+        <a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
+        </div>
+        </div>
+        <a href="#industries" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
+        <a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
+        <div class="mt-4">
+        <button class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+        </div>
+        </nav>
+        </div>
+        </header>
+    <!-- Hero Section -->
+    <section class="hero-section w-full min-h-[600px] relative">
+      <div class="hero-overlay absolute inset-0"></div>
+      <div
+        class="container mx-auto px-4 h-full flex items-center relative z-10 py-20"
+      >
+        <div class="w-full md:w-1/2 text-white pt-16">
+          <h1
+            class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+          >
+            Advanced Fuel Management Solutions
+          </h1>
+          <p class="text-lg sm:text-xl md:text-2xl mb-8 opacity-90">
+            Optimize fuel consumption, reduce costs, and enhance operational
+            efficiency with our intelligent monitoring systems.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <button
+              class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 text-lg"
+            >
+              Get Started
+            </button>
+            <button
+              class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300 text-lg flex items-center"
+            >
+              <i class="ri-play-circle-line mr-2 text-xl"></i> Watch Demo
+            </button>
+          </div>
+          <div class="mt-12 grid grid-cols-2 gap-6">
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-white/20 rounded-full mr-3"
+              >
+                <i class="ri-percent-line text-white text-xl"></i>
+              </div>
+              <div>
+                <span class="text-2xl font-bold">30%</span>
+                <p class="text-sm">Average Fuel Savings</p>
+              </div>
+            </div>
+            <div class="flex items-center">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-white/20 rounded-full mr-3"
+              >
+                <i class="ri-time-line text-white text-xl"></i>
+              </div>
+              <div>
+                <span class="text-2xl font-bold">24/7</span>
+                <p class="text-sm">Real-time Monitoring</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Features Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Comprehensive Fuel Management Features
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Our intelligent systems provide complete visibility and control over
+            your fuel consumption, helping you optimize resources and reduce
+            costs.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Feature 1 -->
+          <div
+            class="feature-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6"
+            >
+              <i class="ri-dashboard-3-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Real-time Monitoring</h3>
+            <p class="text-gray-600 mb-6">
+              Track fuel consumption in real-time across your entire fleet. Get
+              instant alerts for unusual activities or consumption patterns.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                <span class="text-gray-600">Live fuel level tracking</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                <span class="text-gray-600">Automated alerts system</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                <span class="text-gray-600">Customizable thresholds</span>
+              </li>
+            </ul>
+            <a
+              href="./Fuel-Management-Feature-Details.html"
+              data-readdy="true"
+              class="text-primary font-medium flex items-center"
+            >
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <!-- Feature 2 -->
+          <div
+            class="feature-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6"
+            >
+              <i class="ri-line-chart-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Consumption Analytics</h3>
+            <p class="text-gray-600 mb-6">
+              Advanced analytics to identify trends, inefficiencies, and
+              opportunities for optimization in your fuel consumption.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                <span class="text-gray-600">Detailed usage reports</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                <span class="text-gray-600">Driver behavior analysis</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                <span class="text-gray-600">Cost optimization insights</span>
+              </li>
+            </ul>
+            <a
+              href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/1faa5094-f42d-497f-9bd7-f6a05e063f51"
+              data-readdy="true"
+              class="text-primary font-medium flex items-center"
+            >
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+          <!-- Feature 3 -->
+          <div
+            class="feature-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300"
+          >
+            <div
+              class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6"
+            >
+              <i class="ri-shield-check-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-semibold mb-3">Theft Prevention</h3>
+            <p class="text-gray-600 mb-6">
+              Sophisticated security measures to detect and prevent fuel theft,
+              ensuring your resources are protected at all times.
+            </p>
+            <ul class="space-y-2 mb-6">
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                <span class="text-gray-600">Anomaly detection</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                <span class="text-gray-600">Instant theft alerts</span>
+              </li>
+              <li class="flex items-start">
+                <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                <span class="text-gray-600">Secure access controls</span>
+              </li>
+            </ul>
+            <a
+              href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/1faa5094-f42d-497f-9bd7-f6a05e063f51"
+              data-readdy="true"
+              class="text-primary font-medium flex items-center"
+            >
+              Learn More
+              <i class="ri-arrow-right-line ml-2"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Benefits Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col lg:flex-row gap-12 items-center">
+          <div class="w-full lg:w-1/2">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">
+              Benefits That Drive Business Growth
+            </h2>
+            <p class="text-lg text-gray-600 mb-8">
+              Our fuel management solutions deliver measurable results that
+              directly impact your operational efficiency and bottom line.
+            </p>
+            <div class="space-y-6">
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-4 shrink-0"
+                >
+                  <i
+                    class="ri-money-dollar-circle-line text-primary text-xl"
+                  ></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">Reduced Fuel Costs</h3>
+                  <p class="text-gray-600">
+                    Cut fuel expenses by up to 30% through optimized
+                    consumption, reduced idling, and prevention of unauthorized
+                    use.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-4 shrink-0"
+                >
+                  <i class="ri-leaf-line text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">
+                    Lower Carbon Emissions
+                  </h3>
+                  <p class="text-gray-600">
+                    Reduce your environmental footprint by optimizing routes,
+                    improving driving behavior, and minimizing unnecessary fuel
+                    consumption.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-4 shrink-0"
+                >
+                  <i class="ri-time-line text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">
+                    Enhanced Operational Efficiency
+                  </h3>
+                  <p class="text-gray-600">
+                    Streamline operations with automated monitoring, reporting,
+                    and maintenance scheduling based on actual usage patterns.
+                  </p>
+                </div>
+              </div>
+              <div class="flex items-start">
+                <div
+                  class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mr-4 shrink-0"
+                >
+                  <i class="ri-file-chart-line text-primary text-xl"></i>
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2">
+                    Data-Driven Decision Making
+                  </h3>
+                  <p class="text-gray-600">
+                    Make informed strategic decisions with comprehensive
+                    analytics and customizable reporting tools.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-full lg:w-1/2">
+            <div class="bg-white p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-semibold mb-4">
+                Fuel Savings Calculator
+              </h3>
+              <div class="mb-6">
+                <label class="block text-gray-700 mb-2"
+                  >Fleet Size (vehicles)</label
+                >
+                <input
+                  type="range"
+                  id="fleetSizeRange"
+                  min="5"
+                  max="500"
+                  value="50"
+                  class="custom-range mb-2"
+                />
+                <div class="flex justify-between">
+                  <span id="fleetSizeValue" class="font-medium">50</span>
+                  <span class="text-gray-500">vehicles</span>
+                </div>
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-700 mb-2"
+                  >Average Monthly Fuel Cost Per Vehicle</label
+                >
+                <input
+                  type="range"
+                  id="fuelCostRange"
+                  min="500"
+                  max="5000"
+                  value="1500"
+                  class="custom-range mb-2"
+                />
+                <div class="flex justify-between">
+                  <span id="fuelCostValue" class="font-medium">$1,500</span>
+                  <span class="text-gray-500">per vehicle</span>
+                </div>
+              </div>
+              <div class="mb-6">
+                <label class="block text-gray-700 mb-2"
+                  >Expected Savings Percentage</label
+                >
+                <input
+                  type="range"
+                  id="savingsRange"
+                  min="10"
+                  max="40"
+                  value="25"
+                  class="custom-range mb-2"
+                />
+                <div class="flex justify-between">
+                  <span id="savingsValue" class="font-medium">25%</span>
+                  <span class="text-gray-500">efficiency gain</span>
+                </div>
+              </div>
+              <div class="p-6 bg-gray-50 rounded-lg">
+                <div class="flex justify-between mb-4">
+                  <span class="text-gray-700">Monthly Fleet Fuel Cost:</span>
+                  <span id="totalCost" class="font-semibold">$75,000</span>
+                </div>
+                <div class="flex justify-between mb-4">
+                  <span class="text-gray-700">Estimated Monthly Savings:</span>
+                  <span id="monthlySavings" class="font-semibold text-primary"
+                    >$18,750</span
+                  >
+                </div>
+                <div class="flex justify-between mb-4">
+                  <span class="text-gray-700">Projected Annual Savings:</span>
+                  <span id="annualSavings" class="font-semibold text-primary"
+                    >$225,000</span
+                  >
+                </div>
+                <div class="w-full h-[200px]" id="savingsChart"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Implementation Process -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Seamless Implementation Process
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Our structured approach ensures a smooth transition to advanced fuel
+            management with minimal disruption to your operations.
+          </p>
+        </div>
+        <div class="relative">
+          <div
+            class="hidden md:block absolute top-24 left-0 right-0 h-1 bg-gray-200 z-0"
+          ></div>
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+            <!-- Step 1 -->
+            <div class="relative z-10">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mx-auto mb-4 font-bold"
+              >
+                1
+              </div>
+              <div
+                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-full"
+              >
+                <h3 class="text-xl font-semibold mb-3 text-center">
+                  Initial Assessment
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Comprehensive evaluation of your current fuel management
+                  practices and specific requirements.
+                </p>
+                <div
+                  class="flex items-center justify-between text-sm text-gray-500 mb-2"
+                >
+                  <span>Timeline:</span>
+                  <span>1-2 Weeks</span>
+                </div>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                    <span class="text-gray-600">Fleet analysis</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                    <span class="text-gray-600">Needs identification</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                    <span class="text-gray-600">Custom solution design</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Step 2 -->
+            <div class="relative z-10">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mx-auto mb-4 font-bold"
+              >
+                2
+              </div>
+              <div
+                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-full"
+              >
+                <h3 class="text-xl font-semibold mb-3 text-center">
+                  System Integration
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Installation of hardware components and integration with your
+                  existing fleet management systems.
+                </p>
+                <div
+                  class="flex items-center justify-between text-sm text-gray-500 mb-2"
+                >
+                  <span>Timeline:</span>
+                  <span>2-4 Weeks</span>
+                </div>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                    <span class="text-gray-600">Hardware installation</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                    <span class="text-gray-600">Software configuration</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                    <span class="text-gray-600">System testing</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Step 3 -->
+            <div class="relative z-10">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mx-auto mb-4 font-bold"
+              >
+                3
+              </div>
+              <div
+                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-full"
+              >
+                <h3 class="text-xl font-semibold mb-3 text-center">
+                  Staff Training
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Comprehensive training for your team to ensure maximum benefit
+                  from the new system.
+                </p>
+                <div
+                  class="flex items-center justify-between text-sm text-gray-500 mb-2"
+                >
+                  <span>Timeline:</span>
+                  <span>1-2 Weeks</span>
+                </div>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                    <span class="text-gray-600">Admin dashboard training</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                    <span class="text-gray-600">Driver education</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                    <span class="text-gray-600">Best practices workshop</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <!-- Step 4 -->
+            <div class="relative z-10">
+              <div
+                class="w-12 h-12 flex items-center justify-center bg-primary text-white rounded-full mx-auto mb-4 font-bold"
+              >
+                4
+              </div>
+              <div
+                class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 h-full"
+              >
+                <h3 class="text-xl font-semibold mb-3 text-center">
+                  Ongoing Support
+                </h3>
+                <p class="text-gray-600 mb-4">
+                  Continuous assistance and optimization to ensure long-term
+                  success with your fuel management system.
+                </p>
+                <div
+                  class="flex items-center justify-between text-sm text-gray-500 mb-2"
+                >
+                  <span>Timeline:</span>
+                  <span>Continuous</span>
+                </div>
+                <ul class="space-y-2">
+                  <li class="flex items-start">
+                    <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                    <span class="text-gray-600">24/7 technical support</span>
+                  </li>
+                  <li class="flex items-start">
+                    <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                    <span class="text-gray-600"
+                      >Quarterly performance reviews</span
+                    >
+                  </li>
+                  <li class="flex items-start">
+                    <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                    <span class="text-gray-600"
+                      >System updates and upgrades</span
+                    >
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Case Studies Section -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Success Stories</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            See how our fuel management solutions have transformed operations
+            for businesses across various industries.
+          </p>
+        </div>
+        <div class="relative">
+          <div
+            class="case-study-container flex space-x-6 overflow-x-auto pb-8 hide-scrollbar"
+          >
+            <!-- Case Study 1 -->
+            <div
+              class="case-study-card flex-shrink-0 w-full md:w-[400px] bg-white rounded-lg overflow-hidden"
+            >
+              <div class="p-8">
+                <div class="flex items-center justify-between mb-6">
+                  <h3 class="text-xl font-semibold">Horizon Logistics</h3>
+                  <span
+                    class="text-sm bg-blue-100 text-primary px-3 py-1 rounded-full"
+                    >Transportation</span
+                  >
+                </div>
+                <div class="mb-6">
+                  <h4 class="text-gray-700 font-medium mb-2">Challenge:</h4>
+                  <p class="text-gray-600">
+                    Managing fuel costs across a fleet of 120 trucks operating
+                    in multiple states with inconsistent reporting and suspected
+                    fuel theft.
+                  </p>
+                </div>
+                <div class="mb-6">
+                  <h4 class="text-gray-700 font-medium mb-2">Solution:</h4>
+                  <p class="text-gray-600">
+                    Implemented comprehensive fuel monitoring system with
+                    real-time tracking, automated reporting, and anomaly
+                    detection.
+                  </p>
+                </div>
+                <div class="mb-6">
+                  <h4 class="text-gray-700 font-medium mb-2">Results:</h4>
+                  <ul class="space-y-2">
+                    <li class="flex items-start">
+                      <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                      <span class="text-gray-600"
+                        >32% reduction in fuel expenses</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                      <span class="text-gray-600"
+                        >Eliminated unauthorized fuel usage</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                      <span class="text-gray-600">$350,000 annual savings</span>
+                    </li>
+                  </ul>
+                </div>
+                <div class="border-t border-gray-100 pt-6">
+                  <p class="text-gray-600 italic mb-4">
+                    "The visibility and control we now have over our fuel
+                    consumption has transformed our operations. The ROI was
+                    evident within the first quarter."
+                  </p>
+                  <div class="flex items-center">
+                    <div
+                      class="w-12 h-12 bg-gray-200 rounded-full mr-3 flex items-center justify-center"
+                    >
+                      <i class="ri-user-3-line text-gray-500"></i>
+                    </div>
+                    <div>
+                      <p class="font-medium">Michael Richardson</p>
+                      <p class="text-sm text-gray-500">
+                        Fleet Operations Director
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Case Study 2 -->
+            <div
+              class="case-study-card flex-shrink-0 w-full md:w-[400px] bg-white rounded-lg overflow-hidden"
+            >
+              <div class="p-8">
+                <div class="flex items-center justify-between mb-6">
+                  <h3 class="text-xl font-semibold">GreenField Construction</h3>
+                  <span
+                    class="text-sm bg-blue-100 text-primary px-3 py-1 rounded-full"
+                    >Construction</span
+                  >
+                </div>
+                <div class="mb-6">
+                  <h4 class="text-gray-700 font-medium mb-2">Challenge:</h4>
+                  <p class="text-gray-600">
+                    Managing fuel for 75+ heavy equipment vehicles across
+                    multiple construction sites with no centralized monitoring
+                    system.
+                  </p>
+                </div>
+                <div class="mb-6">
+                  <h4 class="text-gray-700 font-medium mb-2">Solution:</h4>
+                  <p class="text-gray-600">
+                    Deployed site-specific fuel management terminals with RFID
+                    authentication and cloud-based monitoring platform.
+                  </p>
+                </div>
+                <div class="mb-6">
+                  <h4 class="text-gray-700 font-medium mb-2">Results:</h4>
+                  <ul class="space-y-2">
+                    <li class="flex items-start">
+                      <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                      <span class="text-gray-600"
+                        >28% reduction in fuel costs</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                      <span class="text-gray-600"
+                        >Improved project cost estimation</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                      <span class="text-gray-600"
+                        >$420,000 first-year savings</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="border-t border-gray-100 pt-6">
+                  <p class="text-gray-600 italic mb-4">
+                    "The system paid for itself within months. We now have
+                    complete accountability for every drop of fuel used across
+                    all our projects."
+                  </p>
+                  <div class="flex items-center">
+                    <div
+                      class="w-12 h-12 bg-gray-200 rounded-full mr-3 flex items-center justify-center"
+                    >
+                      <i class="ri-user-3-line text-gray-500"></i>
+                    </div>
+                    <div>
+                      <p class="font-medium">Jennifer Lawson</p>
+                      <p class="text-sm text-gray-500">Operations Manager</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- Case Study 3 -->
+            <div
+              class="case-study-card flex-shrink-0 w-full md:w-[400px] bg-white rounded-lg overflow-hidden"
+            >
+              <div class="p-8">
+                <div class="flex items-center justify-between mb-6">
+                  <h3 class="text-xl font-semibold">Metro Transit Authority</h3>
+                  <span
+                    class="text-sm bg-blue-100 text-primary px-3 py-1 rounded-full"
+                    >Public Transit</span
+                  >
+                </div>
+                <div class="mb-6">
+                  <h4 class="text-gray-700 font-medium mb-2">Challenge:</h4>
+                  <p class="text-gray-600">
+                    Managing fuel efficiency for a public bus fleet of 200+
+                    vehicles with outdated manual tracking systems.
+                  </p>
+                </div>
+                <div class="mb-6">
+                  <h4 class="text-gray-700 font-medium mb-2">Solution:</h4>
+                  <p class="text-gray-600">
+                    Implemented integrated fuel management with driver behavior
+                    monitoring and route optimization.
+                  </p>
+                </div>
+                <div class="mb-6">
+                  <h4 class="text-gray-700 font-medium mb-2">Results:</h4>
+                  <ul class="space-y-2">
+                    <li class="flex items-start">
+                      <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                      <span class="text-gray-600"
+                        >23% improvement in fuel efficiency</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                      <span class="text-gray-600"
+                        >15% reduction in emissions</span
+                      >
+                    </li>
+                    <li class="flex items-start">
+                      <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                      <span class="text-gray-600"
+                        >$1.2 million annual savings</span
+                      >
+                    </li>
+                  </ul>
+                </div>
+                <div class="border-t border-gray-100 pt-6">
+                  <p class="text-gray-600 italic mb-4">
+                    "Not only did we reduce costs significantly, but we also
+                    made substantial progress toward our sustainability goals."
+                  </p>
+                  <div class="flex items-center">
+                    <div
+                      class="w-12 h-12 bg-gray-200 rounded-full mr-3 flex items-center justify-center"
+                    >
+                      <i class="ri-user-3-line text-gray-500"></i>
+                    </div>
+                    <div>
+                      <p class="font-medium">Robert Chen</p>
+                      <p class="text-sm text-gray-500">
+                        Sustainability Director
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Navigation Arrows -->
+          <button
+            id="prevCaseBtn"
+            class="absolute left-0 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center z-10 -ml-5 focus:outline-none"
+          >
+            <i class="ri-arrow-left-s-line text-gray-600"></i>
+          </button>
+          <button
+            id="nextCaseBtn"
+            class="absolute right-0 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center z-10 -mr-5 focus:outline-none"
+          >
+            <i class="ri-arrow-right-s-line text-gray-600"></i>
+          </button>
+        </div>
+      </div>
+    </section>
+    <!-- Technical Specifications -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">
+            Technical Specifications
+          </h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Our fuel management solutions are built with enterprise-grade
+            technology to ensure reliability, security, and scalability.
+          </p>
+        </div>
+        <div class="max-w-4xl mx-auto">
+          <!-- Accordion Item 1 -->
+          <div class="border border-gray-200 rounded-lg mb-4 overflow-hidden">
+            <button
+              class="accordion-btn w-full flex items-center justify-between p-5 bg-white hover:bg-gray-50 transition-colors"
+            >
+              <span class="text-lg font-medium">Hardware Requirements</span>
+              <i
+                class="ri-arrow-down-s-line text-xl accordion-icon transition-transform"
+              ></i>
+            </button>
+            <div class="accordion-content px-5">
+              <div class="py-5 border-t border-gray-100">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 class="font-medium mb-3">Fuel Monitoring Units</h4>
+                    <ul class="space-y-2">
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >High-precision fuel level sensors</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Temperature-compensated measurements</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >IP67 waterproof rating</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >-40°C to +85°C operating range</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-medium mb-3">Terminal Equipment</h4>
+                    <ul class="space-y-2">
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >RFID/NFC authentication</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >7" touchscreen interface</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600">4G/LTE connectivity</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Backup battery (48-hour operation)</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Accordion Item 2 -->
+          <div class="border border-gray-200 rounded-lg mb-4 overflow-hidden">
+            <button
+              class="accordion-btn w-full flex items-center justify-between p-5 bg-white hover:bg-gray-50 transition-colors"
+            >
+              <span class="text-lg font-medium">Software Capabilities</span>
+              <i
+                class="ri-arrow-down-s-line text-xl accordion-icon transition-transform"
+              ></i>
+            </button>
+            <div class="accordion-content px-5">
+              <div class="py-5 border-t border-gray-100">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 class="font-medium mb-3">Management Dashboard</h4>
+                    <ul class="space-y-2">
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Real-time consumption monitoring</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Customizable alerts and notifications</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Advanced reporting and analytics</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Driver behavior analysis</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-medium mb-3">Mobile Applications</h4>
+                    <ul class="space-y-2">
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >iOS and Android compatibility</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >On-the-go monitoring capabilities</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Push notifications for critical alerts</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Offline mode with data synchronization</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Accordion Item 3 -->
+          <div class="border border-gray-200 rounded-lg mb-4 overflow-hidden">
+            <button
+              class="accordion-btn w-full flex items-center justify-between p-5 bg-white hover:bg-gray-50 transition-colors"
+            >
+              <span class="text-lg font-medium">Integration Options</span>
+              <i
+                class="ri-arrow-down-s-line text-xl accordion-icon transition-transform"
+              ></i>
+            </button>
+            <div class="accordion-content px-5">
+              <div class="py-5 border-t border-gray-100">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 class="font-medium mb-3">Fleet Management Systems</h4>
+                    <ul class="space-y-2">
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Seamless integration with major FMS</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Real-time data synchronization</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Unified reporting capabilities</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-medium mb-3">Enterprise Systems</h4>
+                    <ul class="space-y-2">
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >REST API for custom integrations</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >SAP and Oracle ERP connectors</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Data export in multiple formats</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Accordion Item 4 -->
+          <div class="border border-gray-200 rounded-lg mb-4 overflow-hidden">
+            <button
+              class="accordion-btn w-full flex items-center justify-between p-5 bg-white hover:bg-gray-50 transition-colors"
+            >
+              <span class="text-lg font-medium">Security Features</span>
+              <i
+                class="ri-arrow-down-s-line text-xl accordion-icon transition-transform"
+              ></i>
+            </button>
+            <div class="accordion-content px-5">
+              <div class="py-5 border-t border-gray-100">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 class="font-medium mb-3">Data Security</h4>
+                    <ul class="space-y-2">
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >End-to-end encryption (AES-256)</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Secure cloud storage with redundancy</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Regular security audits and updates</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-medium mb-3">Access Control</h4>
+                    <ul class="space-y-2">
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Role-based access management</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Multi-factor authentication</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >Detailed access logs and audit trails</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Accordion Item 5 -->
+          <div class="border border-gray-200 rounded-lg overflow-hidden">
+            <button
+              class="accordion-btn w-full flex items-center justify-between p-5 bg-white hover:bg-gray-50 transition-colors"
+            >
+              <span class="text-lg font-medium">Compliance Standards</span>
+              <i
+                class="ri-arrow-down-s-line text-xl accordion-icon transition-transform"
+              ></i>
+            </button>
+            <div class="accordion-content px-5">
+              <div class="py-5 border-t border-gray-100">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 class="font-medium mb-3">Industry Certifications</h4>
+                    <ul class="space-y-2">
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >ISO 27001 (Information Security)</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >ISO 9001 (Quality Management)</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >ATEX certification for hazardous environments</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 class="font-medium mb-3">Regulatory Compliance</h4>
+                    <ul class="space-y-2">
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >GDPR compliant data handling</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >EPA emissions reporting capabilities</span
+                        >
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span class="text-gray-600"
+                          >DOT compliance reporting</span
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Consultation Form -->
+    <section class="py-20 bg-gray-50">
+      <div class="container mx-auto px-4">
+        <div
+          class="max-w-5xl mx-auto bg-white rounded-lg shadow-md overflow-hidden"
+        >
+          <div class="flex flex-col lg:flex-row">
+            <div class="w-full lg:w-5/12 bg-primary p-8 lg:p-12 text-white">
+              <h2 class="text-2xl md:text-3xl font-bold mb-4">
+                Request a Consultation
+              </h2>
+              <p class="mb-6">
+                Speak with our fuel management experts to discover how our
+                solutions can optimize your operations and reduce costs.
+              </p>
+              <div class="mb-8">
+                <div class="flex items-start mb-4">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 shrink-0 mt-1"
+                  >
+                    <i class="ri-customer-service-2-line text-white"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-medium mb-1">Expert Guidance</h3>
+                    <p class="text-sm text-white/80">
+                      Our specialists will analyze your specific needs and
+                      recommend tailored solutions.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start mb-4">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 shrink-0 mt-1"
+                  >
+                    <i class="ri-calculator-line text-white"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-medium mb-1">ROI Assessment</h3>
+                    <p class="text-sm text-white/80">
+                      Get a detailed analysis of potential savings and return on
+                      investment.
+                    </p>
+                  </div>
+                </div>
+                <div class="flex items-start">
+                  <div
+                    class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 shrink-0 mt-1"
+                  >
+                    <i class="ri-presentation-line text-white"></i>
+                  </div>
+                  <div>
+                    <h3 class="font-medium mb-1">Demo Presentation</h3>
+                    <p class="text-sm text-white/80">
+                      See our fuel management system in action with a
+                      personalized demonstration.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="border-t border-white/20 pt-6">
+                <p class="font-medium mb-2">Contact Us Directly:</p>
+                <div class="flex items-center mb-3">
+                  <div class="w-5 h-5 flex items-center justify-center mr-3">
+                    <i class="ri-phone-line text-white/80"></i>
+                  </div>
+                  <span>+1 (415) 555-0123</span>
+                </div>
+                <div class="flex items-center">
+                  <div class="w-5 h-5 flex items-center justify-center mr-3">
+                    <i class="ri-mail-line text-white/80"></i>
+                  </div>
+                  <span>fuel@techsolutions.com</span>
+                </div>
+              </div>
+            </div>
+            <div class="w-full lg:w-7/12 p-8 lg:p-12">
+              <form>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                  <div>
+                    <label class="block text-gray-700 mb-2" for="companyName"
+                      >Company Name *</label
+                    >
+                    <input
+                      type="text"
+                      id="companyName"
+                      class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-gray-700 mb-2" for="contactName"
+                      >Contact Name *</label
+                    >
+                    <input
+                      type="text"
+                      id="contactName"
+                      class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-gray-700 mb-2" for="email"
+                      >Email Address *</label
+                    >
+                    <input
+                      type="email"
+                      id="email"
+                      class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label class="block text-gray-700 mb-2" for="phone"
+                      >Phone Number *</label
+                    >
+                    <input
+                      type="tel"
+                      id="phone"
+                      class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="mb-6">
+                  <label class="block text-gray-700 mb-2">Fleet Size</label>
+                  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                    <div class="flex items-center">
+                      <input
+                        type="radio"
+                        name="fleetSize"
+                        id="fleet1"
+                        class="custom-radio mr-2"
+                      />
+                      <label for="fleet1">1-10 vehicles</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        type="radio"
+                        name="fleetSize"
+                        id="fleet2"
+                        class="custom-radio mr-2"
+                      />
+                      <label for="fleet2">11-50 vehicles</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        type="radio"
+                        name="fleetSize"
+                        id="fleet3"
+                        class="custom-radio mr-2"
+                      />
+                      <label for="fleet3">51-200 vehicles</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        type="radio"
+                        name="fleetSize"
+                        id="fleet4"
+                        class="custom-radio mr-2"
+                      />
+                      <label for="fleet4">200+ vehicles</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-6">
+                  <label class="block text-gray-700 mb-2"
+                    >Current Challenges (Select all that apply)</label
+                  >
+                  <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    <div class="flex items-center">
+                      <input
+                        type="checkbox"
+                        id="challenge1"
+                        class="custom-checkbox mr-2"
+                      />
+                      <label for="challenge1">High fuel costs</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        type="checkbox"
+                        id="challenge2"
+                        class="custom-checkbox mr-2"
+                      />
+                      <label for="challenge2">Fuel theft concerns</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        type="checkbox"
+                        id="challenge3"
+                        class="custom-checkbox mr-2"
+                      />
+                      <label for="challenge3">Inefficient consumption</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        type="checkbox"
+                        id="challenge4"
+                        class="custom-checkbox mr-2"
+                      />
+                      <label for="challenge4">Lack of visibility</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        type="checkbox"
+                        id="challenge5"
+                        class="custom-checkbox mr-2"
+                      />
+                      <label for="challenge5">Manual tracking processes</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        type="checkbox"
+                        id="challenge6"
+                        class="custom-checkbox mr-2"
+                      />
+                      <label for="challenge6">Compliance reporting</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-6">
+                  <label class="block text-gray-700 mb-2" for="message"
+                    >Additional Information</label
+                  >
+                  <textarea
+                    id="message"
+                    rows="4"
+                    class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary"
+                  ></textarea>
+                </div>
+                <div class="mb-6">
+                  <label class="block text-gray-700 mb-2"
+                    >Preferred Contact Method</label
+                  >
+                  <div class="flex flex-wrap gap-4">
+                    <div class="flex items-center">
+                      <input
+                        type="radio"
+                        name="contactMethod"
+                        id="contactEmail"
+                        class="custom-radio mr-2"
+                      />
+                      <label for="contactEmail">Email</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        type="radio"
+                        name="contactMethod"
+                        id="contactPhone"
+                        class="custom-radio mr-2"
+                      />
+                      <label for="contactPhone">Phone</label>
+                    </div>
+                    <div class="flex items-center">
+                      <input
+                        type="radio"
+                        name="contactMethod"
+                        id="contactBoth"
+                        class="custom-radio mr-2"
+                      />
+                      <label for="contactBoth">Both</label>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-6">
+                  <div class="flex items-start">
+                    <input
+                      type="checkbox"
+                      id="privacy"
+                      class="custom-checkbox mr-2 mt-1"
+                    />
+                    <label for="privacy" class="text-sm text-gray-600"
+                      >I agree to the
+                      <a href="#" class="text-primary hover:underline"
+                        >Privacy Policy</a
+                      >
+                      and consent to being contacted regarding fuel management
+                      solutions.</label
+                    >
+                  </div>
+                </div>
+                <button
+                  type="submit"
+                  class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 w-full md:w-auto"
+                >
+                  Request Consultation
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Related Solutions -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4">Related Solutions</h2>
+          <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+            Explore our complementary services to create a comprehensive
+            management system for your operations.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <!-- Solution 1 -->
+          <div
+            class="bg-white rounded-lg border border-gray-100 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+          >
+            <div class="h-48 bg-gray-100 flex items-center justify-center">
+              <div
+                class="w-20 h-20 flex items-center justify-center bg-blue-50 rounded-full"
+              >
+                <i class="ri-truck-line text-primary text-3xl"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3">Fleet Management</h3>
+              <p class="text-gray-600 mb-6">
+                Comprehensive vehicle tracking, maintenance scheduling, and
+                driver management to optimize your fleet operations.
+              </p>
+              <a
+                href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/1faa5094-f42d-497f-9bd7-f6a05e063f51"
+                data-readdy="true"
+                class="text-primary font-medium flex items-center"
+              >
+                Learn More
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Solution 2 -->
+          <div
+            class="bg-white rounded-lg border border-gray-100 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+          >
+            <div class="h-48 bg-gray-100 flex items-center justify-center">
+              <div
+                class="w-20 h-20 flex items-center justify-center bg-blue-50 rounded-full"
+              >
+                <i class="ri-route-line text-primary text-3xl"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3">Logistics Solutions</h3>
+              <p class="text-gray-600 mb-6">
+                Route optimization, delivery management, and supply chain
+                visibility to streamline your logistics operations.
+              </p>
+              <a
+                href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/1faa5094-f42d-497f-9bd7-f6a05e063f51"
+                data-readdy="true"
+                class="text-primary font-medium flex items-center"
+              >
+                Learn More
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Solution 3 -->
+          <div
+            class="bg-white rounded-lg border border-gray-100 shadow-sm overflow-hidden transition-all duration-300 hover:shadow-md"
+          >
+            <div class="h-48 bg-gray-100 flex items-center justify-center">
+              <div
+                class="w-20 h-20 flex items-center justify-center bg-blue-50 rounded-full"
+              >
+                <i class="ri-radar-line text-primary text-3xl"></i>
+              </div>
+            </div>
+            <div class="p-6">
+              <h3 class="text-xl font-semibold mb-3">Asset Tracking</h3>
+              <p class="text-gray-600 mb-6">
+                Real-time monitoring of valuable equipment and assets with
+                detailed usage analytics and maintenance alerts.
+              </p>
+              <a
+                href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/1faa5094-f42d-497f-9bd7-f6a05e063f51"
+                data-readdy="true"
+                class="text-primary font-medium flex items-center"
+              >
+                Learn More
+                <i class="ri-arrow-right-line ml-2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="bg-primary py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center text-white">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">
+            Ready to Optimize Your Fuel Management?
+          </h2>
+          <p class="text-xl mb-8">
+            Join hundreds of businesses that have reduced fuel costs by an
+            average of 30% while improving operational efficiency and
+            sustainability.
+          </p>
+          <div class="flex flex-col sm:flex-row justify-center gap-4">
+            <button
+              class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300 text-lg"
+            >
+              Schedule Demo
+            </button>
+            <button
+              class="bg-transparent text-white border border-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-white/10 transition duration-300 text-lg"
+            >
+              Contact Sales
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-16 pb-8">
+      <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          <!-- Company Info -->
+          <div>
+            <a
+              href="#"
+              class="text-2xl font-['Pacifico'] text-white mb-6 inline-block"
+              >logo</a
+            >
+            <p class="text-gray-400 mb-6">
+              Providing enterprise-grade technology solutions that drive
+              innovation and efficiency since 2005.
+            </p>
+            <div class="flex space-x-4">
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300"
+              >
+                <i class="ri-linkedin-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300"
+              >
+                <i class="ri-twitter-x-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300"
+              >
+                <i class="ri-facebook-fill"></i>
+              </a>
+              <a
+                href="#"
+                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300"
+              >
+                <i class="ri-instagram-fill"></i>
+              </a>
+            </div>
+          </div>
+          <!-- Quick Links -->
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+            <ul class="space-y-3">
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >About Us</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Services</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Industries</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Case Studies</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Careers</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-gray-400 hover:text-white transition duration-300"
+                  >Contact</a
+                >
+              </li>
+            </ul>
+          </div>
+          <!-- Contact Info -->
+          <div>
+            <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+            <ul class="space-y-3">
+              <li class="flex items-start">
+                <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+                  <i class="ri-map-pin-line text-primary"></i>
+                </div>
+                <span class="text-gray-400"
+                  >1250 Technology Plaza, Suite 400<br />San Francisco, CA
+                  94105</span
+                >
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-phone-line text-primary"></i>
+                </div>
+                <span class="text-gray-400">+1 (415) 555-0123</span>
+              </li>
+              <li class="flex items-center">
+                <div class="w-5 h-5 flex items-center justify-center mr-3">
+                  <i class="ri-mail-line text-primary"></i>
+                </div>
+                <span class="text-gray-400">info@techsolutions.com</span>
+              </li>
+            </ul>
+          </div>
+          <!-- Newsletter -->
+          <div>
+            <h3 class="text-lg font-semibold mb-6">
+              Subscribe to Our Newsletter
+            </h3>
+            <p class="text-gray-400 mb-4">
+              Stay updated with the latest technology trends and solutions.
+            </p>
+            <form class="mb-4">
+              <div class="flex">
+                <input
+                  type="email"
+                  placeholder="Your email address"
+                  class="bg-gray-800 text-white px-4 py-3 w-full border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                />
+                <button
+                  type="submit"
+                  class="bg-primary text-white px-4 py-3 !rounded-r-lg !rounded-l-none whitespace-nowrap hover:bg-primary/90 transition duration-300"
+                >
+                  Subscribe
+                </button>
+              </div>
+            </form>
+            <div class="flex items-center space-x-4">
+              <div class="w-10 h-6 flex items-center justify-center">
+                <i class="ri-visa-fill text-2xl text-gray-400"></i>
+              </div>
+              <div class="w-10 h-6 flex items-center justify-center">
+                <i class="ri-mastercard-fill text-2xl text-gray-400"></i>
+              </div>
+              <div class="w-10 h-6 flex items-center justify-center">
+                <i class="ri-paypal-fill text-2xl text-gray-400"></i>
+              </div>
+              <div class="w-10 h-6 flex items-center justify-center">
+                <i class="ri-apple-fill text-2xl text-gray-400"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-gray-800 pt-8">
+          <div class="flex flex-col md:flex-row justify-between items-center">
+            <p class="text-gray-500 text-sm mb-4 md:mb-0">
+              © 2025 TechSolutions. All rights reserved.
+            </p>
+            <div class="flex space-x-6">
+              <a
+                href="#"
+                class="text-gray-500 text-sm hover:text-white transition duration-300"
+                >Privacy Policy</a
+              >
+              <a
+                href="#"
+                class="text-gray-500 text-sm hover:text-white transition duration-300"
+                >Terms of Service</a
+              >
+              <a
+                href="#"
+                class="text-gray-500 text-sm hover:text-white transition duration-300"
+                >Cookie Policy</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script id="mobileMenuScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+        const mobileMenu = document.getElementById("mobileMenu");
+        const mobileSolutionsBtn = document.getElementById("mobileSolutionsBtn");
+        const mobileSolutionsMenu = document.getElementById("mobileSolutionsMenu");
+        mobileMenuBtn.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+          const icon = mobileMenuBtn.querySelector("i");
+          icon.classList.toggle("ri-menu-line");
+          icon.classList.toggle("ri-close-line");
+        });
+        mobileSolutionsBtn.addEventListener("click", function () {
+          mobileSolutionsMenu.classList.toggle("hidden");
+          const icon = mobileSolutionsBtn.querySelector("i");
+          icon.classList.toggle("ri-arrow-down-s-line");
+          icon.classList.toggle("ri-arrow-up-s-line");
+        });
+        document.addEventListener("click", function (event) {
+          if (
+            !mobileMenu.contains(event.target) &&
+            !mobileMenuBtn.contains(event.target)
+          ) {
+            mobileMenu.classList.add("hidden");
+            const icon = mobileMenuBtn.querySelector("i");
+            icon.classList.add("ri-menu-line");
+            icon.classList.remove("ri-close-line");
+          }
+        });
+      });
+    </script>
+    <script id="accordionScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const accordionBtns = document.querySelectorAll(".accordion-btn");
+        accordionBtns.forEach((btn) => {
+          btn.addEventListener("click", function () {
+            const content = this.nextElementSibling;
+            const icon = this.querySelector(".accordion-icon");
+            content.classList.toggle("active");
+            icon.style.transform = content.classList.contains("active")
+              ? "rotate(180deg)"
+              : "rotate(0)";
+            // Close other accordions
+            accordionBtns.forEach((otherBtn) => {
+              if (otherBtn !== btn) {
+                const otherContent = otherBtn.nextElementSibling;
+                const otherIcon = otherBtn.querySelector(".accordion-icon");
+                otherContent.classList.remove("active");
+                otherIcon.style.transform = "rotate(0)";
+              }
+            });
+          });
+        });
+      });
+      homeLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'index.html';
+    });
+    </script>
+    <script id="caseStudyCarouselScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const carousel = document.querySelector(".case-study-container");
+        const prevBtn = document.getElementById("prevCaseBtn");
+        const nextBtn = document.getElementById("nextCaseBtn");
+        const cardWidth = document.querySelector(".case-study-card").offsetWidth + 24; // width + margin
+        prevBtn.addEventListener("click", function () {
+          carousel.scrollLeft -= cardWidth;
+        });
+        nextBtn.addEventListener("click", function () {
+          carousel.scrollLeft += cardWidth;
+        });
+      });
+    </script>
+    <script id="calculatorScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const fleetSizeRange = document.getElementById("fleetSizeRange");
+        const fleetSizeValue = document.getElementById("fleetSizeValue");
+        const fuelCostRange = document.getElementById("fuelCostRange");
+        const fuelCostValue = document.getElementById("fuelCostValue");
+        const savingsRange = document.getElementById("savingsRange");
+        const savingsValue = document.getElementById("savingsValue");
+        const totalCost = document.getElementById("totalCost");
+        const monthlySavings = document.getElementById("monthlySavings");
+        const annualSavings = document.getElementById("annualSavings");
+        // Initialize chart
+        const chartDom = document.getElementById("savingsChart");
+        const myChart = echarts.init(chartDom);
+        let option = {
+          animation: false,
+          tooltip: {
+            trigger: "axis",
+            axisPointer: {
+              type: "shadow",
+            },
+            backgroundColor: "rgba(255, 255, 255, 0.9)",
+            borderColor: "#e2e8f0",
+            textStyle: {
+              color: "#1f2937",
+            },
+          },
+          grid: {
+            top: 10,
+            right: 0,
+            bottom: 20,
+            left: 0,
+            containLabel: true,
+          },
+          xAxis: {
+            type: "category",
+            data: ["Current", "With TechSolutions"],
+            axisLine: {
+              lineStyle: {
+                color: "#d1d5db",
+              },
+            },
+            axisLabel: {
+              color: "#1f2937",
+            },
+          },
+          yAxis: {
+            type: "value",
+            axisLine: {
+              show: false,
+            },
+            axisLabel: {
+              color: "#1f2937",
+              formatter: function (value) {
+                return "$" + value.toLocaleString();
+              },
+            },
+            splitLine: {
+              lineStyle: {
+                color: "#e5e7eb",
+              },
+            },
+          },
+          series: [
+            {
+              name: "Annual Cost",
+              type: "bar",
+              barWidth: "60%",
+              data: [900000, 675000],
+              itemStyle: {
+                color: function (params) {
+                  return params.dataIndex === 0
+                    ? "rgba(252, 141, 98, 1)"
+                    : "rgba(87, 181, 231, 1)";
+                },
+                borderRadius: 6,
+              },
+              label: {
+                show: true,
+                position: "top",
+                formatter: function (params) {
+                  return "$" + params.value.toLocaleString();
+                },
+                color: "#1f2937",
+              },
+            },
+          ],
+        };
+        myChart.setOption(option);
+        // Update values and chart on range input changes
+        function updateCalculator() {
+          const fleetSize = parseInt(fleetSizeRange.value);
+          const fuelCost = parseInt(fuelCostRange.value);
+          const savingsPercent = parseInt(savingsRange.value);
+          fleetSizeValue.textContent = fleetSize;
+          fuelCostValue.textContent = "$" + fuelCost.toLocaleString();
+          savingsValue.textContent = savingsPercent + "%";
+          const monthlyTotal = fleetSize * fuelCost;
+          const monthlySavingsAmount = monthlyTotal * (savingsPercent / 100);
+          const annualSavingsAmount = monthlySavingsAmount * 12;
+          totalCost.textContent = "$" + monthlyTotal.toLocaleString();
+          monthlySavings.textContent = "$" + monthlySavingsAmount.toLocaleString();
+          annualSavings.textContent = "$" + annualSavingsAmount.toLocaleString();
+          // Update chart
+          const annualTotal = monthlyTotal * 12;
+          const annualWithSavings = annualTotal - annualSavingsAmount;
+          option.series[0].data = [annualTotal, annualWithSavings];
+          myChart.setOption(option);
+        }
+        fleetSizeRange.addEventListener("input", updateCalculator);
+        fuelCostRange.addEventListener("input", updateCalculator);
+        savingsRange.addEventListener("input", updateCalculator);
+        // Initialize calculator
+        updateCalculator();
+        // Handle window resize for chart
+        window.addEventListener("resize", function () {
+          myChart.resize();
+        });
+      });
+    </script>
+
+<script id="stickyHeaderScript">
+  document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('header');
+      const headerHeight = header.offsetHeight;
+      const homeLink = document.getElementById('homeLink');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const solutionsBtn = document.getElementById('solutionsBtn');
+      const solutionsMenu = document.getElementById('solutionsMenu');
+      let isDropdownOpen = false;
+      function toggleDropdown() {
+          isDropdownOpen = !isDropdownOpen;
+          solutionsMenu.classList.toggle('hidden');
+          solutionsBtn.setAttribute('aria-expanded', isDropdownOpen);
+      }
+      solutionsBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          toggleDropdown();
+      });
+      solutionsBtn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggleDropdown();
+          } else if (e.key === 'Escape' && isDropdownOpen) {
+              toggleDropdown();
+          }
+      });
+      document.addEventListener('click', function(e) {
+          if (!solutionsBtn.contains(e.target) && isDropdownOpen) {
+              toggleDropdown();
+          }
+      });
+      const menuItems = solutionsMenu.querySelectorAll('a');
+      menuItems.forEach((item, index) => {
+          item.setAttribute('role', 'menuitem');
+          item.setAttribute('tabindex', '-1');
+          item.addEventListener('keydown', function(e) {
+              const items = Array.from(menuItems);
+              const currentIndex = items.indexOf(e.target);
+              if (e.key === 'ArrowDown') {
+                  e.preventDefault();
+                  const nextItem = items[(currentIndex + 1) % items.length];
+                  nextItem.focus();
+              } else if (e.key === 'ArrowUp') {
+                  e.preventDefault();
+                  const prevItem = items[(currentIndex - 1 + items.length) % items.length];
+                  prevItem.focus();
+              } else if (e.key === 'Escape') {
+                  toggleDropdown();
+                  solutionsBtn.focus();
+              }
+          });
+      });
+      homeLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
+          mobileMenu.classList.add('hidden');
+      });
+      function updateHeader() {
+          if (window.scrollY > 50) {
+              header.classList.add('shadow');
+          } else {
+              header.classList.remove('shadow');
+          }
+      }
+      window.addEventListener('scroll', updateHeader);
+      updateHeader();
+  });
+  </script>
+  </body>
+</html>

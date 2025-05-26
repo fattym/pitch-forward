@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Schedule a Consultation - TechSolutions</title>
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>tailwind.config={theme:{extend:{colors:{primary:'#0056b3',secondary:'#00a3e0'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+    <style>
+        :where([class^="ri-"])::before { content: "\f3c2"; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f9fafb;
+        }
+        input:focus, select:focus, textarea:focus {
+            outline: none;
+            border-color: #0056b3;
+            box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+        }
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        .calendar-day.available:hover {
+            background-color: #e0f2fe;
+            cursor: pointer;
+        }
+        .calendar-day.selected {
+            background-color: #0056b3;
+            color: white;
+        }
+        .calendar-day.unavailable {
+            color: #d1d5db;
+            cursor: not-allowed;
+        }
+        .custom-checkbox {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 4px;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .custom-checkbox:checked {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+        .custom-checkbox:checked::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 6px;
+            width: 6px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+        .custom-radio {
+            appearance: none;
+            -webkit-appearance: none;
+            width: 20px;
+            height: 20px;
+            border: 2px solid #d1d5db;
+            border-radius: 50%;
+            outline: none;
+            cursor: pointer;
+            position: relative;
+        }
+        .custom-radio:checked {
+            border-color: #0056b3;
+        }
+        .custom-radio:checked::after {
+            content: '';
+            position: absolute;
+            top: 3px;
+            left: 3px;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: #0056b3;
+        }
+        .custom-select {
+            appearance: none;
+            -webkit-appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.5rem center;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem;
+        }
+        .progress-step.active {
+            color: #0056b3;
+            border-color: #0056b3;
+        }
+        .progress-step.completed {
+            background-color: #0056b3;
+            color: white;
+            border-color: #0056b3;
+        }
+        .progress-line {
+            height: 2px;
+            background-color: #e5e7eb;
+            flex: 1;
+        }
+        .progress-line.active {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-sm fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+            <div class="flex items-center">
+                <a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-2xl font-['Pacifico'] text-primary">logo</a>
+            </div>
+            
+            <nav class="hidden md:flex space-x-8">
+                <a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+                <a href="#" class="nav-link text-gray-700 hover:text-primary font-medium">Services</a>
+                <a href="#" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+                <a href="#" class="nav-link text-gray-700 hover:text-primary font-medium">Testimonials</a>
+                <a href="#" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
+            </nav>
+            
+            <div class="flex items-center space-x-4">
+                <button class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+                <button class="md:hidden w-10 h-10 flex items-center justify-center">
+                    <i class="ri-menu-line text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-20">
+        <div class="container mx-auto px-4 max-w-5xl">
+            <!-- Page Header -->
+            <div class="mb-8 mt-8">
+                <div class="flex items-center mb-4">
+                    <a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="flex items-center text-gray-600 hover:text-primary transition-colors">
+                        <div class="w-6 h-6 flex items-center justify-center mr-1">
+                            <i class="ri-arrow-left-line"></i>
+                        </div>
+                        <span>Back to Home</span>
+                    </a>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Schedule a Consultation</h1>
+                <p class="text-lg text-gray-600 max-w-3xl">Book a personalized session with our technology experts to discuss your business needs and discover tailored solutions to drive efficiency, security, and growth.</p>
+            </div>
+            
+            <!-- Progress Indicator -->
+            <div class="flex items-center justify-between mb-12 max-w-2xl mx-auto">
+                <div class="flex flex-col items-center">
+                    <div class="progress-step completed w-10 h-10 rounded-full border-2 flex items-center justify-center font-semibold text-sm mb-2">1</div>
+                    <span class="text-sm font-medium text-primary">Information</span>
+                </div>
+                <div class="progress-line active"></div>
+                <div class="flex flex-col items-center">
+                    <div class="progress-step active w-10 h-10 rounded-full border-2 flex items-center justify-center font-semibold text-sm mb-2">2</div>
+                    <span class="text-sm font-medium text-primary">Schedule</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="flex flex-col items-center">
+                    <div class="progress-step w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center font-semibold text-sm text-gray-500 mb-2">3</div>
+                    <span class="text-sm font-medium text-gray-500">Confirmation</span>
+                </div>
+            </div>
+            
+            <!-- Form and Calendar Container -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                <!-- Left Column: Form -->
+                <div class="lg:col-span-5 bg-white p-6 rounded-lg shadow-sm">
+                    <h2 class="text-xl font-semibold mb-6">Your Information</h2>
+                    
+                    <form id="consultationForm">
+                        <div class="mb-5">
+                            <label for="fullName" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900" required>
+                        </div>
+                        
+                        <div class="mb-5">
+                            <label for="companyName" class="block text-sm font-medium text-gray-700 mb-1">Company Name *</label>
+                            <input type="text" id="companyName" name="companyName" class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900" required>
+                        </div>
+                        
+                        <div class="mb-5">
+                            <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Business Email *</label>
+                            <input type="email" id="email" name="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900" required>
+                        </div>
+                        
+                        <div class="mb-5">
+                            <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900" required>
+                        </div>
+                        
+                        <div class="mb-5">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Areas of Interest (Select all that apply) *</label>
+                            <div class="space-y-2 mt-2">
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="business-automation" name="interests" value="Business Automation" class="custom-checkbox">
+                                    <label for="business-automation" class="ml-2 text-gray-700">Business Automation</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="ip-telephony" name="interests" value="IP Telephony" class="custom-checkbox">
+                                    <label for="ip-telephony" class="ml-2 text-gray-700">IP Telephony</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="security" name="interests" value="Security" class="custom-checkbox">
+                                    <label for="security" class="ml-2 text-gray-700">Security</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="data-center" name="interests" value="Data Center Solutions" class="custom-checkbox">
+                                    <label for="data-center" class="ml-2 text-gray-700">Data Center Solutions</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="internet-connectivity" name="interests" value="Internet Connectivity" class="custom-checkbox">
+                                    <label for="internet-connectivity" class="ml-2 text-gray-700">Internet Connectivity</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="checkbox" id="power-infrastructure" name="interests" value="Power Infrastructure" class="custom-checkbox">
+                                    <label for="power-infrastructure" class="ml-2 text-gray-700">Power Infrastructure</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-5">
+                            <label class="block text-sm font-medium text-gray-700 mb-1">Preferred Meeting Format *</label>
+                            <div class="flex space-x-6 mt-2">
+                                <div class="flex items-center">
+                                    <input type="radio" id="virtual" name="meetingFormat" value="Virtual" class="custom-radio" checked>
+                                    <label for="virtual" class="ml-2 text-gray-700">Virtual Meeting</label>
+                                </div>
+                                <div class="flex items-center">
+                                    <input type="radio" id="in-person" name="meetingFormat" value="In-person" class="custom-radio">
+                                    <label for="in-person" class="ml-2 text-gray-700">In-person Meeting</label>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-5">
+                            <label for="notes" class="block text-sm font-medium text-gray-700 mb-1">Additional Notes (Optional)</label>
+                            <textarea id="notes" name="notes" rows="3" class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 resize-none"></textarea>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Right Column: Calendar and Details -->
+                <div class="lg:col-span-7">
+                    <!-- Calendar Widget -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm mb-6">
+                        <div class="flex justify-between items-center mb-6">
+                            <h2 class="text-xl font-semibold">Select a Date & Time</h2>
+                            <div class="relative">
+                                <select id="timezone" class="custom-select border border-gray-300 rounded-lg px-4 py-2 text-gray-700 bg-white text-sm">
+                                    <option value="UTC-8">Pacific Time (UTC-8)</option>
+                                    <option value="UTC-7">Mountain Time (UTC-7)</option>
+                                    <option value="UTC-6">Central Time (UTC-6)</option>
+                                    <option value="UTC-5">Eastern Time (UTC-5)</option>
+                                    <option value="UTC+0">UTC</option>
+                                    <option value="UTC+1">Central European Time (UTC+1)</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-6">
+                            <div class="flex justify-between items-center mb-4">
+                                <button id="prevMonth" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary">
+                                    <i class="ri-arrow-left-s-line text-xl"></i>
+                                </button>
+                                <h3 id="currentMonth" class="text-lg font-medium">May 2025</h3>
+                                <button id="nextMonth" class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary">
+                                    <i class="ri-arrow-right-s-line text-xl"></i>
+                                </button>
+                            </div>
+                            
+                            <div class="grid grid-cols-7 gap-1 text-center mb-2">
+                                <div class="text-sm font-medium text-gray-500">Sun</div>
+                                <div class="text-sm font-medium text-gray-500">Mon</div>
+                                <div class="text-sm font-medium text-gray-500">Tue</div>
+                                <div class="text-sm font-medium text-gray-500">Wed</div>
+                                <div class="text-sm font-medium text-gray-500">Thu</div>
+                                <div class="text-sm font-medium text-gray-500">Fri</div>
+                                <div class="text-sm font-medium text-gray-500">Sat</div>
+                            </div>
+                            
+                            <div id="calendarDays" class="grid grid-cols-7 gap-1">
+                                <!-- Calendar days will be populated by JavaScript -->
+                            </div>
+                        </div>
+                        
+                        <div id="timeSlots" class="mt-6">
+                            <h3 class="text-lg font-medium mb-4">Available Time Slots for <span id="selectedDate">Saturday, May 24, 2025</span></h3>
+                            <div class="grid grid-cols-3 gap-2">
+                                <button class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors">9:00 AM</button>
+                                <button class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors">9:30 AM</button>
+                                <button class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors">10:00 AM</button>
+                                <button class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors">10:30 AM</button>
+                                <button class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors">11:00 AM</button>
+                                <button class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors">11:30 AM</button>
+                                <button class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors">1:00 PM</button>
+                                <button class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors">1:30 PM</button>
+                                <button class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors">2:00 PM</button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Consultation Details -->
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h2 class="text-xl font-semibold mb-4">Consultation Details</h2>
+                        
+                        <div class="mb-4 flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3 flex-shrink-0 mt-1">
+                                <i class="ri-time-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">Duration</h3>
+                                <p class="text-gray-600">45 minutes with a TechSolutions expert</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4 flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3 flex-shrink-0 mt-1">
+                                <i class="ri-file-list-3-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">What to Prepare</h3>
+                                <p class="text-gray-600">A brief overview of your current technology infrastructure and key challenges you're facing. Any specific questions you'd like addressed during the consultation.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="mb-4 flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3 flex-shrink-0 mt-1">
+                                <i class="ri-road-map-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">Consultation Process</h3>
+                                <p class="text-gray-600">Our expert will discuss your business needs, assess your current technology setup, and recommend tailored solutions to address your specific challenges.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3 flex-shrink-0 mt-1">
+                                <i class="ri-calendar-check-line text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-medium">After Booking</h3>
+                                <p class="text-gray-600">You'll receive a confirmation email with meeting details and a calendar invite. Our team may reach out for additional information to make the consultation more productive.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <!-- Action Section -->
+    <div class="fixed bottom-0 left-0 right-0 bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] py-4 z-40">
+        <div class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center">
+            <div class="text-sm text-gray-500 mb-4 sm:mb-0">
+                <div class="flex items-center">
+                    <div class="w-5 h-5 flex items-center justify-center mr-1">
+                        <i class="ri-shield-check-line text-primary"></i>
+                    </div>
+                    <span>Your information is secure and will not be shared with third parties.</span>
+                </div>
+            </div>
+            <div class="flex items-center">
+                <a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-gray-500 hover:text-gray-700 mr-6">Cancel</a>
+                <button id="scheduleButton" class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Schedule Consultation</button>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Confirmation Modal (Initially Hidden) -->
+    <div id="confirmationModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden">
+        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+            <div class="text-center mb-6">
+                <div class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="ri-check-line text-green-500 text-4xl"></i>
+                </div>
+                <h2 class="text-2xl font-bold text-gray-900 mb-2">Consultation Scheduled!</h2>
+                <p class="text-gray-600">Your consultation has been successfully scheduled for:</p>
+                <p class="text-lg font-medium text-primary mt-2" id="confirmationDateTime">Saturday, May 24, 2025 at 10:00 AM (Pacific Time)</p>
+            </div>
+            
+            <div class="mb-6 bg-gray-50 p-4 rounded-lg">
+                <h3 class="font-medium mb-2">Consultation Details:</h3>
+                <ul class="space-y-2 text-sm text-gray-700">
+                    <li class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center mr-2 mt-0.5">
+                            <i class="ri-user-line text-primary"></i>
+                        </div>
+                        <span id="confirmName">John Smith</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center mr-2 mt-0.5">
+                            <i class="ri-building-line text-primary"></i>
+                        </div>
+                        <span id="confirmCompany">Acme Corporation</span>
+                    </li>
+                    <li class="flex items-start">
+                        <div class="w-5 h-5 flex items-center justify-center mr-2 mt-0.5">
+                            <i class="ri-calendar-line text-primary"></i>
+                        </div>
+                        <span id="confirmFormat">Virtual Meeting</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <p class="text-gray-600 text-sm mb-6">A confirmation email has been sent to <span id="confirmEmail" class="font-medium">john.smith@acme.com</span> with all the details.</p>
+            
+            <div class="flex flex-col space-y-3">
+                <button class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Add to Calendar</button>
+                <a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-center text-gray-600 hover:text-primary transition-colors">Return to Homepage</a>
+            </div>
+        </div>
+    </div>
+
+    <script id="calendarScript">
+        document.addEventListener('DOMContentLoaded', function() {
+            const calendarDays = document.getElementById('calendarDays');
+            const currentMonthElement = document.getElementById('currentMonth');
+            const prevMonthButton = document.getElementById('prevMonth');
+            const nextMonthButton = document.getElementById('nextMonth');
+            const selectedDateElement = document.getElementById('selectedDate');
+            
+            // Current date
+            const today = new Date(2025, 4, 24); // May 24, 2025
+            let currentMonth = today.getMonth();
+            let currentYear = today.getFullYear();
+            
+            // Unavailable dates (weekends and specific dates)
+            const unavailableDates = [
+                new Date(2025, 4, 26).toDateString(),
+                new Date(2025, 4, 27).toDateString(),
+                new Date(2025, 4, 28).toDateString()
+            ];
+            
+            function generateCalendar() {
+                calendarDays.innerHTML = '';
+                
+                const firstDay = new Date(currentYear, currentMonth, 1);
+                const lastDay = new Date(currentYear, currentMonth + 1, 0);
+                const daysInMonth = lastDay.getDate();
+                const startingDay = firstDay.getDay(); // 0 = Sunday
+                
+                currentMonthElement.textContent = firstDay.toLocaleString('default', { month: 'long', year: 'numeric' });
+                
+                // Add empty cells for days before the first day of the month
+                for (let i = 0; i < startingDay; i++) {
+                    const emptyDay = document.createElement('div');
+                    emptyDay.classList.add('h-10', 'flex', 'items-center', 'justify-center');
+                    calendarDays.appendChild(emptyDay);
+                }
+                
+                // Add cells for each day of the month
+                for (let day = 1; day <= daysInMonth; day++) {
+                    const date = new Date(currentYear, currentMonth, day);
+                    const dateString = date.toDateString();
+                    const isWeekend = date.getDay() === 0 || date.getDay() === 6;
+                    const isUnavailable = unavailableDates.includes(dateString) || isWeekend || date < today;
+                    const isToday = date.toDateString() === today.toDateString();
+                    
+                    const dayElement = document.createElement('div');
+                    dayElement.classList.add('calendar-day', 'h-10', 'flex', 'items-center', 'justify-center', 'rounded-full', 'text-sm');
+                    dayElement.textContent = day;
+                    
+                    if (isUnavailable) {
+                        dayElement.classList.add('unavailable');
+                    } else {
+                        dayElement.classList.add('available');
+                        dayElement.addEventListener('click', function() {
+                            document.querySelectorAll('.calendar-day.selected').forEach(el => {
+                                el.classList.remove('selected');
+                            });
+                            dayElement.classList.add('selected');
+                            
+                            const selectedDate = new Date(currentYear, currentMonth, day);
+                            selectedDateElement.textContent = selectedDate.toLocaleDateString('en-US', { 
+                                weekday: 'long', 
+                                month: 'long', 
+                                day: 'numeric', 
+                                year: 'numeric' 
+                            });
+                        });
+                    }
+                    
+                    if (isToday) {
+                        dayElement.classList.add('selected', 'bg-primary', 'text-white');
+                    }
+                    
+                    calendarDays.appendChild(dayElement);
+                }
+            }
+            
+            prevMonthButton.addEventListener('click', function() {
+                if (currentMonth === today.getMonth() && currentYear === today.getFullYear()) {
+                    return; // Don't allow going before current month
+                }
+                
+                currentMonth--;
+                if (currentMonth < 0) {
+                    currentMonth = 11;
+                    currentYear--;
+                }
+                generateCalendar();
+            });
+            
+            nextMonthButton.addEventListener('click', function() {
+                currentMonth++;
+                if (currentMonth > 11) {
+                    currentMonth = 0;
+                    currentYear++;
+                }
+                generateCalendar();
+            });
+            
+            // Initialize calendar
+            generateCalendar();
+            
+            // Time slot selection
+            const timeSlots = document.querySelectorAll('.time-slot');
+            timeSlots.forEach(slot => {
+                slot.addEventListener('click', function() {
+                    timeSlots.forEach(s => {
+                        s.classList.remove('bg-primary', 'text-white', 'border-primary');
+                    });
+                    slot.classList.add('bg-primary', 'text-white', 'border-primary');
+                });
+            });
+        });
+    </script>
+
+    <script id="formScript">
+        document.addEventListener('DOMContentLoaded', function() {
+            const scheduleButton = document.getElementById('scheduleButton');
+            const confirmationModal = document.getElementById('confirmationModal');
+            const form = document.getElementById('consultationForm');
+            
+            // Form validation and submission
+            scheduleButton.addEventListener('click', function() {
+                // Basic validation
+                const fullName = document.getElementById('fullName').value;
+                const companyName = document.getElementById('companyName').value;
+                const email = document.getElementById('email').value;
+                const phone = document.getElementById('phone').value;
+                
+                // Check if at least one interest is selected
+                const interests = document.querySelectorAll('input[name="interests"]:checked');
+                const selectedTimeSlot = document.querySelector('.time-slot.bg-primary');
+                
+                if (!fullName || !companyName || !email || !phone) {
+                    alert('Please fill in all required fields.');
+                    return;
+                }
+                
+                if (interests.length === 0) {
+                    alert('Please select at least one area of interest.');
+                    return;
+                }
+                
+                if (!selectedTimeSlot) {
+                    alert('Please select a time slot for your consultation.');
+                    return;
+                }
+                
+                // Update confirmation modal with form data
+                document.getElementById('confirmName').textContent = fullName;
+                document.getElementById('confirmCompany').textContent = companyName;
+                document.getElementById('confirmEmail').textContent = email;
+                
+                const meetingFormat = document.querySelector('input[name="meetingFormat"]:checked').value;
+                document.getElementById('confirmFormat').textContent = meetingFormat + ' Meeting';
+                
+                const selectedDate = document.getElementById('selectedDate').textContent;
+                const selectedTime = selectedTimeSlot.textContent;
+                const timezone = document.getElementById('timezone').options[document.getElementById('timezone').selectedIndex].text;
+                document.getElementById('confirmationDateTime').textContent = `${selectedDate} at ${selectedTime} (${timezone})`;
+                
+                // Show confirmation modal
+                confirmationModal.classList.remove('hidden');
+            });
+            
+            // Close modal when clicking outside
+            confirmationModal.addEventListener('click', function(e) {
+                if (e.target === confirmationModal) {
+                    confirmationModal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

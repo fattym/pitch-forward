@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Logistics Management Solutions - TechSolutions</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0056b3',secondary:'#00a3e0'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+@keyframes scaleIn {
+from {
+opacity: 0;
+transform: scale(0.9);
+}
+to {
+opacity: 1;
+transform: scale(1);
+}
+}
+@keyframes slideInRight {
+from {
+opacity: 0;
+transform: translateX(30px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+.animate-fadeInUp {
+opacity: 0;
+animation: fadeInUp 0.6s ease-out forwards;
+}
+.animate-scaleIn {
+opacity: 0;
+animation: scaleIn 0.5s ease-out forwards;
+}
+.animate-slideInRight {
+opacity: 0;
+animation: slideInRight 0.5s ease-out forwards;
+}
+.delay-100 { animation-delay: 0.1s; }
+.delay-200 { animation-delay: 0.2s; }
+.delay-300 { animation-delay: 0.3s; }
+.delay-400 { animation-delay: 0.4s; }
+.delay-500 { animation-delay: 0.5s; }
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=modern%2520logistics%2520and%2520transportation%2520hub%2520with%2520cargo%2520containers%252C%2520trucks%252C%2520and%2520automated%2520machinery%2520in%2520operation.%2520The%2520scene%2520shows%2520a%2520sophisticated%2520logistics%2520facility%2520with%2520advanced%2520technology%2520integration%252C%2520featuring%2520container%2520cranes%252C%2520automated%2520guided%2520vehicles%252C%2520and%2520smart%2520tracking%2520systems.%2520The%2520left%2520side%2520has%2520a%2520dark%2520gradient%2520overlay%2520for%2520text%2520contrast%252C%2520while%2520the%2520right%2520shows%2520the%2520dynamic%2520logistics%2520operations.%2520The%2520lighting%2520creates%2520a%2520professional%2520and%2520high-tech%2520atmosphere.&width=1920&height=800&seq=logistics-hero-new&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(0,20,50,0.85) 0%, rgba(0,20,50,0.7) 50%, rgba(0,20,50,0.4) 100%);
+}
+.feature-card {
+transition: all 0.3s ease;
+}
+.feature-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.case-study-card {
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.testimonial-card {
+transition: transform 0.3s ease;
+}
+.testimonial-card:hover {
+transform: translateY(-5px);
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #0056b3;
+border-color: #0056b3;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+top: 3px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #0056b3;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+input:focus, button:focus {
+outline: none;
+ring: 2px;
+ring-color: #0056b3;
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+}
+.custom-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+border-radius: 34px;
+}
+.slider:before {
+position: absolute;
+content: "";
+height: 16px;
+width: 16px;
+left: 4px;
+bottom: 4px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .slider {
+background-color: #0056b3;
+}
+input:checked + .slider:before {
+transform: translateX(26px);
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Header Navigation -->
+<header class="bg-white shadow-sm fixed w-full z-50">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center">
+          <a href="./index.html" class="text-2xl font-['Righteous'] text-primary">Pitch Forward</a>
+      </div>
+      <nav class="hidden md:flex space-x-8">
+          <a href="./index.html" id="homeLink" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+          <div class="relative" id="solutionsDropdown">
+              <button id="solutionsBtn" class="nav-link text-gray-700 hover:text-primary font-medium flex items-center" aria-expanded="false" aria-haspopup="true">
+                  Solutions
+                  <i class="ri-arrow-down-s-line ml-1"></i>
+              </button>
+              <div id="solutionsMenu" class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden" role="menu" aria-labelledby="solutionsBtn">
+                  <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-footprint-line w-5 h-5 mr-3"></i>
+                      Fleet Management
+                  </a>
+                  <a href="./Fuel-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-gas-station-line w-5 h-5 mr-3"></i>
+                      Fuel Management
+                  </a>
+                  <a href="./Logistics-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-truck-line w-5 h-5 mr-3"></i>
+                      Logistics Management
+                  </a>
+                  <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-phone-line w-5 h-5 mr-3"></i>
+                      Telecommunication
+                  </a>
+                  <a href="./Security-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-shield-keyhole-line w-5 h-5 mr-3"></i>
+                      Security
+                  </a>
+                  <a href="./Data-&-Power-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-database-2-line w-5 h-5 mr-3"></i>
+                      Data & Power
+                  </a>
+                  <a href="./Internet-&-Connectivity-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-wifi-line w-5 h-5 mr-3"></i>
+                      Internet & Connectivity
+                  </a>
+                  <a href="./Mining-Technology-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-mine-line w-5 h-5 mr-3"></i>
+                      Mining
+                  </a>
+                  <a href="./Warehousing-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-store-2-line w-5 h-5 mr-3"></i>
+                      Warehousing
+                  </a>
+              </div>
+          </div>
+          <a href="#industries" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+          <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+          <div class="relative hidden md:block">
+              <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm focus:border-primary">
+              <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+                  <i class="ri-search-line"></i>
+              </div>
+          </div>
+          <!-- Contact Us Button always visible on desktop, and on mobile triggers modal -->
+          <button id="contactUsBtn" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 block md:block">Contact Us</button>
+          <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
+              <div class="bg-white rounded-lg w-full max-w-xl mx-4 relative">
+                  <button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+                      <i class="ri-close-line text-2xl"></i>
+                  </button>
+                  <div class="max-h-[100vh] overflow-x-auto p-4 md:p-8">
+                      <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
+                      <form id="contactForm" action="" method="POST">
+                          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                              <div>
+                                  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                  <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                              </div>
+                              <div>
+                                  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                  <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                              </div>
+                              <div>
+                                  <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                  <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                              </div>
+                              <div>
+                                  <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+                                  <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                              </div>
+                          </div>
+                          <div class="mb-4">
+                              <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
+                              <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary pr-8">
+                                <option value="">Select a service</option>
+                                <option value="fleet">Fleet Management</option>
+                                <option value="fuel">Fuel Management</option>
+                                <option value="logistics">Logistics Management</option>
+                                <option value="telecommunication">Telecommunication</option>
+                                <option value="security">Security</option>
+                                <option value="data-power">Data &amp; Power</option>
+                                <option value="internet-connectivity">Internet &amp; Connectivity</option>
+                                <option value="mining">Mining</option>
+                                <option value="warehousing">Warehousing</option>
+                                <option value="other">Other</option>
+                              </select>
+                          </div>
+                          <div class="mb-6">
+                              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                              <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
+                          </div>
+                          <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Submit</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
+              <i class="ri-menu-line text-xl"></i>
+          </button>
+      </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-lg z-50">
+      <nav class="container mx-auto px-4 py-4">
+          <a href="index.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
+          <div class="relative">
+              <button id="mobileSolutionsBtn" class="w-full flex items-center justify-between py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">
+                  Solutions
+                  <i class="ri-arrow-down-s-line"></i>
+              </button>
+              <div id="mobileSolutionsMenu" class="hidden bg-gray-50 px-4 py-2">
+                  <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Fleet Management</a>
+                  <a href="./Fuel-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Fuel Management</a>
+                  <a href="./Logistics-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Logistics Management</a>
+                  <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Telecommunication</a>
+                  <a href="./Security-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Security</a>
+                  <a href="./Data-&-Power-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Data & Power</a>
+                  <a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
+                  <a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
+                  <a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
+              </div>
+          </div>
+          <a href="#industries" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
+          <a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
+          <div class="mt-4">
+              <!-- Contact Us Button in mobile menu triggers modal -->
+              <button id="mobileContactUsBtn" class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+          </div>
+      </nav>
+  </div>
+</header>
+<!-- Hero Section -->
+<section class="hero-section w-full h-[800px] relative">
+<div class="hero-overlay absolute inset-0"></div>
+<div class="container mx-auto px-4 h-full flex items-center relative z-10">
+<div class="w-full md:w-1/2 text-white">
+<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">Advanced Logistics Management Solutions</h1>
+<p class="text-lg sm:text-xl md:text-2xl mb-8 opacity-90">Optimize your supply chain with real-time tracking, route optimization, and inventory management solutions.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 text-lg">Get Started</button>
+<button class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300 text-lg">Schedule Demo</button>
+</div>
+<div class="mt-12 flex flex-wrap items-center gap-6">
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3">
+<i class="ri-truck-line text-white"></i>
+</div>
+<span class="text-sm md:text-base">99.8% On-time Delivery</span>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3">
+<i class="ri-route-line text-white"></i>
+</div>
+<span class="text-sm md:text-base">40% Route Optimization</span>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3">
+<i class="ri-money-dollar-circle-line text-white"></i>
+</div>
+<span class="text-sm md:text-base">30% Cost Reduction</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Key Features Section -->
+<section id="features" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Comprehensive Logistics & Container Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our integrated platform provides end-to-end logistics management and premium shipping container solutions for your business needs.</p>
+</div>
+<div class="space-y-8">
+<!-- First Row Features -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="feature-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-route-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Fleet Tracking & Management</h3>
+<p class="text-gray-600 mb-4">Real-time GPS tracking and telematics for complete visibility of your fleet's location, status, and performance metrics.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Live vehicle tracking with ETA updates</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Driver behavior monitoring</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Maintenance scheduling & alerts</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Fuel consumption optimization</span>
+</li>
+</ul>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<div class="feature-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-map-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Route Optimization</h3>
+<p class="text-gray-600 mb-4">AI-powered route planning that considers traffic, weather, delivery windows, and vehicle constraints to maximize efficiency.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Multi-stop route optimization</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Real-time traffic integration</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Delivery time window management</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Dynamic re-routing capabilities</span>
+</li>
+</ul>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<div class="feature-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-stack-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Inventory Management</h3>
+<p class="text-gray-600 mb-4">Comprehensive inventory control system with real-time stock levels, automated reordering, and warehouse optimization.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Real-time inventory visibility</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Barcode & RFID integration</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Automated reordering system</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Warehouse space optimization</span>
+</li>
+</ul>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Second Row - Container Sales Card -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="feature-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-ship-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Shipping Containers</h3>
+<p class="text-gray-600 mb-4">New and used shipping containers available for purchase, with customization options to meet your specific requirements.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">20ft & 40ft containers</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">High-cube options</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Custom modifications</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Certification included</span>
+</li>
+</ul>
+<button class="text-primary font-medium flex items-center hover:underline">
+View Container Inventory
+<i class="ri-arrow-right-line ml-2"></i>
+</button>
+</div>
+<div class="feature-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-route-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Fleet Tracking & Management</h3>
+<p class="text-gray-600 mb-4">Real-time GPS tracking and telematics for complete visibility of your fleet's location, status, and performance metrics.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Live vehicle tracking with ETA updates</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Driver behavior monitoring</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Maintenance scheduling & alerts</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Fuel consumption optimization</span>
+</li>
+</ul>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Feature Card 2 -->
+<div class="feature-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-map-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Route Optimization</h3>
+<p class="text-gray-600 mb-4">AI-powered route planning that considers traffic, weather, delivery windows, and vehicle constraints to maximize efficiency.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Multi-stop route optimization</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Real-time traffic integration</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Delivery time window management</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Dynamic re-routing capabilities</span>
+</li>
+</ul>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Feature Card 3 -->
+<div class="feature-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-stack-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Inventory Management</h3>
+<p class="text-gray-600 mb-4">Comprehensive inventory control system with real-time stock levels, automated reordering, and warehouse optimization.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Real-time inventory visibility</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Barcode & RFID integration</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Automated reordering system</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Warehouse space optimization</span>
+</li>
+</ul>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits & ROI Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 animate-fadeInUp">Measurable Business Impact</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto animate-fadeInUp delay-100">Our logistics management solutions deliver quantifiable results that directly impact your operational efficiency and bottom line.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Metric 1 -->
+<div class="bg-white p-8 rounded-lg shadow-sm text-center stat-item">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mx-auto mb-6">
+<i class="ri-gas-station-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-4xl font-bold text-primary mb-2">30%</h3>
+<p class="text-xl font-semibold mb-2">Reduced Fuel Costs</p>
+<p class="text-gray-600">Optimize routes and driving behavior to significantly lower fuel consumption.</p>
+</div>
+<!-- Metric 2 -->
+<div class="bg-white p-8 rounded-lg shadow-sm text-center">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mx-auto mb-6">
+<i class="ri-route-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-4xl font-bold text-primary mb-2">40%</h3>
+<p class="text-xl font-semibold mb-2">Improved Route Efficiency</p>
+<p class="text-gray-600">AI-powered route optimization that reduces travel time and increases deliveries per day.</p>
+</div>
+<!-- Metric 3 -->
+<div class="bg-white p-8 rounded-lg shadow-sm text-center">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mx-auto mb-6">
+<i class="ri-money-dollar-circle-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-4xl font-bold text-primary mb-2">25%</h3>
+<p class="text-xl font-semibold mb-2">Lower Operating Costs</p>
+<p class="text-gray-600">Streamline operations and reduce manual processes to cut overall logistics expenses.</p>
+</div>
+<!-- Metric 4 -->
+<div class="bg-white p-8 rounded-lg shadow-sm text-center">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mx-auto mb-6">
+<i class="ri-check-double-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-4xl font-bold text-primary mb-2">99.9%</h3>
+<p class="text-xl font-semibold mb-2">Delivery Accuracy</p>
+<p class="text-gray-600">Ensure on-time, accurate deliveries with real-time tracking and verification systems.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Solution Demo Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Interactive Logistics Solution</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Experience how our integrated platform provides complete visibility and control over your entire logistics operation.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-12 items-center">
+<div class="w-full lg:w-1/2 bg-gray-100 rounded-lg overflow-hidden shadow-md relative">
+<div style="background-image: url('https://readdy.ai/api/search-image?query=logistics%2520management%2520dashboard%2520interface%2520showing%2520maps%252C%2520delivery%2520routes%252C%2520vehicle%2520tracking%252C%2520and%2520analytics%2520charts.%2520The%2520interface%2520has%2520a%2520professional%2520design%2520with%2520blue%2520accents%252C%2520clear%2520data%2520visualization%252C%2520and%2520a%2520user-friendly%2520layout.%2520The%2520screen%2520shows%2520multiple%2520vehicles%2520on%2520a%2520map%2520with%2520status%2520indicators%2520and%2520performance%2520metrics.&width=800&height=600&seq=logistics-dashboard&orientation=landscape')" class="w-full h-96 bg-cover bg-center"></div>
+<div class="absolute top-4 left-4 bg-primary text-white px-4 py-2 rounded-full text-sm font-medium">Live Demo</div>
+</div>
+<div class="w-full lg:w-1/2">
+<h3 class="text-2xl font-bold mb-6">Comprehensive Command Center</h3>
+<p class="text-gray-600 mb-8">Our intuitive dashboard provides a centralized view of your entire logistics operation, enabling real-time decision making and proactive management.</p>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-dashboard-3-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-2">Unified Dashboard</h4>
+<p class="text-gray-600">Single interface for monitoring fleet location, inventory levels, delivery status, and key performance metrics.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-notification-3-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-2">Real-time Alerts</h4>
+<p class="text-gray-600">Instant notifications for delays, deviations, maintenance needs, and inventory thresholds.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-bar-chart-grouped-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-2">Advanced Analytics</h4>
+<p class="text-gray-600">Powerful reporting tools with customizable KPIs to identify trends and optimization opportunities.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-smartphone-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-2">Mobile Accessibility</h4>
+<p class="text-gray-600">Access your logistics data anywhere, anytime with our responsive mobile application.</p>
+</div>
+</div>
+</div>
+<div class="mt-10">
+<button class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Schedule Live Demo</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Performance Analytics Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Performance Analytics</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Gain actionable insights from comprehensive data analysis to continuously improve your logistics operations.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div>
+<div class="bg-white p-6 rounded-lg shadow-sm mb-8">
+<h3 class="text-xl font-semibold mb-4">Delivery Performance Trends</h3>
+<div id="deliveryChart" class="w-full h-80"></div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-semibold mb-4">Cost Optimization Impact</h3>
+<div id="costChart" class="w-full h-80"></div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm">
+<h3 class="text-xl font-semibold mb-6">Key Performance Indicators</h3>
+<div class="space-y-8">
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-gray-700 font-medium">On-Time Delivery Rate</span>
+<span class="text-primary font-semibold">98.7%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 98.7%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-gray-700 font-medium">Fleet Utilization</span>
+<span class="text-primary font-semibold">92.4%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 92.4%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-gray-700 font-medium">Inventory Accuracy</span>
+<span class="text-primary font-semibold">99.3%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 99.3%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-gray-700 font-medium">Order Fulfillment Rate</span>
+<span class="text-primary font-semibold">97.8%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 97.8%"></div>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-gray-700 font-medium">Average Delivery Time</span>
+<span class="text-primary font-semibold">-28.5%</span>
+</div>
+<div class="w-full bg-gray-200 rounded-full h-2.5">
+<div class="bg-primary h-2.5 rounded-full" style="width: 71.5%"></div>
+</div>
+<p class="text-sm text-gray-500 mt-1">28.5% reduction compared to industry average</p>
+</div>
+<div class="pt-4 border-t border-gray-100">
+<h4 class="text-lg font-semibold mb-4">Customizable Reporting</h4>
+<p class="text-gray-600 mb-4">Create personalized reports with the metrics that matter most to your business.</p>
+<div class="flex flex-wrap gap-3">
+<div class="flex items-center">
+<input type="checkbox" id="kpi1" class="custom-checkbox mr-2" checked>
+<label for="kpi1" class="text-gray-700">Fuel Efficiency</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="kpi2" class="custom-checkbox mr-2" checked>
+<label for="kpi2" class="text-gray-700">Driver Performance</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="kpi3" class="custom-checkbox mr-2">
+<label for="kpi3" class="text-gray-700">Maintenance Costs</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="kpi4" class="custom-checkbox mr-2">
+<label for="kpi4" class="text-gray-700">Carbon Emissions</label>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Studies Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4 animate-fadeInUp">Success Stories</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto animate-fadeInUp delay-100">See how leading companies have transformed their logistics operations with our solutions.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Case Study 1 -->
+<div class="case-study-card bg-white rounded-lg overflow-hidden animate-scaleIn delay-100">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520retail%2520distribution%2520center%2520with%2520workers%2520using%2520digital%2520tablets%2520for%2520inventory%2520management.%2520The%2520warehouse%2520is%2520well-organized%2520with%2520clear%2520aisles%2520and%2520stacked%2520products.%2520Workers%2520are%2520scanning%2520barcodes%2520and%2520monitoring%2520inventory%2520on%2520mobile%2520devices.%2520The%2520environment%2520is%2520clean%2520and%2520professional%2520with%2520good%2520lighting.&width=600&height=400&seq=retail-case-study&orientation=landscape" alt="Global Retail Distribution" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mr-3">
+<i class="ri-store-2-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold">Global Retail Distribution</h3>
+</div>
+<p class="text-gray-600 mb-4">A leading retail chain optimized their distribution network across 200+ locations, resulting in significant improvements.</p>
+<div class="space-y-2 mb-6">
+<div class="flex items-center justify-between">
+<span class="text-gray-600">Delivery Time</span>
+<div class="flex items-center">
+<span class="text-red-500 line-through mr-2">48 hrs</span>
+<span class="text-green-600 font-medium">24 hrs</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-gray-600">Logistics Costs</span>
+<div class="flex items-center">
+<span class="text-red-500 line-through mr-2">$4.2M</span>
+<span class="text-green-600 font-medium">$2.8M</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-gray-600">Inventory Accuracy</span>
+<div class="flex items-center">
+<span class="text-red-500 line-through mr-2">92%</span>
+<span class="text-green-600 font-medium">99.6%</span>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-100 pt-4">
+<p class="italic text-gray-600 mb-4">"The logistics platform has revolutionized our distribution capabilities, allowing us to fulfill orders faster while reducing costs."</p>
+<div class="flex items-center">
+<div class="w-10 h-10 bg-gray-200 rounded-full mr-3 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520a%2520female%2520executive%2520in%2520business%2520attire%2520with%2520a%2520neutral%2520background&width=100&height=100&seq=exec1&orientation=squarish" alt="Sarah Johnson" class="w-full h-full object-cover">
+</div>
+<div>
+<p class="font-medium">Sarah Johnson</p>
+<p class="text-sm text-gray-500">VP of Operations</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Case Study 2 -->
+<div class="case-study-card bg-white rounded-lg overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520food%2520distribution%2520facility%2520with%2520temperature-controlled%2520storage%2520and%2520workers%2520managing%2520inventory%2520with%2520digital%2520devices.%2520The%2520facility%2520shows%2520organized%2520food%2520products%2520on%2520shelves%2520and%2520in%2520refrigerated%2520areas.%2520Workers%2520are%2520using%2520tablets%2520to%2520track%2520inventory%2520and%2520monitor%2520temperatures.%2520The%2520environment%2520is%2520clean%2520and%2520follows%2520food%2520safety%2520protocols.&width=600&height=400&seq=food-case-study&orientation=landscape" alt="Food & Beverage Distribution" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mr-3">
+<i class="ri-restaurant-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold">Food & Beverage Distribution</h3>
+</div>
+<p class="text-gray-600 mb-4">A national food distributor implemented our cold chain logistics solution to ensure product quality and reduce waste.</p>
+<div class="space-y-2 mb-6">
+<div class="flex items-center justify-between">
+<span class="text-gray-600">Product Spoilage</span>
+<div class="flex items-center">
+<span class="text-red-500 line-through mr-2">8.5%</span>
+<span class="text-green-600 font-medium">1.2%</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-gray-600">Temperature Deviations</span>
+<div class="flex items-center">
+<span class="text-red-500 line-through mr-2">12/day</span>
+<span class="text-green-600 font-medium">0.3/day</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-gray-600">Delivery Compliance</span>
+<div class="flex items-center">
+<span class="text-red-500 line-through mr-2">91%</span>
+<span class="text-green-600 font-medium">99.8%</span>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-100 pt-4">
+<p class="italic text-gray-600 mb-4">"The real-time temperature monitoring and alerts have been game-changing for our perishable goods distribution."</p>
+<div class="flex items-center">
+<div class="w-10 h-10 bg-gray-200 rounded-full mr-3 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520a%2520male%2520executive%2520in%2520business%2520casual%2520attire%2520with%2520a%2520neutral%2520background&width=100&height=100&seq=exec2&orientation=squarish" alt="Michael Rodriguez" class="w-full h-full object-cover">
+</div>
+<div>
+<p class="font-medium">Michael Rodriguez</p>
+<p class="text-sm text-gray-500">Supply Chain Director</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Case Study 3 -->
+<div class="case-study-card bg-white rounded-lg overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520e-commerce%2520fulfillment%2520center%2520with%2520automated%2520sorting%2520systems%2520and%2520workers%2520preparing%2520packages%2520for%2520shipping.%2520The%2520warehouse%2520shows%2520conveyor%2520belts%252C%2520packaging%2520stations%252C%2520and%2520organized%2520shelving%2520with%2520products.%2520Workers%2520are%2520using%2520digital%2520devices%2520to%2520scan%2520and%2520process%2520orders.%2520The%2520facility%2520is%2520modern%2520with%2520good%2520lighting%2520and%2520clear%2520organization.&width=600&height=400&seq=ecommerce-case-study&orientation=landscape" alt="E-commerce Fulfillment" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mr-3">
+<i class="ri-shopping-cart-2-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold">E-commerce Fulfillment</h3>
+</div>
+<p class="text-gray-600 mb-4">A fast-growing e-commerce company scaled their operations with our integrated logistics and inventory management system.</p>
+<div class="space-y-2 mb-6">
+<div class="flex items-center justify-between">
+<span class="text-gray-600">Order Processing Time</span>
+<div class="flex items-center">
+<span class="text-red-500 line-through mr-2">6 hrs</span>
+<span class="text-green-600 font-medium">45 min</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-gray-600">Order Accuracy</span>
+<div class="flex items-center">
+<span class="text-red-500 line-through mr-2">94%</span>
+<span class="text-green-600 font-medium">99.9%</span>
+</div>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-gray-600">Customer Satisfaction</span>
+<div class="flex items-center">
+<span class="text-red-500 line-through mr-2">3.8/5</span>
+<span class="text-green-600 font-medium">4.9/5</span>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-100 pt-4">
+<p class="italic text-gray-600 mb-4">"We've been able to scale from 500 to 15,000 orders per day without increasing our operational team size."</p>
+<div class="flex items-center">
+<div class="w-10 h-10 bg-gray-200 rounded-full mr-3 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520a%2520female%2520tech%2520executive%2520with%2520glasses%2520in%2520casual%2520business%2520attire%2520with%2520a%2520neutral%2520background&width=100&height=100&seq=exec3&orientation=squarish" alt="Jennifer Chen" class="w-full h-full object-cover">
+</div>
+<div>
+<p class="font-medium">Jennifer Chen</p>
+<p class="text-sm text-gray-500">Logistics Manager</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<button class="bg-white text-primary border border-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-50 transition duration-300">View All Case Studies</button>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Hear from logistics professionals who have transformed their operations with our solutions.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="testimonial-card bg-white p-8 rounded-lg shadow-sm">
+<div class="flex items-center mb-6">
+<div class="w-14 h-14 bg-gray-200 rounded-full mr-4 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520a%2520male%2520logistics%2520executive%2520in%2520business%2520attire%2520with%2520a%2520neutral%2520background&width=100&height=100&seq=test1&orientation=squarish" alt="Robert Wilson" class="w-full h-full object-cover">
+</div>
+<div>
+<h4 class="font-semibold">Robert Wilson</h4>
+<p class="text-sm text-gray-500">Logistics Director, GlobalTrade Inc.</p>
+</div>
+</div>
+<div class="mb-6">
+<div class="flex text-yellow-400 mb-2">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<p class="text-gray-600 italic">"Implementing this logistics management system has been transformative for our operations. We've reduced delivery times by 35% and cut operational costs significantly. The real-time visibility across our entire supply chain has eliminated blind spots and allowed us to make data-driven decisions."</p>
+</div>
+<div class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center bg-blue-50 rounded-full mr-2">
+<i class="ri-truck-line text-primary"></i>
+</div>
+<span class="text-sm text-gray-500">Fleet size: 120+ vehicles</span>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="testimonial-card bg-white p-8 rounded-lg shadow-sm">
+<div class="flex items-center mb-6">
+<div class="w-14 h-14 bg-gray-200 rounded-full mr-4 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520a%2520female%2520supply%2520chain%2520manager%2520in%2520business%2520casual%2520attire%2520with%2520a%2520neutral%2520background&width=100&height=100&seq=test2&orientation=squarish" alt="Amanda Torres" class="w-full h-full object-cover">
+</div>
+<div>
+<h4 class="font-semibold">Amanda Torres</h4>
+<p class="text-sm text-gray-500">Supply Chain Manager, FreshDirect Foods</p>
+</div>
+</div>
+<div class="mb-6">
+<div class="flex text-yellow-400 mb-2">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<p class="text-gray-600 italic">"The temperature monitoring capabilities have been crucial for our perishable goods. We've reduced spoilage by over 80% and improved our compliance with food safety regulations. The system alerts us immediately to any temperature deviations, allowing us to take corrective action before product quality is compromised."</p>
+</div>
+<div class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center bg-blue-50 rounded-full mr-2">
+<i class="ri-store-2-line text-primary"></i>
+</div>
+<span class="text-sm text-gray-500">Distribution to 85+ locations</span>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-card bg-white p-8 rounded-lg shadow-sm">
+<div class="flex items-center mb-6">
+<div class="w-14 h-14 bg-gray-200 rounded-full mr-4 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520a%2520male%2520operations%2520manager%2520in%2520casual%2520business%2520attire%2520with%2520a%2520neutral%2520background&width=100&height=100&seq=test3&orientation=squarish" alt="David Patel" class="w-full h-full object-cover">
+</div>
+<div>
+<h4 class="font-semibold">David Patel</h4>
+<p class="text-sm text-gray-500">Operations Manager, QuickShip Logistics</p>
+</div>
+</div>
+<div class="mb-6">
+<div class="flex text-yellow-400 mb-2">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<p class="text-gray-600 italic">"The route optimization feature alone has saved us thousands in fuel costs each month. Our drivers complete more deliveries in less time, and customer satisfaction has improved dramatically with more accurate ETAs. The implementation was smooth, and the support team has been exceptional throughout our journey."</p>
+</div>
+<div class="flex items-center">
+<div class="w-8 h-8 flex items-center justify-center bg-blue-50 rounded-full mr-2">
+<i class="ri-route-line text-primary"></i>
+</div>
+<span class="text-sm text-gray-500">1,200+ deliveries daily</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Optimize Your Logistics?</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Contact us today to discuss how our logistics management solutions can transform your operations.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<div class="w-full lg:w-1/2">
+<form class="bg-white p-8 rounded-lg shadow-sm">
+<div class="mb-6">
+<label for="name" class="block text-gray-700 font-medium mb-2">Full Name</label>
+<input type="text" id="name" placeholder="Enter your full name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary">
+</div>
+<div class="mb-6">
+<label for="company" class="block text-gray-700 font-medium mb-2">Company Name</label>
+<input type="text" id="company" placeholder="Enter your company name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary">
+</div>
+<div class="mb-6">
+<label for="email" class="block text-gray-700 font-medium mb-2">Email Address</label>
+<input type="email" id="email" placeholder="Enter your email address" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary">
+</div>
+<div class="mb-6">
+<label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+<input type="tel" id="phone" placeholder="Enter your phone number" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary">
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 font-medium mb-2">Interested In</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<div class="flex items-center">
+<input type="checkbox" id="interest1" class="custom-checkbox mr-2">
+<label for="interest1" class="text-gray-700">Fleet Tracking</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="interest2" class="custom-checkbox mr-2">
+<label for="interest2" class="text-gray-700">Route Optimization</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="interest3" class="custom-checkbox mr-2">
+<label for="interest3" class="text-gray-700">Inventory Management</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="interest4" class="custom-checkbox mr-2">
+<label for="interest4" class="text-gray-700">Complete Solution</label>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 font-medium mb-2">Message</label>
+<textarea id="message" rows="4" placeholder="Tell us about your logistics needs" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary"></textarea>
+</div>
+<div class="flex items-center mb-6">
+<input type="checkbox" id="consent" class="custom-checkbox mr-2">
+<label for="consent" class="text-gray-700 text-sm">I agree to receive communications about TechSolutions products and services.</label>
+</div>
+<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Submit Inquiry</button>
+</form>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="bg-gray-50 p-8 rounded-lg h-full">
+<h3 class="text-2xl font-bold mb-6">Why Choose Our Logistics Solutions?</h3>
+<div class="space-y-6 mb-8">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-global-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-1">End-to-End Visibility</h4>
+<p class="text-gray-600">Complete transparency across your entire supply chain with real-time tracking and monitoring.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-line-chart-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-1">Proven ROI</h4>
+<p class="text-gray-600">Our clients typically see 25-40% reduction in logistics costs within the first year of implementation.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-settings-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-1">Customizable Solution</h4>
+<p class="text-gray-600">Tailored to your specific industry requirements and operational needs.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-customer-service-2-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-1">Dedicated Support</h4>
+<p class="text-gray-600">24/7 technical assistance and a dedicated implementation team to ensure your success.</p>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-200 pt-8">
+<h4 class="text-lg font-semibold mb-4">Contact Information</h4>
+<div class="space-y-4">
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+<p class="text-gray-700 font-medium">Sales Inquiries</p>
+<p class="text-gray-600">+1 (415) 555-0123</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<div>
+<p class="text-gray-700 font-medium">Email Us</p>
+<p class="text-gray-600">logistics@techsolutions.com</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3">
+<i class="ri-time-line text-primary"></i>
+</div>
+<div>
+<p class="text-gray-700 font-medium">Support Hours</p>
+<p class="text-gray-600">24/7 Technical Support</p>
+</div>
+</div>
+</div>
+<div class="mt-8">
+<p class="text-gray-700 font-medium mb-2">Response Time Guarantee</p>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-green-50 rounded-full mr-3">
+<i class="ri-check-line text-green-600"></i>
+</div>
+<p class="text-gray-600">We respond to all inquiries within 2 business hours</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Find answers to common questions about our logistics management solutions.</p>
+</div>
+<div class="max-w-4xl mx-auto">
+<div class="space-y-6">
+<!-- FAQ Item 1 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<button class="faq-btn w-full flex items-center justify-between p-6 text-left focus:outline-none" data-faq="1">
+<span class="text-lg font-semibold">How quickly can your logistics solution be implemented?</span>
+<i class="ri-add-line text-xl text-gray-500 faq-icon-1"></i>
+</button>
+<div class="faq-content-1 hidden px-6 pb-6">
+<p class="text-gray-600">Our implementation timeline typically ranges from 2-8 weeks depending on the complexity of your operations and the specific modules being implemented. We follow a phased approach to ensure minimal disruption to your ongoing operations. Our dedicated implementation team works closely with your staff to ensure a smooth transition and proper training.</p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<button class="faq-btn w-full flex items-center justify-between p-6 text-left focus:outline-none" data-faq="2">
+<span class="text-lg font-semibold">Can your system integrate with our existing ERP or WMS?</span>
+<i class="ri-add-line text-xl text-gray-500 faq-icon-2"></i>
+</button>
+<div class="faq-content-2 hidden px-6 pb-6">
+<p class="text-gray-600">Yes, our logistics management solution is designed with open APIs that enable seamless integration with most major ERP, WMS, and other business systems. We have pre-built connectors for popular platforms like SAP, Oracle, Microsoft Dynamics, NetSuite, and many others. For custom or legacy systems, our integration team can develop tailored connectors to ensure data flows smoothly between systems.</p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<button class="faq-btn w-full flex items-center justify-between p-6 text-left focus:outline-none" data-faq="3">
+<span class="text-lg font-semibold">What hardware is required for fleet tracking functionality?</span>
+<i class="ri-add-line text-xl text-gray-500 faq-icon-3"></i>
+</button>
+<div class="faq-content-3 hidden px-6 pb-6">
+<p class="text-gray-600">Our fleet tracking solution utilizes compact GPS tracking devices that can be easily installed in any vehicle. These devices connect to our cloud platform via cellular networks and provide real-time location data, engine diagnostics, and driver behavior metrics. We offer both hardwired and plug-and-play options. For advanced functionality like temperature monitoring or cargo tracking, additional sensors can be integrated with the base tracking unit.</p>
+</div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<button class="faq-btn w-full flex items-center justify-between p-6 text-left focus:outline-none" data-faq="4">
+<span class="text-lg font-semibold">How does your route optimization system work?</span>
+<i class="ri-add-line text-xl text-gray-500 faq-icon-4"></i>
+</button>
+<div class="faq-content-4 hidden px-6 pb-6">
+<p class="text-gray-600">Our route optimization engine uses advanced algorithms that consider multiple variables including distance, traffic patterns, delivery time windows, vehicle capacity, driver schedules, and special handling requirements. The system can generate optimal routes for hundreds of stops in seconds, and can dynamically re-optimize routes as conditions change throughout the day. Dispatchers can manually adjust routes when needed, and drivers receive turn-by-turn navigation through our mobile app.</p>
+</div>
+</div>
+<!-- FAQ Item 5 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<button class="faq-btn w-full flex items-center justify-between p-6 text-left focus:outline-none" data-faq="5">
+<span class="text-lg font-semibold">What kind of support and training do you provide?</span>
+<i class="ri-add-line text-xl text-gray-500 faq-icon-5"></i>
+</button>
+<div class="faq-content-5 hidden px-6 pb-6">
+<p class="text-gray-600">We provide comprehensive training for all user levels, from administrators to drivers. Training options include on-site sessions, live webinars, and self-paced online courses. Our support team is available 24/7 through multiple channels including phone, email, and live chat. All clients are assigned a dedicated account manager who conducts regular check-ins and ensures your continued success with our platform. We also provide extensive documentation, video tutorials, and a knowledge base.</p>
+</div>
+</div>
+<!-- FAQ Item 6 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<button class="faq-btn w-full flex items-center justify-between p-6 text-left focus:outline-none" data-faq="6">
+<span class="text-lg font-semibold">Is your system suitable for international logistics operations?</span>
+<i class="ri-add-line text-xl text-gray-500 faq-icon-6"></i>
+</button>
+<div class="faq-content-6 hidden px-6 pb-6">
+<p class="text-gray-600">Yes, our logistics management platform is designed for global operations. It supports multiple languages, currencies, and regional compliance requirements. The system includes features for international shipping documentation, customs clearance, and cross-border tracking. Our cloud infrastructure is distributed globally to ensure fast performance in all regions, and our cellular connectivity for tracking devices works in over 190 countries through our network of carrier partnerships.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<p class="text-gray-600 mb-4">Still have questions about our logistics management solutions?</p>
+<button class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Our Experts</button>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Company Info -->
+<div>
+<a href="#" class="text-2xl font-['Pacifico'] text-white mb-6 inline-block">logo</a>
+<p class="text-gray-400 mb-6">Providing enterprise-grade technology solutions that drive innovation and efficiency since 2005.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Industries</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Case Studies</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Careers</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<span class="text-gray-400">1250 Technology Plaza, Suite 400<br>San Francisco, CA 94105</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<span class="text-gray-400">+1 (415) 555-0123</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<span class="text-gray-400">info@techsolutions.com</span>
+</li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Subscribe to Our Newsletter</h3>
+<p class="text-gray-400 mb-4">Stay updated with the latest technology trends and solutions.</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Your email address" class="bg-gray-800 text-white px-4 py-3 w-full border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary">
+<button type="submit" class="bg-primary text-white px-4 py-3 !rounded-r-lg !rounded-l-none whitespace-nowrap hover:bg-primary/90 transition duration-300">Subscribe</button>
+</div>
+</form>
+<div class="flex items-center space-x-4">
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-visa-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-mastercard-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-paypal-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-apple-fill text-2xl text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 TechSolutions. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Privacy Policy</a>
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Terms of Service</a>
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script id="animationScript">
+document.addEventListener('DOMContentLoaded', function() {
+const observerOptions = {
+threshold: 0.2,
+rootMargin: '50px'
+};
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+if (entry.target.classList.contains('feature-card')) {
+entry.target.classList.add('animate-scaleIn');
+} else if (entry.target.classList.contains('stat-item')) {
+entry.target.classList.add('animate-fadeInUp');
+} else if (entry.target.classList.contains('testimonial-card')) {
+entry.target.classList.add('animate-slideInRight');
+}
+observer.unobserve(entry.target);
+}
+});
+}, observerOptions);
+// Observe feature cards
+document.querySelectorAll('.feature-card').forEach((card, index) => {
+card.style.animationDelay = `${index * 0.1}s`;
+observer.observe(card);
+});
+// Observe statistics
+document.querySelectorAll('.stat-item').forEach((stat, index) => {
+stat.style.animationDelay = `${index * 0.1}s`;
+observer.observe(stat);
+});
+// Observe testimonials
+document.querySelectorAll('.testimonial-card').forEach((card, index) => {
+card.style.animationDelay = `${index * 0.1}s`;
+observer.observe(card);
+});
+});
+</script>
+<script id="chartScript">
+document.addEventListener('DOMContentLoaded', function() {
+// Delivery Performance Chart
+const deliveryChart = echarts.init(document.getElementById('deliveryChart'));
+const deliveryOption = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['On-Time Delivery', 'Average Delivery Time'],
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '3%',
+containLabel: true
+},
+xAxis: {
+type: 'category',
+boundaryGap: false,
+data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+axisLine: {
+lineStyle: {
+color: '#d1d5db'
+}
+},
+axisLabel: {
+color: '#1f2937'
+}
+},
+yAxis: [
+{
+type: 'value',
+name: 'On-Time %',
+min: 80,
+max: 100,
+axisLine: {
+lineStyle: {
+color: '#d1d5db'
+}
+},
+axisLabel: {
+color: '#1f2937',
+formatter: '{value}%'
+},
+splitLine: {
+lineStyle: {
+color: '#f3f4f6'
+}
+}
+},
+{
+type: 'value',
+name: 'Hours',
+min: 0,
+max: 50,
+axisLine: {
+lineStyle: {
+color: '#d1d5db'
+}
+},
+axisLabel: {
+color: '#1f2937',
+formatter: '{value}h'
+},
+splitLine: {
+show: false
+}
+}
+],
+series: [
+{
+name: 'On-Time Delivery',
+type: 'line',
+smooth: true,
+lineStyle: {
+width: 3,
+color: 'rgba(87, 181, 231, 1)'
+},
+symbol: 'none',
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(87, 181, 231, 0.2)'
+}, {
+offset: 1, color: 'rgba(87, 181, 231, 0.05)'
+}]
+}
+},
+data: [85, 87, 89, 91, 93, 95, 96, 97, 98, 98.5, 99, 99.2]
+},
+{
+name: 'Average Delivery Time',
+type: 'line',
+yAxisIndex: 1,
+smooth: true,
+lineStyle: {
+width: 3,
+color: 'rgba(141, 211, 199, 1)'
+},
+symbol: 'none',
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(141, 211, 199, 0.2)'
+}, {
+offset: 1, color: 'rgba(141, 211, 199, 0.05)'
+}]
+}
+},
+data: [48, 45, 42, 38, 35, 32, 30, 28, 26, 24, 22, 20]
+}
+]
+};
+deliveryChart.setOption(deliveryOption);
+// Cost Optimization Chart
+const costChart = echarts.init(document.getElementById('costChart'));
+const costOption = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Fuel Costs', 'Maintenance Costs', 'Total Logistics Costs'],
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '3%',
+containLabel: true
+},
+xAxis: {
+type: 'category',
+boundaryGap: false,
+data: ['Q1 2024', 'Q2 2024', 'Q3 2024', 'Q4 2024', 'Q1 2025', 'Q2 2025'],
+axisLine: {
+lineStyle: {
+color: '#d1d5db'
+}
+},
+axisLabel: {
+color: '#1f2937'
+}
+},
+yAxis: {
+type: 'value',
+name: 'Cost Reduction %',
+min: 0,
+max: 40,
+axisLine: {
+lineStyle: {
+color: '#d1d5db'
+}
+},
+axisLabel: {
+color: '#1f2937',
+formatter: '{value}%'
+},
+splitLine: {
+lineStyle: {
+color: '#f3f4f6'
+}
+}
+},
+series: [
+{
+name: 'Fuel Costs',
+type: 'bar',
+stack: 'total',
+barWidth: '30%',
+itemStyle: {
+color: 'rgba(87, 181, 231, 1)',
+borderRadius: [4, 4, 0, 0]
+},
+data: [10, 15, 20, 25, 28, 30]
+},
+{
+name: 'Maintenance Costs',
+type: 'bar',
+stack: 'total',
+barWidth: '30%',
+itemStyle: {
+color: 'rgba(141, 211, 199, 1)',
+borderRadius: [0, 0, 0, 0]
+},
+data: [5, 8, 12, 15, 18, 20]
+},
+{
+name: 'Total Logistics Costs',
+type: 'line',
+smooth: true,
+lineStyle: {
+width: 3,
+color: 'rgba(252, 141, 98, 1)'
+},
+symbol: 'circle',
+symbolSize: 8,
+data: [15, 20, 25, 30, 32, 35]
+}
+]
+};
+costChart.setOption(costOption);
+// Resize charts when window size changes
+window.addEventListener('resize', function() {
+deliveryChart.resize();
+costChart.resize();
+});
+});
+</script>
+<script id="faqScript">
+document.addEventListener('DOMContentLoaded', function() {
+const faqButtons = document.querySelectorAll('.faq-btn');
+faqButtons.forEach(button => {
+button.addEventListener('click', function() {
+const faqId = this.getAttribute('data-faq');
+const content = document.querySelector(`.faq-content-${faqId}`);
+const icon = document.querySelector(`.faq-icon-${faqId}`);
+// Toggle current FAQ
+content.classList.toggle('hidden');
+// Change icon
+if (content.classList.contains('hidden')) {
+icon.classList.remove('ri-subtract-line');
+icon.classList.add('ri-add-line');
+} else {
+icon.classList.remove('ri-add-line');
+icon.classList.add('ri-subtract-line');
+}
+});
+});
+});
+</script>
+<script id="contactModalScript">
+  document.addEventListener('DOMContentLoaded', function() {
+      // Show modal on both desktop and mobile Contact Us buttons
+      function showContactModal() {
+          document.getElementById('contactModal').classList.remove('hidden');
+          document.body.classList.add('overflow-hidden');
+      }
+      function hideContactModal() {
+          document.getElementById('contactModal').classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+      }
+      document.getElementById('contactUsBtn').addEventListener('click', showContactModal);
+      const mobileContactBtn = document.getElementById('mobileContactUsBtn');
+      if (mobileContactBtn) {
+          mobileContactBtn.addEventListener('click', function() {
+              document.getElementById('mobileMenu').classList.add('hidden');
+              showContactModal();
+          });
+      }
+      document.getElementById('closeModalBtn').addEventListener('click', hideContactModal);
+      // Close modal on outside click
+      document.getElementById('contactModal').addEventListener('click', function(e) {
+          if (e.target === this) hideContactModal();
+      });
+  });
+  </script>
+  <script id="mobileMenuScript">
+  document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const mobileSolutionsBtn = document.getElementById('mobileSolutionsBtn');
+      const mobileSolutionsMenu = document.getElementById('mobileSolutionsMenu');
+      // Toggle mobile menu
+      mobileMenuBtn.addEventListener('click', function() {
+          mobileMenu.classList.toggle('hidden');
+          const icon = mobileMenuBtn.querySelector('i');
+          icon.classList.toggle('ri-menu-line');
+          icon.classList.toggle('ri-close-line');
+      });
+      // Toggle mobile solutions dropdown
+      mobileSolutionsBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          mobileSolutionsMenu.classList.toggle('hidden');
+          const icon = mobileSolutionsBtn.querySelector('i');
+          icon.classList.toggle('ri-arrow-down-s-line');
+          icon.classList.toggle('ri-arrow-up-s-line');
+      });
+      // Close mobile menu when clicking outside
+      document.addEventListener('click', function(event) {
+          if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+              mobileMenu.classList.add('hidden');
+              const icon = mobileMenuBtn.querySelector('i');
+              icon.classList.add('ri-menu-line');
+              icon.classList.remove('ri-close-line');
+          }
+      });
+      // Close mobile menu on link click
+      mobileMenu.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function() {
+              mobileMenu.classList.add('hidden');
+              const icon = mobileMenuBtn.querySelector('i');
+              icon.classList.add('ri-menu-line');
+              icon.classList.remove('ri-close-line');
+          });
+      });
+  });
+  </script>
+  <script id="stickyHeaderScript">
+  document.addEventListener('DOMContentLoaded', function() {
+      const header = document.querySelector('header');
+      const headerHeight = header.offsetHeight;
+      const homeLink = document.getElementById('homeLink');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const solutionsBtn = document.getElementById('solutionsBtn');
+      const solutionsMenu = document.getElementById('solutionsMenu');
+      let isDropdownOpen = false;
+      function toggleDropdown() {
+          isDropdownOpen = !isDropdownOpen;
+          solutionsMenu.classList.toggle('hidden');
+          solutionsBtn.setAttribute('aria-expanded', isDropdownOpen);
+      }
+      solutionsBtn.addEventListener('click', function(e) {
+          e.stopPropagation();
+          toggleDropdown();
+      });
+      solutionsBtn.addEventListener('keydown', function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              toggleDropdown();
+          } else if (e.key === 'Escape' && isDropdownOpen) {
+              toggleDropdown();
+          }
+      });
+      document.addEventListener('click', function(e) {
+          if (!solutionsBtn.contains(e.target) && isDropdownOpen) {
+              toggleDropdown();
+          }
+      });
+      const menuItems = solutionsMenu.querySelectorAll('a');
+      menuItems.forEach((item, index) => {
+          item.setAttribute('role', 'menuitem');
+          item.setAttribute('tabindex', '-1');
+          item.addEventListener('keydown', function(e) {
+              const items = Array.from(menuItems);
+              const currentIndex = items.indexOf(e.target);
+              if (e.key === 'ArrowDown') {
+                  e.preventDefault();
+                  const nextItem = items[(currentIndex + 1) % items.length];
+                  nextItem.focus();
+              } else if (e.key === 'ArrowUp') {
+                  e.preventDefault();
+                  const prevItem = items[(currentIndex - 1 + items.length) % items.length];
+                  prevItem.focus();
+              } else if (e.key === 'Escape') {
+                  toggleDropdown();
+                  solutionsBtn.focus();
+              }
+          });
+      });
+      homeLink.addEventListener('click', function(e) {
+          e.preventDefault();
+          window.scrollTo({
+              top: 0,
+              behavior: 'smooth'
+          });
+          mobileMenu.classList.add('hidden');
+      });
+      function updateHeader() {
+          if (window.scrollY > 50) {
+              header.classList.add('shadow');
+          } else {
+              header.classList.remove('shadow');
+          }
+      }
+      window.addEventListener('scroll', updateHeader);
+      updateHeader();
+  });
+
+   homeLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'index.html';
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,2764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enterprise Security Solutions - TechSolutions</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0056b3',secondary:'#00a3e0'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=modern%2520enterprise%2520security%2520infrastructure%2520with%2520surveillance%2520cameras%252C%2520access%2520control%2520systems%252C%2520and%2520cybersecurity%2520monitoring%2520displays.%2520The%2520image%2520should%2520have%2520a%2520gradient%2520from%2520dark%2520blue%2520to%2520lighter%2520blue%2520on%2520the%2520left%2520side%252C%2520providing%2520space%2520for%2520text%2520overlay%2520with%2520good%2520contrast%252C%2520while%2520the%2520right%2520side%2520shows%2520clear%2520details%2520of%2520security%2520technology%2520and%2520monitoring%2520systems.&width=1920&height=800&seq=securityhero123&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.solution-card {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.5s ease-out;
+}
+
+.solution-card.animate {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(0,20,50,0.85) 0%, rgba(0,20,50,0.7) 50%, rgba(0,20,50,0.4) 100%);
+}
+.solution-card {
+transition: all 0.3s ease;
+}
+.solution-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.security-map {
+background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+}
+.case-card {
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #0056b3;
+border-color: #0056b3;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+top: 3px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-radio {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+border-radius: 50%;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-radio:checked {
+border-color: #0056b3;
+}
+.custom-radio:checked::after {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background-color: #0056b3;
+}
+.tab-active {
+color: #0056b3;
+border-color: #0056b3;
+}
+.tab-content {
+display: none;
+}
+.tab-content.active {
+display: block;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Header Navigation -->
+<header class="bg-white shadow-sm fixed w-full z-50">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center">
+          <a href="./index.html" class="text-2xl font-['Righteous'] text-primary">Pitch Forward</a>
+      </div>
+      <nav class="hidden md:flex space-x-8">
+          <a href="./index.html" id="homeLink" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+          <div class="relative" id="solutionsDropdown">
+              <button id="solutionsBtn" class="nav-link text-gray-700 hover:text-primary font-medium flex items-center" aria-expanded="false" aria-haspopup="true">
+                  Solutions
+                  <i class="ri-arrow-down-s-line ml-1"></i>
+              </button>
+              <div id="solutionsMenu" class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden" role="menu" aria-labelledby="solutionsBtn">
+                  <a href="./Fleet-Management-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-footprint-line w-5 h-5 mr-3"></i>
+                      Fleet Management
+                  </a>
+                  <a href="./Fuel-Management-Solutions.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-gas-station-line w-5 h-5 mr-3"></i>
+                      Fuel Management
+                  </a>
+                  <a href="./Logistics-Management-Solutions.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-truck-line w-5 h-5 mr-3"></i>
+                      Logistics Management
+                  </a>
+                  <a href="./Telecommunication-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-phone-line w-5 h-5 mr-3"></i>
+                      Telecommunication
+                  </a>
+                  <a href="./Security-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-shield-keyhole-line w-5 h-5 mr-3"></i>
+                      Security
+                  </a>
+                  <a href="./Data-&-Power-Solutions.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-database-2-line w-5 h-5 mr-3"></i>
+                      Data & Power
+                  </a>
+                  <a href="./Internet-&-Connectivity-Solutions.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-wifi-line w-5 h-5 mr-3"></i>
+                      Internet & Connectivity
+                  </a>
+                  <a href="./Mining-Technology-Solutions.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-mine-line w-5 h-5 mr-3"></i>
+                      Mining
+                  </a>
+                  <a href="./Warehousing-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-store-2-line w-5 h-5 mr-3"></i>
+                      Warehousing
+                  </a>
+              </div>
+          </div>
+          <a href="#industries" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+          <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+          <div class="relative hidden md:block">
+              <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm focus:border-primary">
+              <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+                  <i class="ri-search-line"></i>
+              </div>
+          </div>
+          <!-- Contact Us Button always visible on desktop, and on mobile triggers modal -->
+          <button id="contactUsBtn" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 block md:block">Contact Us</button>
+          <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
+              <div class="bg-white rounded-lg w-full max-w-xl mx-4 relative">
+                  <button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+                      <i class="ri-close-line text-2xl"></i>
+                  </button>
+                  <div class="max-h-[100vh] overflow-x-auto p-4 md:p-8">
+                      <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
+                      <form id="contactForm" action="" method="POST">
+                          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                              <div>
+                                  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                  <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                              </div>
+                              <div>
+                                  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                  <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                              </div>
+                              <div>
+                                  <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                  <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                              </div>
+                              <div>
+                                  <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+                                  <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                              </div>
+                          </div>
+                          <div class="mb-4">
+                              <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
+                              <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary pr-8">
+                                <option value="">Select a service</option>
+                                <option value="fleet">Fleet Management</option>
+                                <option value="fuel">Fuel Management</option>
+                                <option value="logistics">Logistics Management</option>
+                                <option value="telecommunication">Telecommunication</option>
+                                <option value="security">Security</option>
+                                <option value="data-power">Data &amp; Power</option>
+                                <option value="internet-connectivity">Internet &amp; Connectivity</option>
+                                <option value="mining">Mining</option>
+                                <option value="warehousing">Warehousing</option>
+                                <option value="other">Other</option>
+                              </select>
+                          </div>
+                          <div class="mb-6">
+                              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                              <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
+                          </div>
+                          <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Submit</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
+              <i class="ri-menu-line text-xl"></i>
+          </button>
+      </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-lg z-50">
+      <nav class="container mx-auto px-4 py-4">
+          <a href="index.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
+          <div class="relative">
+              <button id="mobileSolutionsBtn" class="w-full flex items-center justify-between py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">
+                  Solutions
+                  <i class="ri-arrow-down-s-line"></i>
+              </button>
+              <div id="mobileSolutionsMenu" class="hidden bg-gray-50 px-4 py-2">
+                  <a href="./Fleet-Management-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Fleet Management</a>
+                  <a href="./Fuel-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Fuel Management</a>
+                  <a href="./Logistics-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Logistics Management</a>
+                  <a href="./Telecommunication-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Telecommunication</a>
+                  <a href="./Security-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Security</a>
+                  <a href="./Data-&-Power-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Data & Power</a>
+                  <a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
+                  <a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
+                  <a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
+              </div>
+          </div>
+          <a href="#industries" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
+          <a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
+          <div class="mt-4">
+              <!-- Contact Us Button in mobile menu triggers modal -->
+              <button id="mobileContactUsBtn" class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+          </div>
+      </nav>
+  </div>
+</header>
+<!-- Breadcrumb -->
+<div class="bg-gray-100 pt-20">
+<div class="container mx-auto px-4 py-3">
+<div class="flex items-center text-sm">
+<a href="#" class="text-gray-600 hover:text-primary">Home</a>
+<i class="ri-arrow-right-s-line mx-2 text-gray-400"></i>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-gray-600 hover:text-primary">Solutions</a>
+<i class="ri-arrow-right-s-line mx-2 text-gray-400"></i>
+<span class="text-primary font-medium">Security</span>
+</div>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="hero-section w-full min-h-[600px] relative">
+<div class="hero-overlay absolute inset-0"></div>
+<div class="container mx-auto px-4 h-full flex items-center relative z-10 py-20">
+<div class="w-full md:w-1/2 text-white">
+<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">Enterprise Security Solutions</h1>
+<p class="text-lg sm:text-xl md:text-2xl mb-8 opacity-90">Comprehensive physical and digital security systems for your business</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 text-lg">Get Started</button>
+<button class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300 text-lg">Schedule Demo</button>
+</div>
+<div class="mt-12 flex items-center space-x-6">
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3">
+<i class="ri-shield-check-line text-white"></i>
+</div>
+<span class="text-sm md:text-base">ISO 27001 Certified</span>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3">
+<i class="ri-customer-service-2-line text-white"></i>
+</div>
+<span class="text-sm md:text-base">24/7 Support</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Solutions Overview Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Comprehensive Security Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Advanced security systems designed to protect your assets, people, and data across physical and digital environments.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Solution Card 1 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-door-lock-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Physical Security Systems</h3>
+<ul class="text-gray-600 mb-6 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Access control solutions</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Biometric authentication</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Perimeter protection</span>
+</li>
+</ul>
+<a href="#physical-security" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Solution Card 2 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-shield-keyhole-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Cybersecurity Solutions</h3>
+<ul class="text-gray-600 mb-6 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Network security</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Endpoint protection</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Threat intelligence</span>
+</li>
+</ul>
+<a href="#cyber-security" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Solution Card 3 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-key-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Access Control Systems</h3>
+<ul class="text-gray-600 mb-6 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Card & badge systems</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Visitor management</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Time & attendance tracking</span>
+</li>
+</ul>
+<a href="#access-control" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Solution Card 4 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-camera-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Surveillance Systems</h3>
+<ul class="text-gray-600 mb-6 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>HD & 4K camera systems</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Video analytics</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Remote monitoring</span>
+</li>
+</ul>
+<a href="#surveillance" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Solution Card 5 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-alarm-warning-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Intrusion Detection</h3>
+<ul class="text-gray-600 mb-6 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Motion sensors</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Glass break detection</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>24/7 monitoring services</span>
+</li>
+</ul>
+<a href="#intrusion" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Solution Card 6 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-drone-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Drone Surveillance</h3>
+<ul class="text-gray-600 mb-6 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Aerial monitoring & inspection</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Thermal imaging capabilities</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Perimeter surveillance</span>
+</li>
+</ul>
+<a href="#drone-services" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Solution Card 7 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-service-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Managed Security Services</h3>
+<ul class="text-gray-600 mb-6 space-y-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Security operations center</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Incident response</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<span>Vulnerability management</span>
+</li>
+</ul>
+<a href="#managed-services" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Access Control Spotlight -->
+<section id="access-control" class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="flex flex-col lg:flex-row items-center gap-12">
+<div class="w-full lg:w-1/2">
+<div class="mb-6">
+<span class="bg-blue-100 text-primary px-4 py-1 rounded-full text-sm font-medium">Featured Solution</span>
+</div>
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Enterprise Access Control Systems</h2>
+<p class="text-lg text-gray-600 mb-8">Secure and manage access to your facilities with advanced authentication technologies, comprehensive monitoring, and seamless integration with your existing security infrastructure.</p>
+<div class="space-y-6 mb-8">
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-fingerprint-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Multi-Factor Authentication</h3>
+<p class="text-gray-600">Combine credentials, biometrics, and mobile authentication for enhanced security at critical access points.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-dashboard-3-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Centralized Management</h3>
+<p class="text-gray-600">Control all access points from a single dashboard with real-time monitoring and comprehensive reporting.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-global-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2">Enterprise Integration</h3>
+<p class="text-gray-600">Seamlessly connect with HR systems, visitor management, and other security platforms for unified operations.</p>
+</div>
+</div>
+</div>
+<button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Request Demo</button>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-semibold mb-4">Access Control Dashboard</h3>
+<div class="security-map h-80 w-full rounded mb-6"></div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-gray-50 p-4 rounded">
+<div class="flex items-center justify-between mb-2">
+<span class="font-medium">Active Users</span>
+<span class="text-primary font-semibold">247</span>
+</div>
+<div class="w-full bg-gray-200 h-2 rounded-full">
+<div class="bg-primary h-2 rounded-full" style="width: 68%"></div>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded">
+<div class="flex items-center justify-between mb-2">
+<span class="font-medium">Secure Areas</span>
+<span class="text-primary font-semibold">32</span>
+</div>
+<div class="w-full bg-gray-200 h-2 rounded-full">
+<div class="bg-primary h-2 rounded-full" style="width: 92%"></div>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded">
+<div class="flex items-center justify-between mb-2">
+<span class="font-medium">Today's Access</span>
+<span class="text-primary font-semibold">1,284</span>
+</div>
+<div class="w-full bg-gray-200 h-2 rounded-full">
+<div class="bg-primary h-2 rounded-full" style="width: 75%"></div>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded">
+<div class="flex items-center justify-between mb-2">
+<span class="font-medium">Alerts</span>
+<span class="text-red-500 font-semibold">3</span>
+</div>
+<div class="w-full bg-gray-200 h-2 rounded-full">
+<div class="bg-red-500 h-2 rounded-full" style="width: 15%"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Cybersecurity Features Section -->
+<section id="cyber-security" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Advanced Cybersecurity Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Protect your digital assets with comprehensive cybersecurity solutions designed to prevent, detect, and respond to threats.</p>
+</div>
+<div class="flex flex-col lg:flex-row gap-12">
+<div class="w-full lg:w-1/2">
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div id="securityChart" class="h-96 w-full"></div>
+</div>
+<div class="mt-8 bg-blue-50 rounded-lg p-6">
+<h3 class="text-xl font-semibold mb-4">Security Risk Assessment</h3>
+<div class="space-y-4">
+<div>
+<label class="block text-gray-700 mb-2">Security Posture</label>
+<input type="range" min="0" max="100" value="65" class="w-full" id="securitySlider">
+<div class="flex justify-between">
+<span class="text-sm text-gray-500">High Risk</span>
+<span class="text-sm text-gray-700 font-medium" id="securityValue">65%</span>
+<span class="text-sm text-gray-500">Secure</span>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-gray-700 mb-1">Vulnerabilities</p>
+<p class="text-xl font-bold text-red-600" id="vulnerabilities">37</p>
+</div>
+<div>
+<p class="text-gray-700 mb-1">Threats Blocked</p>
+<p class="text-xl font-bold text-green-600" id="threatsBlocked">14,382</p>
+</div>
+</div>
+<div class="bg-white rounded p-4">
+<p class="text-gray-700 mb-1">Recommended Actions</p>
+<ul class="space-y-2 text-sm">
+<li class="flex items-start">
+<i class="ri-error-warning-line text-amber-500 mr-2 mt-0.5"></i>
+<span>Update endpoint protection on 18 devices</span>
+</li>
+<li class="flex items-start">
+<i class="ri-error-warning-line text-amber-500 mr-2 mt-0.5"></i>
+<span>Implement multi-factor authentication</span>
+</li>
+<li class="flex items-start">
+<i class="ri-error-warning-line text-red-500 mr-2 mt-0.5"></i>
+<span>Patch critical vulnerability in web server</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="w-full lg:w-1/2">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mb-4">
+<i class="ri-shield-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Threat Protection</h3>
+<p class="text-gray-600">Advanced threat detection and prevention across networks, endpoints, and cloud environments.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mb-4">
+<i class="ri-eye-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Threat Intelligence</h3>
+<p class="text-gray-600">Real-time monitoring and analysis of global threat landscapes to anticipate attacks.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mb-4">
+<i class="ri-lock-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Data Protection</h3>
+<p class="text-gray-600">Encryption, data loss prevention, and secure access controls for sensitive information.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-full mb-4">
+<i class="ri-cloud-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Cloud Security</h3>
+<p class="text-gray-600">Secure cloud infrastructure, applications, and data with comprehensive protection.</p>
+</div>
+</div>
+<div class="mt-6 bg-white p-6 rounded-lg shadow-sm">
+<h3 class="text-xl font-semibold mb-4">Key Cybersecurity Features</h3>
+<div class="grid grid-cols-2 gap-y-3">
+<div class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Next-gen firewall</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Endpoint detection & response</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Email security</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Zero trust architecture</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Vulnerability scanning</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Security awareness training</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>SIEM solutions</span>
+</div>
+<div class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Incident response</span>
+</div>
+</div>
+</div>
+<div class="mt-6">
+<button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 w-full">Get Security Assessment</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Features & Benefits Matrix -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Features & Benefits</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Comprehensive overview of our security solutions and their impact on your business.</p>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="flex border-b">
+<button class="tab-btn flex-1 py-4 px-6 font-medium text-center border-b-2 border-transparent hover:bg-gray-50 tab-active" data-tab="physical-tab">Physical Security</button>
+<button class="tab-btn flex-1 py-4 px-6 font-medium text-center border-b-2 border-transparent hover:bg-gray-50" data-tab="cyber-tab">Cybersecurity</button>
+<button class="tab-btn flex-1 py-4 px-6 font-medium text-center border-b-2 border-transparent hover:bg-gray-50" data-tab="surveillance-tab">Surveillance</button>
+</div>
+<!-- Physical Security Tab Content -->
+<div id="physical-tab" class="tab-content active p-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Technical Specifications</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Access Control Hardware</p>
+<p class="text-sm text-gray-600">RFID, biometric, mobile credentials</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Lock Systems</p>
+<p class="text-sm text-gray-600">Electromagnetic, electric strike, smart locks</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Alarm Integration</p>
+<p class="text-sm text-gray-600">Fire, intrusion, duress alarms</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Power Backup</p>
+<p class="text-sm text-gray-600">UPS systems, fail-secure/fail-safe modes</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Connectivity</p>
+<p class="text-sm text-gray-600">Wired, wireless, PoE options</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Key Features</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Access Levels</p>
+<p class="text-sm text-gray-600">Customizable permissions by area, time, and user</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Visitor Management</p>
+<p class="text-sm text-gray-600">Pre-registration, temporary credentials, escort requirements</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Audit Trails</p>
+<p class="text-sm text-gray-600">Comprehensive access logs and reporting</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Emergency Protocols</p>
+<p class="text-sm text-gray-600">Lockdown, mustering, emergency override</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Anti-Passback</p>
+<p class="text-sm text-gray-600">Prevents credential sharing and tailgating</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Business Benefits</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Enhanced Security</p>
+<p class="text-sm text-gray-600">Prevent unauthorized access to sensitive areas</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Operational Efficiency</p>
+<p class="text-sm text-gray-600">Automate access processes and reduce manual security</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Compliance</p>
+<p class="text-sm text-gray-600">Meet regulatory requirements with detailed records</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Risk Reduction</p>
+<p class="text-sm text-gray-600">Minimize theft, vandalism, and workplace incidents</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Scalability</p>
+<p class="text-sm text-gray-600">Easily expand system as your business grows</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Cybersecurity Tab Content -->
+<div id="cyber-tab" class="tab-content p-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Technical Specifications</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Firewall Protection</p>
+<p class="text-sm text-gray-600">Next-gen firewalls with deep packet inspection</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Encryption</p>
+<p class="text-sm text-gray-600">AES-256, TLS 1.3, end-to-end encryption</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Authentication</p>
+<p class="text-sm text-gray-600">Multi-factor, SSO, biometric verification</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Threat Detection</p>
+<p class="text-sm text-gray-600">AI-powered anomaly detection, behavior analysis</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Monitoring</p>
+<p class="text-sm text-gray-600">24/7 SOC, SIEM integration, real-time alerts</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Key Features</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Endpoint Protection</p>
+<p class="text-sm text-gray-600">Comprehensive security for all devices</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Email Security</p>
+<p class="text-sm text-gray-600">Anti-phishing, spam filtering, attachment scanning</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Vulnerability Management</p>
+<p class="text-sm text-gray-600">Regular scanning, patching, and remediation</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Data Loss Prevention</p>
+<p class="text-sm text-gray-600">Content inspection, policy enforcement</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Incident Response</p>
+<p class="text-sm text-gray-600">Automated containment and remediation</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Business Benefits</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Data Protection</p>
+<p class="text-sm text-gray-600">Safeguard sensitive information and intellectual property</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Business Continuity</p>
+<p class="text-sm text-gray-600">Minimize downtime from cyber incidents</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Regulatory Compliance</p>
+<p class="text-sm text-gray-600">Meet industry standards (GDPR, HIPAA, PCI DSS)</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Reputation Protection</p>
+<p class="text-sm text-gray-600">Avoid costly breaches and maintain customer trust</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Cost Efficiency</p>
+<p class="text-sm text-gray-600">Prevent financial losses from cyber attacks</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<!-- Surveillance Tab Content -->
+<div id="surveillance-tab" class="tab-content p-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Technical Specifications</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Camera Resolution</p>
+<p class="text-sm text-gray-600">1080p to 4K Ultra HD options</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Camera Types</p>
+<p class="text-sm text-gray-600">Dome, bullet, PTZ, thermal imaging</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Storage</p>
+<p class="text-sm text-gray-600">NVR, cloud storage, hybrid solutions</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Low-Light Performance</p>
+<p class="text-sm text-gray-600">IR illumination, starlight technology</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Bandwidth</p>
+<p class="text-sm text-gray-600">H.265+ compression, adaptive streaming</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Key Features</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Video Analytics</p>
+<p class="text-sm text-gray-600">Motion detection, object recognition, facial recognition</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Remote Monitoring</p>
+<p class="text-sm text-gray-600">Mobile apps, web interface, multi-site management</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Alerts & Notifications</p>
+<p class="text-sm text-gray-600">Real-time alerts for suspicious activities</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Integration</p>
+<p class="text-sm text-gray-600">Access control, alarm systems, VMS platforms</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Search Capabilities</p>
+<p class="text-sm text-gray-600">Advanced forensic search, event-based retrieval</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-primary">Business Benefits</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Deterrence</p>
+<p class="text-sm text-gray-600">Reduce theft, vandalism, and unauthorized access</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Incident Investigation</p>
+<p class="text-sm text-gray-600">Video evidence for resolving security events</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Operational Insights</p>
+<p class="text-sm text-gray-600">Monitor workflows, traffic patterns, and space utilization</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Liability Protection</p>
+<p class="text-sm text-gray-600">Document incidents and defend against false claims</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1 flex-shrink-0"></i>
+<div>
+<p class="font-medium">Remote Management</p>
+<p class="text-sm text-gray-600">Monitor multiple locations from a central point</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Industry Applications -->
+<section id="industries" class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Industry Applications</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our security solutions are tailored to meet the unique requirements of various industries.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Industry 1 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520corporate%2520office%2520building%2520with%2520security%2520systems%2520visible%2520including%2520access%2520control%2520gates%252C%2520surveillance%2520cameras%252C%2520and%2520security%2520personnel%2520at%2520a%2520reception%2520desk.%2520The%2520image%2520should%2520show%2520a%2520professional%2520business%2520environment%2520with%2520clear%2520security%2520measures%2520integrated%2520into%2520the%2520corporate%2520setting.&width=600&height=400&seq=corporate123&orientation=landscape" alt="Corporate Security" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">Corporate Security</h3>
+<p class="text-gray-600 mb-4">Comprehensive security solutions for office buildings, headquarters, and corporate campuses.</p>
+<div class="space-y-2">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Integrated access control systems</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Visitor management solutions</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Executive protection services</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Industry 2 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=government%2520facility%2520with%2520advanced%2520security%2520measures%2520including%2520perimeter%2520fencing%252C%2520security%2520checkpoints%252C%2520and%2520surveillance%2520systems.%2520The%2520image%2520should%2520show%2520a%2520secure%2520government%2520building%2520with%2520professional%2520security%2520infrastructure%2520and%2520personnel%2520monitoring%2520entry%2520points.&width=600&height=400&seq=government123&orientation=landscape" alt="Government Facilities" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">Government Facilities</h3>
+<p class="text-gray-600 mb-4">High-security solutions for government buildings, data centers, and critical infrastructure.</p>
+<div class="space-y-2">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Multi-factor authentication</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Perimeter intrusion detection</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>SCIF-compliant security measures</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Industry 3 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520hospital%2520or%2520healthcare%2520facility%2520with%2520security%2520systems%2520including%2520access%2520control%2520doors%252C%2520surveillance%2520cameras%252C%2520and%2520security%2520personnel%2520at%2520entry%2520points.%2520The%2520image%2520should%2520show%2520a%2520clean%252C%2520professional%2520healthcare%2520environment%2520with%2520visible%2520but%2520unobtrusive%2520security%2520measures.&width=600&height=400&seq=healthcare123&orientation=landscape" alt="Healthcare Security" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">Healthcare Security</h3>
+<p class="text-gray-600 mb-4">Specialized security for hospitals, clinics, and pharmaceutical facilities with patient privacy focus.</p>
+<div class="space-y-2">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Patient data protection</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Infant protection systems</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Medication storage security</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Industry 4 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520retail%2520store%2520with%2520security%2520systems%2520including%2520surveillance%2520cameras%252C%2520electronic%2520article%2520surveillance%2520gates%252C%2520and%2520security%2520tags%2520on%2520merchandise.%2520The%2520image%2520should%2520show%2520a%2520busy%2520retail%2520environment%2520with%2520integrated%2520security%2520measures%2520that%2520protect%2520merchandise%2520while%2520maintaining%2520a%2520positive%2520shopping%2520experience.&width=600&height=400&seq=retail123&orientation=landscape" alt="Retail Security" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">Retail Security</h3>
+<p class="text-gray-600 mb-4">Loss prevention and customer safety solutions for stores, malls, and distribution centers.</p>
+<div class="space-y-2">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Anti-theft systems</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>POS monitoring</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Inventory tracking security</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Industry 5 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520bank%2520or%2520financial%2520institution%2520with%2520comprehensive%2520security%2520systems%2520including%2520bulletproof%2520glass%252C%2520surveillance%2520cameras%252C%2520access%2520control%2520doors%252C%2520and%2520security%2520personnel.%2520The%2520image%2520should%2520show%2520a%2520professional%2520banking%2520environment%2520with%2520high-level%2520security%2520measures%2520integrated%2520into%2520the%2520design.&width=600&height=400&seq=banking123&orientation=landscape" alt="Banking & Finance" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">Banking & Finance</h3>
+<p class="text-gray-600 mb-4">High-security solutions for banks, credit unions, and financial institutions with asset protection.</p>
+<div class="space-y-2">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Vault security systems</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>ATM protection</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Fraud detection systems</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Industry 6 -->
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=educational%2520institution%2520with%2520security%2520systems%2520including%2520access%2520control%2520entry%2520points%252C%2520surveillance%2520cameras%252C%2520and%2520emergency%2520notification%2520systems.%2520The%2520image%2520should%2520show%2520a%2520modern%2520school%2520or%2520university%2520campus%2520with%2520security%2520measures%2520that%2520protect%2520students%2520and%2520staff%2520while%2520maintaining%2520an%2520open%2520learning%2520environment.&width=600&height=400&seq=education123&orientation=landscape" alt="Educational Institutions" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3">Educational Institutions</h3>
+<p class="text-gray-600 mb-4">Campus security solutions for schools, colleges, and universities with student safety focus.</p>
+<div class="space-y-2">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Emergency notification systems</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Lockdown capabilities</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Visitor screening solutions</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Studies Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Success Stories</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">See how our security solutions have transformed operations for organizations across industries.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Case Study 1 -->
+<div class="case-card bg-white rounded-lg overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520corporate%2520office%2520building%2520lobby%2520with%2520advanced%2520access%2520control%2520systems%2520including%2520turnstiles%252C%2520card%2520readers%252C%2520and%2520security%2520personnel.%2520The%2520image%2520should%2520show%2520employees%2520using%2520access%2520cards%2520or%2520biometric%2520authentication%2520to%2520enter%2520a%2520secure%2520area%2520in%2520a%2520professional%2520corporate%2520environment.&width=600&height=400&seq=access_case123&orientation=landscape" alt="Enterprise Access Control Case Study" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-xs font-medium">Corporate</span>
+<span class="ml-2 text-sm text-gray-500">Global Financial Group</span>
+</div>
+<h3 class="text-xl font-semibold mb-3">Enterprise Access Control Deployment</h3>
+<p class="text-gray-600 mb-4">Implemented multi-factor authentication across 28 locations with centralized management and real-time monitoring.</p>
+<div class="space-y-2 mb-4">
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">65% reduction in unauthorized access incidents</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">Streamlined visitor management process</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">Achieved compliance with financial regulations</p>
+</div>
+</div>
+<a href="#" class="text-primary font-medium flex items-center text-sm">
+Read Full Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Case Study 2 -->
+<div class="case-card bg-white rounded-lg overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520security%2520operations%2520center%2520with%2520multiple%2520surveillance%2520monitors%2520displaying%2520camera%2520feeds%2520from%2520various%2520locations.%2520The%2520image%2520should%2520show%2520security%2520professionals%2520monitoring%2520video%2520feeds%2520in%2520a%2520high-tech%2520control%2520room%2520environment%2520with%2520advanced%2520video%2520management%2520systems.&width=600&height=400&seq=surveillance_case123&orientation=landscape" alt="Video Surveillance Case Study" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-xs font-medium">Retail</span>
+<span class="ml-2 text-sm text-gray-500">Metro Retail Chain</span>
+</div>
+<h3 class="text-xl font-semibold mb-3">Video Surveillance System Integration</h3>
+<p class="text-gray-600 mb-4">Deployed AI-powered video analytics across 42 retail locations with centralized monitoring and loss prevention.</p>
+<div class="space-y-2 mb-4">
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">32% reduction in inventory shrinkage</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">Improved customer safety metrics</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">$420,000 annual loss prevention savings</p>
+</div>
+</div>
+<a href="#" class="text-primary font-medium flex items-center text-sm">
+Read Full Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+<!-- Case Study 3 -->
+<div class="case-card bg-white rounded-lg overflow-hidden">
+<div class="h-48 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=modern%2520corporate%2520IT%2520department%2520with%2520cybersecurity%2520professionals%2520working%2520on%2520security%2520operations.%2520The%2520image%2520should%2520show%2520a%2520team%2520monitoring%2520network%2520security%2520dashboards%2520and%2520threat%2520detection%2520systems%2520in%2520a%2520professional%2520enterprise%2520environment%2520with%2520multiple%2520screens%2520displaying%2520security%2520analytics.&width=600&height=400&seq=cyber_case123&orientation=landscape" alt="Cybersecurity Case Study" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<div class="flex items-center mb-4">
+<span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-xs font-medium">Healthcare</span>
+<span class="ml-2 text-sm text-gray-500">Regional Medical Network</span>
+</div>
+<h3 class="text-xl font-semibold mb-3">Cybersecurity Infrastructure Upgrade</h3>
+<p class="text-gray-600 mb-4">Implemented comprehensive cybersecurity framework with endpoint protection and 24/7 monitoring.</p>
+<div class="space-y-2 mb-4">
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">98.7% reduction in ransomware risk</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">HIPAA compliance achievement</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
+<i class="ri-checkbox-circle-line text-green-600"></i>
+</div>
+<p class="text-sm text-gray-700">Zero data breaches since implementation</p>
+</div>
+</div>
+<a href="#" class="text-primary font-medium flex items-center text-sm">
+Read Full Case Study
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Equipment Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Security Equipment & Devices</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">High-quality, reliable security hardware designed for various environments and security requirements.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Device 1 -->
+<div class="bg-white rounded-lg p-6 shadow-sm">
+<div class="h-48 mb-4 flex items-center justify-center">
+<img src="https://readdy.ai/api/search-image?query=professional%2520security%2520camera%2520with%2520modern%2520design%2520on%2520clean%2520white%2520background.%2520The%2520image%2520should%2520show%2520a%2520high-definition%2520dome%2520or%2520bullet%2520surveillance%2520camera%2520with%2520clear%2520details%2520of%2520the%2520lens%2520and%2520housing%252C%2520suitable%2520for%2520professional%2520security%2520applications.&width=300&height=300&seq=camera_device1&orientation=squarish" alt="HD Security Camera" class="max-h-full">
+</div>
+<h3 class="text-lg font-semibold mb-2">ProVision HD-8200</h3>
+<p class="text-gray-600 mb-4">Professional 4K ultra HD security camera with advanced low-light capabilities.</p>
+<div class="space-y-1 mb-4">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>4K resolution (8MP)</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>120° wide-angle view</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>IR night vision (100ft)</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">View Specifications</button>
+</div>
+<!-- Device 2 -->
+<div class="bg-white rounded-lg p-6 shadow-sm">
+<div class="h-48 mb-4 flex items-center justify-center">
+<img src="https://readdy.ai/api/search-image?query=professional%2520access%2520control%2520reader%2520with%2520keypad%2520and%2520card%2520scanner%2520on%2520clean%2520white%2520background.%2520The%2520image%2520should%2520show%2520a%2520modern%2520wall-mounted%2520access%2520control%2520device%2520with%2520clear%2520details%2520of%2520the%2520keypad%2520and%2520card%2520reading%2520area%252C%2520suitable%2520for%2520professional%2520security%2520applications.&width=300&height=300&seq=access_device1&orientation=squarish" alt="Access Control Reader" class="max-h-full">
+</div>
+<h3 class="text-lg font-semibold mb-2">SecurePass AC-500</h3>
+<p class="text-gray-600 mb-4">Multi-factor access control reader with biometric verification capabilities.</p>
+<div class="space-y-1 mb-4">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Fingerprint, card & PIN</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>IP65 weather resistant</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Anti-tamper alerts</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">View Specifications</button>
+</div>
+<!-- Device 3 -->
+<div class="bg-white rounded-lg p-6 shadow-sm">
+<div class="h-48 mb-4 flex items-center justify-center">
+<img src="https://readdy.ai/api/search-image?query=professional%2520security%2520alarm%2520panel%2520or%2520control%2520system%2520on%2520clean%2520white%2520background.%2520The%2520image%2520should%2520show%2520a%2520modern%2520wall-mounted%2520alarm%2520control%2520panel%2520with%2520keypad%2520and%2520display%2520screen%252C%2520suitable%2520for%2520professional%2520security%2520applications.&width=300&height=300&seq=alarm_device1&orientation=squarish" alt="Alarm Control Panel" class="max-h-full">
+</div>
+<h3 class="text-lg font-semibold mb-2">DefendPro AP-1000</h3>
+<p class="text-gray-600 mb-4">Enterprise-grade alarm panel with multi-zone monitoring and smart integration.</p>
+<div class="space-y-1 mb-4">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>64 zone monitoring</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Cellular/IP connectivity</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Mobile app control</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">View Specifications</button>
+</div>
+<!-- Device 4 -->
+<div class="bg-white rounded-lg p-6 shadow-sm">
+<div class="h-48 mb-4 flex items-center justify-center">
+<img src="https://readdy.ai/api/search-image?query=professional%2520network%2520security%2520appliance%2520or%2520firewall%2520device%2520on%2520clean%2520white%2520background.%2520The%2520image%2520should%2520show%2520a%2520modern%2520rack-mountable%2520network%2520security%2520device%2520with%2520clear%2520details%2520of%2520the%2520ports%2520and%2520indicators%252C%2520suitable%2520for%2520professional%2520cybersecurity%2520applications.&width=300&height=300&seq=firewall_device1&orientation=squarish" alt="Network Security Appliance" class="max-h-full">
+</div>
+<h3 class="text-lg font-semibold mb-2">CyberShield NS-2000</h3>
+<p class="text-gray-600 mb-4">Next-generation firewall with advanced threat protection and VPN capabilities.</p>
+<div class="space-y-1 mb-4">
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>10 Gbps throughput</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Intrusion prevention</span>
+</div>
+<div class="flex items-center text-sm text-gray-700">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Malware protection</span>
+</div>
+</div>
+<button class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">View Specifications</button>
+</div>
+</div>
+<div class="mt-12 text-center">
+<button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Download Security Equipment Catalog</button>
+</div>
+</div>
+</section>
+<!-- Pricing Options Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Pricing Options</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Flexible security plans designed to meet the needs and budget of your organization.</p>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="flex border-b">
+<button class="pricing-tab flex-1 py-4 px-6 font-medium text-center border-b-2 border-transparent hover:bg-gray-50 tab-active" data-tab="physical-pricing">Physical Security</button>
+<button class="pricing-tab flex-1 py-4 px-6 font-medium text-center border-b-2 border-transparent hover:bg-gray-50" data-tab="cyber-pricing">Cybersecurity</button>
+<button class="pricing-tab flex-1 py-4 px-6 font-medium text-center border-b-2 border-transparent hover:bg-gray-50" data-tab="managed-pricing">Managed Services</button>
+<button class="pricing-tab flex-1 py-4 px-6 font-medium text-center border-b-2 border-transparent hover:bg-gray-50" data-tab="custom-pricing">Custom Solutions</button>
+</div>
+<!-- Physical Security Pricing Tab -->
+<div id="physical-pricing" class="pricing-content active p-6">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Basic Plan -->
+<div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold mb-2">Essential Protection</h3>
+<p class="text-gray-600 mb-6">For small businesses and single locations</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$1,999</span>
+<span class="text-gray-600">/one-time setup</span>
+<p class="text-gray-600 mt-1">+ $149/month</p>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>4 HD security cameras</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Basic access control (2 doors)</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Intrusion detection system</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Mobile app access</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Standard support (8/5)</span>
+</li>
+<li class="flex items-start text-gray-400">
+<i class="ri-close-line mr-2 mt-1"></i>
+<span>Video analytics</span>
+</li>
+<li class="flex items-start text-gray-400">
+<i class="ri-close-line mr-2 mt-1"></i>
+<span>Integration with other systems</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Get Started</button>
+</div>
+<!-- Professional Plan -->
+<div class="border-2 border-primary rounded-lg p-6 shadow-md relative">
+<div class="absolute top-0 right-0 bg-primary text-white px-4 py-1 text-sm font-medium rounded-bl-lg rounded-tr-lg">Most Popular</div>
+<h3 class="text-xl font-semibold mb-2">Business Security</h3>
+<p class="text-gray-600 mb-6">For medium-sized businesses with multiple areas</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$4,999</span>
+<span class="text-gray-600">/one-time setup</span>
+<p class="text-gray-600 mt-1">+ $299/month</p>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>12 HD security cameras</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Advanced access control (8 doors)</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Multi-zone intrusion detection</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Basic video analytics</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>30-day video storage</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Mobile & desktop access</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Priority support (12/7)</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Get Started</button>
+</div>
+<!-- Enterprise Plan -->
+<div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold mb-2">Enterprise Security</h3>
+<p class="text-gray-600 mb-6">For large organizations with complex needs</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">Custom</span>
+<p class="text-gray-600 mt-1">Tailored to your requirements</p>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Unlimited HD/4K cameras</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Enterprise access control</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Advanced video analytics</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Perimeter intrusion detection</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>System integration capabilities</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Dedicated account manager</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>24/7 premium support</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Sales</button>
+</div>
+</div>
+</div>
+<!-- Cybersecurity Pricing Tab -->
+<div id="cyber-pricing" class="pricing-content p-6 hidden">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Basic Plan -->
+<div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold mb-2">Basic Protection</h3>
+<p class="text-gray-600 mb-6">For small businesses with basic needs</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$499</span>
+<span class="text-gray-600">/month</span>
+<p class="text-gray-600 mt-1">Up to 25 devices</p>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Endpoint protection</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Email security</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Basic firewall</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Monthly vulnerability scan</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Standard support (8/5)</span>
+</li>
+<li class="flex items-start text-gray-400">
+<i class="ri-close-line mr-2 mt-1"></i>
+<span>24/7 monitoring</span>
+</li>
+<li class="flex items-start text-gray-400">
+<i class="ri-close-line mr-2 mt-1"></i>
+<span>Advanced threat protection</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Get Started</button>
+</div>
+<!-- Professional Plan -->
+<div class="border-2 border-primary rounded-lg p-6 shadow-md relative">
+<div class="absolute top-0 right-0 bg-primary text-white px-4 py-1 text-sm font-medium rounded-bl-lg rounded-tr-lg">Most Popular</div>
+<h3 class="text-xl font-semibold mb-2">Advanced Protection</h3>
+<p class="text-gray-600 mb-6">For medium-sized businesses with sensitive data</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$1,299</span>
+<span class="text-gray-600">/month</span>
+<p class="text-gray-600 mt-1">Up to 100 devices</p>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>All Basic features</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Next-gen firewall</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Advanced endpoint protection</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Data loss prevention</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Weekly vulnerability scans</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Security awareness training</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Priority support (12/7)</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Get Started</button>
+</div>
+<!-- Enterprise Plan -->
+<div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold mb-2">Enterprise Security</h3>
+<p class="text-gray-600 mb-6">For large organizations with complex needs</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$3,499</span>
+<span class="text-gray-600">/month</span>
+<p class="text-gray-600 mt-1">Up to 500 devices</p>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>All Advanced features</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>24/7 SOC monitoring</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Advanced threat protection</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Cloud security posture management</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Incident response team</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Compliance reporting</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>24/7 premium support</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Sales</button>
+</div>
+</div>
+</div>
+<!-- Managed Services Pricing Tab -->
+<div id="managed-pricing" class="pricing-content p-6 hidden">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Basic Plan -->
+<div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold mb-2">Essential Monitoring</h3>
+<p class="text-gray-600 mb-6">For small businesses with basic monitoring needs</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$799</span>
+<span class="text-gray-600">/month</span>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>8/5 system monitoring</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Basic incident response</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Monthly system health reports</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Remote system management</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Standard support (8/5)</span>
+</li>
+<li class="flex items-start text-gray-400">
+<i class="ri-close-line mr-2 mt-1"></i>
+<span>On-site response</span>
+</li>
+<li class="flex items-start text-gray-400">
+<i class="ri-close-line mr-2 mt-1"></i>
+<span>Compliance management</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Get Started</button>
+</div>
+<!-- Professional Plan -->
+<div class="border-2 border-primary rounded-lg p-6 shadow-md relative">
+<div class="absolute top-0 right-0 bg-primary text-white px-4 py-1 text-sm font-medium rounded-bl-lg rounded-tr-lg">Most Popular</div>
+<h3 class="text-xl font-semibold mb-2">Professional Management</h3>
+<p class="text-gray-600 mb-6">For medium-sized businesses with comprehensive needs</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$1,899</span>
+<span class="text-gray-600">/month</span>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>24/7 system monitoring</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Advanced incident response</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Weekly system health reports</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Remote & on-site support</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>System optimization</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Basic compliance management</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Priority support (24/7)</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Get Started</button>
+</div>
+<!-- Enterprise Plan -->
+<div class="border border-gray-200 rounded-lg p-6 hover:shadow-md transition-shadow">
+<h3 class="text-xl font-semibold mb-2">Enterprise Management</h3>
+<p class="text-gray-600 mb-6">For large organizations with complex security operations</p>
+<div class="mb-6">
+<span class="text-4xl font-bold">$4,999</span>
+<span class="text-gray-600">/month</span>
+</div>
+<ul class="space-y-3 mb-8">
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>All Professional features</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Dedicated security team</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Advanced compliance management</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Security strategy consulting</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Threat hunting services</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>Executive reporting</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-green-600 mr-2 mt-1"></i>
+<span>24/7 premium support with SLAs</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white px-4 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Sales</button>
+</div>
+</div>
+</div>
+<!-- Custom Solutions Tab -->
+<div id="custom-pricing" class="pricing-content p-6 hidden">
+<div class="max-w-3xl mx-auto text-center">
+<h3 class="text-2xl font-bold mb-4">Tailored Security Solutions for Your Business</h3>
+<p class="text-lg text-gray-600 mb-8">We understand that every organization has unique security requirements. Our team of experts will work with you to design a custom solution that perfectly fits your needs and budget.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-left mb-8">
+<div class="bg-gray-50 p-6 rounded-lg">
+<h4 class="text-xl font-semibold mb-4">Custom Solution Benefits</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span>Tailored to your specific security needs</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span>Integration with existing systems</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span>Optimized for your industry requirements</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span>Flexible deployment options</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span>Scalable as your security needs evolve</span>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg">
+<h4 class="text-xl font-semibold mb-4">Our Process</h4>
+<ol class="space-y-3">
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary text-white rounded-full mr-3 flex-shrink-0 font-medium">1</div>
+<span>Security assessment & risk analysis</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary text-white rounded-full mr-3 flex-shrink-0 font-medium">2</div>
+<span>Solution design & proposal</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary text-white rounded-full mr-3 flex-shrink-0 font-medium">3</div>
+<span>Implementation planning</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary text-white rounded-full mr-3 flex-shrink-0 font-medium">4</div>
+<span>Deployment & testing</span>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary text-white rounded-full mr-3 flex-shrink-0 font-medium">5</div>
+<span>Ongoing support & optimization</span>
+</li>
+</ol>
+</div>
+</div>
+<button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Schedule a Security Consultation</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Form Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="max-w-5xl mx-auto">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Our Security Experts</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Have questions about our solutions? Fill out the form below and one of our security specialists will get back to you within 24 hours.</p>
+</div>
+<div class="bg-white rounded-lg shadow-sm overflow-hidden">
+<div class="grid grid-cols-1 lg:grid-cols-3">
+<div class="bg-primary text-white p-8">
+<h3 class="text-2xl font-semibold mb-6">Get in Touch</h3>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
+<i class="ri-map-pin-line"></i>
+</div>
+<div>
+<h4 class="font-medium mb-1">Address</h4>
+<p class="opacity-80">1250 Technology Plaza, Suite 400<br>San Francisco, CA 94105</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
+<i class="ri-phone-line"></i>
+</div>
+<div>
+<h4 class="font-medium mb-1">Phone</h4>
+<p class="opacity-80">+1 (415) 555-0123</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
+<i class="ri-mail-line"></i>
+</div>
+<div>
+<h4 class="font-medium mb-1">Email</h4>
+<p class="opacity-80">security@techsolutions.com</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
+<i class="ri-time-line"></i>
+</div>
+<div>
+<h4 class="font-medium mb-1">Support Hours</h4>
+<p class="opacity-80">24/7 Emergency Support<br>8am-6pm PT Sales Inquiries</p>
+</div>
+</div>
+</div>
+</div>
+<div class="p-8 lg:col-span-2">
+<form>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div>
+<label class="block text-gray-700 mb-2" for="firstName">First Name*</label>
+<input type="text" id="firstName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none" required>
+</div>
+<div>
+<label class="block text-gray-700 mb-2" for="lastName">Last Name*</label>
+<input type="text" id="lastName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none" required>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div>
+<label class="block text-gray-700 mb-2" for="email">Email Address*</label>
+<input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none" required>
+</div>
+<div>
+<label class="block text-gray-700 mb-2" for="phone">Phone Number</label>
+<input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none">
+</div>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 mb-2" for="company">Company Name*</label>
+<input type="text" id="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none" required>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 mb-2">Interested In (Select all that apply)</label>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+<div class="flex items-center">
+<input type="checkbox" id="physical" class="custom-checkbox mr-3">
+<label for="physical">Physical Security</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="cyber" class="custom-checkbox mr-3">
+<label for="cyber">Cybersecurity</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="access" class="custom-checkbox mr-3">
+<label for="access">Access Control</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="surveillance" class="custom-checkbox mr-3">
+<label for="surveillance">Surveillance Systems</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="intrusion" class="custom-checkbox mr-3">
+<label for="intrusion">Intrusion Detection</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="managed" class="custom-checkbox mr-3">
+<label for="managed">Managed Security Services</label>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 mb-2">Number of Locations/Sites</label>
+<div class="flex items-center space-x-6">
+<div class="flex items-center">
+<input type="radio" id="size1" name="companySize" class="custom-radio mr-2">
+<label for="size1">1</label>
+</div>
+<div class="flex items-center">
+<input type="radio" id="size2" name="companySize" class="custom-radio mr-2">
+<label for="size2">2-5</label>
+</div>
+<div class="flex items-center">
+<input type="radio" id="size3" name="companySize" class="custom-radio mr-2">
+<label for="size3">6-20</label>
+</div>
+<div class="flex items-center">
+<input type="radio" id="size4" name="companySize" class="custom-radio mr-2">
+<label for="size4">21+</label>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 mb-2" for="message">Security Requirements*</label>
+<textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none" required></textarea>
+</div>
+<div class="mb-6">
+<label class="block text-gray-700 mb-2">Preferred Contact Method</label>
+<div class="flex items-center space-x-6">
+<div class="flex items-center">
+<input type="radio" id="contactEmail" name="contactMethod" class="custom-radio mr-2" checked>
+<label for="contactEmail">Email</label>
+</div>
+<div class="flex items-center">
+<input type="radio" id="contactPhone" name="contactMethod" class="custom-radio mr-2">
+<label for="contactPhone">Phone</label>
+</div>
+</div>
+</div>
+<button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Submit Inquiry</button>
+</form>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Emergency Support Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Emergency Support & Services</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">We provide rapid response and comprehensive support services to address security incidents and emergencies.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Support Option 1 -->
+<div class="bg-white rounded-lg p-6 shadow-sm">
+<div class="w-14 h-14 flex items-center justify-center bg-blue-50 rounded-full mb-6">
+<i class="ri-alarm-warning-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Incident Response</h3>
+<p class="text-gray-600 mb-4">Rapid response to security breaches, intrusions, and other security incidents with expert remediation.</p>
+<ul class="space-y-2 text-sm text-gray-700">
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>30-minute response time</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>On-site emergency teams</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Containment & recovery</span>
+</li>
+</ul>
+</div>
+<!-- Support Option 2 -->
+<div class="bg-white rounded-lg p-6 shadow-sm">
+<div class="w-14 h-14 flex items-center justify-center bg-blue-50 rounded-full mb-6">
+<i class="ri-24-hours-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">24/7 Monitoring</h3>
+<p class="text-gray-600 mb-4">Round-the-clock security monitoring of your systems, networks, and physical premises.</p>
+<ul class="space-y-2 text-sm text-gray-700">
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Real-time alert system</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Proactive threat detection</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Continuous surveillance</span>
+</li>
+</ul>
+</div>
+<!-- Support Option 3 -->
+<div class="bg-white rounded-lg p-6 shadow-sm">
+<div class="w-14 h-14 flex items-center justify-center bg-blue-50 rounded-full mb-6">
+<i class="ri-tools-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Maintenance Services</h3>
+<p class="text-gray-600 mb-4">Regular maintenance and updates to ensure your security systems operate at peak performance.</p>
+<ul class="space-y-2 text-sm text-gray-700">
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Quarterly system audits</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Firmware/software updates</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Performance optimization</span>
+</li>
+</ul>
+</div>
+<!-- Support Option 4 -->
+<div class="bg-white rounded-lg p-6 shadow-sm">
+<div class="w-14 h-14 flex items-center justify-center bg-blue-50 rounded-full mb-6">
+<i class="ri-user-settings-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Consulting Services</h3>
+<p class="text-gray-600 mb-4">Expert security consulting to assess risks, develop strategies, and optimize your security posture.</p>
+<ul class="space-y-2 text-sm text-gray-700">
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Security assessments</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Compliance guidance</span>
+</li>
+<li class="flex items-center">
+<i class="ri-check-line text-primary mr-2"></i>
+<span>Security roadmap development</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="mt-12 bg-white rounded-lg p-8 shadow-sm">
+<h3 class="text-2xl font-semibold mb-6">Service Level Agreements</h3>
+<div class="overflow-x-auto">
+<table class="w-full min-w-full">
+<thead>
+<tr class="bg-gray-50">
+<th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Service Level</th>
+<th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Response Time</th>
+<th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Resolution Time</th>
+<th class="px-6 py-3 text-left text-sm font-medium text-gray-700">Support Hours</th>
+<th class="px-6 py-3 text-left text-sm font-medium text-gray-700">On-Site Support</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200">
+<tr>
+<td class="px-6 py-4 text-sm text-gray-700">Standard</td>
+<td class="px-6 py-4 text-sm text-gray-700">4 hours</td>
+<td class="px-6 py-4 text-sm text-gray-700">Next business day</td>
+<td class="px-6 py-4 text-sm text-gray-700">8/5</td>
+<td class="px-6 py-4 text-sm text-gray-700">Additional fee</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm text-gray-700">Enhanced</td>
+<td class="px-6 py-4 text-sm text-gray-700">2 hours</td>
+<td class="px-6 py-4 text-sm text-gray-700">8 hours</td>
+<td class="px-6 py-4 text-sm text-gray-700">12/7</td>
+<td class="px-6 py-4 text-sm text-gray-700">Quarterly included</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm text-gray-700">Premium</td>
+<td class="px-6 py-4 text-sm text-gray-700">1 hour</td>
+<td class="px-6 py-4 text-sm text-gray-700">4 hours</td>
+<td class="px-6 py-4 text-sm text-gray-700">24/7</td>
+<td class="px-6 py-4 text-sm text-gray-700">Monthly included</td>
+</tr>
+<tr>
+<td class="px-6 py-4 text-sm text-gray-700">Mission Critical</td>
+<td class="px-6 py-4 text-sm text-gray-700">15 minutes</td>
+<td class="px-6 py-4 text-sm text-gray-700">2 hours</td>
+<td class="px-6 py-4 text-sm text-gray-700">24/7/365</td>
+<td class="px-6 py-4 text-sm text-gray-700">Dedicated engineer</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</section>
+<!-- Call-to-Action Footer -->
+<section class="py-20 bg-primary">
+<div class="container mx-auto px-4">
+<div class="max-w-4xl mx-auto text-center text-white">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Secure Your Business Today</h2>
+<p class="text-xl mb-8 opacity-90">Partner with us to implement comprehensive security solutions that protect your assets, people, and data while enabling your business to thrive.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4 mb-12">
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/6b7e2c16-e0e8-4c18-9622-a498b0bc1b10" data-readdy="true">
+<button class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300">Back to Telecommunication</button>
+</a>
+<button class="bg-transparent text-white border border-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-white/10 transition duration-300">Schedule Free Security Assessment</button>
+</div>
+<div class="flex flex-wrap justify-center gap-6">
+<a href="#" class="flex items-center bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition duration-300">
+<i class="ri-file-download-line mr-2"></i>
+<span>Download Security Guide</span>
+</a>
+<a href="#" class="flex items-center bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition duration-300">
+<i class="ri-vidicon-line mr-2"></i>
+<span>Request Demo</span>
+</a>
+<a href="#" class="flex items-center bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg transition duration-300">
+<i class="ri-customer-service-2-line mr-2"></i>
+<span>Emergency Support</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Company Info -->
+<div>
+<a href="#" class="text-2xl font-['Pacifico'] text-white mb-6 inline-block">logo</a>
+<p class="text-gray-400 mb-6">Providing enterprise-grade technology solutions that drive innovation and efficiency since 2005.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+<li><a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-gray-400 hover:text-white transition duration-300">Solutions</a></li>
+<li><a href="#industries" class="text-gray-400 hover:text-white transition duration-300">Industries</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Case Studies</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Careers</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<span class="text-gray-400">1250 Technology Plaza, Suite 400<br>San Francisco, CA 94105</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<span class="text-gray-400">+1 (415) 555-0123</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<span class="text-gray-400">info@techsolutions.com</span>
+</li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Subscribe to Our Newsletter</h3>
+<p class="text-gray-400 mb-4">Stay updated with the latest security trends and solutions.</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Your email address" class="bg-gray-800 text-white px-4 py-3 w-full border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary">
+<button type="submit" class="bg-primary text-white px-4 py-3 !rounded-r-lg !rounded-l-none whitespace-nowrap hover:bg-primary/90 transition duration-300">Subscribe</button>
+</div>
+</form>
+<div class="flex items-center space-x-4">
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-visa-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-mastercard-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-paypal-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-apple-fill text-2xl text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 TechSolutions. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Privacy Policy</a>
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Terms of Service</a>
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script id="navigationScript">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+
+// Add animation observer
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('animate');
+    }
+  });
+}, {
+  threshold: 0.1
+});
+
+// Observe all solution cards
+document.querySelectorAll('.solution-card').forEach(card => {
+  observer.observe(card);
+});
+
+// Add animation classes to hero content
+document.querySelector('.hero-section h1').classList.add('animate-fadeInUp');
+document.querySelector('.hero-section p').classList.add('animate-fadeInUp', 'animate-delay-200');
+const heroButtons = document.querySelectorAll('.hero-section button');
+heroButtons[0].classList.add('animate-fadeInUp', 'animate-delay-300');
+heroButtons[1].classList.add('animate-fadeInUp', 'animate-delay-400');
+
+// Add animation to statistics
+const stats = document.querySelectorAll('.security-map + div .bg-gray-50');
+stats.forEach((stat, index) => {
+  stat.style.opacity = '0';
+  stat.style.transform = 'translateY(20px)';
+  stat.style.transition = 'all 0.5s ease-out';
+  stat.style.transitionDelay = `${index * 100}ms`;
+  observer.observe(stat);
+});
+const mobileSolutionsBtn = document.getElementById('mobileSolutionsBtn');
+const mobileSolutionsMenu = document.getElementById('mobileSolutionsMenu');
+const solutionsBtn = document.getElementById('solutionsBtn');
+const solutionsMenu = document.getElementById('solutionsMenu');
+mobileMenuBtn.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+const icon = mobileMenuBtn.querySelector('i');
+icon.classList.toggle('ri-menu-line');
+icon.classList.toggle('ri-close-line');
+});
+mobileSolutionsBtn.addEventListener('click', function() {
+mobileSolutionsMenu.classList.toggle('hidden');
+const icon = mobileSolutionsBtn.querySelector('i');
+icon.classList.toggle('ri-arrow-down-s-line');
+icon.classList.toggle('ri-arrow-up-s-line');
+});
+solutionsBtn.addEventListener('click', function(e) {
+e.preventDefault();
+solutionsMenu.classList.toggle('hidden');
+});
+document.addEventListener('click', function(event) {
+if (!solutionsBtn.contains(event.target) && !solutionsMenu.contains(event.target)) {
+solutionsMenu.classList.add('hidden');
+}
+if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+mobileMenu.classList.add('hidden');
+const icon = mobileMenuBtn.querySelector('i');
+icon.classList.add('ri-menu-line');
+icon.classList.remove('ri-close-line');
+}
+});
+});
+</script>
+<script id="tabsScript">
+document.addEventListener('DOMContentLoaded', function() {
+// Features & Benefits Tabs
+const tabBtns = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+tabBtns.forEach(btn => {
+btn.addEventListener('click', function() {
+const tabId = this.getAttribute('data-tab');
+// Remove active class from all buttons and contents
+tabBtns.forEach(btn => btn.classList.remove('tab-active'));
+tabContents.forEach(content => content.classList.remove('active'));
+// Add active class to clicked button and corresponding content
+this.classList.add('tab-active');
+document.getElementById(tabId).classList.add('active');
+});
+});
+// Pricing Tabs
+const pricingTabs = document.querySelectorAll('.pricing-tab');
+const pricingContents = document.querySelectorAll('.pricing-content');
+pricingTabs.forEach(tab => {
+tab.addEventListener('click', function() {
+const tabId = this.getAttribute('data-tab');
+// Remove active class from all tabs and contents
+pricingTabs.forEach(tab => tab.classList.remove('tab-active'));
+pricingContents.forEach(content => {
+content.classList.add('hidden');
+content.classList.remove('active');
+});
+// Add active class to clicked tab and corresponding content
+this.classList.add('tab-active');
+const activeContent = document.getElementById(tabId);
+activeContent.classList.remove('hidden');
+activeContent.classList.add('active');
+});
+});
+});
+</script>
+<script id="securityAssessmentScript">
+document.addEventListener('DOMContentLoaded', function() {
+const securitySlider = document.getElementById('securitySlider');
+const securityValue = document.getElementById('securityValue');
+const vulnerabilities = document.getElementById('vulnerabilities');
+const threatsBlocked = document.getElementById('threatsBlocked');
+function updateSecurityMetrics() {
+const value = parseInt(securitySlider.value);
+securityValue.textContent = value + '%';
+// Adjust vulnerabilities based on security posture (inverse relationship)
+const vulnCount = Math.round(100 - value) + Math.round(Math.random() * 10);
+vulnerabilities.textContent = vulnCount;
+// Adjust threats blocked based on security posture (direct relationship)
+const threatCount = Math.round(10000 + (value * 100) + Math.random() * 1000);
+threatsBlocked.textContent = threatCount.toLocaleString();
+}
+if (securitySlider) {
+securitySlider.addEventListener('input', updateSecurityMetrics);
+updateSecurityMetrics(); // Initialize with default values
+}
+});
+</script>
+<script id="securityChartScript">
+document.addEventListener('DOMContentLoaded', function() {
+const chartDom = document.getElementById('securityChart');
+if (chartDom) {
+const myChart = echarts.init(chartDom);
+
+// Add fade in animation to chart container
+chartDom.style.opacity = '0';
+chartDom.style.transition = 'opacity 0.6s ease-out';
+setTimeout(() => {
+  chartDom.style.opacity = '1';
+}, 300);
+const option = {
+animation: false,
+title: {
+text: 'Security Threat Analysis',
+left: 'center',
+textStyle: {
+color: '#1f2937'
+}
+},
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#e5e7eb',
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Detected Threats', 'Blocked Threats', 'Critical Vulnerabilities'],
+bottom: 10,
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '15%',
+top: '15%',
+containLabel: true
+},
+xAxis: {
+type: 'category',
+boundaryGap: false,
+data: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+axisLabel: {
+color: '#1f2937'
+},
+axisLine: {
+lineStyle: {
+color: '#e5e7eb'
+}
+}
+},
+yAxis: {
+type: 'value',
+axisLabel: {
+color: '#1f2937',
+formatter: '{value}'
+},
+axisLine: {
+lineStyle: {
+color: '#e5e7eb'
+}
+},
+splitLine: {
+lineStyle: {
+color: '#f3f4f6'
+}
+}
+},
+series: [
+{
+name: 'Detected Threats',
+type: 'line',
+smooth: true,
+lineStyle: {
+width: 3,
+color: 'rgba(87, 181, 231, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(87, 181, 231, 0.2)'
+}, {
+offset: 1, color: 'rgba(87, 181, 231, 0.05)'
+}]
+}
+},
+emphasis: {
+focus: 'series'
+},
+data: [1450, 1680, 1890, 2100, 1940, 2300, 2450, 2650, 2800, 3100, 3300, 3500]
+},
+{
+name: 'Blocked Threats',
+type: 'line',
+smooth: true,
+lineStyle: {
+width: 3,
+color: 'rgba(141, 211, 199, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(141, 211, 199, 0.2)'
+}, {
+offset: 1, color: 'rgba(141, 211, 199, 0.05)'
+}]
+}
+},
+emphasis: {
+focus: 'series'
+},
+data: [1400, 1620, 1830, 2050, 1880, 2230, 2390, 2580, 2720, 3020, 3200, 3400]
+},
+{
+name: 'Critical Vulnerabilities',
+type: 'line',
+smooth: true,
+lineStyle: {
+width: 3,
+color: 'rgba(252, 141, 98, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(252, 141, 98, 0.2)'
+}, {
+offset: 1, color: 'rgba(252, 141, 98, 0.05)'
+}]
+}
+},
+emphasis: {
+focus: 'series'
+},
+data: [68, 62, 54, 48, 42, 38, 35, 32, 28, 24, 20, 18]
+}
+]
+};
+myChart.setOption(option);
+// Resize chart when window size changes
+window.addEventListener('resize', function() {
+myChart.resize();
+});
+}
+});
+document.addEventListener('DOMContentLoaded', function() {
+  // Contact Us Modal logic
+  const contactUsBtn = document.getElementById('contactUsBtn');
+  const mobileContactUsBtn = document.getElementById('mobileContactUsBtn');
+  const contactModal = document.getElementById('contactModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+
+  function openModal() {
+    contactModal.classList.remove('hidden');
+    contactModal.classList.add('flex');
+    document.body.classList.add('overflow-hidden');
+  }
+
+  function closeModal() {
+    contactModal.classList.add('hidden');
+    contactModal.classList.remove('flex');
+    document.body.classList.remove('overflow-hidden');
+  }
+
+  if (contactUsBtn) {
+    contactUsBtn.addEventListener('click', openModal);
+  }
+  if (mobileContactUsBtn) {
+    mobileContactUsBtn.addEventListener('click', openModal);
+  }
+  if (closeModalBtn) {
+    closeModalBtn.addEventListener('click', closeModal);
+  }
+  // Close modal when clicking outside the modal content
+  if (contactModal) {
+    contactModal.addEventListener('click', function(e) {
+      if (e.target === contactModal) {
+        closeModal();
+      }
+    });
+  }
+});
+</script>
+</body>
+</html>

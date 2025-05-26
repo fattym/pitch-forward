@@ -1,0 +1,1215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule a Consultation - TechSolutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+    <script src="https://cdn.tailwindcss.com/3.4.16"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: { primary: "#0056b3", secondary: "#00a3e0" },
+            borderRadius: {
+              none: "0px",
+              sm: "4px",
+              DEFAULT: "8px",
+              md: "12px",
+              lg: "16px",
+              xl: "20px",
+              "2xl": "24px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "8px",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
+    />
+    <style>
+      :where([class^="ri-"])::before { content: "\f3c2"; }
+      body {
+          font-family: 'Inter', sans-serif;
+          background-color: #f9fafb;
+      }
+      input:focus, select:focus, textarea:focus {
+          outline: none;
+          border-color: #0056b3;
+          box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+      }
+      input[type="number"]::-webkit-inner-spin-button,
+      input[type="number"]::-webkit-outer-spin-button {
+          -webkit-appearance: none;
+          margin: 0;
+      }
+      .calendar-day.available:hover {
+          background-color: #e0f2fe;
+          cursor: pointer;
+      }
+      .calendar-day.selected {
+          background-color: #0056b3;
+          color: white;
+      }
+      .calendar-day.unavailable {
+          color: #d1d5db;
+          cursor: not-allowed;
+      }
+      .custom-checkbox {
+          appearance: none;
+          -webkit-appearance: none;
+          width: 20px;
+          height: 20px;
+          border: 2px solid #d1d5db;
+          border-radius: 4px;
+          outline: none;
+          cursor: pointer;
+          position: relative;
+      }
+      .custom-checkbox:checked {
+          background-color: #0056b3;
+          border-color: #0056b3;
+      }
+      .custom-checkbox:checked::after {
+          content: '';
+          position: absolute;
+          top: 3px;
+          left: 6px;
+          width: 6px;
+          height: 10px;
+          border: solid white;
+          border-width: 0 2px 2px 0;
+          transform: rotate(45deg);
+      }
+      .custom-radio {
+          appearance: none;
+          -webkit-appearance: none;
+          width: 20px;
+          height: 20px;
+          border: 2px solid #d1d5db;
+          border-radius: 50%;
+          outline: none;
+          cursor: pointer;
+          position: relative;
+      }
+      .custom-radio:checked {
+          border-color: #0056b3;
+      }
+      .custom-radio:checked::after {
+          content: '';
+          position: absolute;
+          top: 3px;
+          left: 3px;
+          width: 10px;
+          height: 10px;
+          border-radius: 50%;
+          background-color: #0056b3;
+      }
+      .custom-select {
+          appearance: none;
+          -webkit-appearance: none;
+          background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%236b7280'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+          background-repeat: no-repeat;
+          background-position: right 0.5rem center;
+          background-size: 1.5em 1.5em;
+          padding-right: 2.5rem;
+      }
+      .progress-step.active {
+          color: #0056b3;
+          border-color: #0056b3;
+      }
+      .progress-step.completed {
+          background-color: #0056b3;
+          color: white;
+          border-color: #0056b3;
+      }
+      .progress-line {
+          height: 2px;
+          background-color: #e5e7eb;
+          flex: 1;
+      }
+      .progress-line.active {
+          background-color: #0056b3;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header Navigation -->
+    <header class="bg-white shadow-sm fixed w-full z-50">
+        <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        
+            <div class="flex items-center">
+              <a href="./index.html" class="text-2xl font-['Righteous'] text-primary">Pitch Forward</a >
+            </div>
+            
+        <nav class="hidden md:flex space-x-8">
+        <a href="./index.html" id="homeLink" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+        <div class="relative" id="solutionsDropdown">
+        <button id="solutionsBtn" class="nav-link text-gray-700 hover:text-primary font-medium flex items-center" aria-expanded="false" aria-haspopup="true">
+        Solutions
+        <i class="ri-arrow-down-s-line ml-1"></i>
+        </button>
+        <div id="solutionsMenu" class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden" role="menu" aria-labelledby="solutionsBtn">
+        <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-footprint-line w-5 h-5 mr-3"></i>
+        Fleet Management
+        </a>
+        <a href="./Fuel-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-gas-station-line w-5 h-5 mr-3"></i>
+        Fuel Management
+        </a>
+        <a href="./Logistics-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-truck-line w-5 h-5 mr-3"></i>
+        Logistics Management
+        </a>
+        <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-phone-line w-5 h-5 mr-3"></i>
+        Telecommunication
+        </a>
+        <a href="./Security-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-shield-keyhole-line w-5 h-5 mr-3"></i>
+        Security
+        </a>
+        <a href="./Data-&-Power-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-database-2-line w-5 h-5 mr-3"></i>
+        Data & Power
+        </a>
+        <a href="./Internet-&-Connectivity-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-wifi-line w-5 h-5 mr-3"></i>
+        Internet & Connectivity
+        </a>
+        <a href="./Mining-Technology-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-mine-line w-5 h-5 mr-3"></i>
+        Mining
+        </a>
+        <a href="./Warehousing-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+        <i class="ri-store-2-line w-5 h-5 mr-3"></i>
+        Warehousing
+        </a>
+        </div>
+        </div>
+        <a href="#industries" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+        <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+        <div class="relative hidden md:block">
+        <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm focus:border-primary">
+        <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+        <i class="ri-search-line"></i>
+        </div>
+        </div>
+        <button id="contactUsBtn" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+        <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
+        <div class="bg-white rounded-lg w-full max-w-xl mx-4 relative">
+        <button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+        <i class="ri-close-line text-2xl"></i>
+        </button>
+        
+        <div class="max-h-[100vh] overflow-x-auto p-4 md:p-8">
+        
+        <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
+        <form id="contactForm" action="" method="POST">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+        <div>
+        <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+        <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+        </div>
+        <div>
+        <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+        <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+        </div>
+        <div>
+        <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+        <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+        </div>
+        <div>
+        <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+        <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+        </div>
+        </div>
+        <div class="mb-4">
+        <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
+        <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary pr-8">
+          <option value="">Select a service</option>
+          <option value="fleet">Fleet Management</option>
+          <option value="fuel">Fuel Management</option>
+          <option value="logistics">Logistics Management</option>
+          <option value="telecommunication">Telecommunication</option>
+          <option value="security">Security</option>
+          <option value="data-power">Data &amp; Power</option>
+          <option value="internet-connectivity">Internet &amp; Connectivity</option>
+          <option value="mining">Mining</option>
+          <option value="warehousing">Warehousing</option>
+          <option value="other">Other</option>
+        </select>
+        </div>
+        <div class="mb-6">
+        <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+        <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Submit</button>
+        </form>
+        </div>
+        </div>
+        </div>
+        <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
+        <i class="ri-menu-line text-xl"></i>
+        </button>
+        </div>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobileMenu" class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-lg">
+        <nav class="container mx-auto px-4 py-4">
+        <a href="index.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
+        <div class="relative">
+        <button id="mobileSolutionsBtn" class="w-full flex items-center justify-between py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">
+        Solutions
+        <i class="ri-arrow-down-s-line"></i>
+        </button>
+        <div id="mobileSolutionsMenu" class="hidden bg-gray-50 px-4 py-2">
+        <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Fleet Management</a>
+        <a href="./Fuel-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Fuel Management</a>
+        <a href="./Logistics-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Logistics Management</a>
+        <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Telecommunication</a>
+        <a href="./Security-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Security</a>
+        <a href="./Data-&-Power-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Data & Power</a>
+        <a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
+        <a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
+        <a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
+        </div>
+        </div>
+        <a href="#industries" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
+        <a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
+        <div class="mt-4">
+        <button class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+        </div>
+        </nav>
+        </div>
+        </header>
+
+    <!-- Main Content -->
+    <main class="pt-20 pb-20">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <!-- Page Header -->
+        <div class="mb-8 mt-8">
+          <div class="flex items-center mb-4">
+            <a
+              href="./index.html"
+              data-readdy="true"
+              class="flex items-center text-gray-600 hover:text-primary transition-colors"
+            >
+              <div class="w-6 h-6 flex items-center justify-center mr-1">
+                <i class="ri-arrow-left-line"></i>
+              </div>
+              <span>Back to Home</span>
+            </a>
+          </div>
+          <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Schedule a Consultation
+          </h1>
+          <p class="text-lg text-gray-600 max-w-3xl">
+            Book a personalized session with our technology experts to discuss
+            your business needs and discover tailored solutions to drive
+            efficiency, security, and growth.
+          </p>
+        </div>
+
+        <!-- Progress Indicator -->
+        <div class="flex items-center justify-between mb-12 max-w-2xl mx-auto">
+          <div class="flex flex-col items-center">
+            <div
+              class="progress-step completed w-10 h-10 rounded-full border-2 flex items-center justify-center font-semibold text-sm mb-2"
+            >
+              1
+            </div>
+            <span class="text-sm font-medium text-primary">Information</span>
+          </div>
+          <div class="progress-line active"></div>
+          <div class="flex flex-col items-center">
+            <div
+              class="progress-step active w-10 h-10 rounded-full border-2 flex items-center justify-center font-semibold text-sm mb-2"
+            >
+              2
+            </div>
+            <span class="text-sm font-medium text-primary">Schedule</span>
+          </div>
+          <div class="progress-line"></div>
+          <div class="flex flex-col items-center">
+            <div
+              class="progress-step w-10 h-10 rounded-full border-2 border-gray-300 flex items-center justify-center font-semibold text-sm text-gray-500 mb-2"
+            >
+              3
+            </div>
+            <span class="text-sm font-medium text-gray-500">Confirmation</span>
+          </div>
+        </div>
+
+        <!-- Form and Calendar Container -->
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+          <!-- Left Column: Form -->
+          <div class="lg:col-span-5 bg-white p-6 rounded-lg shadow-sm">
+            <h2 class="text-xl font-semibold mb-6">Your Information</h2>
+
+            <form id="consultationForm">
+              <div class="mb-5">
+                <label
+                  for="fullName"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Full Name *</label
+                >
+                <input
+                  type="text"
+                  id="fullName"
+                  name="fullName"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900"
+                  required
+                />
+              </div>
+
+              <div class="mb-5">
+                <label
+                  for="companyName"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Company Name *</label
+                >
+                <input
+                  type="text"
+                  id="companyName"
+                  name="companyName"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900"
+                  required
+                />
+              </div>
+
+              <div class="mb-5">
+                <label
+                  for="email"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Business Email *</label
+                >
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900"
+                  required
+                />
+              </div>
+
+              <div class="mb-5">
+                <label
+                  for="phone"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Phone Number *</label
+                >
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900"
+                  required
+                />
+              </div>
+
+              <div class="mb-5">
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Areas of Interest (Select all that apply) *</label
+                >
+                <!-- New Areas of Interest -->
+                <div class="space-y-2 mt-2">
+                    <div class="flex items-center">
+                        <input
+                            type="checkbox"
+                            id="fleet-management"
+                            name="interests"
+                            value="Fleet Management"
+                            class="custom-checkbox"
+                        />
+                        <label for="fleet-management" class="ml-2 text-gray-700">Fleet Management</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input
+                            type="checkbox"
+                            id="fuel-management"
+                            name="interests"
+                            value="Fuel Management"
+                            class="custom-checkbox"
+                        />
+                        <label for="fuel-management" class="ml-2 text-gray-700">Fuel Management</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input
+                            type="checkbox"
+                            id="logistics-management"
+                            name="interests"
+                            value="Logistics Management"
+                            class="custom-checkbox"
+                        />
+                        <label for="logistics-management" class="ml-2 text-gray-700">Logistics Management</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input
+                            type="checkbox"
+                            id="telecommunication"
+                            name="interests"
+                            value="Telecommunication"
+                            class="custom-checkbox"
+                        />
+                        <label for="telecommunication" class="ml-2 text-gray-700">Telecommunication</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input
+                            type="checkbox"
+                            id="security"
+                            name="interests"
+                            value="Security"
+                            class="custom-checkbox"
+                        />
+                        <label for="security" class="ml-2 text-gray-700">Security</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input
+                            type="checkbox"
+                            id="data-power"
+                            name="interests"
+                            value="Data & Power"
+                            class="custom-checkbox"
+                        />
+                        <label for="data-power" class="ml-2 text-gray-700">Data & Power</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input
+                            type="checkbox"
+                            id="internet-connectivity"
+                            name="interests"
+                            value="Internet & Connectivity"
+                            class="custom-checkbox"
+                        />
+                        <label for="internet-connectivity" class="ml-2 text-gray-700">Internet & Connectivity</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input
+                            type="checkbox"
+                            id="mining"
+                            name="interests"
+                            value="Mining"
+                            class="custom-checkbox"
+                        />
+                        <label for="mining" class="ml-2 text-gray-700">Mining</label>
+                    </div>
+                    <div class="flex items-center">
+                        <input
+                            type="checkbox"
+                            id="warehousing"
+                            name="interests"
+                            value="Warehousing"
+                            class="custom-checkbox"
+                        />
+                        <label for="warehousing" class="ml-2 text-gray-700">Warehousing</label>
+                    </div>
+                </div>
+              
+              </div>
+
+              <div class="mb-5">
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Preferred Meeting Format *</label
+                >
+                <div class="flex space-x-6 mt-2">
+                  <div class="flex items-center">
+                    <input
+                      type="radio"
+                      id="virtual"
+                      name="meetingFormat"
+                      value="Virtual"
+                      class="custom-radio"
+                      checked
+                    />
+                    <label for="virtual" class="ml-2 text-gray-700"
+                      >Virtual Meeting</label
+                    >
+                  </div>
+                  <div class="flex items-center">
+                    <input
+                      type="radio"
+                      id="in-person"
+                      name="meetingFormat"
+                      value="In-person"
+                      class="custom-radio"
+                    />
+                    <label for="in-person" class="ml-2 text-gray-700"
+                      >In-person Meeting</label
+                    >
+                  </div>
+                </div>
+              </div>
+
+              <div class="mb-5">
+                <label
+                  for="notes"
+                  class="block text-sm font-medium text-gray-700 mb-1"
+                  >Additional Notes (Optional)</label
+                >
+                <textarea
+                  id="notes"
+                  name="notes"
+                  rows="3"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 resize-none"
+                ></textarea>
+              </div>
+            </form>
+          </div>
+
+          <!-- Right Column: Calendar and Details -->
+          <div class="lg:col-span-7">
+            <!-- Calendar Widget -->
+            <div class="bg-white p-6 rounded-lg shadow-sm mb-6">
+              <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-semibold">Select a Date & Time</h2>
+                <div class="relative">
+                  <select
+                    id="timezone"
+                    class="custom-select border border-gray-300 rounded-lg px-4 py-2 text-gray-700 bg-white text-sm"
+                  >
+                    <option value="UTC-8">Pacific Time (UTC-8)</option>
+                    <option value="UTC-7">Mountain Time (UTC-7)</option>
+                    <option value="UTC-6">Central Time (UTC-6)</option>
+                    <option value="UTC-5">Eastern Time (UTC-5)</option>
+                    <option value="UTC+0">UTC</option>
+                    <option value="UTC+1">Central European Time (UTC+1)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="mb-6">
+                <div class="flex justify-between items-center mb-4">
+                  <button
+                    id="prevMonth"
+                    class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary"
+                  >
+                    <i class="ri-arrow-left-s-line text-xl"></i>
+                  </button>
+                  <h3 id="currentMonth" class="text-lg font-medium">
+                    May 2025
+                  </h3>
+                  <button
+                    id="nextMonth"
+                    class="w-8 h-8 flex items-center justify-center text-gray-600 hover:text-primary"
+                  >
+                    <i class="ri-arrow-right-s-line text-xl"></i>
+                  </button>
+                </div>
+
+                <div class="grid grid-cols-7 gap-1 text-center mb-2">
+                  <div class="text-sm font-medium text-gray-500">Sun</div>
+                  <div class="text-sm font-medium text-gray-500">Mon</div>
+                  <div class="text-sm font-medium text-gray-500">Tue</div>
+                  <div class="text-sm font-medium text-gray-500">Wed</div>
+                  <div class="text-sm font-medium text-gray-500">Thu</div>
+                  <div class="text-sm font-medium text-gray-500">Fri</div>
+                  <div class="text-sm font-medium text-gray-500">Sat</div>
+                </div>
+
+                <div id="calendarDays" class="grid grid-cols-7 gap-1">
+                  <!-- Calendar days will be populated by JavaScript -->
+                </div>
+              </div>
+
+              <div id="timeSlots" class="mt-6">
+                <h3 class="text-lg font-medium mb-4">
+                  Available Time Slots for
+                  <span id="selectedDate">Saturday, May 24, 2025</span>
+                </h3>
+                <div class="grid grid-cols-3 gap-2">
+                  <button
+                    class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors"
+                  >
+                    9:00 AM
+                  </button>
+                  <button
+                    class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors"
+                  >
+                    9:30 AM
+                  </button>
+                  <button
+                    class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors"
+                  >
+                    10:00 AM
+                  </button>
+                  <button
+                    class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors"
+                  >
+                    10:30 AM
+                  </button>
+                  <button
+                    class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors"
+                  >
+                    11:00 AM
+                  </button>
+                  <button
+                    class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors"
+                  >
+                    11:30 AM
+                  </button>
+                  <button
+                    class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors"
+                  >
+                    1:00 PM
+                  </button>
+                  <button
+                    class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors"
+                  >
+                    1:30 PM
+                  </button>
+                  <button
+                    class="time-slot px-4 py-2 border border-gray-300 rounded-lg text-center hover:bg-blue-50 hover:border-primary transition-colors"
+                  >
+                    2:00 PM
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Consultation Details -->
+            <div class="bg-white p-6 rounded-lg shadow-sm">
+              <h2 class="text-xl font-semibold mb-4">Consultation Details</h2>
+
+              <div class="mb-4 flex items-start">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3 flex-shrink-0 mt-1"
+                >
+                  <i class="ri-time-line text-primary"></i>
+                </div>
+                <div>
+                  <h3 class="font-medium">Duration</h3>
+                  <p class="text-gray-600">
+                    45 minutes with a TechSolutions expert
+                  </p>
+                </div>
+              </div>
+
+              <div class="mb-4 flex items-start">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3 flex-shrink-0 mt-1"
+                >
+                  <i class="ri-file-list-3-line text-primary"></i>
+                </div>
+                <div>
+                  <h3 class="font-medium">What to Prepare</h3>
+                  <p class="text-gray-600">
+                    A brief overview of your current technology infrastructure
+                    and key challenges you're facing. Any specific questions
+                    you'd like addressed during the consultation.
+                  </p>
+                </div>
+              </div>
+
+              <div class="mb-4 flex items-start">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3 flex-shrink-0 mt-1"
+                >
+                  <i class="ri-road-map-line text-primary"></i>
+                </div>
+                <div>
+                  <h3 class="font-medium">Consultation Process</h3>
+                  <p class="text-gray-600">
+                    Our expert will discuss your business needs, assess your
+                    current technology setup, and recommend tailored solutions
+                    to address your specific challenges.
+                  </p>
+                </div>
+              </div>
+
+              <div class="flex items-start">
+                <div
+                  class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-3 flex-shrink-0 mt-1"
+                >
+                  <i class="ri-calendar-check-line text-primary"></i>
+                </div>
+                <div>
+                  <h3 class="font-medium">After Booking</h3>
+                  <p class="text-gray-600">
+                    You'll receive a confirmation email with meeting details and
+                    a calendar invite. Our team may reach out for additional
+                    information to make the consultation more productive.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Action Section -->
+    <div
+      class="fixed bottom-0 left-0 right-0 bg-white shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] py-4 z-40"
+    >
+      <div
+        class="container mx-auto px-4 flex flex-col sm:flex-row justify-between items-center"
+      >
+        <div class="text-sm text-gray-500 mb-4 sm:mb-0">
+          <div class="flex items-center">
+            <div class="w-5 h-5 flex items-center justify-center mr-1">
+              <i class="ri-shield-check-line text-primary"></i>
+            </div>
+            <span
+              >Your information is secure and will not be shared with third
+              parties.</span
+            >
+          </div>
+        </div>
+        <div class="flex items-center">
+          <a
+            href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6"
+            data-readdy="true"
+            class="text-gray-500 hover:text-gray-700 mr-6"
+            >Cancel</a
+          >
+          <button
+            id="scheduleButton"
+            class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300"
+          >
+            Schedule Consultation
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirmation Modal (Initially Hidden) -->
+    <div
+      id="confirmationModal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 hidden"
+    >
+      <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4">
+        <div class="text-center mb-6">
+          <div
+            class="w-20 h-20 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4"
+          >
+            <i class="ri-check-line text-green-500 text-4xl"></i>
+          </div>
+          <h2 class="text-2xl font-bold text-gray-900 mb-2">
+            Consultation Scheduled!
+          </h2>
+          <p class="text-gray-600">
+            Your consultation has been successfully scheduled for:
+          </p>
+          <p
+            class="text-lg font-medium text-primary mt-2"
+            id="confirmationDateTime"
+          >
+            Saturday, May 24, 2025 at 10:00 AM (Pacific Time)
+          </p>
+        </div>
+
+        <div class="mb-6 bg-gray-50 p-4 rounded-lg">
+          <h3 class="font-medium mb-2">Consultation Details:</h3>
+          <ul class="space-y-2 text-sm text-gray-700">
+            <li class="flex items-start">
+              <div class="w-5 h-5 flex items-center justify-center mr-2 mt-0.5">
+                <i class="ri-user-line text-primary"></i>
+              </div>
+              <span id="confirmName">John Smith</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 flex items-center justify-center mr-2 mt-0.5">
+                <i class="ri-building-line text-primary"></i>
+              </div>
+              <span id="confirmCompany">Acme Corporation</span>
+            </li>
+            <li class="flex items-start">
+              <div class="w-5 h-5 flex items-center justify-center mr-2 mt-0.5">
+                <i class="ri-calendar-line text-primary"></i>
+              </div>
+              <span id="confirmFormat">Virtual Meeting</span>
+            </li>
+          </ul>
+        </div>
+
+        <p class="text-gray-600 text-sm mb-6">
+          A confirmation email has been sent to
+          <span id="confirmEmail" class="font-medium">john.smith@acme.com</span>
+          with all the details.
+        </p>
+
+        <div class="flex flex-col space-y-3">
+          <button
+            class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300"
+          >
+            Add to Calendar
+          </button>
+          <a
+            href="./index.html"
+            data-readdy="true"
+            class="text-center text-gray-600 hover:text-primary transition-colors"
+            >Return to Homepage</a
+          >
+        </div>
+      </div>
+    </div>
+
+    <script id="calendarScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const calendarDays = document.getElementById("calendarDays");
+        const currentMonthElement = document.getElementById("currentMonth");
+        const prevMonthButton = document.getElementById("prevMonth");
+        const nextMonthButton = document.getElementById("nextMonth");
+        const selectedDateElement = document.getElementById("selectedDate");
+
+        // Current date
+        const today = new Date(2025, 4, 24); // May 24, 2025
+        let currentMonth = today.getMonth();
+        let currentYear = today.getFullYear();
+
+        // Unavailable dates (weekends and specific dates)
+        const unavailableDates = [
+          new Date(2025, 4, 26).toDateString(),
+          new Date(2025, 4, 27).toDateString(),
+          new Date(2025, 4, 28).toDateString(),
+        ];
+
+        function generateCalendar() {
+          calendarDays.innerHTML = "";
+
+          const firstDay = new Date(currentYear, currentMonth, 1);
+          const lastDay = new Date(currentYear, currentMonth + 1, 0);
+          const daysInMonth = lastDay.getDate();
+          const startingDay = firstDay.getDay(); // 0 = Sunday
+
+          currentMonthElement.textContent = firstDay.toLocaleString("default", {
+            month: "long",
+            year: "numeric",
+          });
+
+          // Add empty cells for days before the first day of the month
+          for (let i = 0; i < startingDay; i++) {
+            const emptyDay = document.createElement("div");
+            emptyDay.classList.add("h-10", "flex", "items-center", "justify-center");
+            calendarDays.appendChild(emptyDay);
+          }
+
+          // Add cells for each day of the month
+          for (let day = 1; day <= daysInMonth; day++) {
+            const date = new Date(currentYear, currentMonth, day);
+            const dateString = date.toDateString();
+            const isWeekend = date.getDay() === 0 || date.getDay() === 6;
+            const isUnavailable =
+              unavailableDates.includes(dateString) || isWeekend || date < today;
+            const isToday = date.toDateString() === today.toDateString();
+
+            const dayElement = document.createElement("div");
+            dayElement.classList.add(
+              "calendar-day",
+              "h-10",
+              "flex",
+              "items-center",
+              "justify-center",
+              "rounded-full",
+              "text-sm",
+            );
+            dayElement.textContent = day;
+
+            if (isUnavailable) {
+              dayElement.classList.add("unavailable");
+            } else {
+              dayElement.classList.add("available");
+              dayElement.addEventListener("click", function () {
+                document.querySelectorAll(".calendar-day.selected").forEach((el) => {
+                  el.classList.remove("selected");
+                });
+                dayElement.classList.add("selected");
+
+                const selectedDate = new Date(currentYear, currentMonth, day);
+                selectedDateElement.textContent = selectedDate.toLocaleDateString(
+                  "en-US",
+                  {
+                    weekday: "long",
+                    month: "long",
+                    day: "numeric",
+                    year: "numeric",
+                  },
+                );
+              });
+            }
+
+            if (isToday) {
+              dayElement.classList.add("selected", "bg-primary", "text-white");
+            }
+
+            calendarDays.appendChild(dayElement);
+          }
+        }
+
+        prevMonthButton.addEventListener("click", function () {
+          if (
+            currentMonth === today.getMonth() &&
+            currentYear === today.getFullYear()
+          ) {
+            return; // Don't allow going before current month
+          }
+
+          currentMonth--;
+          if (currentMonth < 0) {
+            currentMonth = 11;
+            currentYear--;
+          }
+          generateCalendar();
+        });
+
+        nextMonthButton.addEventListener("click", function () {
+          currentMonth++;
+          if (currentMonth > 11) {
+            currentMonth = 0;
+            currentYear++;
+          }
+          generateCalendar();
+        });
+
+        // Initialize calendar
+        generateCalendar();
+
+        // Time slot selection
+        const timeSlots = document.querySelectorAll(".time-slot");
+        timeSlots.forEach((slot) => {
+          slot.addEventListener("click", function () {
+            timeSlots.forEach((s) => {
+              s.classList.remove("bg-primary", "text-white", "border-primary");
+            });
+            slot.classList.add("bg-primary", "text-white", "border-primary");
+          });
+        });
+      });
+    </script>
+
+    <script id="formScript">
+      document.addEventListener("DOMContentLoaded", function () {
+        const scheduleButton = document.getElementById("scheduleButton");
+        const confirmationModal = document.getElementById("confirmationModal");
+        const form = document.getElementById("consultationForm");
+
+        // Form validation and submission
+        scheduleButton.addEventListener("click", function () {
+          // Basic validation
+          const fullName = document.getElementById("fullName").value;
+          const companyName = document.getElementById("companyName").value;
+          const email = document.getElementById("email").value;
+          const phone = document.getElementById("phone").value;
+
+          // Check if at least one interest is selected
+          const interests = document.querySelectorAll(
+            'input[name="interests"]:checked',
+          );
+          const selectedTimeSlot = document.querySelector(".time-slot.bg-primary");
+
+          if (!fullName || !companyName || !email || !phone) {
+            alert("Please fill in all required fields.");
+            return;
+          }
+
+          if (interests.length === 0) {
+            alert("Please select at least one area of interest.");
+            return;
+          }
+
+          if (!selectedTimeSlot) {
+            alert("Please select a time slot for your consultation.");
+            return;
+          }
+
+          // Update confirmation modal with form data
+          document.getElementById("confirmName").textContent = fullName;
+          document.getElementById("confirmCompany").textContent = companyName;
+          document.getElementById("confirmEmail").textContent = email;
+
+          const meetingFormat = document.querySelector(
+            'input[name="meetingFormat"]:checked',
+          ).value;
+          document.getElementById("confirmFormat").textContent =
+            meetingFormat + " Meeting";
+
+          const selectedDate = document.getElementById("selectedDate").textContent;
+          const selectedTime = selectedTimeSlot.textContent;
+          const timezone =
+            document.getElementById("timezone").options[
+              document.getElementById("timezone").selectedIndex
+            ].text;
+          document.getElementById("confirmationDateTime").textContent =
+            `${selectedDate} at ${selectedTime} (${timezone})`;
+
+          // Show confirmation modal
+          confirmationModal.classList.remove("hidden");
+        });
+
+        // Close modal when clicking outside
+        confirmationModal.addEventListener("click", function (e) {
+          if (e.target === confirmationModal) {
+            confirmationModal.classList.add("hidden");
+          }
+        });
+      });
+
+    </script>
+    <!-- ...existing code... -->
+<script id="contactModalScript">
+    document.addEventListener('DOMContentLoaded', function() {
+        // Show modal on both desktop and mobile Contact Us buttons
+        function showContactModal() {
+            document.getElementById('contactModal').classList.remove('hidden');
+            document.body.classList.add('overflow-hidden');
+        }
+        function hideContactModal() {
+            document.getElementById('contactModal').classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+        }
+        document.getElementById('contactUsBtn').addEventListener('click', showContactModal);
+        const mobileContactBtn = document.getElementById('mobileContactUsBtn');
+        if (mobileContactBtn) {
+            mobileContactBtn.addEventListener('click', function() {
+                document.getElementById('mobileMenu').classList.add('hidden');
+                showContactModal();
+            });
+        }
+        document.getElementById('closeModalBtn').addEventListener('click', hideContactModal);
+        // Close modal on outside click
+        document.getElementById('contactModal').addEventListener('click', function(e) {
+            if (e.target === this) hideContactModal();
+        });
+    });
+    </script>
+    <script id="mobileMenuScript">
+    document.addEventListener('DOMContentLoaded', function() {
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileSolutionsBtn = document.getElementById('mobileSolutionsBtn');
+        const mobileSolutionsMenu = document.getElementById('mobileSolutionsMenu');
+        // Toggle mobile menu
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenu.classList.toggle('hidden');
+            const icon = mobileMenuBtn.querySelector('i');
+            icon.classList.toggle('ri-menu-line');
+            icon.classList.toggle('ri-close-line');
+        });
+        // Toggle mobile solutions dropdown
+        mobileSolutionsBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            mobileSolutionsMenu.classList.toggle('hidden');
+            const icon = mobileSolutionsBtn.querySelector('i');
+            icon.classList.toggle('ri-arrow-down-s-line');
+            icon.classList.toggle('ri-arrow-up-s-line');
+        });
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.add('ri-menu-line');
+                icon.classList.remove('ri-close-line');
+            }
+        });
+        // Close mobile menu on link click
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', function() {
+                mobileMenu.classList.add('hidden');
+                const icon = mobileMenuBtn.querySelector('i');
+                icon.classList.add('ri-menu-line');
+                icon.classList.remove('ri-close-line');
+            });
+        });
+    });
+    </script>
+    <script id="stickyHeaderScript">
+    document.addEventListener('DOMContentLoaded', function() {
+        const header = document.querySelector('header');
+        const headerHeight = header.offsetHeight;
+        const homeLink = document.getElementById('homeLink');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const solutionsBtn = document.getElementById('solutionsBtn');
+        const solutionsMenu = document.getElementById('solutionsMenu');
+        let isDropdownOpen = false;
+        function toggleDropdown() {
+            isDropdownOpen = !isDropdownOpen;
+            solutionsMenu.classList.toggle('hidden');
+            solutionsBtn.setAttribute('aria-expanded', isDropdownOpen);
+        }
+        solutionsBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            toggleDropdown();
+        });
+        solutionsBtn.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                toggleDropdown();
+            } else if (e.key === 'Escape' && isDropdownOpen) {
+                toggleDropdown();
+            }
+        });
+        document.addEventListener('click', function(e) {
+            if (!solutionsBtn.contains(e.target) && isDropdownOpen) {
+                toggleDropdown();
+            }
+        });
+        const menuItems = solutionsMenu.querySelectorAll('a');
+        menuItems.forEach((item, index) => {
+            item.setAttribute('role', 'menuitem');
+            item.setAttribute('tabindex', '-1');
+            item.addEventListener('keydown', function(e) {
+                const items = Array.from(menuItems);
+                const currentIndex = items.indexOf(e.target);
+                if (e.key === 'ArrowDown') {
+                    e.preventDefault();
+                    const nextItem = items[(currentIndex + 1) % items.length];
+                    nextItem.focus();
+                } else if (e.key === 'ArrowUp') {
+                    e.preventDefault();
+                    const prevItem = items[(currentIndex - 1 + items.length) % items.length];
+                    prevItem.focus();
+                } else if (e.key === 'Escape') {
+                    toggleDropdown();
+                    solutionsBtn.focus();
+                }
+            });
+        });
+        homeLink.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+            mobileMenu.classList.add('hidden');
+        });
+        function updateHeader() {
+            if (window.scrollY > 50) {
+                header.classList.add('shadow');
+            } else {
+                header.classList.remove('shadow');
+            }
+        }
+        window.addEventListener('scroll', updateHeader);
+        updateHeader();
+    });
+    /**
+     * Toggle the Solutions dropdown in a webview context.
+     * This function can be called from outside to open/close the dropdown.
+     */
+     homeLink.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.location.href = 'index.html';
+    });
+    </script>
+  </body>
+</html>

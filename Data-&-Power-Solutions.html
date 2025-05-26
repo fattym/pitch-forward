@@ -1,0 +1,2161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data & Power Solutions - TechSolutions</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0056b3',secondary:'#00a3e0'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.animate-scaleIn {
+  animation: scaleIn 0.6s ease-out forwards;
+}
+
+.animate-slideInRight {
+  animation: slideInRight 0.6s ease-out forwards;
+}
+
+.animate-delay-100 {
+  animation-delay: 100ms;
+}
+
+.animate-delay-200 {
+  animation-delay: 200ms;
+}
+
+.animate-delay-300 {
+  animation-delay: 300ms;
+}
+
+.animate-delay-400 {
+  animation-delay: 400ms;
+}
+
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=modern%2520data%2520center%2520with%2520server%2520racks%2520and%2520blue%2520LED%2520lighting%252C%2520showing%2520advanced%2520cooling%2520systems%2520and%2520power%2520infrastructure.%2520The%2520image%2520should%2520have%2520a%2520dark%2520blue%2520gradient%2520on%2520the%2520left%2520side%2520that%2520transitions%2520smoothly%2520to%2520show%2520the%2520data%2520center%2520equipment%2520on%2520the%2520right.%2520The%2520left%2520side%2520should%2520have%2520enough%2520dark%2520space%2520for%2520white%2520text%2520overlay%2520with%2520good%2520contrast.&width=1920&height=800&seq=datacenter123&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(0,20,50,0.85) 0%, rgba(0,20,50,0.7) 50%, rgba(0,20,50,0.4) 100%);
+}
+.solution-card {
+transition: all 0.3s ease;
+}
+.solution-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.tab-content {
+display: none;
+}
+.tab-content.active {
+display: block;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #0056b3;
+border-color: #0056b3;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+top: 3px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-radio {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+border-radius: 50%;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-radio:checked {
+border-color: #0056b3;
+}
+.custom-radio:checked::after {
+content: '';
+position: absolute;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+width: 10px;
+height: 10px;
+background-color: #0056b3;
+border-radius: 50%;
+}
+.case-study-carousel {
+scroll-behavior: smooth;
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #0056b3;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.nav-link.active::after {
+width: 100%;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Header Navigation -->
+<header class="bg-white shadow-sm fixed w-full z-50">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="flex items-center">
+          <a href="./index.html" class="text-2xl font-['Righteous'] text-primary">Pitch Forward</a>
+      </div>
+      <nav class="hidden md:flex space-x-8">
+          <a href="./index.html" id="homeLink" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+          <div class="relative" id="solutionsDropdown">
+              <button id="solutionsBtn" class="nav-link text-gray-700 hover:text-primary font-medium flex items-center" aria-expanded="false" aria-haspopup="true">
+                  Solutions
+                  <i class="ri-arrow-down-s-line ml-1"></i>
+              </button>
+              <div id="solutionsMenu" class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden" role="menu" aria-labelledby="solutionsBtn">
+                  <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-footprint-line w-5 h-5 mr-3"></i>
+                      Fleet Management
+                  </a>
+                  <a href="./Fuel-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-gas-station-line w-5 h-5 mr-3"></i>
+                      Fuel Management
+                  </a>
+                  <a href="./Logistics-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-truck-line w-5 h-5 mr-3"></i>
+                      Logistics Management
+                  </a>
+                  <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-phone-line w-5 h-5 mr-3"></i>
+                      Telecommunication
+                  </a>
+                  <a href="./Security-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-shield-keyhole-line w-5 h-5 mr-3"></i>
+                      Security
+                  </a>
+                  <a href="./Data-&-Power-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-database-2-line w-5 h-5 mr-3"></i>
+                      Data & Power
+                  </a>
+                  <a href="./Internet-&-Connectivity-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-wifi-line w-5 h-5 mr-3"></i>
+                      Internet & Connectivity
+                  </a>
+                  <a href="./Mining-Technology-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-mine-line w-5 h-5 mr-3"></i>
+                      Mining
+                  </a>
+                  <a href="./Warehousing-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                      <i class="ri-store-2-line w-5 h-5 mr-3"></i>
+                      Warehousing
+                  </a>
+              </div>
+          </div>
+          <a href="#industries" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+          <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
+      </nav>
+      <div class="flex items-center space-x-4">
+          <div class="relative hidden md:block">
+              <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm focus:border-primary">
+              <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+                  <i class="ri-search-line"></i>
+              </div>
+          </div>
+          <!-- Contact Us Button always visible on desktop, and on mobile triggers modal -->
+          <button id="contactUsBtn" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 block md:block">Contact Us</button>
+          <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
+              <div class="bg-white rounded-lg w-full max-w-xl mx-4 relative">
+                  <button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+                      <i class="ri-close-line text-2xl"></i>
+                  </button>
+                  <div class="max-h-[100vh] overflow-x-auto p-4 md:p-8">
+                      <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
+                      <form id="contactForm" action="" method="POST">
+                          <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                              <div>
+                                  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                  <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                              </div>
+                              <div>
+                                  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                  <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                              </div>
+                              <div>
+                                  <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                  <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                              </div>
+                              <div>
+                                  <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+                                  <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                              </div>
+                          </div>
+                          <div class="mb-4">
+                              <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
+                              <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary pr-8">
+                                <option value="">Select a service</option>
+                                <option value="fleet">Fleet Management</option>
+                                <option value="fuel">Fuel Management</option>
+                                <option value="logistics">Logistics Management</option>
+                                <option value="telecommunication">Telecommunication</option>
+                                <option value="security">Security</option>
+                                <option value="data-power">Data &amp; Power</option>
+                                <option value="internet-connectivity">Internet &amp; Connectivity</option>
+                                <option value="mining">Mining</option>
+                                <option value="warehousing">Warehousing</option>
+                                <option value="other">Other</option>
+                              </select>
+                          </div>
+                          <div class="mb-6">
+                              <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                              <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
+                          </div>
+                          <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Submit</button>
+                      </form>
+                  </div>
+              </div>
+          </div>
+          <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
+              <i class="ri-menu-line text-xl"></i>
+          </button>
+      </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-lg z-50">
+      <nav class="container mx-auto px-4 py-4">
+          <a href="index.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
+          <div class="relative">
+              <button id="mobileSolutionsBtn" class="w-full flex items-center justify-between py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">
+                  Solutions
+                  <i class="ri-arrow-down-s-line"></i>
+              </button>
+              <div id="mobileSolutionsMenu" class="hidden bg-gray-50 px-4 py-2">
+                  <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Fleet Management</a>
+                  <a href="./Fuel-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Fuel Management</a>
+                  <a href="./Logistics-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Logistics Management</a>
+                  <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Telecommunication</a>
+                  <a href="./Security-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Security</a>
+                  <a href="./Data-&-Power-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Data & Power</a>
+                  <a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
+                  <a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
+                  <a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
+              </div>
+          </div>
+          <a href="#industries" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
+          <a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
+          <div class="mt-4">
+              <!-- Contact Us Button in mobile menu triggers modal -->
+              <button id="mobileContactUsBtn" class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+          </div>
+      </nav>
+  </div>
+</header>
+<!-- Breadcrumb -->
+<div class="bg-gray-100 pt-20">
+<div class="container mx-auto px-4 py-3">
+<div class="flex items-center text-sm text-gray-600">
+<a href="#" class="hover:text-primary">Home</a>
+<i class="ri-arrow-right-s-line mx-2"></i>
+<a href="#" class="hover:text-primary">Solutions</a>
+<i class="ri-arrow-right-s-line mx-2"></i>
+<span class="text-primary font-medium">Data & Power</span>
+</div>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="hero-section w-full relative">
+<div class="hero-overlay absolute inset-0"></div>
+<div class="container mx-auto px-4 h-full flex items-center relative z-10 py-32">
+<div class="w-full md:w-1/2 text-white">
+<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fadeInUp">Data Center & Power Infrastructure Solutions</h1>
+<p class="text-lg sm:text-xl md:text-2xl mb-8 opacity-90 animate-fadeInUp animate-delay-100">Enterprise-grade data center design, power management, and backup solutions that ensure business continuity and operational excellence.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 text-lg animate-fadeInUp animate-delay-200">Request Consultation</button>
+<button class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300 text-lg animate-fadeInUp animate-delay-300">Download Specifications</button>
+</div>
+<div class="mt-12 flex items-center space-x-6">
+<div class="flex items-center animate-fadeInUp animate-delay-400">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3">
+<i class="ri-shield-check-line text-white"></i>
+</div>
+<span class="text-sm md:text-base">99.999% Uptime</span>
+</div>
+<div class="flex items-center animate-fadeInUp animate-delay-400">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3">
+<i class="ri-award-line text-white"></i>
+</div>
+<span class="text-sm md:text-base">Tier IV Certified</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Solution Categories Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Comprehensive Data & Power Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our integrated approach to data center infrastructure and power management ensures reliability, efficiency, and scalability for your mission-critical operations.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Solution Card 1 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 opacity-0 animate-scaleIn">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-server-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Data Center Infrastructure</h3>
+<p class="text-gray-600 mb-6">Custom-designed data center solutions including rack systems, cooling infrastructure, and monitoring tools to meet your specific business requirements.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-700">Modular rack systems</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-700">Precision cooling</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-700">Real-time monitoring</span>
+</li>
+</ul>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Solution Card 2 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 opacity-0 animate-scaleIn">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-flashlight-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Power Management Systems</h3>
+<p class="text-gray-600 mb-6">Comprehensive power distribution, monitoring, and management solutions that optimize energy usage and ensure continuous operations.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-700">Intelligent PDUs</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-700">Power quality analysis</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-700">Energy optimization</span>
+</li>
+</ul>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Solution Card 3 -->
+<div class="solution-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 opacity-0 animate-scaleIn">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-battery-charge-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Backup & UPS Solutions</h3>
+<p class="text-gray-600 mb-6">Reliable backup power systems and uninterruptible power supplies that protect your critical infrastructure from outages and fluctuations.</p>
+<ul class="space-y-2 mb-6">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-700">Enterprise UPS systems</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-700">Backup generators</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-700">Automatic transfer switches</span>
+</li>
+</ul>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specifications Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Technical Specifications</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Detailed information about our data center and power infrastructure solutions to help you make informed decisions.</p>
+</div>
+<!-- Tabs Navigation -->
+<div class="flex flex-wrap justify-center mb-8">
+<button id="tab1" class="tab-btn px-6 py-3 font-medium text-primary border-b-2 border-primary">Data Center Design</button>
+<button id="tab2" class="tab-btn px-6 py-3 font-medium text-gray-500 border-b-2 border-transparent">Power Infrastructure</button>
+<button id="tab3" class="tab-btn px-6 py-3 font-medium text-gray-500 border-b-2 border-transparent">UPS Systems</button>
+<button id="tab4" class="tab-btn px-6 py-3 font-medium text-gray-500 border-b-2 border-transparent">Cooling Systems</button>
+<button id="tab5" class="tab-btn px-6 py-3 font-medium text-gray-500 border-b-2 border-transparent">Energy Efficiency</button>
+</div>
+<!-- Tab Content -->
+<div class="bg-white rounded-lg shadow-sm p-8">
+<!-- Tab 1 Content -->
+<div id="tab1Content" class="tab-content active">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h3 class="text-2xl font-semibold mb-4">Data Center Design Specifications</h3>
+<p class="text-gray-600 mb-6">Our data center designs follow industry best practices and can be customized to meet your specific requirements.</p>
+<div class="space-y-6">
+<div>
+<h4 class="text-lg font-medium mb-2">Tier Classifications</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Tier I to Tier IV</span>
+<p class="text-sm text-gray-600">From basic capacity to fully fault-tolerant infrastructure</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Uptime Guarantees</span>
+<p class="text-sm text-gray-600">From 99.671% to 99.995% availability</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-2">Physical Infrastructure</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Rack Capacity</span>
+<p class="text-sm text-gray-600">42U to 52U racks with adjustable mounting rails</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Floor Loading</span>
+<p class="text-sm text-gray-600">Up to 1,500 kg/m² load-bearing capacity</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Security Systems</span>
+<p class="text-sm text-gray-600">Multi-factor authentication, CCTV, and 24/7 monitoring</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<div class="bg-gray-50 p-6 rounded-lg mb-6">
+<h4 class="text-lg font-medium mb-4">Data Center Layout Efficiency</h4>
+<div id="dataCenter-chart" class="w-full h-64"></div>
+</div>
+<div class="border border-gray-200 rounded-lg p-6">
+<h4 class="text-lg font-medium mb-4">Key Design Features</h4>
+<div class="space-y-4">
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-layout-grid-line text-primary text-xl"></i>
+</div>
+<div>
+<h5 class="font-medium">Modular Design</h5>
+<p class="text-sm text-gray-600">Scalable infrastructure that grows with your needs</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-fire-line text-primary text-xl"></i>
+</div>
+<div>
+<h5 class="font-medium">Fire Suppression</h5>
+<p class="text-sm text-gray-600">Advanced fire detection and suppression systems</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-plug-line text-primary text-xl"></i>
+</div>
+<div>
+<h5 class="font-medium">Redundant Power</h5>
+<p class="text-sm text-gray-600">N+1 or 2N power redundancy configurations</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab 2 Content -->
+<div id="tab2Content" class="tab-content">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h3 class="text-2xl font-semibold mb-4">Power Infrastructure Specifications</h3>
+<p class="text-gray-600 mb-6">Our power infrastructure solutions ensure reliable, efficient, and scalable power delivery to your critical systems.</p>
+<div class="space-y-6">
+<div>
+<h4 class="text-lg font-medium mb-2">Power Distribution</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">PDU Capacity</span>
+<p class="text-sm text-gray-600">From 5kVA to 400kVA with monitoring capabilities</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Branch Circuit Monitoring</span>
+<p class="text-sm text-gray-600">Real-time monitoring of current, voltage, and power</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-2">Power Quality</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Harmonic Filtering</span>
+<p class="text-sm text-gray-600">Active and passive harmonic filters</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Surge Protection</span>
+<p class="text-sm text-gray-600">Multi-stage surge protection devices</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Power Factor Correction</span>
+<p class="text-sm text-gray-600">Automatic correction to >0.95</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<div class="bg-gray-50 p-6 rounded-lg mb-6">
+<h4 class="text-lg font-medium mb-4">Power Distribution Efficiency</h4>
+<div id="powerDistribution-chart" class="w-full h-64"></div>
+</div>
+<div class="border border-gray-200 rounded-lg p-6">
+<h4 class="text-lg font-medium mb-4">Key Power Features</h4>
+<div class="space-y-4">
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-dashboard-3-line text-primary text-xl"></i>
+</div>
+<div>
+<h5 class="font-medium">Power Monitoring</h5>
+<p class="text-sm text-gray-600">Real-time monitoring and analytics</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-switch-line text-primary text-xl"></i>
+</div>
+<div>
+<h5 class="font-medium">Automatic Transfer Switches</h5>
+<p class="text-sm text-gray-600">Transfer times as low as 10ms</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-settings-line text-primary text-xl"></i>
+</div>
+<div>
+<h5 class="font-medium">Remote Management</h5>
+<p class="text-sm text-gray-600">Secure remote monitoring and control</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab 3 Content -->
+<div id="tab3Content" class="tab-content">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h3 class="text-2xl font-semibold mb-4">UPS Systems Specifications</h3>
+<p class="text-gray-600 mb-6">Our uninterruptible power supply systems provide clean, continuous power to protect your critical equipment from outages and power quality issues.</p>
+<div class="space-y-6">
+<div>
+<h4 class="text-lg font-medium mb-2">UPS Technologies</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Online Double Conversion</span>
+<p class="text-sm text-gray-600">Zero transfer time with full isolation</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Line-Interactive</span>
+<p class="text-sm text-gray-600">Voltage regulation with battery backup</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Modular UPS</span>
+<p class="text-sm text-gray-600">Scalable from 10kVA to 3MVA</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-2">Battery Systems</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">VRLA Batteries</span>
+<p class="text-sm text-gray-600">5-10 year design life</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Lithium-Ion Batteries</span>
+<p class="text-sm text-gray-600">10-15 year design life with higher cycle count</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Flywheel Energy Storage</span>
+<p class="text-sm text-gray-600">Mechanical energy storage with 20+ year life</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<div class="bg-gray-50 p-6 rounded-lg mb-6">
+<h4 class="text-lg font-medium mb-4">UPS Efficiency Comparison</h4>
+<div id="ups-chart" class="w-full h-64"></div>
+</div>
+<div class="border border-gray-200 rounded-lg p-6">
+<h4 class="text-lg font-medium mb-4">Key UPS Features</h4>
+<div class="space-y-4">
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-battery-2-charge-line text-primary text-xl"></i>
+</div>
+<div>
+<h5 class="font-medium">Advanced Battery Management</h5>
+<p class="text-sm text-gray-600">Extends battery life by up to 50%</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-cpu-line text-primary text-xl"></i>
+</div>
+<div>
+<h5 class="font-medium">Intelligent Controls</h5>
+<p class="text-sm text-gray-600">Adaptive algorithms for optimal performance</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-wifi-line text-primary text-xl"></i>
+</div>
+<div>
+<h5 class="font-medium">Remote Monitoring</h5>
+<p class="text-sm text-gray-600">24/7 monitoring with predictive analytics</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab 4 Content -->
+<div id="tab4Content" class="tab-content">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h3 class="text-2xl font-semibold mb-4">Cooling Systems Specifications</h3>
+<p class="text-gray-600 mb-6">Our precision cooling solutions maintain optimal temperature and humidity levels for your IT equipment, maximizing performance and lifespan.</p>
+<div class="space-y-6">
+<div>
+<h4 class="text-lg font-medium mb-2">Cooling Technologies</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Precision Air Conditioning</span>
+<p class="text-sm text-gray-600">±1°C temperature and ±5% humidity control</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">In-Row Cooling</span>
+<p class="text-sm text-gray-600">Close-coupled cooling for high-density racks</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Liquid Cooling</span>
+<p class="text-sm text-gray-600">Direct-to-chip and immersion cooling solutions</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-2">Airflow Management</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Hot/Cold Aisle Containment</span>
+<p class="text-sm text-gray-600">Up to 30% energy savings</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Raised Floor Systems</span>
+<p class="text-sm text-gray-600">Optimized underfloor pressure distribution</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Ceiling Return Plenums</span>
+<p class="text-sm text-gray-600">Efficient heat extraction pathways</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<div class="bg-gray-50 p-6 rounded-lg mb-6">
+<h4 class="text-lg font-medium mb-4">Cooling Efficiency Comparison</h4>
+<div id="cooling-chart" class="w-full h-64"></div>
+</div>
+<div class="border border-gray-200 rounded-lg p-6">
+<h4 class="text-lg font-medium mb-4">Key Cooling Features</h4>
+<div class="space-y-4">
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-temp-cold-line text-primary text-xl"></i>
+</div>
+<div>
+<h5 class="font-medium">Variable Speed Fans</h5>
+<p class="text-sm text-gray-600">Dynamic airflow adjustment based on load</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-sensor-line text-primary text-xl"></i>
+</div>
+<div>
+<h5 class="font-medium">Environmental Monitoring</h5>
+<p class="text-sm text-gray-600">Temperature, humidity, and airflow sensors</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-water-flash-line text-primary text-xl"></i>
+</div>
+<div>
+<h5 class="font-medium">Free Cooling</h5>
+<p class="text-sm text-gray-600">Economizer modes for reduced energy use</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Tab 5 Content -->
+<div id="tab5Content" class="tab-content">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h3 class="text-2xl font-semibold mb-4">Energy Efficiency Solutions</h3>
+<p class="text-gray-600 mb-6">Our energy-efficient designs and technologies reduce operational costs while minimizing environmental impact.</p>
+<div class="space-y-6">
+<div>
+<h4 class="text-lg font-medium mb-2">Efficiency Metrics</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Power Usage Effectiveness (PUE)</span>
+<p class="text-sm text-gray-600">As low as 1.2 for modern designs</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Water Usage Effectiveness (WUE)</span>
+<p class="text-sm text-gray-600">Optimized water consumption for cooling</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Carbon Usage Effectiveness (CUE)</span>
+<p class="text-sm text-gray-600">Reduced carbon footprint per kWh</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="text-lg font-medium mb-2">Energy-Saving Technologies</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">High-Efficiency UPS</span>
+<p class="text-sm text-gray-600">Up to 98% efficiency in ECO mode</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">LED Lighting</span>
+<p class="text-sm text-gray-600">Motion-sensitive, energy-efficient lighting</p>
+</div>
+</li>
+<li class="flex items-start">
+<i class="ri-checkbox-circle-line text-primary mr-2 mt-1"></i>
+<div>
+<span class="font-medium">Renewable Energy Integration</span>
+<p class="text-sm text-gray-600">Solar, wind, and fuel cell options</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div>
+<div class="bg-gray-50 p-6 rounded-lg mb-6">
+<h4 class="text-lg font-medium mb-4">PUE Improvement Over Time</h4>
+<div id="energy-chart" class="w-full h-64"></div>
+</div>
+<div class="border border-gray-200 rounded-lg p-6">
+<h4 class="text-lg font-medium mb-4">Key Efficiency Features</h4>
+<div class="space-y-4">
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-leaf-line text-primary text-xl"></i>
+</div>
+<div>
+<h5 class="font-medium">Green Building Design</h5>
+<p class="text-sm text-gray-600">LEED and BREEAM certified facilities</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-recycle-line text-primary text-xl"></i>
+</div>
+<div>
+<h5 class="font-medium">Heat Recovery Systems</h5>
+<p class="text-sm text-gray-600">Waste heat utilization for office heating</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-dashboard-line text-primary text-xl"></i>
+</div>
+<div>
+<h5 class="font-medium">DCIM Software</h5>
+<p class="text-sm text-gray-600">Intelligent monitoring and optimization</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Benefits Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Key Benefits</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our data center and power infrastructure solutions deliver measurable business value through improved reliability, efficiency, and scalability.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Benefit 1 -->
+<div class="bg-white p-8 rounded-lg shadow-sm text-center opacity-0 animate-fadeInUp">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mx-auto mb-6">
+<i class="ri-time-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-4xl font-bold text-primary mb-2">99.999%</h3>
+<p class="text-xl font-semibold mb-2">Uptime Guarantee</p>
+<p class="text-gray-600">Less than 5.3 minutes of downtime per year, ensuring continuous business operations.</p>
+</div>
+<!-- Benefit 2 -->
+<div class="bg-white p-8 rounded-lg shadow-sm text-center opacity-0 animate-fadeInUp">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mx-auto mb-6">
+<i class="ri-leaf-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-4xl font-bold text-primary mb-2">40%</h3>
+<p class="text-xl font-semibold mb-2">Energy Savings</p>
+<p class="text-gray-600">Reduce operational costs with energy-efficient designs and intelligent power management.</p>
+</div>
+<!-- Benefit 3 -->
+<div class="bg-white p-8 rounded-lg shadow-sm text-center opacity-0 animate-fadeInUp">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mx-auto mb-6">
+<i class="ri-scales-3-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-4xl font-bold text-primary mb-2">100%</h3>
+<p class="text-xl font-semibold mb-2">Scalability</p>
+<p class="text-gray-600">Modular designs that grow with your business without disrupting operations.</p>
+</div>
+<!-- Benefit 4 -->
+<div class="bg-white p-8 rounded-lg shadow-sm text-center opacity-0 animate-fadeInUp">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mx-auto mb-6">
+<i class="ri-money-dollar-circle-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-4xl font-bold text-primary mb-2">35%</h3>
+<p class="text-xl font-semibold mb-2">Cost Reduction</p>
+<p class="text-gray-600">Lower total cost of ownership through optimized infrastructure and reduced maintenance.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Case Studies Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Client Success Stories</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">See how our data center and power solutions have transformed operations for leading organizations across industries.</p>
+</div>
+<div class="relative">
+<div class="case-study-carousel flex space-x-6 overflow-x-auto pb-8 hide-scrollbar">
+<!-- Case Study 1 -->
+<div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-bank-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold">Global Financial Institution</h3>
+</div>
+<div class="mb-6">
+<div class="mb-4">
+<h4 class="text-lg font-medium text-gray-800">Challenge</h4>
+<p class="text-gray-600">Needed to upgrade aging data center infrastructure while maintaining 24/7 operations for critical financial systems.</p>
+</div>
+<div class="mb-4">
+<h4 class="text-lg font-medium text-gray-800">Solution</h4>
+<p class="text-gray-600">Implemented a phased migration to a Tier IV data center with 2N redundancy and advanced power management systems.</p>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-800">Results</h4>
+<ul class="space-y-1 mt-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Zero downtime during migration</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">42% reduction in energy costs</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">100% uptime since implementation</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-100 pt-4">
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Implementation: 8 months</span>
+<a href="#" class="text-primary font-medium flex items-center text-sm">
+Read Full Case Study
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Case Study 2 -->
+<div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-hospital-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold">Regional Healthcare Network</h3>
+</div>
+<div class="mb-6">
+<div class="mb-4">
+<h4 class="text-lg font-medium text-gray-800">Challenge</h4>
+<p class="text-gray-600">Required reliable power infrastructure for life-critical systems across multiple hospital facilities.</p>
+</div>
+<div class="mb-4">
+<h4 class="text-lg font-medium text-gray-800">Solution</h4>
+<p class="text-gray-600">Deployed distributed UPS systems with advanced battery management and redundant power distribution.</p>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-800">Results</h4>
+<ul class="space-y-1 mt-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Eliminated power-related system outages</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">30% extended battery service life</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Regulatory compliance achievement</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-100 pt-4">
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Implementation: 6 months</span>
+<a href="#" class="text-primary font-medium flex items-center text-sm">
+Read Full Case Study
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Case Study 3 -->
+<div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-shopping-cart-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold">E-Commerce Platform</h3>
+</div>
+<div class="mb-6">
+<div class="mb-4">
+<h4 class="text-lg font-medium text-gray-800">Challenge</h4>
+<p class="text-gray-600">Needed scalable data center capacity to handle seasonal traffic spikes and rapid business growth.</p>
+</div>
+<div class="mb-4">
+<h4 class="text-lg font-medium text-gray-800">Solution</h4>
+<p class="text-gray-600">Implemented modular data center design with scalable power and cooling infrastructure.</p>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-800">Results</h4>
+<ul class="space-y-1 mt-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">300% capacity increase in 3 years</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">45% improvement in PUE</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Zero downtime during peak seasons</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-100 pt-4">
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Implementation: 4 months</span>
+<a href="#" class="text-primary font-medium flex items-center text-sm">
+Read Full Case Study
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<!-- Case Study 4 -->
+<div class="flex-shrink-0 w-full sm:w-1/2 lg:w-1/3 bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="p-6">
+<div class="flex items-center mb-4">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mr-4">
+<i class="ri-government-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold">Government Agency</h3>
+</div>
+<div class="mb-6">
+<div class="mb-4">
+<h4 class="text-lg font-medium text-gray-800">Challenge</h4>
+<p class="text-gray-600">Required high-security data center with advanced power protection for sensitive information systems.</p>
+</div>
+<div class="mb-4">
+<h4 class="text-lg font-medium text-gray-800">Solution</h4>
+<p class="text-gray-600">Designed and built a Tier III+ data center with multi-layered security and triple-redundant power systems.</p>
+</div>
+<div>
+<h4 class="text-lg font-medium text-gray-800">Results</h4>
+<ul class="space-y-1 mt-2">
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Achieved highest security certifications</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">Survived multiple regional power outages</span>
+</li>
+<li class="flex items-start">
+<i class="ri-check-line text-primary mr-2 mt-1"></i>
+<span class="text-gray-600">25% reduction in operational costs</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-100 pt-4">
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Implementation: 12 months</span>
+<a href="#" class="text-primary font-medium flex items-center text-sm">
+Read Full Case Study
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Navigation Arrows -->
+<button id="prevCaseBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center z-10 -ml-5 focus:outline-none">
+<i class="ri-arrow-left-s-line text-gray-600"></i>
+</button>
+<button id="nextCaseBtn" class="absolute right-0 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center z-10 -mr-5 focus:outline-none">
+<i class="ri-arrow-right-s-line text-gray-600"></i>
+</button>
+</div>
+<!-- Dots Navigation -->
+<div class="flex justify-center mt-8 space-x-2">
+<button class="w-3 h-3 rounded-full bg-primary"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300"></button>
+<button class="w-3 h-3 rounded-full bg-gray-300"></button>
+</div>
+</div>
+</section>
+<!-- Consultation Form Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Request a Consultation</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Speak with our data center and power infrastructure experts to design a solution tailored to your specific business needs.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<!-- Contact Form -->
+<div class="bg-white p-8 rounded-lg shadow-sm">
+<form>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+<div>
+<label for="name" class="block text-sm font-medium text-gray-700 mb-1">Full Name *</label>
+<input type="text" id="name" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20" required>
+</div>
+<div>
+<label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company Name *</label>
+<input type="text" id="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20" required>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
+<div>
+<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email Address *</label>
+<input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20" required>
+</div>
+<div>
+<label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+<input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20">
+</div>
+</div>
+<div class="mb-6">
+<label for="requirements" class="block text-sm font-medium text-gray-700 mb-1">Project Requirements *</label>
+<textarea id="requirements" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20" required></textarea>
+</div>
+<div class="mb-6">
+<label class="block text-sm font-medium text-gray-700 mb-2">Areas of Interest</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+<div class="flex items-center">
+<input type="checkbox" id="interest1" class="custom-checkbox mr-2">
+<label for="interest1" class="text-gray-600">Data Center Design</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="interest2" class="custom-checkbox mr-2">
+<label for="interest2" class="text-gray-600">Power Management</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="interest3" class="custom-checkbox mr-2">
+<label for="interest3" class="text-gray-600">UPS Systems</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="interest4" class="custom-checkbox mr-2">
+<label for="interest4" class="text-gray-600">Cooling Solutions</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="interest5" class="custom-checkbox mr-2">
+<label for="interest5" class="text-gray-600">Energy Efficiency</label>
+</div>
+<div class="flex items-center">
+<input type="checkbox" id="interest6" class="custom-checkbox mr-2">
+<label for="interest6" class="text-gray-600">Monitoring Systems</label>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<label class="block text-sm font-medium text-gray-700 mb-2">Preferred Contact Method</label>
+<div class="flex space-x-6">
+<div class="flex items-center">
+<input type="radio" id="contact1" name="contact" class="custom-radio mr-2" checked>
+<label for="contact1" class="text-gray-600">Email</label>
+</div>
+<div class="flex items-center">
+<input type="radio" id="contact2" name="contact" class="custom-radio mr-2">
+<label for="contact2" class="text-gray-600">Phone</label>
+</div>
+<div class="flex items-center">
+<input type="radio" id="contact3" name="contact" class="custom-radio mr-2">
+<label for="contact3" class="text-gray-600">Video Call</label>
+</div>
+</div>
+</div>
+<button type="submit" class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 w-full">Submit Request</button>
+</form>
+</div>
+<!-- Additional Information -->
+<div>
+<div class="bg-gray-50 p-8 rounded-lg mb-8">
+<h3 class="text-xl font-semibold mb-4">Why Choose Our Data & Power Solutions?</h3>
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mt-1 mr-3">
+<i class="ri-shield-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Industry-Leading Reliability</h4>
+<p class="text-gray-600 text-sm">Our solutions are designed to exceed industry standards for uptime and performance.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mt-1 mr-3">
+<i class="ri-team-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Expert Consultation</h4>
+<p class="text-gray-600 text-sm">Our team of certified engineers provides personalized guidance throughout your project.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mt-1 mr-3">
+<i class="ri-24-hours-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">24/7 Support</h4>
+<p class="text-gray-600 text-sm">Round-the-clock monitoring and support ensures your systems are always operational.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mt-1 mr-3">
+<i class="ri-global-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Global Experience</h4>
+<p class="text-gray-600 text-sm">We've implemented solutions for organizations across 40+ countries and diverse industries.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="bg-blue-50 p-8 rounded-lg">
+<h3 class="text-xl font-semibold mb-4">Need Immediate Assistance?</h3>
+<p class="text-gray-600 mb-6">Our technical support team is available 24/7 to address urgent inquiries and provide assistance.</p>
+<div class="space-y-4">
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<div>
+<p class="text-sm text-gray-500">Support Hotline</p>
+<p class="font-medium">+1 (800) 555-0123</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<div>
+<p class="text-sm text-gray-500">Email Support</p>
+<p class="font-medium">datacenter@techsolutions.com</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-full mr-4">
+<i class="ri-chat-1-line text-primary"></i>
+</div>
+<div>
+<p class="text-sm text-gray-500">Live Chat</p>
+<button class="text-primary font-medium">Start Chat Now</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Related Resources Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Related Resources</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Access our library of technical resources, white papers, and guides to learn more about data center and power infrastructure solutions.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Resource 1 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mb-4">
+<i class="ri-file-text-line text-primary text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Data Center Design Best Practices</h3>
+<p class="text-gray-600 mb-4">Comprehensive guide to modern data center design principles and implementation strategies.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">PDF • 24 pages</span>
+<button class="text-primary font-medium flex items-center text-sm">
+Download
+<i class="ri-download-line ml-1"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Resource 2 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mb-4">
+<i class="ri-file-chart-line text-primary text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">UPS Selection Guide</h3>
+<p class="text-gray-600 mb-4">Technical specifications and comparison of UPS technologies for different business requirements.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">PDF • 18 pages</span>
+<button class="text-primary font-medium flex items-center text-sm">
+Download
+<i class="ri-download-line ml-1"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Resource 3 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mb-4">
+<i class="ri-vidicon-line text-primary text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Data Center Cooling Webinar</h3>
+<p class="text-gray-600 mb-4">On-demand webinar exploring advanced cooling technologies and energy efficiency strategies.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Video • 45 minutes</span>
+<button class="text-primary font-medium flex items-center text-sm">
+Watch Now
+<i class="ri-play-line ml-1"></i>
+</button>
+</div>
+</div>
+</div>
+<!-- Resource 4 -->
+<div class="bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mb-4">
+<i class="ri-calculator-line text-primary text-xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">TCO Calculator</h3>
+<p class="text-gray-600 mb-4">Interactive tool to estimate the total cost of ownership for data center and power infrastructure.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Interactive Tool</span>
+<button class="text-primary font-medium flex items-center text-sm">
+Access Tool
+<i class="ri-external-link-line ml-1"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-12">
+<a href="#" class="inline-flex items-center text-primary font-medium">
+View All Resources
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</section>
+<!-- Call-to-Action Section -->
+<section class="py-20 bg-gradient-to-r from-primary to-blue-600 text-white">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Data Center Infrastructure?</h2>
+<p class="text-xl mb-8">Partner with us to implement reliable, efficient, and scalable data center and power solutions that support your business growth.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300">Schedule Consultation</button>
+<button class="bg-transparent text-white border border-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-white/10 transition duration-300">Download Specifications</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Company Info -->
+<div>
+<a href="#" class="text-2xl font-['Pacifico'] text-white mb-6 inline-block">logo</a>
+<p class="text-gray-400 mb-6">Providing enterprise-grade technology solutions that drive innovation and efficiency since 2005.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Industries</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Case Studies</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Careers</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<span class="text-gray-400">1250 Technology Plaza, Suite 400<br>San Francisco, CA 94105</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<span class="text-gray-400">+1 (415) 555-0123</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<span class="text-gray-400">info@techsolutions.com</span>
+</li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Subscribe to Our Newsletter</h3>
+<p class="text-gray-400 mb-4">Stay updated with the latest technology trends and solutions.</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Your email address" class="bg-gray-800 text-white px-4 py-3 w-full border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary">
+<button type="submit" class="bg-primary text-white px-4 py-3 !rounded-r-lg !rounded-l-none whitespace-nowrap hover:bg-primary/90 transition duration-300">Subscribe</button>
+</div>
+</form>
+<div class="flex items-center space-x-4">
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-visa-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-mastercard-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-paypal-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-apple-fill text-2xl text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 TechSolutions. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Privacy Policy</a>
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Terms of Service</a>
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script id="animationScript">
+document.addEventListener('DOMContentLoaded', function() {
+  // Animate solution cards on scroll
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.opacity = "1";
+        entry.target.style.transform = "translateY(0)";
+      }
+    });
+  }, {
+    threshold: 0.1
+  });
+
+  document.querySelectorAll('.solution-card').forEach(card => {
+    observer.observe(card);
+  });
+
+  // Animate statistics cards
+  document.querySelectorAll('.bg-white.p-8.rounded-lg.shadow-sm.text-center').forEach((card, index) => {
+    setTimeout(() => {
+      card.style.opacity = "1";
+    }, index * 200);
+  });
+});
+</script>
+
+<script id="tabScript">
+document.addEventListener('DOMContentLoaded', function() {
+const tabs = document.querySelectorAll('.tab-btn');
+const tabContents = document.querySelectorAll('.tab-content');
+tabs.forEach(tab => {
+tab.addEventListener('click', () => {
+// Remove active class from all tabs
+tabs.forEach(t => {
+t.classList.remove('text-primary');
+t.classList.remove('border-primary');
+t.classList.add('text-gray-500');
+t.classList.add('border-transparent');
+});
+// Add active class to clicked tab
+tab.classList.add('text-primary');
+tab.classList.add('border-primary');
+tab.classList.remove('text-gray-500');
+tab.classList.remove('border-transparent');
+// Hide all tab contents
+tabContents.forEach(content => {
+content.classList.remove('active');
+});
+// Show corresponding tab content
+const tabId = tab.id;
+const contentId = tabId + 'Content';
+document.getElementById(contentId).classList.add('active');
+});
+});
+});
+</script>
+<script id="carouselScript">
+document.addEventListener('DOMContentLoaded', function() {
+const carousel = document.querySelector('.case-study-carousel');
+const prevBtn = document.getElementById('prevCaseBtn');
+const nextBtn = document.getElementById('nextCaseBtn');
+const cardWidth = document.querySelector('.case-study-carousel > div').offsetWidth + 24; // width + margin
+prevBtn.addEventListener('click', function() {
+carousel.scrollLeft -= cardWidth;
+});
+nextBtn.addEventListener('click', function() {
+carousel.scrollLeft += cardWidth;
+});
+});
+</script>
+<script id="mobileMenuScript">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileSolutionsBtn = document.getElementById('mobileSolutionsBtn');
+const mobileSolutionsMenu = document.getElementById('mobileSolutionsMenu');
+mobileMenuBtn.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+const icon = mobileMenuBtn.querySelector('i');
+icon.classList.toggle('ri-menu-line');
+icon.classList.toggle('ri-close-line');
+});
+mobileSolutionsBtn.addEventListener('click', function() {
+mobileSolutionsMenu.classList.toggle('hidden');
+const icon = mobileSolutionsBtn.querySelector('i');
+icon.classList.toggle('ri-arrow-down-s-line');
+icon.classList.toggle('ri-arrow-up-s-line');
+});
+document.addEventListener('click', function(event) {
+if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+mobileMenu.classList.add('hidden');
+const icon = mobileMenuBtn.querySelector('i');
+icon.classList.add('ri-menu-line');
+icon.classList.remove('ri-close-line');
+}
+});
+});
+</script>
+<script id="dropdownScript">
+document.addEventListener('DOMContentLoaded', function() {
+const solutionsBtn = document.getElementById('solutionsBtn');
+const solutionsMenu = document.getElementById('solutionsMenu');
+let isDropdownOpen = false;
+function toggleDropdown() {
+isDropdownOpen = !isDropdownOpen;
+solutionsMenu.classList.toggle('hidden');
+solutionsBtn.setAttribute('aria-expanded', isDropdownOpen);
+}
+solutionsBtn.addEventListener('click', function(e) {
+e.stopPropagation();
+toggleDropdown();
+});
+document.addEventListener('click', function(e) {
+if (!solutionsBtn.contains(e.target) && isDropdownOpen) {
+toggleDropdown();
+}
+});
+});
+</script>
+<script id="chartsScript">
+document.addEventListener('DOMContentLoaded', function() {
+// Data Center Layout Efficiency Chart
+const dataCenterChart = echarts.init(document.getElementById('dataCenter-chart'));
+const dataCenterOption = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Traditional', 'TechSolutions'],
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '3%',
+containLabel: true
+},
+xAxis: {
+type: 'category',
+boundaryGap: false,
+data: ['Space Utilization', 'Cooling Efficiency', 'Power Density', 'Scalability'],
+axisLabel: {
+color: '#1f2937'
+}
+},
+yAxis: {
+type: 'value',
+axisLabel: {
+color: '#1f2937'
+}
+},
+series: [
+{
+name: 'Traditional',
+type: 'line',
+stack: 'Total',
+data: [45, 55, 40, 35],
+lineStyle: {
+color: 'rgba(141, 211, 199, 1)'
+},
+itemStyle: {
+color: 'rgba(141, 211, 199, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(141, 211, 199, 0.3)'
+}, {
+offset: 1, color: 'rgba(141, 211, 199, 0.1)'
+}]
+}
+},
+smooth: true,
+showSymbol: false
+},
+{
+name: 'TechSolutions',
+type: 'line',
+stack: 'Total',
+data: [75, 85, 80, 90],
+lineStyle: {
+color: 'rgba(87, 181, 231, 1)'
+},
+itemStyle: {
+color: 'rgba(87, 181, 231, 1)'
+},
+areaStyle: {
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(87, 181, 231, 0.3)'
+}, {
+offset: 1, color: 'rgba(87, 181, 231, 0.1)'
+}]
+}
+},
+smooth: true,
+showSymbol: false
+}
+]
+};
+dataCenterChart.setOption(dataCenterOption);
+// Power Distribution Efficiency Chart
+const powerChart = echarts.init(document.getElementById('powerDistribution-chart'));
+const powerOption = {
+animation: false,
+tooltip: {
+trigger: 'item',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+orient: 'horizontal',
+bottom: 'bottom',
+textStyle: {
+color: '#1f2937'
+}
+},
+series: [
+{
+name: 'Power Distribution',
+type: 'pie',
+radius: ['40%', '70%'],
+avoidLabelOverlap: false,
+itemStyle: {
+borderRadius: 8,
+borderColor: '#fff',
+borderWidth: 2
+},
+label: {
+show: false,
+position: 'center'
+},
+emphasis: {
+label: {
+show: true,
+fontSize: '16',
+fontWeight: 'bold'
+}
+},
+labelLine: {
+show: false
+},
+data: [
+{ value: 40, name: 'IT Equipment', itemStyle: { color: 'rgba(87, 181, 231, 1)' } },
+{ value: 25, name: 'Cooling', itemStyle: { color: 'rgba(141, 211, 199, 1)' } },
+{ value: 15, name: 'UPS Losses', itemStyle: { color: 'rgba(251, 191, 114, 1)' } },
+{ value: 10, name: 'Distribution Losses', itemStyle: { color: 'rgba(252, 141, 98, 1)' } },
+{ value: 10, name: 'Other', itemStyle: { color: '#ccc' } }
+]
+}
+]
+};
+powerChart.setOption(powerOption);
+// UPS Efficiency Chart
+const upsChart = echarts.init(document.getElementById('ups-chart'));
+const upsOption = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Standard UPS', 'High-Efficiency UPS', 'TechSolutions UPS'],
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '3%',
+containLabel: true
+},
+xAxis: {
+type: 'category',
+boundaryGap: false,
+data: ['10%', '25%', '50%', '75%', '100%'],
+name: 'Load Percentage',
+axisLabel: {
+color: '#1f2937'
+}
+},
+yAxis: {
+type: 'value',
+name: 'Efficiency (%)',
+min: 70,
+max: 100,
+axisLabel: {
+color: '#1f2937'
+}
+},
+series: [
+{
+name: 'Standard UPS',
+type: 'line',
+data: [75, 82, 88, 91, 92],
+lineStyle: {
+color: 'rgba(252, 141, 98, 1)'
+},
+itemStyle: {
+color: 'rgba(252, 141, 98, 1)'
+},
+smooth: true
+},
+{
+name: 'High-Efficiency UPS',
+type: 'line',
+data: [85, 89, 92, 94, 95],
+lineStyle: {
+color: 'rgba(141, 211, 199, 1)'
+},
+itemStyle: {
+color: 'rgba(141, 211, 199, 1)'
+},
+smooth: true
+},
+{
+name: 'TechSolutions UPS',
+type: 'line',
+data: [90, 93, 96, 98, 99],
+lineStyle: {
+color: 'rgba(87, 181, 231, 1)'
+},
+itemStyle: {
+color: 'rgba(87, 181, 231, 1)'
+},
+smooth: true
+}
+]
+};
+upsChart.setOption(upsOption);
+// Cooling Efficiency Chart
+const coolingChart = echarts.init(document.getElementById('cooling-chart'));
+const coolingOption = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#1f2937'
+}
+},
+legend: {
+data: ['Traditional Cooling', 'In-Row Cooling', 'Liquid Cooling'],
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '3%',
+containLabel: true
+},
+xAxis: {
+type: 'category',
+data: ['5kW/rack', '10kW/rack', '20kW/rack', '30kW/rack', '40kW/rack'],
+axisLabel: {
+color: '#1f2937'
+}
+},
+yAxis: {
+type: 'value',
+name: 'PUE',
+min: 1,
+max: 2.5,
+axisLabel: {
+color: '#1f2937'
+}
+},
+series: [
+{
+name: 'Traditional Cooling',
+type: 'bar',
+data: [1.8, 2.0, 2.2, 2.4, 2.5],
+itemStyle: {
+color: 'rgba(252, 141, 98, 1)',
+borderRadius: 4
+}
+},
+{
+name: 'In-Row Cooling',
+type: 'bar',
+data: [1.5, 1.6, 1.7, 1.9, 2.1],
+itemStyle: {
+color: 'rgba(141, 211, 199, 1)',
+borderRadius: 4
+}
+},
+{
+name: 'Liquid Cooling',
+type: 'bar',
+data: [1.3, 1.3, 1.35, 1.4, 1.45],
+itemStyle: {
+color: 'rgba(87, 181, 231, 1)',
+borderRadius: 4
+}
+}
+]
+};
+coolingChart.setOption(coolingOption);
+// Energy Efficiency Chart
+const energyChart = echarts.init(document.getElementById('energy-chart'));
+const energyOption = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#1f2937'
+}
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '3%',
+containLabel: true
+},
+xAxis: {
+type: 'category',
+data: ['2015', '2017', '2019', '2021', '2023', '2025'],
+axisLabel: {
+color: '#1f2937'
+}
+},
+yAxis: {
+type: 'value',
+name: 'PUE',
+min: 1,
+max: 2,
+axisLabel: {
+color: '#1f2937'
+}
+},
+series: [
+{
+name: 'Industry Average',
+type: 'line',
+data: [1.8, 1.75, 1.67, 1.6, 1.55, 1.5],
+lineStyle: {
+color: 'rgba(141, 211, 199, 1)'
+},
+itemStyle: {
+color: 'rgba(141, 211, 199, 1)'
+},
+smooth: true
+},
+{
+name: 'TechSolutions',
+type: 'line',
+data: [1.6, 1.45, 1.35, 1.25, 1.2, 1.15],
+lineStyle: {
+color: 'rgba(87, 181, 231, 1)'
+},
+itemStyle: {
+color: 'rgba(87, 181, 231, 1)'
+},
+smooth: true,
+markPoint: {
+data: [
+{ type: 'min', name: 'Minimum' }
+]
+}
+}
+]
+};
+energyChart.setOption(energyOption);
+// Resize charts when window size changes
+window.addEventListener('resize', function() {
+dataCenterChart.resize();
+powerChart.resize();
+upsChart.resize();
+coolingChart.resize();
+energyChart.resize();
+});
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Modal elements
+  const contactUsBtn = document.getElementById('contactUsBtn');
+  const mobileContactUsBtn = document.getElementById('mobileContactUsBtn');
+  const contactModal = document.getElementById('contactModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+
+  // Open modal
+  function openModal() {
+    contactModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+  // Close modal
+  function closeModal() {
+    contactModal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  if (contactUsBtn) contactUsBtn.addEventListener('click', openModal);
+  if (mobileContactUsBtn) mobileContactUsBtn.addEventListener('click', openModal);
+  if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+
+  // Close modal on outside click
+  contactModal.addEventListener('click', function(e) {
+    if (e.target === contactModal) closeModal();
+  });
+
+  // ESC key closes modal
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !contactModal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+  // Contact form submission (basic UX, no backend)
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      contactForm.reset();
+      closeModal();
+      alert('Thank you for contacting us! We will get back to you soon.');
+    });
+  }
+});
+</script>
+</body>
+</html>

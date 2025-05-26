@@ -1,0 +1,1784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Internet & Connectivity Solutions - TechSolutions</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0056b3',secondary:'#00a3e0'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=modern%2520server%2520room%2520with%2520fiber%2520optic%2520cables%2520glowing%2520with%2520blue%2520light%252C%2520network%2520switches%2520and%2520routers%2520in%2520a%2520clean%2520data%2520center.%2520The%2520image%2520has%2520a%2520gradient%2520from%2520dark%2520blue%2520to%2520lighter%2520blue%2520on%2520the%2520left%2520side%252C%2520transitioning%2520to%2520clear%2520view%2520of%2520technology%2520infrastructure%2520on%2520the%2520right.%2520Professional%2520lighting%2520creates%2520a%2520high-tech%2520atmosphere%2520with%2520excellent%2520contrast%2520for%2520text%2520overlay.&width=1920&height=800&seq=connectivity123&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(0,20,50,0.85) 0%, rgba(0,20,50,0.7) 50%, rgba(0,20,50,0.4) 100%);
+}
+.service-card {
+opacity: 0;
+transform: translateY(20px);
+transition: all 0.5s ease;
+}
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.service-card.animate {
+opacity: 1;
+transform: translateY(0);
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #0056b3;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #0056b3;
+border-color: #0056b3;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+top: 3px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-switch {
+position: relative;
+display: inline-block;
+width: 50px;
+height: 24px;
+}
+.custom-switch input {
+opacity: 0;
+width: 0;
+height: 0;
+}
+.switch-slider {
+position: absolute;
+cursor: pointer;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+background-color: #ccc;
+transition: .4s;
+border-radius: 34px;
+}
+.switch-slider:before {
+position: absolute;
+content: "";
+height: 18px;
+width: 18px;
+left: 3px;
+bottom: 3px;
+background-color: white;
+transition: .4s;
+border-radius: 50%;
+}
+input:checked + .switch-slider {
+background-color: #0056b3;
+}
+input:checked + .switch-slider:before {
+transform: translateX(26px);
+}
+.tab-active {
+background-color: #0056b3;
+color: white;
+}
+.tab-inactive {
+background-color: #f3f4f6;
+color: #4b5563;
+}
+.plan-card {
+transition: all 0.3s ease;
+}
+.plan-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.recommended {
+border: 2px solid #0056b3;
+}
+.testimonial-card {
+opacity: 0;
+transform: translateY(20px);
+transition: all 0.5s ease;
+}
+.testimonial-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.testimonial-card.animate {
+opacity: 1;
+transform: translateY(0);
+}
+.coverage-map {
+background-image: url('https://public.readdy.ai/gen_page/map_placeholder_1280x720.png');
+background-size: contain;
+background-position: center;
+background-repeat: no-repeat;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Header Navigation -->
+<header class="bg-white shadow-sm fixed w-full z-50">
+    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+        <div class="flex items-center">
+            <a href="./index.html" class="text-2xl font-['Righteous'] text-primary">Pitch Forward</a>
+        </div>
+        <nav class="hidden md:flex space-x-8">
+            <a href="./index.html" id="homeLink" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+            <div class="relative" id="solutionsDropdown">
+                <button id="solutionsBtn" class="nav-link text-gray-700 hover:text-primary font-medium flex items-center" aria-expanded="false" aria-haspopup="true">
+                    Solutions
+                    <i class="ri-arrow-down-s-line ml-1"></i>
+                </button>
+                <div id="solutionsMenu" class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden" role="menu" aria-labelledby="solutionsBtn">
+                    <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                        <i class="ri-footprint-line w-5 h-5 mr-3"></i>
+                        Fleet Management
+                    </a>
+                    <a href="./Fuel-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                        <i class="ri-gas-station-line w-5 h-5 mr-3"></i>
+                        Fuel Management
+                    </a>
+                    <a href="./Logistics-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                        <i class="ri-truck-line w-5 h-5 mr-3"></i>
+                        Logistics Management
+                    </a>
+                    <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                        <i class="ri-phone-line w-5 h-5 mr-3"></i>
+                        Telecommunication
+                    </a>
+                    <a href="./Security-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                        <i class="ri-shield-keyhole-line w-5 h-5 mr-3"></i>
+                        Security
+                    </a>
+                    <a href="./Data-&-Power-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                        <i class="ri-database-2-line w-5 h-5 mr-3"></i>
+                        Data & Power
+                    </a>
+                    <a href="./Internet-&-Connectivity-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                        <i class="ri-wifi-line w-5 h-5 mr-3"></i>
+                        Internet & Connectivity
+                    </a>
+                    <a href="./Mining-Technology-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                        <i class="ri-mine-line w-5 h-5 mr-3"></i>
+                        Mining
+                    </a>
+                    <a href="./Warehousing-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+                        <i class="ri-store-2-line w-5 h-5 mr-3"></i>
+                        Warehousing
+                    </a>
+                </div>
+            </div>
+            <a href="#industries" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+            <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
+        </nav>
+        <div class="flex items-center space-x-4">
+            <div class="relative hidden md:block">
+                <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm focus:border-primary">
+                <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+                    <i class="ri-search-line"></i>
+                </div>
+            </div>
+            <!-- Contact Us Button always visible on desktop, and on mobile triggers modal -->
+            <button id="contactUsBtn" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 block md:block">Contact Us</button>
+            <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
+                <div class="bg-white rounded-lg w-full max-w-xl mx-4 relative">
+                    <button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+                        <i class="ri-close-line text-2xl"></i>
+                    </button>
+                    <div class="max-h-[100vh] overflow-x-auto p-4 md:p-8">
+                        <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
+                        <form id="contactForm" action="" method="POST">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+                                <div>
+                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+                                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                                </div>
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                                </div>
+                                <div>
+                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                                </div>
+                                <div>
+                                    <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+                                    <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
+                                <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary pr-8">
+                                    <option value="">Select a service</option>
+                                    <option value="automation">Business Automation</option>
+                                    <option value="telephony">IP Telephony</option>
+                                    <option value="security">Integrated Security</option>
+                                    <option value="datacenter">Data Center Solutions</option>
+                                    <option value="internet">Internet Connectivity</option>
+                                    <option value="power">Power Infrastructure</option>
+                                </select>
+                            </div>
+                            <div class="mb-6">
+                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+                                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
+                            </div>
+                            <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
+                <i class="ri-menu-line text-xl"></i>
+            </button>
+        </div>
+    </div>
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-lg z-50">
+        <nav class="container mx-auto px-4 py-4">
+            <a href="index.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
+            <div class="relative">
+                <button id="mobileSolutionsBtn" class="w-full flex items-center justify-between py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">
+                    Solutions
+                    <i class="ri-arrow-down-s-line"></i>
+                </button>
+                <div id="mobileSolutionsMenu" class="hidden bg-gray-50 px-4 py-2">
+                    <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Fleet Management</a>
+                    <a href="./Fuel-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Fuel Management</a>
+                    <a href="./Logistics-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Logistics Management</a>
+                    <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Telecommunication</a>
+                    <a href="./Security-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Security</a>
+                    <a href="./Data-&-Power-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Data & Power</a>
+                    <a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
+                    <a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
+                    <a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
+                </div>
+            </div>
+            <a href="#industries" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
+            <a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
+            <div class="mt-4">
+                <!-- Contact Us Button in mobile menu triggers modal -->
+                <button id="mobileContactUsBtn" class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+            </div>
+        </nav>
+    </div>
+</header>
+<!-- Breadcrumb -->
+<div class="bg-gray-100 pt-20">
+<div class="container mx-auto px-4 py-3">
+<div class="flex items-center text-sm text-gray-600">
+<a href="#" class="hover:text-primary">Home</a>
+<i class="ri-arrow-right-s-line mx-2"></i>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="hover:text-primary">Solutions</a>
+<i class="ri-arrow-right-s-line mx-2"></i>
+<span class="text-primary font-medium">Internet & Connectivity</span>
+</div>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="hero-section w-full min-h-[600px] relative">
+<div class="hero-overlay absolute inset-0"></div>
+<div class="container mx-auto px-4 h-full flex items-center relative z-10 py-20">
+<div class="w-full md:w-1/2 text-white">
+<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 opacity-0 transition-all duration-1000 translate-y-8" id="heroTitle">Enterprise-Grade Internet & Connectivity Solutions</h1>
+<p class="text-lg sm:text-xl md:text-2xl mb-8 opacity-90">Secure, reliable, and high-performance connectivity solutions with 99.99% uptime guarantee for businesses of all sizes.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 text-lg">Get Started</button>
+<button class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300 text-lg">Compare Plans</button>
+</div>
+<div class="mt-12 flex items-center space-x-6">
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3">
+<i class="ri-shield-check-line text-white"></i>
+</div>
+<span class="text-sm md:text-base">99.99% Uptime SLA</span>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3">
+<i class="ri-customer-service-2-line text-white"></i>
+</div>
+<span class="text-sm md:text-base">24/7 Technical Support</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Service Categories Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Comprehensive Connectivity Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">From high-speed fiber optics to secure VPN services, we provide end-to-end connectivity solutions tailored to your business needs.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Service Card 1 -->
+<div class="service-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-router-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Fiber Optic Solutions</h3>
+<p class="text-gray-600 mb-6">Ultra-fast dedicated fiber connections with speeds up to 10 Gbps, providing low-latency performance for data-intensive applications.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Service Card 2 -->
+<div class="service-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-wifi-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Wireless Connectivity</h3>
+<p class="text-gray-600 mb-6">Enterprise-grade wireless solutions including point-to-point, mesh networks, and 5G connectivity for flexible deployment options.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Service Card 3 -->
+<div class="service-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-lock-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">VPN Services</h3>
+<p class="text-gray-600 mb-6">Secure site-to-site and remote access VPN solutions with advanced encryption to protect your data and enable secure remote work.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Service Card 4 -->
+<div class="service-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-server-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Network Infrastructure</h3>
+<p class="text-gray-600 mb-6">Complete network design, implementation, and management services including switches, routers, and network security appliances.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Service Card 5 -->
+<div class="service-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-dashboard-3-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Bandwidth Management</h3>
+<p class="text-gray-600 mb-6">Intelligent traffic shaping and QoS solutions to optimize network performance, prioritize critical applications, and control costs.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Service Card 6 -->
+<div class="service-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<i class="ri-cloud-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">SD-WAN Solutions</h3>
+<p class="text-gray-600 mb-6">Software-defined wide area networking for intelligent routing, enhanced security, and simplified management of distributed networks.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Learn More
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specifications Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Connectivity Plan Comparison</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Choose the right connectivity solution for your business needs with our flexible service tiers.</p>
+</div>
+<!-- Plan Type Tabs -->
+<div class="flex justify-center mb-10">
+<div class="inline-flex rounded-full p-1 bg-gray-100">
+<button id="businessTab" class="px-6 py-2 rounded-full tab-active whitespace-nowrap">Business</button>
+<button id="enterpriseTab" class="px-6 py-2 rounded-full tab-inactive whitespace-nowrap">Enterprise</button>
+</div>
+</div>
+<!-- Business Plans -->
+<div id="businessPlans" class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Basic Plan -->
+<div class="plan-card bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="bg-gray-50 p-6 text-center">
+<h3 class="text-xl font-semibold">Basic Business</h3>
+<div class="mt-4">
+<span class="text-4xl font-bold">$299</span>
+<span class="text-gray-500">/month</span>
+</div>
+<p class="text-gray-600 mt-2">For small businesses</p>
+</div>
+<div class="p-6">
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>100 Mbps Fiber Connection</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>99.9% Uptime SLA</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Basic Firewall Protection</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>5 Static IP Addresses</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>8-hour Support Response</span>
+</li>
+</ul>
+<button class="w-full bg-gray-100 text-gray-800 mt-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-200 transition duration-300">Select Plan</button>
+</div>
+</div>
+<!-- Professional Plan -->
+<div class="plan-card bg-white rounded-lg overflow-hidden shadow-sm recommended">
+<div class="bg-primary p-6 text-center text-white">
+<div class="absolute top-4 right-4 bg-yellow-400 text-xs font-bold px-2 py-1 rounded-full text-gray-800">RECOMMENDED</div>
+<h3 class="text-xl font-semibold">Professional Business</h3>
+<div class="mt-4">
+<span class="text-4xl font-bold">$599</span>
+<span class="text-white/80">/month</span>
+</div>
+<p class="text-white/80 mt-2">For growing businesses</p>
+</div>
+<div class="p-6">
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>500 Mbps Fiber Connection</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>99.95% Uptime SLA</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Advanced Firewall & DDoS Protection</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>10 Static IP Addresses</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>4-hour Support Response</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white mt-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Select Plan</button>
+</div>
+</div>
+<!-- Premium Plan -->
+<div class="plan-card bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="bg-gray-50 p-6 text-center">
+<h3 class="text-xl font-semibold">Premium Business</h3>
+<div class="mt-4">
+<span class="text-4xl font-bold">$999</span>
+<span class="text-gray-500">/month</span>
+</div>
+<p class="text-gray-600 mt-2">For established businesses</p>
+</div>
+<div class="p-6">
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>1 Gbps Fiber Connection</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>99.99% Uptime SLA</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Enterprise Security Suite</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>16 Static IP Addresses</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>2-hour Support Response</span>
+</li>
+</ul>
+<button class="w-full bg-gray-100 text-gray-800 mt-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-200 transition duration-300">Select Plan</button>
+</div>
+</div>
+</div>
+<!-- Enterprise Plans (Hidden by Default) -->
+<div id="enterprisePlans" class="grid grid-cols-1 md:grid-cols-3 gap-8 hidden">
+<!-- Basic Enterprise -->
+<div class="plan-card bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="bg-gray-50 p-6 text-center">
+<h3 class="text-xl font-semibold">Basic Enterprise</h3>
+<div class="mt-4">
+<span class="text-4xl font-bold">$1,499</span>
+<span class="text-gray-500">/month</span>
+</div>
+<p class="text-gray-600 mt-2">For medium enterprises</p>
+</div>
+<div class="p-6">
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>2 Gbps Dedicated Fiber</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>99.99% Uptime SLA</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Advanced Security Suite</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>/28 IP Block (16 IPs)</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>1-hour Support Response</span>
+</li>
+</ul>
+<button class="w-full bg-gray-100 text-gray-800 mt-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-200 transition duration-300">Select Plan</button>
+</div>
+</div>
+<!-- Advanced Enterprise -->
+<div class="plan-card bg-white rounded-lg overflow-hidden shadow-sm recommended">
+<div class="bg-primary p-6 text-center text-white">
+<div class="absolute top-4 right-4 bg-yellow-400 text-xs font-bold px-2 py-1 rounded-full text-gray-800">RECOMMENDED</div>
+<h3 class="text-xl font-semibold">Advanced Enterprise</h3>
+<div class="mt-4">
+<span class="text-4xl font-bold">$2,999</span>
+<span class="text-white/80">/month</span>
+</div>
+<p class="text-white/80 mt-2">For large enterprises</p>
+</div>
+<div class="p-6">
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>5 Gbps Dedicated Fiber</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>99.995% Uptime SLA</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Enterprise Security + SIEM</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>/27 IP Block (32 IPs)</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>30-minute Support Response</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-white mt-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Select Plan</button>
+</div>
+</div>
+<!-- Premium Enterprise -->
+<div class="plan-card bg-white rounded-lg overflow-hidden shadow-sm">
+<div class="bg-gray-50 p-6 text-center">
+<h3 class="text-xl font-semibold">Premium Enterprise</h3>
+<div class="mt-4">
+<span class="text-4xl font-bold">$4,999</span>
+<span class="text-gray-500">/month</span>
+</div>
+<p class="text-gray-600 mt-2">For mission-critical operations</p>
+</div>
+<div class="p-6">
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>10 Gbps Dedicated Fiber</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>99.999% Uptime SLA</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Complete Security Stack + SOC</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>/26 IP Block (64 IPs)</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>15-minute Support Response</span>
+</li>
+</ul>
+<button class="w-full bg-gray-100 text-gray-800 mt-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-200 transition duration-300">Select Plan</button>
+</div>
+</div>
+</div>
+<!-- Comparison Chart -->
+<div class="mt-20">
+<h3 class="text-2xl font-bold text-center mb-10">Performance Comparison</h3>
+<div id="performanceChart" class="w-full h-96"></div>
+</div>
+</div>
+</section>
+<!-- Benefits & Features Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Key Benefits & Features</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our connectivity solutions are designed to provide maximum reliability, security, and performance for your business.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Benefit 1 -->
+<div class="bg-gray-50 rounded-lg p-8">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-6">
+<i class="ri-shield-check-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">99.99% Uptime Guarantee</h3>
+<p class="text-gray-600">Our redundant infrastructure and proactive monitoring ensure your business stays connected with industry-leading reliability.</p>
+<ul class="mt-4 space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Redundant network paths</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Automatic failover systems</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">24/7 network monitoring</span>
+</li>
+</ul>
+</div>
+<!-- Benefit 2 -->
+<div class="bg-gray-50 rounded-lg p-8">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-6">
+<i class="ri-customer-service-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">24/7 Technical Support</h3>
+<p class="text-gray-600">Our dedicated support team is available around the clock to address any connectivity issues and provide expert assistance.</p>
+<ul class="mt-4 space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Dedicated account managers</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Multi-channel support</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Rapid response times</span>
+</li>
+</ul>
+</div>
+<!-- Benefit 3 -->
+<div class="bg-gray-50 rounded-lg p-8">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-6">
+<i class="ri-lock-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Advanced Security Features</h3>
+<p class="text-gray-600">Protect your network with enterprise-grade security solutions that safeguard your data and prevent unauthorized access.</p>
+<ul class="mt-4 space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">DDoS protection</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Next-gen firewall</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Intrusion prevention</span>
+</li>
+</ul>
+</div>
+<!-- Benefit 4 -->
+<div class="bg-gray-50 rounded-lg p-8">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-6">
+<i class="ri-scales-3-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Scalable Solutions</h3>
+<p class="text-gray-600">Our connectivity solutions grow with your business, allowing you to easily upgrade bandwidth and services as needed.</p>
+<ul class="mt-4 space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Flexible bandwidth options</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">On-demand capacity increases</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Future-proof infrastructure</span>
+</li>
+</ul>
+</div>
+<!-- Benefit 5 -->
+<div class="bg-gray-50 rounded-lg p-8">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-6">
+<i class="ri-dashboard-3-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Real-time Monitoring</h3>
+<p class="text-gray-600">Access comprehensive analytics and monitoring tools to track network performance and optimize connectivity.</p>
+<ul class="mt-4 space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Real-time bandwidth usage</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Performance analytics</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Customizable alerts</span>
+</li>
+</ul>
+</div>
+<!-- Benefit 6 -->
+<div class="bg-gray-50 rounded-lg p-8">
+<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-full mb-6">
+<i class="ri-global-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Global Network Coverage</h3>
+<p class="text-gray-600">Connect your business locations worldwide with our extensive network infrastructure and carrier partnerships.</p>
+<ul class="mt-4 space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Multi-region connectivity</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Low-latency global routes</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Unified management portal</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Coverage Map Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Network Coverage</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our extensive network infrastructure provides reliable connectivity across major business centers and beyond.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm">
+<div class="coverage-map w-full h-[500px] rounded-lg"></div>
+<div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div>
+<h4 class="text-lg font-semibold mb-2 flex items-center">
+<div class="w-4 h-4 bg-primary rounded-full mr-2"></div>
+Fiber Coverage
+</h4>
+<p class="text-gray-600 ml-6">High-speed fiber connectivity available in major metropolitan areas with speeds up to 10 Gbps.</p>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-2 flex items-center">
+<div class="w-4 h-4 bg-blue-300 rounded-full mr-2"></div>
+Wireless Coverage
+</h4>
+<p class="text-gray-600 ml-6">Fixed wireless solutions available in suburban and select rural areas with speeds up to 1 Gbps.</p>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-2 flex items-center">
+<div class="w-4 h-4 bg-gray-400 rounded-full mr-2"></div>
+Partner Network
+</h4>
+<p class="text-gray-600 ml-6">Extended coverage through strategic partnerships, ensuring connectivity wherever your business operates.</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Client Testimonials Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">What Our Clients Say</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Hear from businesses that have transformed their operations with our connectivity solutions.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Testimonial 1 -->
+<div class="testimonial-card bg-gray-50 rounded-lg p-8">
+<div class="flex items-center mb-6">
+<div class="text-yellow-400 flex">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="ml-2 text-gray-600">5.0</span>
+</div>
+<p class="text-gray-700 mb-6">"Since implementing TechSolutions' fiber connectivity, our network downtime has been virtually eliminated. The 99.99% uptime guarantee has been exceeded, and our productivity has increased significantly."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4 text-gray-600">
+<i class="ri-user-3-line"></i>
+</div>
+<div>
+<h4 class="font-semibold">Michael Richardson</h4>
+<p class="text-gray-600 text-sm">CTO, Global Financial Services</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 2 -->
+<div class="testimonial-card bg-gray-50 rounded-lg p-8">
+<div class="flex items-center mb-6">
+<div class="text-yellow-400 flex">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+<span class="ml-2 text-gray-600">5.0</span>
+</div>
+<p class="text-gray-700 mb-6">"The bandwidth management tools have transformed how we prioritize critical applications. Our VoIP quality improved dramatically, and their technical support team is responsive and knowledgeable."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4 text-gray-600">
+<i class="ri-user-3-line"></i>
+</div>
+<div>
+<h4 class="font-semibold">Samantha Nguyen</h4>
+<p class="text-gray-600 text-sm">IT Director, Healthcare Solutions</p>
+</div>
+</div>
+</div>
+<!-- Testimonial 3 -->
+<div class="testimonial-card bg-gray-50 rounded-lg p-8">
+<div class="flex items-center mb-6">
+<div class="text-yellow-400 flex">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+<span class="ml-2 text-gray-600">4.5</span>
+</div>
+<p class="text-gray-700 mb-6">"As our business expanded to multiple locations, TechSolutions provided a seamless SD-WAN solution that unified our network. The real-time monitoring tools give us complete visibility into our connectivity."</p>
+<div class="flex items-center">
+<div class="w-12 h-12 bg-gray-300 rounded-full flex items-center justify-center mr-4 text-gray-600">
+<i class="ri-user-3-line"></i>
+</div>
+<div>
+<h4 class="font-semibold">David Patel</h4>
+<p class="text-gray-600 text-sm">Network Manager, Retail Chain</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Client Logos -->
+<div class="mt-16">
+<p class="text-center text-gray-500 mb-8">Trusted by leading companies across industries</p>
+<div class="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+<div class="flex items-center text-gray-400 text-2xl">
+<i class="ri-bank-fill mr-2"></i>
+<span class="font-semibold">FirstBank</span>
+</div>
+<div class="flex items-center text-gray-400 text-2xl">
+<i class="ri-hospital-fill mr-2"></i>
+<span class="font-semibold">MediCare</span>
+</div>
+<div class="flex items-center text-gray-400 text-2xl">
+<i class="ri-building-4-fill mr-2"></i>
+<span class="font-semibold">TechCorp</span>
+</div>
+<div class="flex items-center text-gray-400 text-2xl">
+<i class="ri-store-2-fill mr-2"></i>
+<span class="font-semibold">RetailPlus</span>
+</div>
+<div class="flex items-center text-gray-400 text-2xl">
+<i class="ri-government-fill mr-2"></i>
+<span class="font-semibold">GovSystems</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Get Connected Today</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Contact our team to discuss your connectivity needs and find the perfect solution for your business.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<!-- Contact Form -->
+<div class="bg-white rounded-lg shadow-sm p-8">
+<h3 class="text-2xl font-semibold mb-6">Request Information</h3>
+<form>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+<div>
+<label for="firstName" class="block text-gray-700 mb-2">First Name</label>
+<input type="text" id="firstName" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20">
+</div>
+<div>
+<label for="lastName" class="block text-gray-700 mb-2">Last Name</label>
+<input type="text" id="lastName" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20">
+</div>
+</div>
+<div class="mb-6">
+<label for="email" class="block text-gray-700 mb-2">Business Email</label>
+<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20">
+</div>
+<div class="mb-6">
+<label for="company" class="block text-gray-700 mb-2">Company Name</label>
+<input type="text" id="company" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20">
+</div>
+<div class="mb-6">
+<label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
+<input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20">
+</div>
+<div class="mb-6">
+<label for="service" class="block text-gray-700 mb-2">Interested Service</label>
+<div class="relative">
+<select id="service" class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:border-primary focus:ring-2 focus:ring-primary/20 pr-8">
+    <option value="">Select a service</option>
+    <option value="fleet">Fleet Management</option>
+    <option value="fuel">Fuel Management</option>
+    <option value="logistics">Logistics Management</option>
+    <option value="telecommunication">Telecommunication</option>
+    <option value="security">Security</option>
+    <option value="data-power">Data &amp; Power</option>
+    <option value="internet-connectivity">Internet &amp; Connectivity</option>
+    <option value="mining">Mining</option>
+    <option value="warehousing">Warehousing</option>
+    <option value="other">Other</option>
+</select>
+<div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+<i class="ri-arrow-down-s-line text-gray-500"></i>
+</div>
+</div>
+</div>
+<div class="mb-6">
+<label for="message" class="block text-gray-700 mb-2">Additional Information</label>
+<textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20"></textarea>
+</div>
+<div class="mb-6 flex items-start">
+<input type="checkbox" id="consent" class="custom-checkbox mt-1">
+<label for="consent" class="ml-3 text-gray-600 text-sm">I consent to TechSolutions processing my data to contact me about my inquiry. I understand I can unsubscribe at any time.</label>
+</div>
+<button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 w-full md:w-auto">Submit Request</button>
+</form>
+</div>
+<!-- Contact Information -->
+<div>
+<div class="bg-white rounded-lg shadow-sm p-8 mb-8">
+<h3 class="text-2xl font-semibold mb-6">Technical Support</h3>
+<p class="text-gray-600 mb-6">Our technical support team is available 24/7 to assist with any connectivity issues or questions.</p>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-4 text-primary">
+<i class="ri-phone-line"></i>
+</div>
+<div>
+<h4 class="font-semibold">Support Hotline</h4>
+<p class="text-gray-600">+1 (800) 555-0123</p>
+<p class="text-sm text-gray-500">Available 24/7</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-4 text-primary">
+<i class="ri-mail-line"></i>
+</div>
+<div>
+<h4 class="font-semibold">Email Support</h4>
+<p class="text-gray-600">support@techsolutions.com</p>
+<p class="text-sm text-gray-500">Response within 1 hour</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-4 text-primary">
+<i class="ri-message-2-line"></i>
+</div>
+<div>
+<h4 class="font-semibold">Live Chat</h4>
+<p class="text-gray-600">Available on our customer portal</p>
+<p class="text-sm text-gray-500">Instant technical assistance</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg shadow-sm p-8">
+<h3 class="text-2xl font-semibold mb-6">Schedule a Consultation</h3>
+<p class="text-gray-600 mb-6">Book a free consultation with our connectivity experts to discuss your specific requirements.</p>
+<div class="mb-6">
+<label for="consultDate" class="block text-gray-700 mb-2">Preferred Date</label>
+<input type="date" id="consultDate" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20">
+</div>
+<div class="mb-6">
+<label for="consultTime" class="block text-gray-700 mb-2">Preferred Time</label>
+<div class="relative">
+<select id="consultTime" class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:border-primary focus:ring-2 focus:ring-primary/20 pr-8">
+<option value="">Select a time</option>
+<option value="9am">9:00 AM - 10:00 AM</option>
+<option value="11am">11:00 AM - 12:00 PM</option>
+<option value="1pm">1:00 PM - 2:00 PM</option>
+<option value="3pm">3:00 PM - 4:00 PM</option>
+</select>
+<div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
+<i class="ri-arrow-down-s-line text-gray-500"></i>
+</div>
+</div>
+</div>
+<button class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 w-full">Book Consultation</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-20 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Find answers to common questions about our connectivity solutions.</p>
+</div>
+<div class="max-w-4xl mx-auto">
+<div class="space-y-6">
+<!-- FAQ Item 1 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-toggle w-full flex items-center justify-between p-6 bg-gray-50 text-left" aria-expanded="false">
+<span class="text-lg font-semibold">What is the difference between dedicated and shared internet?</span>
+<i class="ri-add-line text-xl transition-transform"></i>
+</button>
+<div class="faq-content hidden p-6 border-t border-gray-200">
+<p class="text-gray-700">Dedicated internet provides a fixed bandwidth exclusively for your business, ensuring consistent performance regardless of other users. Shared internet connections divide bandwidth among multiple users, which can result in variable speeds during peak usage times. Our dedicated fiber solutions offer guaranteed bandwidth with symmetrical upload and download speeds, making them ideal for businesses with critical connectivity needs.</p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-toggle w-full flex items-center justify-between p-6 bg-gray-50 text-left" aria-expanded="false">
+<span class="text-lg font-semibold">How does the 99.99% uptime guarantee work?</span>
+<i class="ri-add-line text-xl transition-transform"></i>
+</button>
+<div class="faq-content hidden p-6 border-t border-gray-200">
+<p class="text-gray-700">Our 99.99% uptime guarantee is backed by our Service Level Agreement (SLA). This means your connectivity will be available 99.99% of the time, which translates to less than 52.6 minutes of downtime per year. If we fail to meet this guarantee, you'll receive service credits according to our SLA terms. We achieve this reliability through redundant network paths, automatic failover systems, and 24/7 proactive monitoring of our infrastructure.</p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-toggle w-full flex items-center justify-between p-6 bg-gray-50 text-left" aria-expanded="false">
+<span class="text-lg font-semibold">Can I upgrade my bandwidth as my business grows?</span>
+<i class="ri-add-line text-xl transition-transform"></i>
+</button>
+<div class="faq-content hidden p-6 border-t border-gray-200">
+<p class="text-gray-700">Yes, our connectivity solutions are designed to scale with your business. In most cases, bandwidth upgrades can be implemented without hardware changes or service interruptions. Our fiber infrastructure supports speeds from 100 Mbps to 10 Gbps, allowing for seamless upgrades as your needs evolve. You can request bandwidth changes through your account manager or our customer portal, and most upgrades can be completed within 24-48 hours.</p>
+</div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-toggle w-full flex items-center justify-between p-6 bg-gray-50 text-left" aria-expanded="false">
+<span class="text-lg font-semibold">What security features are included with your connectivity solutions?</span>
+<i class="ri-add-line text-xl transition-transform"></i>
+</button>
+<div class="faq-content hidden p-6 border-t border-gray-200">
+<p class="text-gray-700">Our connectivity solutions include various security features depending on your selected plan. Basic plans include standard firewall protection and DDoS mitigation. Advanced plans add intrusion prevention systems (IPS), web filtering, and application control. Enterprise plans include comprehensive security with advanced threat protection, SIEM integration, and optional managed security services. All plans can be enhanced with our VPN services for secure remote access and site-to-site connectivity.</p>
+</div>
+</div>
+<!-- FAQ Item 5 -->
+<div class="border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-toggle w-full flex items-center justify-between p-6 bg-gray-50 text-left" aria-expanded="false">
+<span class="text-lg font-semibold">How long does installation typically take?</span>
+<i class="ri-add-line text-xl transition-transform"></i>
+</button>
+<div class="faq-content hidden p-6 border-t border-gray-200">
+<p class="text-gray-700">Installation timeframes vary based on your location and the type of connectivity solution. For locations where our fiber infrastructure is already present, installation typically takes 10-15 business days. For new fiber builds, the timeframe can range from 30-90 days depending on construction requirements and permits. Wireless solutions can often be deployed more quickly, typically within 5-10 business days. During the sales process, we'll provide you with a specific installation timeline for your location.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Resources Section -->
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Resources & Downloads</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Access technical specifications, implementation guides, and other helpful resources.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Resource 1 -->
+<div class="bg-white rounded-lg shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mb-4 text-primary">
+<i class="ri-file-text-line text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">Technical Specifications</h3>
+<p class="text-gray-600 mb-4">Detailed specifications for our connectivity solutions, including performance metrics and hardware requirements.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Download PDF
+<i class="ri-download-line ml-2"></i>
+</a>
+</div>
+<!-- Resource 2 -->
+<div class="bg-white rounded-lg shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mb-4 text-primary">
+<i class="ri-book-open-line text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">Implementation Guide</h3>
+<p class="text-gray-600 mb-4">Step-by-step guide for implementing our connectivity solutions in your business environment.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Download PDF
+<i class="ri-download-line ml-2"></i>
+</a>
+</div>
+<!-- Resource 3 -->
+<div class="bg-white rounded-lg shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mb-4 text-primary">
+<i class="ri-file-list-3-line text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">Service Level Agreement</h3>
+<p class="text-gray-600 mb-4">Complete details of our service level agreements, including uptime guarantees and support response times.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Download PDF
+<i class="ri-download-line ml-2"></i>
+</a>
+</div>
+<!-- Resource 4 -->
+<div class="bg-white rounded-lg shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mb-4 text-primary">
+<i class="ri-video-line text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">Webinar: Optimizing Network Performance</h3>
+<p class="text-gray-600 mb-4">On-demand webinar featuring expert tips for maximizing your network performance and reliability.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Watch Now
+<i class="ri-play-circle-line ml-2"></i>
+</a>
+</div>
+<!-- Resource 5 -->
+<div class="bg-white rounded-lg shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mb-4 text-primary">
+<i class="ri-article-line text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">Case Studies</h3>
+<p class="text-gray-600 mb-4">Real-world examples of how businesses have transformed their operations with our connectivity solutions.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+View Case Studies
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+<!-- Resource 6 -->
+<div class="bg-white rounded-lg shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-50 rounded-lg mb-4 text-primary">
+<i class="ri-calculator-line text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2">ROI Calculator</h3>
+<p class="text-gray-600 mb-4">Interactive tool to calculate the potential return on investment from upgrading your connectivity infrastructure.</p>
+<a href="#" class="text-primary font-medium flex items-center">
+Access Calculator
+<i class="ri-arrow-right-line ml-2"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Call-to-Action Section -->
+<section class="py-20 bg-primary">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center text-white">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Connectivity?</h2>
+<p class="text-xl mb-8">Partner with TechSolutions for reliable, high-performance internet and connectivity solutions that power your business growth.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300">Schedule Consultation</button>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true">
+<button class="bg-transparent text-white border border-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-white/10 transition duration-300">Back to Solutions</button>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Company Info -->
+<div>
+<a href="#" class="text-2xl font-['Pacifico'] text-white mb-6 inline-block">logo</a>
+<p class="text-gray-400 mb-6">Providing enterprise-grade technology solutions that drive innovation and efficiency since 2005.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Industries</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Case Studies</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Careers</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<span class="text-gray-400">1250 Technology Plaza, Suite 400<br>San Francisco, CA 94105</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<span class="text-gray-400">+1 (415) 555-0123</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<span class="text-gray-400">info@techsolutions.com</span>
+</li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Subscribe to Our Newsletter</h3>
+<p class="text-gray-400 mb-4">Stay updated with the latest technology trends and solutions.</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Your email address" class="bg-gray-800 text-white px-4 py-3 w-full border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary">
+<button type="submit" class="bg-primary text-white px-4 py-3 !rounded-r-lg !rounded-l-none whitespace-nowrap hover:bg-primary/90 transition duration-300">Subscribe</button>
+</div>
+</form>
+<div class="flex items-center space-x-4">
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-visa-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-mastercard-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-paypal-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-apple-fill text-2xl text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 TechSolutions. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Privacy Policy</a>
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Terms of Service</a>
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script id="mobileMenuScript">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileSolutionsBtn = document.getElementById('mobileSolutionsBtn');
+const mobileSolutionsMenu = document.getElementById('mobileSolutionsMenu');
+mobileMenuBtn.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+const icon = mobileMenuBtn.querySelector('i');
+icon.classList.toggle('ri-menu-line');
+icon.classList.toggle('ri-close-line');
+});
+mobileSolutionsBtn.addEventListener('click', function() {
+mobileSolutionsMenu.classList.toggle('hidden');
+const icon = mobileSolutionsBtn.querySelector('i');
+icon.classList.toggle('ri-arrow-down-s-line');
+icon.classList.toggle('ri-arrow-up-s-line');
+});
+document.addEventListener('click', function(event) {
+if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+mobileMenu.classList.add('hidden');
+const icon = mobileMenuBtn.querySelector('i');
+icon.classList.add('ri-menu-line');
+icon.classList.remove('ri-close-line');
+}
+});
+});
+</script>
+<script id="heroAnimationScript">
+document.addEventListener('DOMContentLoaded', function() {
+setTimeout(() => {
+const heroTitle = document.getElementById('heroTitle');
+heroTitle.classList.remove('opacity-0', 'translate-y-8');
+}, 300);
+});
+</script>
+
+<script id="stickyHeaderScript">
+document.addEventListener('DOMContentLoaded', function() {
+const header = document.querySelector('header');
+const solutionsBtn = document.getElementById('solutionsBtn');
+const solutionsMenu = document.getElementById('solutionsMenu');
+let isDropdownOpen = false;
+function toggleDropdown() {
+isDropdownOpen = !isDropdownOpen;
+solutionsMenu.classList.toggle('hidden');
+solutionsBtn.setAttribute('aria-expanded', isDropdownOpen);
+}
+solutionsBtn.addEventListener('click', function(e) {
+e.stopPropagation();
+toggleDropdown();
+});
+document.addEventListener('click', function(e) {
+if (!solutionsBtn.contains(e.target) && isDropdownOpen) {
+toggleDropdown();
+}
+});
+function updateHeader() {
+if (window.scrollY > 50) {
+header.classList.add('shadow');
+} else {
+header.classList.remove('shadow');
+}
+}
+window.addEventListener('scroll', updateHeader);
+updateHeader();
+});
+</script>
+<script id="tabsScript">
+document.addEventListener('DOMContentLoaded', function() {
+const businessTab = document.getElementById('businessTab');
+const enterpriseTab = document.getElementById('enterpriseTab');
+const businessPlans = document.getElementById('businessPlans');
+const enterprisePlans = document.getElementById('enterprisePlans');
+businessTab.addEventListener('click', function() {
+businessTab.classList.add('tab-active');
+businessTab.classList.remove('tab-inactive');
+enterpriseTab.classList.add('tab-inactive');
+enterpriseTab.classList.remove('tab-active');
+businessPlans.classList.remove('hidden');
+enterprisePlans.classList.add('hidden');
+});
+enterpriseTab.addEventListener('click', function() {
+enterpriseTab.classList.add('tab-active');
+enterpriseTab.classList.remove('tab-inactive');
+businessTab.classList.add('tab-inactive');
+businessTab.classList.remove('tab-active');
+enterprisePlans.classList.remove('hidden');
+businessPlans.classList.add('hidden');
+});
+});
+</script>
+<script id="faqScript">
+document.addEventListener('DOMContentLoaded', function() {
+const faqToggles = document.querySelectorAll('.faq-toggle');
+faqToggles.forEach(toggle => {
+toggle.addEventListener('click', function() {
+const content = this.nextElementSibling;
+const icon = this.querySelector('i');
+const isExpanded = this.getAttribute('aria-expanded') === 'true';
+this.setAttribute('aria-expanded', !isExpanded);
+content.classList.toggle('hidden');
+icon.classList.toggle('ri-add-line');
+icon.classList.toggle('ri-subtract-line');
+icon.style.transform = isExpanded ? 'rotate(0deg)' : 'rotate(45deg)';
+});
+});
+});
+</script>
+<script id="animationScript">
+document.addEventListener('DOMContentLoaded', function() {
+const observerOptions = {
+root: null,
+rootMargin: '0px',
+threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if (entry.isIntersecting) {
+entry.target.classList.add('animate');
+observer.unobserve(entry.target);
+}
+});
+}, observerOptions);
+
+document.querySelectorAll('.service-card, .testimonial-card').forEach(card => {
+observer.observe(card);
+});
+
+const staggeredElements = document.querySelectorAll('.service-card');
+staggeredElements.forEach((el, index) => {
+el.style.transitionDelay = `${index * 0.1}s`;
+});
+});
+</script>
+
+<script id="performanceChartScript">
+document.addEventListener('DOMContentLoaded', function() {
+const chartDom = document.getElementById('performanceChart');
+const myChart = echarts.init(chartDom);
+const option = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#333'
+}
+},
+legend: {
+data: ['Basic', 'Professional', 'Premium'],
+bottom: 0
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '12%',
+top: '3%',
+containLabel: true
+},
+xAxis: {
+type: 'category',
+boundaryGap: false,
+data: ['Download Speed', 'Upload Speed', 'Latency', 'Reliability', 'Security'],
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+color: '#666'
+}
+},
+yAxis: {
+type: 'value',
+axisLine: {
+show: false
+},
+axisLabel: {
+color: '#666'
+},
+splitLine: {
+lineStyle: {
+color: '#eee'
+}
+}
+},
+series: [
+{
+name: 'Basic',
+type: 'line',
+stack: 'Total',
+smooth: true,
+lineStyle: {
+width: 3
+},
+symbol: 'none',
+areaStyle: {
+opacity: 0.1,
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(87, 181, 231, 0.2)'
+}, {
+offset: 1, color: 'rgba(87, 181, 231, 0.01)'
+}]
+}
+},
+emphasis: {
+focus: 'series'
+},
+color: 'rgba(87, 181, 231, 1)',
+data: [30, 30, 60, 80, 40]
+},
+{
+name: 'Professional',
+type: 'line',
+stack: 'Total',
+smooth: true,
+lineStyle: {
+width: 3
+},
+symbol: 'none',
+areaStyle: {
+opacity: 0.1,
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(141, 211, 199, 0.2)'
+}, {
+offset: 1, color: 'rgba(141, 211, 199, 0.01)'
+}]
+}
+},
+emphasis: {
+focus: 'series'
+},
+color: 'rgba(141, 211, 199, 1)',
+data: [60, 60, 80, 90, 70]
+},
+{
+name: 'Premium',
+type: 'line',
+stack: 'Total',
+smooth: true,
+lineStyle: {
+width: 3
+},
+symbol: 'none',
+areaStyle: {
+opacity: 0.1,
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(251, 191, 114, 0.2)'
+}, {
+offset: 1, color: 'rgba(251, 191, 114, 0.01)'
+}]
+}
+},
+emphasis: {
+focus: 'series'
+},
+color: 'rgba(251, 191, 114, 1)',
+data: [100, 100, 95, 99, 95]
+}
+]
+};
+myChart.setOption(option);
+window.addEventListener('resize', function() {
+myChart.resize();
+});
+});
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Modal elements
+  const contactUsBtn = document.getElementById('contactUsBtn');
+  const mobileContactUsBtn = document.getElementById('mobileContactUsBtn');
+  const contactModal = document.getElementById('contactModal');
+  const closeModalBtn = document.getElementById('closeModalBtn');
+
+  // Open modal
+  function openModal() {
+    contactModal.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+  // Close modal
+  function closeModal() {
+    contactModal.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  if (contactUsBtn) contactUsBtn.addEventListener('click', openModal);
+  if (mobileContactUsBtn) mobileContactUsBtn.addEventListener('click', openModal);
+  if (closeModalBtn) closeModalBtn.addEventListener('click', closeModal);
+
+  // Close modal on outside click
+  contactModal.addEventListener('click', function(e) {
+    if (e.target === contactModal) closeModal();
+  });
+
+  // ESC key closes modal
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !contactModal.classList.contains('hidden')) {
+      closeModal();
+    }
+  });
+
+  // Contact form submission (basic UX, no backend)
+  const contactForm = document.getElementById('contactForm');
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      contactForm.reset();
+      closeModal();
+      alert('Thank you for contacting us! We will get back to you soon.');
+    });
+  }
+});
+</script>
+</body>
+</html>
