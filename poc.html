@@ -108,171 +108,132 @@ animation: fadeIn 0.6s ease-out forwards;
 </head>
 <body class="bg-gray-50">
 <!-- Header Navigation -->
-<header class="bg-white shadow-sm fixed w-full z-50">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-        <div class="flex items-center">
-            <a href="./index.html" class="text-2xl font-['Righteous'] text-primary">Pitch Forward</a>
-        </div>
-        <nav class="hidden md:flex space-x-8">
-            <a href="./index.html" id="homeLink" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
-            <div class="relative" id="solutionsDropdown">
-                <button id="solutionsBtn" class="nav-link text-gray-700 hover:text-primary font-medium flex items-center" aria-expanded="false" aria-haspopup="true">
-                    Solutions
-                    <i class="ri-arrow-down-s-line ml-1"></i>
-                </button>
-                <div id="solutionsMenu" class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden" role="menu" aria-labelledby="solutionsBtn">
-                    <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-                        <i class="ri-footprint-line w-5 h-5 mr-3"></i>
-                        Fleet Management
-                    </a>
-                    <a href="./Fuel-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-                        <i class="ri-gas-station-line w-5 h-5 mr-3"></i>
-                        Fuel Management
-                    </a>
-                    <a href="./Logistics-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-                        <i class="ri-truck-line w-5 h-5 mr-3"></i>
-                        Logistics Management
-                    </a>
-                    <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-                        <i class="ri-phone-line w-5 h-5 mr-3"></i>
-                        Telecommunication
-                    </a>
-                    <a href="./Security-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-                        <i class="ri-shield-keyhole-line w-5 h-5 mr-3"></i>
-                        Security
-                    </a>
-                    <a href="./Data-&-Power-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-                        <i class="ri-database-2-line w-5 h-5 mr-3"></i>
-                        Data & Power
-                    </a>
-                    <a href="./Internet-&-Connectivity-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-                        <i class="ri-wifi-line w-5 h-5 mr-3"></i>
-                        Internet & Connectivity
-                    </a>
-                    <a href="./Mining-Technology-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-                        <i class="ri-mine-line w-5 h-5 mr-3"></i>
-                        Mining
-                    </a>
-                    <a href="./Warehousing-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-                        <i class="ri-store-2-line w-5 h-5 mr-3"></i>
-                        Warehousing
-                    </a>
-                      <a href="./hospitality.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-    <i class="ri-hotel-line w-5 h-5 mr-3"></i>
-    Hospitality
-  </a>
-                </div>
-            </div>
-            <a href="./industry.html" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
-            <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
-        </nav>
-        <div class="flex items-center space-x-4">
-            <div class="relative hidden md:block">
-                <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm focus:border-primary">
-                <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
-                    <i class="ri-search-line"></i>
-                </div>
-            </div>
-            <!-- Contact Us Button always visible on desktop, and on mobile triggers modal -->
-            <button id="contactUsBtn" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 block md:block">Contact Us</button>
-            <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
-                <div class="bg-white rounded-lg w-full max-w-xl mx-4 relative">
-                    <button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
-                        <i class="ri-close-line text-2xl"></i>
-                    </button>
-                    <div class="max-h-[100vh] overflow-x-auto p-4 md:p-8">
-                        <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
-                        <form id="contactForm" action="" method="POST">
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-                                <div>
-                                    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-                                    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
-                                </div>
-                                <div>
-                                    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                                    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
-                                </div>
-                                <div>
-                                    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-                                    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
-                                </div>
-                                <div>
-                                    <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
-                                    <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
-                                </div>
-                            </div>
-                            <div class="mb-4">
-                                <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
-                                <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary pr-8">
-                                    <option value="">Select a service</option>
-                                    <option value="fleet">Fleet Management</option>
-                                    <option value="fuel">Fuel Management</option>
-                                    <option value="logistics">Logistics Management</option>
-                                    <option value="telecommunication">Telecommunication</option>
-                                    <option value="security">Security</option>
-                                    <option value="data-power">Data &amp; Power</option>
-                                    <option value="internet-connectivity">Internet &amp; Connectivity</option>
-                                    <option value="mining">Mining</option>
-                                    <option value="warehousing">Warehousing</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                            <div class="mb-6">
-                                <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-                                <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
-                            </div>
-                            <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Submit</button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-            <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
-                <i class="ri-menu-line text-xl"></i>
-            </button>
-        </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-lg z-50">
-        <nav class="container mx-auto px-4 py-4">
-            <a href="index.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
-            <div class="relative">
-                <button id="mobileSolutionsBtn" class="w-full flex items-center justify-between py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">
-                    Solutions
-                    <i class="ri-arrow-down-s-line"></i>
-                </button>
-                <div id="mobileSolutionsMenu" class="hidden bg-gray-50 px-4 py-2">
-                    <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Fleet Management</a>
-                    <a href="./Fuel-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Fuel Management</a>
-                    <a href="./Logistics-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Logistics Management</a>
-                    <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Telecommunication</a>
-                    <a href="./Security-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Security</a>
-                    <a href="./Data-&-Power-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Data & Power</a>
-                    <a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
-                    <a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
-                    <a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
-                     <a href="./hospitality.html" class="block py-2 text-gray-700 hover:text-primary">Hospitality</a>
-                </div>
-            </div>
-            <a href="./industry.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
-            <a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
-            <div class="mt-4">
-                <!-- Contact Us Button in mobile menu triggers modal -->
-                <button id="mobileContactUsBtn" class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
-            </div>
-        </nav>
-    </div>
+<header class="bg-white fixed w-full z-50 shadow-sm">
+<div class="container mx-auto px-4">
+<div class="flex items-center justify-between h-20">
+<div class="flex items-center space-x-16">
+<a href="#" class="text-2xl font-['Righteous'] text-primary">Pitch forward</a>
+<nav class="hidden lg:flex items-center space-x-10">
+<div class="relative group" id="solutionsDropdown">
+<button id="solutionsButton" class="flex items-center space-x-2 text-gray-700 hover:text-primary py-8">
+<span class="font-medium">Solutions</span>
+<i class="ri-arrow-down-s-line transition-transform duration-200"></i>
+</button>
+<div id="solutionsMenu" class="absolute top-full left-0 mt-0 w-[480px] bg-white rounded-lg shadow-xl py-6 hidden group-hover:block border border-gray-100">
+<div class="grid grid-cols-2 gap-4 px-6">
+<a href="#" class="flex items-start p-3 rounded-lg hover:bg-gray-50 transition duration-200">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-route-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Route Optimization</h4>
+<p class="text-sm text-gray-500 mt-1">AI-powered route planning and optimization</p>
+</div>
+</a>
+<a href="#" class="flex items-start p-3 rounded-lg hover:bg-gray-50 transition duration-200">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-shield-user-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Driver Safety</h4>
+<p class="text-sm text-gray-500 mt-1">Real-time monitoring and analytics</p>
+</div>
+</a>
+<a href="#" class="flex items-start p-3 rounded-lg hover:bg-gray-50 transition duration-200">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-gas-station-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Fuel Management</h4>
+<p class="text-sm text-gray-500 mt-1">Track and optimize fuel consumption</p>
+</div>
+</a>
+<a href="#" class="flex items-start p-3 rounded-lg hover:bg-gray-50 transition duration-200">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-lg mr-4 flex-shrink-0">
+<i class="ri-tools-line text-primary text-xl"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Maintenance</h4>
+<p class="text-sm text-gray-500 mt-1">Predictive maintenance scheduling</p>
+</div>
+</a>
+</div>
+<div class="mt-6 bg-gray-50 p-6">
+<div class="flex items-center justify-between">
+<div>
+<h5 class="font-medium text-gray-900">New: AI Fleet Assistant</h5>
+<p class="text-sm text-gray-500 mt-1">Discover how AI can transform your fleet operations</p>
+</div>
+<button class="text-primary hover:text-primary/80">Learn More →</button>
+</div>
+</div>
+</div>
+</div>
+<div class="relative group" id="industriesDropdown">
+<button id="industriesButton" class="flex items-center space-x-2 text-gray-700 hover:text-primary py-8">
+<span class="font-medium">Industries</span>
+<i class="ri-arrow-down-s-line transition-transform duration-200"></i>
+</button>
+<div id="industriesMenu" class="absolute top-full left-0 mt-0 w-[320px] bg-white rounded-lg shadow-xl py-4 hidden group-hover:block border border-gray-100">
+<div class="grid grid-cols-1 gap-1">
+<a href="#" class="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-50">
+<div class="w-8 h-8 flex items-center justify-center bg-blue-50 rounded-lg mr-3">
+<i class="ri-truck-line text-primary"></i>
+</div>
+<span>Logistics & Transportation</span>
+</a>
+<a href="#" class="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-50">
+<div class="w-8 h-8 flex items-center justify-center bg-blue-50 rounded-lg mr-3">
+<i class="ri-building-2-line text-primary"></i>
+</div>
+<span>Construction</span>
+</a>
+<a href="#" class="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-50">
+<div class="w-8 h-8 flex items-center justify-center bg-blue-50 rounded-lg mr-3">
+<i class="ri-service-line text-primary"></i>
+</div>
+<span>Field Services</span>
+</a>
+<a href="#" class="flex items-center px-6 py-3 text-gray-700 hover:bg-gray-50">
+<div class="w-8 h-8 flex items-center justify-center bg-blue-50 rounded-lg mr-3">
+<i class="ri-government-line text-primary"></i>
+</div>
+<span>Government</span>
+</a>
+</div>
+</div>
+</div>
+<a href="#case-studies" class="font-medium text-gray-700 hover:text-primary">Case Studies</a>
+<a href="#pricing" class="font-medium text-gray-700 hover:text-primary">Pricing</a>
+<a href="#about" class="font-medium text-gray-700 hover:text-primary">About</a>
+</nav>
+</div>
+<div class="flex items-center space-x-8">
+<div class="hidden lg:flex items-center space-x-6">
+<a href="#" class="text-gray-700 hover:text-primary font-medium">Log in</a>
+<button class="text-gray-700 hover:text-primary">
+<i class="ri-search-line text-xl"></i>
+</button>
+</div>
+<button id="getStartedBtn" class="bg-primary text-white px-6 py-2.5 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Get Started</button>
+<button class="lg:hidden w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line text-xl"></i>
+</button>
+</div>
+</div>
+</div>
 </header>
 <!-- Breadcrumbs -->
 <div class="bg-gray-100 pt-20">
 <div class="container mx-auto px-4 py-3">
 <div class="flex items-center text-sm text-gray-500">
-<a href="./index.html" class="hover:text-primary">Home</a>
+<a href="#" class="hover:text-primary">Home</a>
 <i class="ri-arrow-right-s-line mx-2"></i>
-<a href="./Fleet-Management-Solutions-Overview.html" class="hover:text-primary">Solutions</a>
+<a href="#" class="hover:text-primary">Solutions</a>
 <i class="ri-arrow-right-s-line mx-2"></i>
-<a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="hover:text-primary">Fleet Management</a>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/225c498e-f526-4e3e-ab93-39c22f90717f" data-readdy="true" class="hover:text-primary">Fleet Management</a>
 <i class="ri-arrow-right-s-line mx-2"></i>
-<span class="text-primary font-medium">Push-to-Talk Over Cellular</span>
+<span class="text-primary font-medium">Real-time Vehicle Tracking</span>
 </div>
 </div>
 </div>
@@ -281,7 +242,7 @@ animation: fadeIn 0.6s ease-out forwards;
 <div class="hero-overlay absolute inset-0"></div>
 <div class="container mx-auto px-4 h-full flex items-center relative z-10 animate-fadeIn">
 <div class="w-full md:w-1/2 text-white">
-<a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="inline-flex items-center mb-6 text-white/80 hover:text-white transition-colors">
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/225c498e-f526-4e3e-ab93-39c22f90717f" data-readdy="true" class="inline-flex items-center mb-6 text-white/80 hover:text-white transition-colors">
 <i class="ri-arrow-left-line mr-2"></i>
 Back to Fleet Communication Solutions
 </a>
@@ -654,7 +615,234 @@ Back to Fleet Communication Solutions
 </div>
 </section>
 <!-- Interactive Demo Section -->
-
+<section class="py-20 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-16">
+<h2 class="text-3xl md:text-4xl font-bold mb-4">Real-time Route Optimization Analytics</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Monitor and optimize delivery routes in real-time with our AI-powered route optimization dashboard, reducing costs and improving efficiency.</p>
+</div>
+<div class="bg-white rounded-lg shadow-md overflow-hidden">
+<div class="p-6 border-b border-gray-200">
+<div class="flex justify-between items-center">
+<h3 class="text-xl font-semibold">Route Optimization Analytics Dashboard</h3>
+<div class="flex items-center space-x-4">
+<div class="flex items-center space-x-2">
+<span class="text-sm text-gray-500">Route Analysis Period:</span>
+<select class="text-sm font-medium bg-transparent border-none cursor-pointer focus:outline-none">
+<option>Today's Routes</option>
+<option>Last 7 Days</option>
+<option>Last 30 Days</option>
+<option>Custom Range</option>
+</select>
+</div>
+<div class="flex space-x-2">
+<button class="text-gray-500 hover:text-primary w-8 h-8 flex items-center justify-center" title="Refresh Data">
+<i class="ri-refresh-line"></i>
+</button>
+<button class="text-gray-500 hover:text-primary w-8 h-8 flex items-center justify-center" title="Export Report">
+<i class="ri-download-line"></i>
+</button>
+<button class="text-gray-500 hover:text-primary w-8 h-8 flex items-center justify-center" title="More Options">
+<i class="ri-more-2-line"></i>
+</button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-8">
+<div class="bg-blue-50 rounded-lg p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-gray-500 text-sm">Route Efficiency Score</p>
+<h4 class="text-3xl font-bold">95</h4>
+</div>
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full">
+<i class="ri-route-line text-primary"></i>
+</div>
+</div>
+<div class="flex items-center">
+<span class="text-green-500 text-sm flex items-center mr-2">
+<i class="ri-arrow-up-s-line"></i> +8%
+</span>
+<span class="text-gray-500 text-sm">vs last week</span>
+</div>
+</div>
+<div class="bg-green-50 rounded-lg p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-gray-500 text-sm">Distance Saved</p>
+<h4 class="text-3xl font-bold">28%</h4>
+</div>
+<div class="w-10 h-10 flex items-center justify-center bg-green-100 rounded-full">
+<i class="ri-map-pin-time-line text-green-600"></i>
+</div>
+</div>
+<div class="flex items-center">
+<span class="text-green-500 text-sm flex items-center mr-2">
+<i class="ri-arrow-up-s-line"></i> +5%
+</span>
+<span class="text-gray-500 text-sm">optimization</span>
+</div>
+</div>
+<div class="bg-yellow-50 rounded-lg p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-gray-500 text-sm">On-Time Deliveries</p>
+<h4 class="text-3xl font-bold">96%</h4>
+</div>
+<div class="w-10 h-10 flex items-center justify-center bg-yellow-100 rounded-full">
+<i class="ri-timer-flash-line text-yellow-600"></i>
+</div>
+</div>
+<div class="flex items-center">
+<span class="text-green-500 text-sm flex items-center mr-2">
+<i class="ri-arrow-up-s-line"></i> +12%
+</span>
+<span class="text-gray-500 text-sm">improvement</span>
+</div>
+</div>
+<div class="bg-blue-50 rounded-lg p-6">
+<div class="flex justify-between items-start mb-4">
+<div>
+<p class="text-gray-500 text-sm">Fuel Savings</p>
+<h4 class="text-3xl font-bold">32%</h4>
+</div>
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full">
+<i class="ri-gas-station-line text-primary"></i>
+</div>
+</div>
+<div class="flex items-center">
+<span class="text-green-500 text-sm flex items-center mr-2">
+<i class="ri-arrow-up-s-line"></i> +15%
+</span>
+<span class="text-gray-500 text-sm">cost reduction</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<div class="lg:col-span-2 bg-white border border-gray-200 rounded-lg p-4">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-semibold">Route Optimization Trends</h4>
+<div class="flex space-x-2">
+<button class="text-xs bg-blue-50 text-primary px-3 py-1 rounded-full">Real-time</button>
+<button class="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full">Daily</button>
+<button class="text-xs bg-gray-100 text-gray-600 px-3 py-1 rounded-full">Weekly</button>
+</div>
+</div>
+<div id="maintenanceChart" class="h-[400px]"></div>
+<div class="grid grid-cols-4 gap-4 mt-4 p-2 bg-gray-50 rounded-lg">
+<div class="text-center">
+<p class="text-sm text-gray-500">Distance Saved</p>
+<p class="font-semibold text-green-500">458 km</p>
+</div>
+<div class="text-center">
+<p class="text-sm text-gray-500">Time Saved</p>
+<p class="font-semibold text-blue-500">47 hours</p>
+</div>
+<div class="text-center">
+<p class="text-sm text-gray-500">Fuel Saved</p>
+<p class="font-semibold text-primary">685 L</p>
+</div>
+<div class="text-center">
+<p class="text-sm text-gray-500">CO2 Reduced</p>
+<p class="font-semibold text-green-600">1.2 tons</p>
+</div>
+</div>
+</div>
+<div class="bg-white border border-gray-200 rounded-lg p-4">
+<div class="flex justify-between items-center mb-4">
+<h4 class="font-semibold">Route Performance Analysis</h4>
+<button class="text-sm text-primary hover:underline">View All Routes</button>
+</div>
+<div class="space-y-4">
+<div class="p-3 border border-gray-100 rounded-lg hover:bg-gray-50 cursor-pointer">
+<div class="flex justify-between items-center mb-2">
+<h5 class="font-medium">Downtown Express Route</h5>
+<span class="text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full">Optimized</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mb-2 text-sm">
+<div class="flex items-center text-gray-500">
+<i class="ri-route-line mr-1"></i>
+<span>Distance: -32%</span>
+</div>
+<div class="flex items-center text-gray-500">
+<i class="ri-timer-line mr-1"></i>
+<span>Time: -28%</span>
+</div>
+</div>
+<div class="w-full bg-gray-200 h-2 rounded-full mb-2">
+<div class="bg-green-500 h-2 rounded-full" style="width: 95%"></div>
+</div>
+<div class="flex items-center justify-between text-xs text-gray-500">
+<span>15 Deliveries</span>
+<span>Last Updated: 5 min ago</span>
+</div>
+</div>
+<div class="p-3 border border-gray-100 rounded-lg hover:bg-gray-50 cursor-pointer">
+<div class="flex justify-between items-center mb-2">
+<h5 class="font-medium">Suburban Loop Route</h5>
+<span class="text-xs bg-yellow-100 text-yellow-600 px-2 py-0.5 rounded-full">Optimizing</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mb-2 text-sm">
+<div class="flex items-center text-gray-500">
+<i class="ri-route-line mr-1"></i>
+<span>Distance: -18%</span>
+</div>
+<div class="flex items-center text-gray-500">
+<i class="ri-timer-line mr-1"></i>
+<span>Time: -15%</span>
+</div>
+</div>
+<div class="w-full bg-gray-200 h-2 rounded-full mb-2">
+<div class="bg-yellow-500 h-2 rounded-full" style="width: 82%"></div>
+</div>
+<div class="flex items-center justify-between text-xs text-gray-500">
+<span>22 Deliveries</span>
+<span>Last Updated: 12 min ago</span>
+</div>
+</div>
+<div class="p-3 border border-gray-100 rounded-lg hover:bg-gray-50 cursor-pointer">
+<div class="flex justify-between items-center mb-2">
+<h5 class="font-medium">Industrial Zone Route</h5>
+<span class="text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">New Route</span>
+</div>
+<div class="grid grid-cols-2 gap-2 mb-2 text-sm">
+<div class="flex items-center text-gray-500">
+<i class="ri-route-line mr-1"></i>
+<span>Projected: -25%</span>
+</div>
+<div class="flex items-center text-gray-500">
+<i class="ri-timer-line mr-1"></i>
+<span>ETA: 4:30 PM</span>
+</div>
+</div>
+<div class="w-full bg-gray-200 h-2 rounded-full mb-2">
+<div class="bg-blue-500 h-2 rounded-full" style="width: 75%"></div>
+</div>
+<div class="flex items-center justify-between text-xs text-gray-500">
+<span>18 Deliveries</span>
+<span>Starting in: 30 min</span>
+</div>
+</div>
+<div class="mt-4 p-3 bg-blue-50 border border-blue-200 rounded-lg">
+<div class="flex items-start">
+<i class="ri-lightbulb-line text-primary mr-2 mt-0.5"></i>
+<div>
+<h5 class="text-sm font-medium text-primary">Route Optimization Insight</h5>
+<p class="text-xs text-gray-700">AI suggests combining 2 routes to improve efficiency by additional 15%.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<a href="#" class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 inline-block">Request Full Dashboard Access</a>
+</div>
+</div>
+</section>
 <script id="maintenanceChartScript">
 document.addEventListener('DOMContentLoaded', function() {
 const chartDom = document.getElementById('maintenanceChart');
@@ -1794,222 +1982,102 @@ I consent to TechSolutions processing my personal data in accordance with the <a
 </div>
 </div>
 </section>
-<style>
-  #backToTop {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 50;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-  }
-  #backToTop.visible {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  @media (max-width: 768px) {
-    #backToTop {
-      bottom: 1rem;
-      right: 1rem;
-      width: 3rem;
-      height: 3rem; pointer-events: none;
-    transition: opacity 0.3s;
-    }
-  }
-</style>
-<button id="backToTop" class="back-to-top bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
-  <i class="ri-arrow-up-line text-xl"></i>
-  </button>
 <!-- Footer -->
-<footer class="bg-orange-500 text-white pt-16 pb-8" animation="fadeIn">
-  <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-      <!-- Company Info -->
-      <div>
-        <a
-          href="#"
-          class="text-2xl font-['Righteous'] text-white mb-6 inline-block"
-          >Pitch forward</a
-        >
-        <p class="text-black-100 mb-6">
-          Providing enterprise-grade technology solutions that drive
-          innovation and efficiency since 2005.
-        </p>
-        <div class="flex space-x-4">
-          <a
-            href="#"
-            class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
-          >
-            <i class="ri-linkedin-fill"></i>
-          </a>
-          <a
-            href="#"
-            class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
-          >
-            <i class="ri-twitter-x-fill"></i>
-          </a>
-          <a
-            href="#"
-            class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
-          >
-            <i class="ri-facebook-fill"></i>
-          </a>
-          <a
-            href="#"
-            class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
-          >
-            <i class="ri-instagram-fill"></i>
-          </a>
-        </div>
-      </div>
-      <!-- Quick Links -->
-      <div>
-        <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
-        <ul class="space-y-3">
-          <li>
-            <a
-              href="./hospitality.html"
-              class="text-black-100 hover:text-white transition duration-300"
-              >Hospitality</a
-            >
-          </li>
-          <li>
-            <a
-              href="./Fuel-Management-Feature-Details.html"
-              class="text-black-100 hover:text-white transition duration-300"
-              >Fuel</a
-            >
-          </li>
-          <li>
-            <a
-              href="./industry.html"
-              class="text-black-100 hover:text-white transition duration-300"
-              >Industries</a
-            >
-          </li>
-          <li>
-            <a
-              href="./Mining-Technology-Solutions.html"
-              class="text-black-100 hover:text-white transition duration-300"
-              >Mining</a
-            >
-          </li>
-          <li>
-            <a
-              href="./Fleet-Management-Feature-Driver.html"
-              class="text-black-100 hover:text-white transition duration-300"
-              >Drivers </a
-            >
-          </li>
-          <li>
-            <a
-              href="./Fleet-Management-Feature-Details poc.html"
-              class="text-black-100 hover:text-white transition duration-300"
-              >Radio</a
-            >
-          </li>
-        </ul>
-      </div>
-      <!-- Contact Info -->
-      <div>
-        <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
-        <ul class="space-y-3">
-          <li class="flex items-start">
-            <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
-              <i class="ri-map-pin-line text-white"></i>
-            </div>
-            <span class="text-black-400"
-              >
-              Products
-              Services
-              About Us
-              Contact
-              Contact Us
-              The Piano, Brookside drive,<br />Westlands, Nairobi, Kenya.
-            </span
-            >
-          </li>
-          <li class="flex items-center">
-            <div class="w-5 h-5 flex items-center justify-center mr-3">
-              <i class="ri-phone-line text-white"></i>
-            </div>
-            <span class="text-black-100">(+254) 707 586837</span>
-          </li>
-          <li class="flex items-center">
-            <div class="w-5 h-5 flex items-center justify-center mr-3">
-              <i class="ri-mail-line text-white"></i>
-            </div>
-            <span class="text-black-100">
-              contact@pitchforwardgroup.com
-              </span>
-          </li>
-        </ul>
-      </div>
-      <!-- Newsletter -->
-      <div>
-        <h3 class="text-lg font-semibold mb-6">
-          Subscribe to Our Newsletter
-        </h3>
-        <p class="text-white-400 mb-4">
-          Stay updated with the latest technology trends and solutions.
-        </p>
-        <form class="mb-4">
-          <div class="flex">
-            <input
-              type="email"
-              placeholder="Your email address"
-              class="bg-white-600 text-black-100 px-4 py-3 w-full border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary"
-            />
-            <button
-              type="submit"
-              class="bg-primary text-white px-4 py-3 !rounded-r-lg !rounded-l-none whitespace-nowrap hover:bg-primary/90 transition duration-300"
-            >
-              Subscribe
-            </button>
-          </div>
-        </form>
-        <div class="flex items-center space-x-4">
-          <div class="w-10 h-6 flex items-center justify-center">
-            <i class="ri-visa-fill text-2xl text-white-100"></i>
-          </div>
-          <div class="w-10 h-6 flex items-center justify-center">
-            <i class="ri-mastercard-fill text-2xl text-white-100"></i>
-          </div>
-          <div class="w-10 h-6 flex items-center justify-center">
-            <i class="ri-paypal-fill text-2xl text-white-100"></i>
-          </div>
-          <div class="w-10 h-6 flex items-center justify-center">
-            <i class="ri-apple-fill text-2xl text-whit-500"></i>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="border-t border-white-800 pt-8">
-      <div class="flex flex-col md:flex-row justify-between items-center">
-        <p class="text-white-500 text-sm mb-4 md:mb-0">
-          © 2025 TechSolutions. All rights reserved.
-        </p>
-        <div class="flex space-x-6">
-          <a
-            href="#"
-            class="text-white-500 text-sm hover:text-white transition duration-300"
-            >Privacy Policy</a
-          >
-          <a
-            href="#"
-            class="text-white-500 text-sm hover:text-white transition duration-300"
-            >Terms of Service</a
-          >
-          <a
-            href="#"
-            class="text-white-500 text-sm hover:text-white transition duration-300"
-            >Cookie Policy</a
-          >
-        </div>
-      </div>
-    </div>
-  </div>
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<!-- Company Info -->
+<div>
+<a href="#" class="text-2xl font-['Righteous'] text-white mb-6 inline-block">Pitch forward</a>
+<p class="text-gray-400 mb-6">Providing enterprise-grade technology solutions that drive innovation and efficiency since 2005.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-twitter-x-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<!-- Quick Links -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Services</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Industries</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Case Studies</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Careers</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition duration-300">Contact</a></li>
+</ul>
+</div>
+<!-- Contact Info -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+<i class="ri-map-pin-line text-primary"></i>
+</div>
+<span class="text-gray-400">1250 Technology Plaza, Suite 400<br>San Francisco, CA 94105</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3">
+<i class="ri-phone-line text-primary"></i>
+</div>
+<span class="text-gray-400">+1 (415) 555-0123</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-3">
+<i class="ri-mail-line text-primary"></i>
+</div>
+<span class="text-gray-400">info@techsolutions.com</span>
+</li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div>
+<h3 class="text-lg font-semibold mb-6">Subscribe to Our Newsletter</h3>
+<p class="text-gray-400 mb-4">Stay updated with the latest technology trends and solutions.</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Your email address" class="bg-gray-800 text-white px-4 py-3 w-full border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary">
+<button type="submit" class="bg-primary text-white px-4 py-3 !rounded-r-lg !rounded-l-none whitespace-nowrap hover:bg-primary/90 transition duration-300">Subscribe</button>
+</div>
+</form>
+<div class="flex items-center space-x-4">
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-visa-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-mastercard-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-paypal-fill text-2xl text-gray-400"></i>
+</div>
+<div class="w-10 h-6 flex items-center justify-center">
+<i class="ri-apple-fill text-2xl text-gray-400"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-500 text-sm mb-4 md:mb-0">© 2025 TechSolutions. All rights reserved.</p>
+<div class="flex space-x-6">
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Privacy Policy</a>
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Terms of Service</a>
+<a href="#" class="text-gray-500 text-sm hover:text-white transition duration-300">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
 </footer>
 <!-- Get Started Modal -->
 <div id="getStartedModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden">
@@ -2394,6 +2462,9 @@ const header = document.querySelector('header');
 const solutionsButton = document.getElementById('solutionsButton');
 const solutionsMenu = document.getElementById('solutionsMenu');
 const solutionsDropdown = document.getElementById('solutionsDropdown');
+const industriesButton = document.getElementById('industriesButton');
+const industriesMenu = document.getElementById('industriesMenu');
+const industriesDropdown = document.getElementById('industriesDropdown');
 function updateHeader() {
 if (window.scrollY > 50) {
 header.classList.add('shadow');
@@ -2418,172 +2489,30 @@ if (!solutionsDropdown.contains(event.target)) {
 solutionsMenu.classList.add('hidden');
 solutionsButton.querySelector('.ri-arrow-down-s-line').style.transform = 'rotate(0deg)';
 }
+if (!industriesDropdown.contains(event.target)) {
+industriesMenu.classList.add('hidden');
+industriesButton.querySelector('.ri-arrow-down-s-line').style.transform = 'rotate(0deg)';
 }
+}
+
+function toggleIndustriesMenu(event) {
+event.stopPropagation();
+const isOpen = !industriesMenu.classList.contains('hidden');
+const arrowIcon = industriesButton.querySelector('.ri-arrow-down-s-line');
+if (isOpen) {
+industriesMenu.classList.add('hidden');
+arrowIcon.style.transform = 'rotate(0deg)';
+} else {
+industriesMenu.classList.remove('hidden');
+arrowIcon.style.transform = 'rotate(180deg)';
+}
+}
+
 solutionsButton.addEventListener('click', toggleSolutionsMenu);
+industriesButton.addEventListener('click', toggleIndustriesMenu);
 document.addEventListener('click', handleClickOutside);
 window.addEventListener('scroll', updateHeader);
 updateHeader();
-});
-</script>
-<script id="contactModalScript">
-    document.addEventListener('DOMContentLoaded', function() {
-        // Show modal on both desktop and mobile Contact Us buttons
-        function showContactModal() {
-            document.getElementById('contactModal').classList.remove('hidden');
-            document.body.classList.add('overflow-hidden');
-        }
-        function hideContactModal() {
-            document.getElementById('contactModal').classList.add('hidden');
-            document.body.classList.remove('overflow-hidden');
-        }
-        document.getElementById('contactUsBtn').addEventListener('click', showContactModal);
-        const mobileContactBtn = document.getElementById('mobileContactUsBtn');
-        if (mobileContactBtn) {
-            mobileContactBtn.addEventListener('click', function() {
-                document.getElementById('mobileMenu').classList.add('hidden');
-                showContactModal();
-            });
-        }
-        document.getElementById('closeModalBtn').addEventListener('click', hideContactModal);
-        // Close modal on outside click
-        document.getElementById('contactModal').addEventListener('click', function(e) {
-            if (e.target === this) hideContactModal();
-        });
-    });
-    </script>
-    <script id="mobileMenuScript">
-      document.addEventListener('DOMContentLoaded', function() {
-          const mobileMenuBtn = document.getElementById('mobileMenuBtn');
-          const mobileMenu = document.getElementById('mobileMenu');
-          const mobileSolutionsBtn = document.getElementById('mobileSolutionsBtn');
-          const mobileSolutionsMenu = document.getElementById('mobileSolutionsMenu');
-          // Toggle mobile menu
-          mobileMenuBtn.addEventListener('click', function() {
-              mobileMenu.classList.toggle('hidden');
-              const icon = mobileMenuBtn.querySelector('i');
-              icon.classList.toggle('ri-menu-line');
-              icon.classList.toggle('ri-close-line');
-          });
-          // Toggle mobile solutions dropdown
-          mobileSolutionsBtn.addEventListener('click', function(e) {
-              e.stopPropagation();
-              mobileSolutionsMenu.classList.toggle('hidden');
-              const icon = mobileSolutionsBtn.querySelector('i');
-              icon.classList.toggle('ri-arrow-down-s-line');
-              icon.classList.toggle('ri-arrow-up-s-line');
-          });
-          // Close mobile menu when clicking outside
-          document.addEventListener('click', function(event) {
-              if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
-                  mobileMenu.classList.add('hidden');
-                  const icon = mobileMenuBtn.querySelector('i');
-                  icon.classList.add('ri-menu-line');
-                  icon.classList.remove('ri-close-line');
-              }
-          });
-          // Close mobile menu on link click
-          mobileMenu.querySelectorAll('a').forEach(link => {
-              link.addEventListener('click', function() {
-                  mobileMenu.classList.add('hidden');
-                  const icon = mobileMenuBtn.querySelector('i');
-                  icon.classList.add('ri-menu-line');
-                  icon.classList.remove('ri-close-line');
-              });
-          });
-      });
-      </script>
-
-<script id="stickyHeaderScript">
-document.addEventListener('DOMContentLoaded', function() {
-    const header = document.querySelector('header');
-    const headerHeight = header.offsetHeight;
-    const homeLink = document.getElementById('homeLink');
-    const mobileMenu = document.getElementById('mobileMenu');
-    const solutionsBtn = document.getElementById('solutionsBtn');
-    const solutionsMenu = document.getElementById('solutionsMenu');
-    let isDropdownOpen = false;
-    function toggleDropdown() {
-        isDropdownOpen = !isDropdownOpen;
-        solutionsMenu.classList.toggle('hidden');
-        solutionsBtn.setAttribute('aria-expanded', isDropdownOpen);
-    }
-    solutionsBtn.addEventListener('click', function(e) {
-        e.stopPropagation();
-        toggleDropdown();
-    });
-    solutionsBtn.addEventListener('keydown', function(e) {
-        if (e.key === 'Enter' || e.key === ' ') {
-            e.preventDefault();
-            toggleDropdown();
-        } else if (e.key === 'Escape' && isDropdownOpen) {
-            toggleDropdown();
-        }
-    });
-    document.addEventListener('click', function(e) {
-        if (!solutionsBtn.contains(e.target) && isDropdownOpen) {
-            toggleDropdown();
-        }
-    });
-    const menuItems = solutionsMenu.querySelectorAll('a');
-    menuItems.forEach((item, index) => {
-        item.setAttribute('role', 'menuitem');
-        item.setAttribute('tabindex', '-1');
-        item.addEventListener('keydown', function(e) {
-            const items = Array.from(menuItems);
-            const currentIndex = items.indexOf(e.target);
-            if (e.key === 'ArrowDown') {
-                e.preventDefault();
-                const nextItem = items[(currentIndex + 1) % items.length];
-                nextItem.focus();
-            } else if (e.key === 'ArrowUp') {
-                e.preventDefault();
-                const prevItem = items[(currentIndex - 1 + items.length) % items.length];
-                prevItem.focus();
-            } else if (e.key === 'Escape') {
-                toggleDropdown();
-                solutionsBtn.focus();
-            }
-        });
-    });
-    homeLink.addEventListener('click', function(e) {
-        e.preventDefault();
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
-        mobileMenu.classList.add('hidden');
-    });
-    function updateHeader() {
-        if (window.scrollY > 50) {
-            header.classList.add('shadow');
-        } else {
-            header.classList.remove('shadow');
-        }
-    }
-    window.addEventListener('scroll', updateHeader);
-    updateHeader();
-});
-/**
- * Toggle the Solutions dropdown in a webview context.
- * This function can be called from outside to open/close the dropdown.
- */
-</script>
-<script id="backToTopScript">
-document.addEventListener("DOMContentLoaded", function () {
-  const backToTopBtn = document.getElementById("backToTop");
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 500) {
-      backToTopBtn.classList.add("visible");
-    } else {
-      backToTopBtn.classList.remove("visible");
-    }
-  });
-  backToTopBtn.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
 });
 </script>
 </body>

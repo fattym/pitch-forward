@@ -1,0 +1,3095 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Industry Solutions - Smart Hospitality Management</title>
+<script src="https://cdn.tailwindcss.com/3.4.16">
+</script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: { primary: "#0056b3", secondary: "#00a3e0" },
+      borderRadius: {
+        none: "0px",
+        sm: "4px",
+        DEFAULT: "8px",
+        md: "12px",
+        lg: "16px",
+        xl: "20px",
+        "2xl": "24px",
+        "3xl": "32px",
+        full: "9999px",
+        button: "8px",
+      },
+    },
+  },
+};
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js">
+</script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+.industry-tab {
+transition: all 0.3s ease;
+}
+.industry-tab.active {
+background-color: #0056b3;
+color: white;
+}
+.industry-content {
+display: none;
+}
+.industry-content.active {
+display: block;
+animation: fadeIn 0.5s ease forwards;
+}
+@keyframes fadeIn {
+from {
+opacity: 0;
+transform: translateY(10px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+.solution-card {
+transition: all 0.3s ease;
+}
+.solution-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.case-study-card {
+transition: all 0.3s ease;
+}
+.case-study-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.testimonial-card {
+transition: all 0.3s ease;
+}
+.testimonial-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.back-to-top {
+position: fixed;
+bottom: 30px;
+right: 30px;
+z-index: 40;
+opacity: 0;
+visibility: hidden;
+transition: all 0.3s ease;
+}
+.back-to-top.visible {
+opacity: 1;
+visibility: visible;
+}
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=modern%2520mining%2520operation%2520with%2520advanced%2520technology%2520equipment%2520monitoring%2520systems%2520and%2520safety%2520controls.%2520The%2520image%2520shows%2520a%2520professional%2520mining%2520site%2520with%2520heavy%2520machinery%252C%2520digital%2520displays%252C%2520and%2520workers%2520using%2520high-tech%2520equipment.%2520The%2520left%2520side%2520has%2520a%2520gradient%2520from%2520dark%2520blue%2520to%2520lighter%2520blue%252C%2520transitioning%2520to%2520a%2520clear%2520view%2520of%2520mining%2520technology%2520on%2520the%2520right.%2520The%2520left%2520side%2520should%2520have%2520enough%2520space%2520for%2520text%2520overlay%2520with%2520good%2520contrast.&width=1920&height=800&seq=mining_hero123&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(0,20,50,0.85) 0%, rgba(0,20,50,0.7) 50%, rgba(0,20,50,0.4) 100%);
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Header Navigation -->
+<header class="bg-white shadow-sm fixed w-full z-50">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+  
+      <div class="flex items-center">
+        <a href="./index.html" class="text-2xl font-['Righteous'] text-primary">Pitch Forward</a >
+      </div>
+      
+  <nav class="hidden md:flex space-x-8">
+  <a href="./index.html" id="homeLink" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+  <div class="relative" id="solutionsDropdown">
+  <button id="solutionsBtn" class="nav-link text-gray-700 hover:text-primary font-medium flex items-center" aria-expanded="false" aria-haspopup="true">
+  Solutions
+  <i class="ri-arrow-down-s-line ml-1"></i>
+  </button>
+  <div id="solutionsMenu" class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden" role="menu" aria-labelledby="solutionsBtn">
+  <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-footprint-line w-5 h-5 mr-3"></i>
+  Fleet Management
+  </a>
+  <a href="./Fuel-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-gas-station-line w-5 h-5 mr-3"></i>
+  Fuel Management
+  </a>
+  <a href="./Logistics-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-truck-line w-5 h-5 mr-3"></i>
+  Logistics Management
+  </a>
+  <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-phone-line w-5 h-5 mr-3"></i>
+  Telecommunication
+  </a>
+  <a href="./Security-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-shield-keyhole-line w-5 h-5 mr-3"></i>
+  Security
+  </a>
+  <a href="./Data-&-Power-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-database-2-line w-5 h-5 mr-3"></i>
+  Data & Power
+  </a>
+  <a href="./Internet-&-Connectivity-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-wifi-line w-5 h-5 mr-3"></i>
+  Internet & Connectivity
+  </a>
+  <a href="./Mining-Technology-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-mine-line w-5 h-5 mr-3"></i>
+  Mining
+  </a>
+  <a href="./Warehousing-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-store-2-line w-5 h-5 mr-3"></i>
+  Warehousing
+  </a>
+  <a href="./hospitality.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-hotel-line w-5 h-5 mr-3"></i>
+    Hospitality
+  </a>
+  </div>
+  </div>
+  <a href="./industry.html" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+  <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
+  </nav>
+  <div class="flex items-center space-x-4">
+  <div class="relative hidden md:block">
+  <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm focus:border-primary">
+  <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+  <i class="ri-search-line"></i>
+  </div>
+  </div>
+  <button id="contactUsBtn" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+  <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
+  <div class="bg-white rounded-lg w-full max-w-xl mx-4 relative">
+  <button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+  <i class="ri-close-line text-2xl"></i>
+  </button>
+  
+  <div class="max-h-[100vh] overflow-x-auto p-4 md:p-8">
+  
+  <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
+  <form id="contactForm" action="" method="POST">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+  <div>
+  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+  <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+  </div>
+  <div>
+  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+  <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+  </div>
+  <div>
+  <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+  <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+  </div>
+  <div>
+  <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+  <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+  </div>
+  </div>
+  <div class="mb-4">
+  <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
+  <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary pr-8">
+  <option value="">Select a service</option>
+  <option value="">Select a service</option>
+  <option value="fleet">Fleet Management</option>
+  <option value="fuel">Fuel Management</option>
+  <option value="logistics">Logistics Management</option>
+  <option value="telecommunication">Telecommunication</option>
+  <option value="security">Security</option>
+  <option value="data-power">Data &amp; Power</option>
+  <option value="internet-connectivity">Internet &amp; Connectivity</option>
+  <option value="mining">Mining</option>
+  <option value="warehousing">Warehousing</option>
+  <option value="other">Other</option>
+  </select>
+  </div>
+  <div class="mb-6">
+  <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+  <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
+  </div>
+  <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Submit</button>
+  </form>
+  </div>
+  </div>
+  </div>
+  <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
+  <i class="ri-menu-line text-xl"></i>
+  </button>
+  </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-lg">
+  <nav class="container mx-auto px-4 py-4">
+  <a href="index.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
+  <div class="relative">
+  <button id="mobileSolutionsBtn" class="w-full flex items-center justify-between py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">
+  Solutions
+  <i class="ri-arrow-down-s-line"></i>
+  </button>
+  <div id="mobileSolutionsMenu" class="hidden bg-gray-50 px-4 py-2">
+  <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Fleet Management</a>
+  <a href="./Fuel-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Fuel Management</a>
+  <a href="./Logistics-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Logistics Management</a>
+  <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Telecommunication</a>
+  <a href="./Security-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Security</a>
+  <a href="./Data-&-Power-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Data & Power</a>
+  <a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
+  <a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
+  <a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
+
+  <a href="./hospitality.html" class="block py-2 text-gray-700 hover:text-primary">Hospitality</a>
+  </div>
+  </div>
+  <a href="./industry.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
+  <a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
+  <div class="mt-4">
+  <button class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+  </div>
+  </nav>
+  </div>
+  </header>
+<!-- Main Content -->
+<main class="pt-16">
+<!-- Hero Section -->
+<section class="hero-section w-full min-h-screen relative">
+<div class="hero-overlay absolute inset-0"></div>
+<div class="container mx-auto px-4 h-full flex items-center relative z-10 py-20">
+<div class="w-full md:w-1/2 text-white pt-16">
+<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6 animate-fadeInLeft">Industry-Specific Technology Solutions</h1>
+<p class="text-lg sm:text-xl md:text-2xl mb-8 opacity-90 animate-fadeInLeft animate-delay-200">Tailored technology solutions designed to address the unique challenges and opportunities in your industry. Discover how TechSolutions can transform your business operations.</p>
+<div class="flex flex-col sm:flex-row gap-4">
+<a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true">
+<button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 text-lg animate-fadeInLeft animate-delay-300">Explore Solutions</button>
+</a>
+<a href="./Consultation-Scheduling-Page.html" data-readdy="true">
+<button class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300 text-lg animate-fadeInLeft animate-delay-400">Schedule Consultation</button>
+</a>
+</div>
+<div class="mt-12 flex items-center space-x-6">
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3">
+<i class="ri-shield-check-line text-white"></i>
+</div>
+<span class="text-sm md:text-base">ISO 27001 Certified</span>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3">
+<i class="ri-customer-service-2-line text-white"></i>
+</div>
+<span class="text-sm md:text-base">24/7 Support</span>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+<!-- Solutions Grid Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Comprehensive Solutions Across Industries</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our integrated technology solutions are designed to address the specific challenges faced by businesses in various sectors.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+<div class="solution-card bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-footprint-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Fleet Management</h3>
+<p class="text-gray-600 mb-4">Real-time vehicle tracking, maintenance scheduling, and driver performance monitoring.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+Learn More
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<div class="solution-card bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-gas-station-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Fuel Management</h3>
+<p class="text-gray-600 mb-4">Automated fuel monitoring, consumption analytics, and theft prevention systems.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+Learn More
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<div class="solution-card bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-truck-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Logistics Management</h3>
+<p class="text-gray-600 mb-4">End-to-end supply chain visibility, route optimization, and delivery tracking.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+Learn More
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<div class="solution-card bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-base-station-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Telecommunication</h3>
+<p class="text-gray-600 mb-4">Reliable communication infrastructure, network monitoring, and connectivity solutions.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+Learn More
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<div class="solution-card bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-shield-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Security</h3>
+<p class="text-gray-600 mb-4">Integrated security systems, access control, and surveillance solutions.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+Learn More
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<div class="solution-card bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-database-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Data & Power</h3>
+<p class="text-gray-600 mb-4">Reliable data storage, power management, and backup solutions for critical operations.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+Learn More
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<div class="solution-card bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-wifi-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Internet & Connectivity</h3>
+<p class="text-gray-600 mb-4">High-speed internet solutions, IoT connectivity, and network infrastructure.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+Learn More
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<div class="solution-card bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-hammer-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Mining</h3>
+<p class="text-gray-600 mb-4">Safety monitoring, equipment tracking, and resource management for mining operations.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+Learn More
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<div class="solution-card bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-store-3-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Warehousing</h3>
+<p class="text-gray-600 mb-4">Inventory management, space optimization, and automated warehouse operations.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+Learn More
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+<div class="solution-card bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+<div class="w-14 h-14 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-hotel-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Hospitality</h3>
+<p class="text-gray-600 mb-4">Guest experience management, property operations, and smart room technology.</p>
+<a href="#" class="text-primary font-medium flex items-center hover:underline">
+Learn More
+<i class="ri-arrow-right-line ml-1"></i>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Industry Applications Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Industry-Specific Applications</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Discover how our solutions are tailored to meet the unique needs of different industries.</p>
+</div>
+<div class="bg-white rounded-xl shadow-sm overflow-hidden">
+<!-- Industry Tabs -->
+<!-- Industry Filter Controls -->
+
+<!-- Industry Content Panels -->
+<div id="fleet-content" class="industry-content active" aria-hidden="false"></div>
+<div id="fuel-content" class="industry-content" aria-hidden="true"></div>
+<div id="logistics-content" class="industry-content" aria-hidden="true"></div>
+<div id="telecommunication-content" class="industry-content" aria-hidden="true"></div>
+<div id="security-content" class="industry-content" aria-hidden="true"></div>
+<div id="data-power-content" class="industry-content" aria-hidden="true"></div>
+<div id="internet-connectivity-content" class="industry-content" aria-hidden="true"></div>
+<div id="mining-content" class="industry-content" aria-hidden="true"></div>
+<div id="warehousing-content" class="industry-content" aria-hidden="true"></div>
+<div id="hospitality-content" class="industry-content" aria-hidden="true"></div>
+<!-- Industry Content -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const tabs = document.querySelectorAll(".industry-tab");
+  const contents = document.querySelectorAll(".industry-content");
+  const search = document.getElementById("industrySearch");
+  const gridView = document.getElementById("gridView");
+  const listView = document.getElementById("listView");
+
+  function showTab(industry) {
+    tabs.forEach(tab => {
+      const isActive = tab.getAttribute("data-industry") === industry;
+      tab.classList.toggle("active", isActive);
+      tab.setAttribute("aria-selected", isActive);
+    });
+    contents.forEach(content => {
+      const isActive = content.id === industry + "-content";
+      content.classList.toggle("active", isActive);
+      content.setAttribute("aria-hidden", !isActive);
+      content.style.display = isActive ? "block" : "none";
+    });
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener("click", function () {
+      showTab(this.getAttribute("data-industry"));
+    });
+  });
+
+  search.addEventListener("input", function () {
+    const val = this.value.toLowerCase();
+    tabs.forEach(tab => {
+      const text = tab.textContent.toLowerCase();
+      const cat = tab.getAttribute("data-category").toLowerCase();
+      tab.style.display = (text.includes(val) || cat.includes(val)) ? "" : "none";
+    });
+  });
+
+  gridView.addEventListener("click", function () {
+    contents.forEach(c => {
+      c.classList.remove("list-view");
+      c.classList.add("grid-view");
+    });
+    gridView.classList.add("bg-primary", "text-white");
+    listView.classList.remove("bg-primary", "text-white");
+  });
+
+  listView.addEventListener("click", function () {
+    contents.forEach(c => {
+      c.classList.remove("grid-view");
+      c.classList.add("list-view");
+    });
+    listView.classList.add("bg-primary", "text-white");
+    gridView.classList.remove("bg-primary", "text-white");
+  });
+
+  // Set initial state
+  showTab("fleet");
+  gridView.click();
+});
+</script>
+<div class="p-6 md:p-8">
+<!-- Hospitality & Tourism Content -->
+
+<!-- Fleet Management Industry Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Fleet Management Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Comprehensive fleet management solutions tailored for diverse industries, enabling real-time tracking, maintenance optimization, and operational efficiency.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
+<div>
+<h3 class="text-2xl font-bold mb-6">Transform Your Fleet Operations</h3>
+<p class="text-gray-600 mb-8">Our advanced fleet management system provides real-time visibility, predictive maintenance, and data-driven insights to optimize your fleet operations across any industry.</p>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Real-time Vehicle Tracking</h4>
+<p class="text-sm text-gray-600">GPS tracking with live location updates and route history</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Predictive Maintenance</h4>
+<p class="text-sm text-gray-600">AI-powered maintenance scheduling and fault prediction</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Fuel Management</h4>
+<p class="text-sm text-gray-600">Fuel consumption monitoring and optimization</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Driver Safety</h4>
+<p class="text-sm text-gray-600">Driver behavior monitoring and safety analytics</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<img src="https://readdy.ai/api/search-image?query=modern%2520fleet%2520management%2520control%2520center%2520with%2520multiple%2520large%2520screens%2520showing%2520vehicle%2520tracking%2520maps%2C%2520analytics%2520dashboards%2C%2520and%2520real-time%2520data.%2520Staff%2520monitoring%2520fleet%2520operations%2520using%2520advanced%2520technology.%2520The%2520room%2520has%2520a%2520professional%2520setup%2520with%2520blue%2520accent%2520lighting%2520and%2520modern%2520equipment.%2520Shows%2520integration%2520of%2520technology%2520in%2520fleet%2520management.&width=600&height=400&seq=fleet_management&orientation=landscape" alt="Fleet Management Control Center" class="w-full h-auto rounded-xl shadow-md object-cover">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<div class="bg-white rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-line-chart-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Performance Metrics</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>45% Fuel Cost Reduction</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>32% Maintenance Savings</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>58% Improved Fleet Efficiency</span>
+</li>
+</ul>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-shield-check-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Safety & Compliance</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>68% Accident Reduction</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>100% Compliance Rate</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>42% Insurance Cost Savings</span>
+</li>
+</ul>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-customer-service-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Service Quality</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>52% Faster Response Time</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>89% Customer Satisfaction</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>35% More Deliveries</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-8">
+<h3 class="text-2xl font-bold mb-6 text-center">Industry Applications</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-4">
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-truck-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Logistics & Transportation</h4>
+</div>
+<p class="text-sm text-gray-600">Route optimization and delivery tracking for efficient logistics operations</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-building-2-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Construction</h4>
+</div>
+<p class="text-sm text-gray-600">Equipment tracking and utilization monitoring for construction sites</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-bus-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Public Transport</h4>
+</div>
+<p class="text-sm text-gray-600">Schedule management and passenger information systems</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-hospital-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Emergency Services</h4>
+</div>
+<p class="text-sm text-gray-600">Real-time dispatch and response time optimization for emergency vehicles</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-oil-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Oil & Gas</h4>
+</div>
+<p class="text-sm text-gray-600">Tank truck monitoring and fuel delivery management</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-flash-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Utilities</h4>
+</div>
+<p class="text-sm text-gray-600">Service vehicle tracking and maintenance crew dispatch</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-hammer-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Mining</h4>
+</div>
+<p class="text-sm text-gray-600">Heavy equipment tracking and maintenance management</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-mail-send-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Courier & Delivery</h4>
+</div>
+<p class="text-sm text-gray-600">Last-mile delivery optimization and package tracking</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-plant-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Agriculture</h4>
+</div>
+<p class="text-sm text-gray-600">Farm equipment tracking and operational efficiency</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Cross-Industry Benefits Section -->
+
+<!-- Fuel Management Industry Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Fuel Management Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Advanced fuel management systems designed to optimize consumption, reduce costs, and ensure compliance across diverse industries.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
+<div>
+<h3 class="text-2xl font-bold mb-6">Optimize Your Fuel Operations</h3>
+<p class="text-gray-600 mb-8">Our comprehensive fuel management system provides real-time monitoring, automated reporting, and advanced analytics to help you control fuel costs and prevent losses.</p>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Real-time Monitoring</h4>
+<p class="text-sm text-gray-600">Continuous tracking of fuel levels, consumption, and dispensing activities</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Theft Prevention</h4>
+<p class="text-sm text-gray-600">Advanced security features and anomaly detection systems</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Automated Reporting</h4>
+<p class="text-sm text-gray-600">Detailed consumption reports and cost analysis</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Compliance Management</h4>
+<p class="text-sm text-gray-600">Environmental regulations and safety standards tracking</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<img src="https://readdy.ai/api/search-image?query=modern%2520fuel%2520management%2520control%2520center%2520with%2520digital%2520displays%2520showing%2520fuel%2520monitoring%2520systems%2C%2520tank%2520levels%2C%2520and%2520consumption%2520analytics.%2520Staff%2520monitoring%2520fuel%2520operations%2520using%2520advanced%2520technology.%2520The%2520room%2520has%2520a%2520professional%2520setup%2520with%2520blue%2520accent%2520lighting%2520and%2520modern%2520equipment.%2520Shows%2520integration%2520of%2520technology%2520in%2520fuel%2520management.&width=600&height=400&seq=fuel_management&orientation=landscape" alt="Fuel Management Control Center" class="w-full h-auto rounded-xl shadow-md object-cover">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<div class="bg-gray-50 rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-line-chart-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Cost Savings</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>32% Fuel Cost Reduction</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>45% Loss Prevention</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>28% Efficiency Improvement</span>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-shield-check-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Compliance & Security</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>100% Compliance Rate</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>75% Theft Reduction</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Real-time Alerts</span>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-database-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Data Analytics</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Advanced Reporting</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Predictive Analysis</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Custom Insights</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="bg-gray-50 rounded-xl shadow-sm p-8">
+<h3 class="text-2xl font-bold mb-6 text-center">Industry Applications</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-4">
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-hammer-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Mining</h4>
+</div>
+<p class="text-sm text-gray-600">Heavy equipment fuel management and consumption tracking</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-building-2-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Construction</h4>
+</div>
+<p class="text-sm text-gray-600">Site-specific fuel monitoring and equipment efficiency</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-truck-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Logistics</h4>
+</div>
+<p class="text-sm text-gray-600">Fleet fuel optimization and route planning</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-factory-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Manufacturing</h4>
+</div>
+<p class="text-sm text-gray-600">Production equipment fuel efficiency monitoring</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-car-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Fleet Leasing</h4>
+</div>
+<p class="text-sm text-gray-600">Vehicle fuel consumption tracking and billing</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-oil-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Oil & Gas</h4>
+</div>
+<p class="text-sm text-gray-600">Storage and distribution monitoring systems</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-plane-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Aviation</h4>
+</div>
+<p class="text-sm text-gray-600">Aircraft fueling operations and compliance</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-plant-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Agriculture</h4>
+</div>
+<p class="text-sm text-gray-600">Farm equipment and machinery fuel management</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-ship-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Marine & Ports</h4>
+</div>
+<p class="text-sm text-gray-600">Vessel fueling and port operations management</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Security Industry Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Security Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Advanced security and surveillance solutions providing comprehensive protection and monitoring across diverse industries.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
+<div>
+<h3 class="text-2xl font-bold mb-6">Transform Your Security Infrastructure</h3>
+<p class="text-gray-600 mb-8">Our integrated security solutions combine cutting-edge technology with intelligent monitoring systems to ensure comprehensive protection for your facilities and assets.</p>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Access Control</h4>
+<p class="text-sm text-gray-600">Advanced biometric systems and smart card solutions</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Video Surveillance</h4>
+<p class="text-sm text-gray-600">AI-powered cameras and real-time monitoring</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Intrusion Detection</h4>
+<p class="text-sm text-gray-600">Smart sensors and automated alert systems</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Emergency Response</h4>
+<p class="text-sm text-gray-600">Rapid incident response and management</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<img src="https://readdy.ai/api/search-image?query=modern%2520security%2520operations%2520center%2520with%2520multiple%2520screens%2520showing%2520surveillance%2520feeds%2C%2520access%2520control%2520systems%2C%2520and%2520security%2520analytics.%2520Security%2520personnel%2520monitoring%2520operations%2520using%2520advanced%2520technology.%2520The%2520room%2520has%2520a%2520professional%2520setup%2520with%2520blue%2520accent%2520lighting%2520and%2520modern%2520equipment.%2520Shows%2520integration%2520of%2520technology%2520in%2520security%2520management.&width=600&height=400&seq=security_management&orientation=landscape" alt="Security Operations Center" class="w-full h-auto rounded-xl shadow-md object-cover">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<div class="bg-gray-50 rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-shield-check-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Security Metrics</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>85% Incident Prevention</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>98% System Uptime</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>< 2min Response Time</span>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-database-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Data Protection</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>End-to-end Encryption</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Secure Storage</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Compliance Ready</span>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-24-hours-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">24/7 Monitoring</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Live Surveillance</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Instant Alerts</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Remote Access</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="bg-gray-50 rounded-xl shadow-sm p-8">
+<h3 class="text-2xl font-bold mb-6 text-center">Industry Applications</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-4">
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-bank-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Banking & Finance</h4>
+</div>
+<p class="text-sm text-gray-600">ATM surveillance and vault security systems</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-home-4-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Real Estate</h4>
+</div>
+<p class="text-sm text-gray-600">Access control for gated communities and buildings</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-government-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Government</h4>
+</div>
+<p class="text-sm text-gray-600">High-security facilities and data protection</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-hospital-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Healthcare</h4>
+</div>
+<p class="text-sm text-gray-600">Hospital surveillance and patient safety</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-factory-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Manufacturing</h4>
+</div>
+<p class="text-sm text-gray-600">Facility access control and asset protection</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-store-2-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Retail</h4>
+</div>
+<p class="text-sm text-gray-600">Loss prevention and store surveillance</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-calendar-event-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Events</h4>
+</div>
+<p class="text-sm text-gray-600">Crowd monitoring and venue security</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-building-2-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Infrastructure</h4>
+</div>
+<p class="text-sm text-gray-600">Critical facility protection and monitoring</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-graduation-cap-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Education</h4>
+</div>
+<p class="text-sm text-gray-600">Campus security and student safety</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Telecommunication Industry Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Telecommunication Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Advanced telecommunication solutions enabling seamless connectivity, digital transformation, and enhanced communication across diverse industries.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
+<div>
+<h3 class="text-2xl font-bold mb-6">Transform Your Communication Infrastructure</h3>
+<p class="text-gray-600 mb-8">Our comprehensive telecommunication solutions provide reliable connectivity, advanced networking capabilities, and integrated communication systems to power your digital operations.</p>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Network Infrastructure</h4>
+<p class="text-sm text-gray-600">High-speed connectivity and robust network architecture</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Communication Systems</h4>
+<p class="text-sm text-gray-600">Unified communications and collaboration platforms</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Security & Compliance</h4>
+<p class="text-sm text-gray-600">Advanced security protocols and regulatory compliance</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Digital Integration</h4>
+<p class="text-sm text-gray-600">Seamless integration with existing systems and platforms</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<img src="https://readdy.ai/api/search-image?query=modern%2520telecommunication%2520control%2520center%2520with%2520multiple%2520screens%2520showing%2520network%2520monitoring%2C%2520data%2520analytics%2C%2520and%2520communication%2520systems.%2520Staff%2520monitoring%2520telecommunications%2520operations%2520using%2520advanced%2520technology.%2520The%2520room%2520has%2520a%2520professional%2520setup%2520with%2520blue%2520accent%2520lighting%2520and%2520modern%2520equipment.%2520Shows%2520integration%2520of%2520technology%2520in%2520telecommunications.&width=600&height=400&seq=telecom_management&orientation=landscape" alt="Telecommunication Control Center" class="w-full h-auto rounded-xl shadow-md object-cover">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<div class="bg-white rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-line-chart-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Performance Metrics</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>99.9% Network Uptime</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>45% Cost Reduction</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>60% Faster Response</span>
+</li>
+</ul>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-shield-check-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Security & Compliance</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Advanced Encryption</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Regulatory Compliance</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>24/7 Monitoring</span>
+</li>
+</ul>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-customer-service-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Service Quality</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>High Bandwidth</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Low Latency</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Reliable Support</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-8">
+<h3 class="text-2xl font-bold mb-6 text-center">Industry Applications</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-4">
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-computer-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">ICT</h4>
+</div>
+<p class="text-sm text-gray-600">Network infrastructure and digital services</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-bank-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Banking & Finance</h4>
+</div>
+<p class="text-sm text-gray-600">Secure transactions and digital banking</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-graduation-cap-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Education</h4>
+</div>
+<p class="text-sm text-gray-600">E-learning and digital classrooms</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-heart-pulse-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Healthcare</h4>
+</div>
+<p class="text-sm text-gray-600">Telemedicine and patient care systems</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-broadcast-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Media & Broadcasting</h4>
+</div>
+<p class="text-sm text-gray-600">Content delivery and streaming services</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-car-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Transport</h4>
+</div>
+<p class="text-sm text-gray-600">Connected vehicles and fleet management</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-shield-star-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Security</h4>
+</div>
+<p class="text-sm text-gray-600">Remote surveillance and monitoring</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-hotel-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Hospitality</h4>
+</div>
+<p class="text-sm text-gray-600">Guest services and entertainment</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-store-2-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Retail</h4>
+</div>
+<p class="text-sm text-gray-600">POS systems and digital advertising</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Data & Power Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Data & Power Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Enterprise-grade data center and power management solutions ensuring continuous operations and maximum uptime for mission-critical facilities.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
+<div>
+<h3 class="text-2xl font-bold mb-6">Transform Your Infrastructure</h3>
+<p class="text-gray-600 mb-8">Our integrated data center and power solutions provide reliable infrastructure, efficient power management, and comprehensive monitoring systems to ensure uninterrupted operations.</p>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Data Center Infrastructure</h4>
+<p class="text-sm text-gray-600">State-of-the-art facilities with redundant systems and security</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Power Management</h4>
+<p class="text-sm text-gray-600">Intelligent power distribution and backup systems</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Environmental Control</h4>
+<p class="text-sm text-gray-600">Advanced cooling and climate management systems</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">24/7 Monitoring</h4>
+<p class="text-sm text-gray-600">Real-time monitoring and predictive maintenance</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<img src="https://readdy.ai/api/search-image?query=modern%2520data%2520center%2520interior%2520with%2520rows%2520of%2520server%2520racks%2C%2520blue%2520LED%2520lighting%2C%2520and%2520advanced%2520cooling%2520systems.%2520The%2520facility%2520shows%2520clean%2C%2520organized%2520cable%2520management%2520and%2520monitoring%2520displays.%2520The%2520environment%2520demonstrates%2520high-tech%2520infrastructure%2520with%2520professional%2520equipment%2520setup.&width=600&height=400&seq=data_power_management&orientation=landscape" alt="Data Center Infrastructure" class="w-full h-auto rounded-xl shadow-md object-cover">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<div class="bg-white rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-database-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Infrastructure Metrics</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>99.999% Uptime</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>45% Energy Savings</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span> 5ms Response Time</span>
+</li>
+</ul>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-shield-check-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Security & Compliance</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>ISO 27001 Certified</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Tier IV Standards</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>24/7 Security</span>
+</li>
+</ul>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-flashlight-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Power Management</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Redundant Systems</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Smart Distribution</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Green Energy Ready</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-8">
+<h3 class="text-2xl font-bold mb-6 text-center">Industry Applications</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-4">
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-database-2-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">ICT / Data Centers</h4>
+</div>
+<p class="text-sm text-gray-600">Enterprise-grade infrastructure and cooling systems</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-base-station-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Telecommunications</h4>
+</div>
+<p class="text-sm text-gray-600">Network infrastructure and power backup</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-bank-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Banking & Finance</h4>
+</div>
+<p class="text-sm text-gray-600">Secure data storage and transaction processing</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-hospital-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Hospitals</h4>
+</div>
+<p class="text-sm text-gray-600">Critical power and data management systems</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-government-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Government Offices</h4>
+</div>
+<p class="text-sm text-gray-600">Secure infrastructure and backup systems</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-building-2-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Smart Cities</h4>
+</div>
+<p class="text-sm text-gray-600">Integrated power and data infrastructure</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-graduation-cap-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Educational Institutions</h4>
+</div>
+<p class="text-sm text-gray-600">Campus-wide data and power solutions</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-factory-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Industrial Plants</h4>
+</div>
+<p class="text-sm text-gray-600">Industrial-grade power and control systems</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-store-2-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Retail Chains</h4>
+</div>
+<p class="text-sm text-gray-600">POS systems and continuous operations</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Logistics Management Section -->
+<section id="logistics" class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Logistics Management Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Advanced logistics management systems designed to optimize supply chain operations, enhance delivery efficiency, and improve customer satisfaction across diverse industries.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
+<div>
+<h3 class="text-2xl font-bold mb-6">Transform Your Supply Chain</h3>
+<p class="text-gray-600 mb-8">Our comprehensive logistics management system provides end-to-end visibility, real-time tracking, and intelligent optimization to streamline your supply chain operations.</p>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Supply Chain Visibility</h4>
+<p class="text-sm text-gray-600">Real-time tracking and monitoring of goods throughout the supply chain</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Route Optimization</h4>
+<p class="text-sm text-gray-600">AI-powered route planning and delivery scheduling</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Warehouse Management</h4>
+<p class="text-sm text-gray-600">Inventory tracking and warehouse space optimization</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Last-Mile Delivery</h4>
+<p class="text-sm text-gray-600">Efficient delivery management and customer notifications</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<img src="https://readdy.ai/api/search-image?query=modern%2520logistics%2520control%2520center%2520with%2520multiple%2520screens%2520showing%2520supply%2520chain%2520operations%2C%2520warehouse%2520management%2C%2520and%2520delivery%2520tracking.%2520Staff%2520monitoring%2520logistics%2520operations%2520using%2520advanced%2520technology.%2520The%2520room%2520has%2520a%2520professional%2520setup%2520with%2520blue%2520accent%2520lighting%2520and%2520modern%2520equipment.%2520Shows%2520integration%2520of%2520technology%2520in%2520logistics%2520management.&width=600&height=400&seq=logistics_management&orientation=landscape" alt="Logistics Management Control Center" class="w-full h-auto rounded-xl shadow-md object-cover">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<div class="bg-gray-50 rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-line-chart-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Operational Metrics</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>42% Delivery Time Reduction</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>35% Cost Optimization</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>52% Improved Accuracy</span>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-customer-service-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Customer Experience</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>95% Customer Satisfaction</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Real-time Tracking</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Automated Updates</span>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-stack-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Resource Utilization</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>48% Better Space Usage</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>38% Fleet Optimization</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Reduced Wastage</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="bg-gray-50 rounded-xl shadow-sm p-8">
+<h3 class="text-2xl font-bold mb-6 text-center">Industry Applications</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-4">
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-shopping-cart-2-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">E-commerce</h4>
+</div>
+<p class="text-sm text-gray-600">End-to-end order fulfillment and delivery management</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-store-2-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Retail & Wholesale</h4>
+</div>
+<p class="text-sm text-gray-600">Inventory management and distribution optimization</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-factory-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Manufacturing</h4>
+</div>
+<p class="text-sm text-gray-600">Supply chain and production logistics</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-medicine-bottle-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Pharmaceutical</h4>
+</div>
+<p class="text-sm text-gray-600">Temperature-controlled logistics and compliance</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-plant-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Agriculture</h4>
+</div>
+<p class="text-sm text-gray-600">Food distribution and cold chain management</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-building-2-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Construction</h4>
+</div>
+<p class="text-sm text-gray-600">Material logistics and project delivery</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-oil-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Oil & Gas</h4>
+</div>
+<p class="text-sm text-gray-600">Supply chain and distribution logistics</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-car-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Automotive</h4>
+</div>
+<p class="text-sm text-gray-600">Parts logistics and inventory management</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-mail-send-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Postal & Courier</h4>
+</div>
+<p class="text-sm text-gray-600">Package tracking and delivery optimization</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Internet & Connectivity Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Internet & Connectivity Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Advanced internet and connectivity solutions enabling digital transformation and seamless operations across diverse industries.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
+<div>
+<h3 class="text-2xl font-bold mb-6">Transform Your Digital Infrastructure</h3>
+<p class="text-gray-600 mb-8">Our comprehensive internet and connectivity solutions provide reliable, high-speed connectivity and advanced networking capabilities to power your digital operations.</p>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">High-Speed Internet</h4>
+<p class="text-sm text-gray-600">Reliable broadband and fiber connectivity solutions</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Network Infrastructure</h4>
+<p class="text-sm text-gray-600">Advanced networking and Wi-Fi solutions</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">IoT Connectivity</h4>
+<p class="text-sm text-gray-600">Seamless integration of smart devices and sensors</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Security & Compliance</h4>
+<p class="text-sm text-gray-600">Advanced security protocols and data protection</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<img src="https://readdy.ai/api/search-image?query=modern%2520network%2520operations%2520center%2520with%2520multiple%2520screens%2520showing%2520network%2520monitoring%2C%2520connectivity%2520status%2C%2520and%2520internet%2520traffic%2520analysis.%2520Staff%2520monitoring%2520network%2520operations%2520using%2520advanced%2520technology.%2520The%2520room%2520has%2520a%2520professional%2520setup%2520with%2520blue%2520accent%2520lighting%2520and%2520modern%2520equipment.%2520Shows%2520integration%2520of%2520technology%2520in%2520internet%2520and%2520connectivity%2520management.&width=600&height=400&seq=internet_connectivity&orientation=landscape" alt="Internet & Connectivity Control Center" class="w-full h-auto rounded-xl shadow-md object-cover">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<div class="bg-white rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-speed-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Performance Metrics</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>99.99% Uptime</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>< 10ms Latency</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>24/7 Monitoring</span>
+</li>
+</ul>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-shield-check-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Security Features</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>DDoS Protection</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Encrypted Traffic</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Secure Access</span>
+</li>
+</ul>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-customer-service-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Support Services</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>24/7 Support</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Rapid Response</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Expert Team</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-8">
+<h3 class="text-2xl font-bold mb-6 text-center">Industry Applications</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-4">
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-graduation-cap-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Education</h4>
+</div>
+<p class="text-sm text-gray-600">Online learning platforms and digital classrooms</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-heart-pulse-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Healthcare</h4>
+</div>
+<p class="text-sm text-gray-600">Telemedicine and remote diagnostics</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-store-2-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Retail</h4>
+</div>
+<p class="text-sm text-gray-600">E-commerce and POS systems</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-bank-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Financial Services</h4>
+</div>
+<p class="text-sm text-gray-600">Online banking and FinTech solutions</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-car-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Transport</h4>
+</div>
+<p class="text-sm text-gray-600">Connected vehicles and fleet management</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-plant-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Agriculture</h4>
+</div>
+<p class="text-sm text-gray-600">Smart farming and IoT sensors</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-hotel-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Hospitality</h4>
+</div>
+<p class="text-sm text-gray-600">Guest Wi-Fi and digital services</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-factory-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Manufacturing</h4>
+</div>
+<p class="text-sm text-gray-600">IoT systems and smart factories</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-building-2-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Smart Buildings</h4>
+</div>
+<p class="text-sm text-gray-600">Building automation and management</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Hospitality Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Hospitality Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Advanced hospitality management solutions designed to enhance guest experiences, streamline operations, and maximize revenue across the hospitality sector.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
+<div>
+<h3 class="text-2xl font-bold mb-6">Transform Your Guest Experience</h3>
+<p class="text-gray-600 mb-8">Our comprehensive hospitality management system provides end-to-end solutions for guest services, operations management, and revenue optimization.</p>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Guest Management</h4>
+<p class="text-sm text-gray-600">Digital check-in/out, personalized services, and guest profiles</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Operations Management</h4>
+<p class="text-sm text-gray-600">Staff scheduling, inventory control, and maintenance tracking</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Revenue Optimization</h4>
+<p class="text-sm text-gray-600">Dynamic pricing, booking management, and loyalty programs</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Analytics & Reporting</h4>
+<p class="text-sm text-gray-600">Real-time insights and performance metrics</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<img src="https://readdy.ai/api/search-image?query=luxury%2520hotel%2520lobby%2520with%2520staff%2520using%2520digital%2520devices%2520for%2520guest%2520check-in.%2520Modern%2520reception%2520area%2520with%2520elegant%2520design%2C%2520blue%2520accent%2520lighting%2C%2520and%2520comfortable%2520seating.%2520Staff%2520providing%2520personalized%2520service%2520while%2520using%2520tablets%2520and%2520digital%2520systems.%2520High-end%2520hospitality%2520setting%2520with%2520professional%2520atmosphere.&width=600&height=400&seq=hospitality_management&orientation=landscape" alt="Hospitality Management" class="w-full h-auto rounded-xl shadow-md object-cover">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<div class="bg-white rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-line-chart-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Performance Metrics</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>42% Higher Guest Satisfaction</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>35% Revenue Growth</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>28% Operational Efficiency</span>
+</li>
+</ul>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-customer-service-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Guest Experience</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Digital Check-in/out</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Mobile Room Keys</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Personalized Service</span>
+</li>
+</ul>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-shield-check-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Operations</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Staff Management</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Inventory Control</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Maintenance Tracking</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-8">
+<h3 class="text-2xl font-bold mb-6 text-center">Industry Applications</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-4">
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-hotel-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Hotels & Lodges</h4>
+</div>
+<p class="text-sm text-gray-600">Complete property and guest management solutions</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-restaurant-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Restaurants</h4>
+</div>
+<p class="text-sm text-gray-600">Table management and food service optimization</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-plane-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Airlines</h4>
+</div>
+<p class="text-sm text-gray-600">Catering and guest handling systems</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-ship-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Cruise Lines</h4>
+</div>
+<p class="text-sm text-gray-600">Onboard services and guest experience management</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-calendar-event-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Event Management</h4>
+</div>
+<p class="text-sm text-gray-600">Venue and event coordination systems</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-landscape-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Resorts & Parks</h4>
+</div>
+<p class="text-sm text-gray-600">Attraction and facility management</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-home-4-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Serviced Apartments</h4>
+</div>
+<p class="text-sm text-gray-600">Property and tenant management</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-global-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Travel Agencies</h4>
+</div>
+<p class="text-sm text-gray-600">Booking and itinerary management</p>
+</div>
+<div class="bg-gray-50 rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-customer-service-2-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Guest Services</h4>
+</div>
+<p class="text-sm text-gray-600">Concierge and support systems</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Warehousing Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Warehousing Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Advanced warehousing and inventory management solutions optimizing storage, distribution, and supply chain operations across diverse industries.</p>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
+<div>
+<h3 class="text-2xl font-bold mb-6">Transform Your Warehouse Operations</h3>
+<p class="text-gray-600 mb-8">Our comprehensive warehousing solutions provide real-time inventory tracking, space optimization, and automated operations to streamline your storage and distribution processes.</p>
+<div class="space-y-4">
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Inventory Management</h4>
+<p class="text-sm text-gray-600">Real-time tracking, automated reordering, and stock optimization</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Space Optimization</h4>
+<p class="text-sm text-gray-600">Smart storage solutions and warehouse layout planning</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Order Fulfillment</h4>
+<p class="text-sm text-gray-600">Efficient picking, packing, and shipping processes</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-6 h-6 flex items-center justify-center bg-primary/10 rounded-full mr-3 mt-1 flex-shrink-0">
+<i class="ri-check-line text-primary text-sm"></i>
+</div>
+<div>
+<h4 class="font-medium">Analytics & Reporting</h4>
+<p class="text-sm text-gray-600">Comprehensive insights and performance metrics</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<img src="https://readdy.ai/api/search-image?query=modern%2520automated%2520warehouse%2520interior%2520with%2520robotic%2520systems%2C%2520conveyor%2520belts%2C%2520and%2520organized%2520storage%2520racks.%2520Staff%2520using%2520digital%2520devices%2520for%2520inventory%2520management.%2520The%2520facility%2520shows%2520clean%2C%2520efficient%2520operations%2520with%2520blue%2520accent%2520lighting%2520and%2520advanced%2520technology%2520integration.%2520The%2520scene%2520demonstrates%2520modern%2520warehousing%2520operations.&width=600&height=400&seq=warehousing_management&orientation=landscape" alt="Modern Warehouse Operations" class="w-full h-auto rounded-xl shadow-md object-cover">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+<div class="bg-gray-50 rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-line-chart-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Operational Metrics</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>45% Space Utilization</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>32% Cost Reduction</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>99.9% Accuracy</span>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-timer-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Time Efficiency</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>60% Faster Picking</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>40% Quicker Processing</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Real-time Updates</span>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 rounded-xl shadow-sm p-6">
+<div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-xl mb-4">
+<i class="ri-shield-check-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-lg font-semibold mb-2">Quality Control</h3>
+<ul class="space-y-2">
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Automated Checks</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Error Prevention</span>
+</li>
+<li class="flex items-center text-gray-600">
+<i class="ri-checkbox-circle-line text-primary mr-2"></i>
+<span>Compliance Ready</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="bg-gray-50 rounded-xl shadow-sm p-8">
+<h3 class="text-2xl font-bold mb-6 text-center">Industry Applications</h3>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="space-y-4">
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-truck-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Logistics & Distribution</h4>
+</div>
+<p class="text-sm text-gray-600">End-to-end supply chain and distribution management</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-shopping-cart-2-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">E-commerce</h4>
+</div>
+<p class="text-sm text-gray-600">Order fulfillment and inventory management</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-store-2-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Retail & Wholesale</h4>
+</div>
+<p class="text-sm text-gray-600">Stock management and distribution</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-medicine-bottle-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Pharmaceutical</h4>
+</div>
+<p class="text-sm text-gray-600">Temperature-controlled storage and tracking</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-restaurant-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Food & Beverage</h4>
+</div>
+<p class="text-sm text-gray-600">FIFO management and cold storage</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-factory-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Manufacturing</h4>
+</div>
+<p class="text-sm text-gray-600">Raw materials and finished goods storage</p>
+</div>
+</div>
+<div class="space-y-4">
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-plant-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Agriculture</h4>
+</div>
+<p class="text-sm text-gray-600">Produce storage and distribution</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-car-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Automotive</h4>
+</div>
+<p class="text-sm text-gray-600">Parts inventory and distribution</p>
+</div>
+<div class="bg-white rounded-lg p-4">
+<div class="flex items-center mb-2">
+<i class="ri-t-shirt-line text-primary text-xl mr-2"></i>
+<h4 class="font-semibold">Fashion & Apparel</h4>
+</div>
+<p class="text-sm text-gray-600">Garment storage and order processing</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Integration & Technology Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Seamless Integration & Technology</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our solutions work together to create a comprehensive ecosystem that enhances operations across your entire organization.</p>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<h3 class="text-2xl font-bold mb-6">Integrated Technology Ecosystem</h3>
+<p class="text-gray-600 mb-6">Our solutions are designed to work seamlessly together, creating a unified technology ecosystem that eliminates silos and enhances cross-functional operations.</p>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg mr-4 mt-1 flex-shrink-0">
+<i class="ri-database-2-line text-primary"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-1">Centralized Data Management</h4>
+<p class="text-gray-600">All solutions share a common data platform, ensuring consistent information across systems and enabling powerful cross-functional analytics.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg mr-4 mt-1 flex-shrink-0">
+<i class="ri-plug-line text-primary"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-1">Open API Architecture</h4>
+<p class="text-gray-600">Our flexible API framework allows for easy integration with existing systems and third-party applications, protecting your current investments.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg mr-4 mt-1 flex-shrink-0">
+<i class="ri-cloud-line text-primary"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-1">Cloud & On-Premise Options</h4>
+<p class="text-gray-600">Deploy in the cloud for maximum flexibility or on-premise for enhanced control, with hybrid options available to meet your specific requirements.</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<div id="integrationChart" class="w-full h-96"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonials Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">What Our Clients Say</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Hear from organizations across different industries about how our solutions have transformed their operations.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="testimonial-card bg-gray-50 rounded-xl p-6">
+<div class="flex items-center mb-4">
+<img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520African%2520female%2520executive%2520in%2520business%2520attire%2520with%2520neutral%2520background%2C%2520professional%2520lighting%2C%2520high%2520quality%2520portrait&width=80&height=80&seq=testimonial_1&orientation=squarish" alt="Sarah Mwangi" class="w-14 h-14 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-semibold">Sarah Mwangi</h4>
+<p class="text-sm text-gray-500">Operations Director, Serena Hotels</p>
+</div>
+</div>
+<div class="mb-4">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-4">"Implementing the smart hospitality management system has completely transformed our guest experience. Check-in times have been reduced by 70%, and our guest satisfaction scores have reached an all-time high. The integration with our existing systems was seamless."</p>
+<div class="text-sm text-gray-500">
+<i class="ri-calendar-line mr-1"></i>
+<span>Client since 2022</span>
+</div>
+</div>
+<div class="testimonial-card bg-gray-50 rounded-xl p-6">
+<div class="flex items-center mb-4">
+<img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520African%2520male%2520executive%2520in%2520business%2520suit%2520with%2520neutral%2520background%2C%2520professional%2520lighting%2C%2520high%2520quality%2520portrait&width=80&height=80&seq=testimonial_2&orientation=squarish" alt="David Ochieng" class="w-14 h-14 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-semibold">David Ochieng</h4>
+<p class="text-sm text-gray-500">CTO, East African Breweries</p>
+</div>
+</div>
+<div class="mb-4">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-4">"The fleet and logistics management solutions have given us unprecedented visibility into our distribution operations. We've reduced fuel costs by 28% and improved delivery times by 35%. The ROI has far exceeded our expectations."</p>
+<div class="text-sm text-gray-500">
+<i class="ri-calendar-line mr-1"></i>
+<span>Client since 2021</span>
+</div>
+</div>
+<div class="testimonial-card bg-gray-50 rounded-xl p-6">
+<div class="flex items-center mb-4">
+<img src="https://readdy.ai/api/search-image?query=professional%2520headshot%2520of%2520African%2520female%2520healthcare%2520executive%2520in%2520professional%2520attire%2520with%2520neutral%2520background%2C%2520professional%2520lighting%2C%2520high%2520quality%2520portrait&width=80&height=80&seq=testimonial_3&orientation=squarish" alt="Dr. Janet Kimani" class="w-14 h-14 rounded-full object-cover mr-4">
+<div>
+<h4 class="font-semibold">Dr. Janet Kimani</h4>
+<p class="text-sm text-gray-500">CEO, Nairobi Medical Center</p>
+</div>
+</div>
+<div class="mb-4">
+<div class="flex text-yellow-400">
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-fill"></i>
+<i class="ri-star-half-fill"></i>
+</div>
+</div>
+<p class="text-gray-600 mb-4">"The healthcare management system has revolutionized our patient care. Wait times have decreased by 62%, and our staff can now focus more on patient care rather than administrative tasks. The security features have also ensured complete HIPAA compliance."</p>
+<div class="text-sm text-gray-500">
+<i class="ri-calendar-line mr-1"></i>
+<span>Client since 2023</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Regional Impact Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Regional Impact & Global Reach</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our solutions are making a significant impact across Kenya and beyond, helping organizations of all sizes transform their operations.</p>
+</div>
+<div class="bg-white rounded-xl shadow-sm p-8">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<div id="regionalChart" class="w-full h-96"></div>
+</div>
+<div>
+<h3 class="text-2xl font-bold mb-6">Driving Innovation Across Kenya</h3>
+<p class="text-gray-600 mb-6">Our solutions are helping Kenyan businesses across all sectors embrace digital transformation, improve efficiency, and compete on a global scale.</p>
+<div class="space-y-6">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg mr-4 mt-1 flex-shrink-0">
+<i class="ri-global-line text-primary"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-1">Local Expertise, Global Standards</h4>
+<p class="text-gray-600">Our solutions combine deep understanding of local business challenges with world-class technology and best practices.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg mr-4 mt-1 flex-shrink-0">
+<i class="ri-team-line text-primary"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-1">Local Support & Implementation</h4>
+<p class="text-gray-600">Our Kenya-based team provides responsive support, training, and implementation services to ensure your success.</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg mr-4 mt-1 flex-shrink-0">
+<i class="ri-building-line text-primary"></i>
+</div>
+<div>
+<h4 class="text-lg font-semibold mb-1">Cross-Industry Collaboration</h4>
+<p class="text-gray-600">We facilitate knowledge sharing and best practices across industries, creating a stronger business ecosystem.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-6 mt-8">
+<div class="bg-gray-50 p-4 rounded-lg text-center">
+<div class="text-3xl font-bold text-primary mb-1">500+</div>
+<p class="text-sm text-gray-600">Clients in Kenya</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg text-center">
+<div class="text-3xl font-bold text-primary mb-1">12+</div>
+<p class="text-sm text-gray-600">Industries Served</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg text-center">
+<div class="text-3xl font-bold text-primary mb-1">35%</div>
+<p class="text-sm text-gray-600">Average Efficiency Gain</p>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg text-center">
+<div class="text-3xl font-bold text-primary mb-1">24/7</div>
+<p class="text-sm text-gray-600">Local Support</p>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Call-to-Action Section -->
+<section class="py-16 bg-gradient-to-r from-primary to-secondary text-white">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center">
+<h2 class="text-3xl font-bold mb-6">Ready to Transform Your Industry?</h2>
+<p class="text-xl mb-8 opacity-90">Discover how our industry-specific solutions can help your organization optimize operations, enhance customer experiences, and drive growth.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300">Schedule Consultation</button>
+<button class="bg-transparent text-white border border-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-white/10 transition duration-300">
+Request Demo
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Resources Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Industry Resources</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Access our library of industry-specific resources to learn more about how our solutions can benefit your organization.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-gray-50 rounded-xl overflow-hidden">
+<div class="h-48 bg-gray-200" style="background-image: url('https://readdy.ai/api/search-image?query=business%2520professionals%2520in%2520a%2520meeting%2520reviewing%2520data%2520on%2520digital%2520tablets%2520and%2520displays.%2520The%2520setting%2520is%2520a%2520modern%2520conference%2520room%2520with%2520blue%2520accent%2520lighting.%2520The%2520scene%2520shows%2520collaboration%2520and%2520data%2520analysis%2520with%2520professional%2520business%2520people%2520of%2520diverse%2520backgrounds%2520engaged%2520in%2520discussion.&width=400&height=240&seq=resource_1&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="inline-flex items-center justify-center bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium mb-4">WHITEPAPER</div>
+<h3 class="text-lg font-semibold mb-2">The Future of Hospitality Technology</h3>
+<p class="text-gray-600 mb-4">Explore emerging trends and technologies that are reshaping the hospitality industry and enhancing guest experiences.</p>
+<button class="text-primary font-medium flex items-center hover:underline">
+Download Whitepaper
+<i class="ri-download-line ml-1"></i>
+</button>
+</div>
+</div>
+<div class="bg-gray-50 rounded-xl overflow-hidden">
+<div class="h-48 bg-gray-200" style="background-image: url('https://readdy.ai/api/search-image?query=business%2520analyst%2520presenting%2520ROI%2520data%2520and%2520charts%2520on%2520large%2520screen%2520to%2520executives.%2520The%2520setting%2520is%2520a%2520modern%2520office%2520with%2520blue%2520accent%2520lighting.%2520The%2520presentation%2520shows%2520financial%2520graphs%2520and%2520return%2520on%2520investment%2520metrics%2520with%2520professional%2520business%2520people%2520engaged%2520in%2520the%2520presentation.&width=400&height=240&seq=resource_2&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="inline-flex items-center justify-center bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium mb-4">CASE STUDY</div>
+<h3 class="text-lg font-semibold mb-2">ROI Analysis: Technology Investment in Retail</h3>
+<p class="text-gray-600 mb-4">A detailed analysis of the return on investment for technology solutions in the retail sector, with real-world examples.</p>
+<button class="text-primary font-medium flex items-center hover:underline">
+Read Case Study
+<i class="ri-arrow-right-line ml-1"></i>
+</button>
+</div>
+</div>
+<div class="bg-gray-50 rounded-xl overflow-hidden">
+<div class="h-48 bg-gray-200" style="background-image: url('https://readdy.ai/api/search-image?query=technology%2520implementation%2520guide%2520being%2520reviewed%2520by%2520IT%2520professionals%2520and%2520business%2520managers.%2520The%2520setting%2520is%2520a%2520modern%2520office%2520with%2520blue%2520accent%2520lighting.%2520The%2520scene%2520shows%2520collaboration%2520between%2520technical%2520and%2520business%2520teams%2520with%2520implementation%2520diagrams%2520and%2520project%2520plans%2520visible%2520on%2520screens%2520and%2520tablets.&width=400&height=240&seq=resource_3&orientation=landscape'); background-size: cover; background-position: center;"></div>
+<div class="p-6">
+<div class="inline-flex items-center justify-center bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium mb-4">GUIDE</div>
+<h3 class="text-lg font-semibold mb-2">Implementation Guide: Cross-Industry Solutions</h3>
+<p class="text-gray-600 mb-4">A comprehensive guide to implementing technology solutions across different industries, with best practices and pitfalls to avoid.</p>
+<button class="text-primary font-medium flex items-center hover:underline">
+Download Guide
+<i class="ri-download-line ml-1"></i>
+</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Back to Top Button -->
+<button id="backToTop" class="back-to-top bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
+<i class="ri-arrow-up-line text-xl"></i>
+</button>
+<!-- Footer -->
+<footer class="bg-orange-500 text-white pt-16 pb-8" animation="fadeIn">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <!-- Company Info -->
+      <div>
+        <a
+          href="#"
+          class="text-2xl font-['Righteous'] text-white mb-6 inline-block"
+          >Pitch forward</a
+        >
+        <p class="text-black-100 mb-6">
+          Providing enterprise-grade technology solutions that drive
+          innovation and efficiency since 2005.
+        </p>
+        <div class="flex space-x-4">
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
+          >
+            <i class="ri-linkedin-fill"></i>
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
+          >
+            <i class="ri-twitter-x-fill"></i>
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
+          >
+            <i class="ri-facebook-fill"></i>
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
+          >
+            <i class="ri-instagram-fill"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+        <ul class="space-y-3">
+          <li>
+            <a
+              href="./hospitality.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Hospitality</a
+            >
+          </li>
+          <li>
+            <a
+              href="./Fuel-Management-Feature-Details.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Fuel</a
+            >
+          </li>
+          <li>
+            <a
+              href="./industry.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Industries</a
+            >
+          </li>
+          <li>
+            <a
+              href="./Mining-Technology-Solutions.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Mining</a
+            >
+          </li>
+          <li>
+            <a
+              href="./Fleet-Management-Feature-Driver.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Drivers </a
+            >
+          </li>
+          <li>
+            <a
+              href="./Fleet-Management-Feature-Details poc.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Radio</a
+            >
+          </li>
+        </ul>
+      </div>
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+              <i class="ri-map-pin-line text-white"></i>
+            </div>
+            <span class="text-black-400"
+              >
+              Products
+              Services
+              About Us
+              Contact
+              Contact Us
+              The Piano, Brookside drive,<br />Westlands, Nairobi, Kenya.
+            </span
+            >
+          </li>
+          <li class="flex items-center">
+            <div class="w-5 h-5 flex items-center justify-center mr-3">
+              <i class="ri-phone-line text-white"></i>
+            </div>
+            <span class="text-black-100">(+254) 707 586837</span>
+          </li>
+          <li class="flex items-center">
+            <div class="w-5 h-5 flex items-center justify-center mr-3">
+              <i class="ri-mail-line text-white"></i>
+            </div>
+            <span class="text-black-100">
+              contact@pitchforwardgroup.com
+              </span>
+          </li>
+        </ul>
+      </div>
+      <!-- Newsletter -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">
+          Subscribe to Our Newsletter
+        </h3>
+        <p class="text-white-400 mb-4">
+          Stay updated with the latest technology trends and solutions.
+        </p>
+        <form class="mb-4">
+          <div class="flex">
+            <input
+              type="email"
+              placeholder="Your email address"
+              class="bg-white-600 text-black-100 px-4 py-3 w-full border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+            <button
+              type="submit"
+              class="bg-primary text-white px-4 py-3 !rounded-r-lg !rounded-l-none whitespace-nowrap hover:bg-primary/90 transition duration-300"
+            >
+              Subscribe
+            </button>
+          </div>
+        </form>
+        <div class="flex items-center space-x-4">
+          <div class="w-10 h-6 flex items-center justify-center">
+            <i class="ri-visa-fill text-2xl text-white-100"></i>
+          </div>
+          <div class="w-10 h-6 flex items-center justify-center">
+            <i class="ri-mastercard-fill text-2xl text-white-100"></i>
+          </div>
+          <div class="w-10 h-6 flex items-center justify-center">
+            <i class="ri-paypal-fill text-2xl text-white-100"></i>
+          </div>
+          <div class="w-10 h-6 flex items-center justify-center">
+            <i class="ri-apple-fill text-2xl text-whit-500"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white-800 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-white-500 text-sm mb-4 md:mb-0">
+          © 2025 TechSolutions. All rights reserved.
+        </p>
+        <div class="flex space-x-6">
+          <a
+            href="#"
+            class="text-white-500 text-sm hover:text-white transition duration-300"
+            >Privacy Policy</a
+          >
+          <a
+            href="#"
+            class="text-white-500 text-sm hover:text-white transition duration-300"
+            >Terms of Service</a
+          >
+          <a
+            href="#"
+            class="text-white-500 text-sm hover:text-white transition duration-300"
+            >Cookie Policy</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script id="mobileMenuScript">
+document.addEventListener("DOMContentLoaded", function () {
+  const mobileMenuBtn = document.getElementById("mobileMenuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  const mobileSolutionsBtn = document.getElementById("mobileSolutionsBtn");
+  const mobileSolutionsMenu = document.getElementById("mobileSolutionsMenu");
+  mobileMenuBtn.addEventListener("click", function () {
+    mobileMenu.classList.toggle("hidden");
+    const icon = mobileMenuBtn.querySelector("i");
+    icon.classList.toggle("ri-menu-line");
+    icon.classList.toggle("ri-close-line");
+  });
+  mobileSolutionsBtn.addEventListener("click", function () {
+    mobileSolutionsMenu.classList.toggle("hidden");
+    const icon = mobileSolutionsBtn.querySelector("i");
+    icon.classList.toggle("ri-arrow-down-s-line");
+    icon.classList.toggle("ri-arrow-up-s-line");
+  });
+  document.addEventListener("click", function (event) {
+    if (
+      !mobileMenu.contains(event.target) &&
+      !mobileMenuBtn.contains(event.target)
+    ) {
+      mobileMenu.classList.add("hidden");
+      const icon = mobileMenuBtn.querySelector("i");
+      icon.classList.add("ri-menu-line");
+      icon.classList.remove("ri-close-line");
+    }
+  });
+});
+</script>
+<script id="dropdownMenuScript">
+document.addEventListener("DOMContentLoaded", function () {
+  const solutionsBtn = document.getElementById("solutionsBtn");
+  const solutionsMenu = document.getElementById("solutionsMenu");
+  let isDropdownOpen = false;
+  function toggleDropdown() {
+    isDropdownOpen = !isDropdownOpen;
+    solutionsMenu.classList.toggle("hidden");
+    solutionsBtn.setAttribute("aria-expanded", isDropdownOpen);
+  }
+  solutionsBtn.addEventListener("click", function (e) {
+    e.stopPropagation();
+    toggleDropdown();
+  });
+  document.addEventListener("click", function (e) {
+    if (!solutionsBtn.contains(e.target) && isDropdownOpen) {
+      toggleDropdown();
+    }
+  });
+});
+</script>
+<script id="industryTabsScript">
+document.addEventListener("DOMContentLoaded", function () {
+  const industryTabs = document.querySelectorAll(".industry-tab");
+  const industryContents = document.querySelectorAll(".industry-content");
+  const searchInput = document.getElementById("industrySearch");
+  const gridViewBtn = document.getElementById("gridView");
+  const listViewBtn = document.getElementById("listView");
+  function setActiveIndustry(industryName) {
+    // Update tab states
+    industryTabs.forEach((tab) => {
+      const isActive = tab.getAttribute("data-industry") === industryName;
+      tab.classList.toggle("active", isActive);
+      tab.setAttribute("aria-selected", isActive);
+    });
+    // Update content visibility
+    industryContents.forEach((content) => {
+      const contentId = `${industryName}-content`;
+      if (content.id === contentId) {
+        content.classList.add("active");
+        content.style.display = "block";
+        content.setAttribute("aria-hidden", "false");
+        content.offsetHeight; // Force reflow for animation
+      } else {
+        content.classList.remove("active");
+        content.setAttribute("aria-hidden", "true");
+        setTimeout(() => {
+          if (!content.classList.contains("active")) {
+            content.style.display = "none";
+          }
+        }, 300);
+      }
+    });
+  }
+  // Search functionality
+  searchInput.addEventListener("input", function (e) {
+    const searchTerm = e.target.value.toLowerCase();
+    industryTabs.forEach((tab) => {
+      const tabText = tab.textContent.toLowerCase();
+      const category = tab.getAttribute("data-category").toLowerCase();
+      if (tabText.includes(searchTerm) || category.includes(searchTerm)) {
+        tab.style.display = "";
+      } else {
+        tab.style.display = "none";
+      }
+    });
+  });
+  // View toggle functionality
+  gridViewBtn.addEventListener("click", function () {
+    document.querySelectorAll(".industry-content").forEach((content) => {
+      content.classList.remove("list-view");
+      content.classList.add("grid-view");
+    });
+    gridViewBtn.classList.add("bg-primary", "text-white");
+    listViewBtn.classList.remove("bg-primary", "text-white");
+  });
+  listViewBtn.addEventListener("click", function () {
+    document.querySelectorAll(".industry-content").forEach((content) => {
+      content.classList.remove("grid-view");
+      content.classList.add("list-view");
+    });
+    listViewBtn.classList.add("bg-primary", "text-white");
+    gridViewBtn.classList.remove("bg-primary", "text-white");
+  });
+  // Add click handlers to tabs
+  industryTabs.forEach((tab) => {
+    tab.addEventListener("click", function (e) {
+      e.preventDefault();
+      const industry = this.getAttribute("data-industry");
+      if (industry) {
+        setActiveIndustry(industry);
+      }
+    });
+  });
+  // Check URL hash for initial tab
+  const hash = window.location.hash.slice(1);
+  const validIndustries = [
+    "hospitality",
+    "retail",
+    "healthcare",
+    "manufacturing",
+    "agriculture",
+    "financial",
+  ];
+  const initialIndustry = validIndustries.includes(hash) ? hash : "hospitality";
+  // Set initial active tab and view
+  setActiveIndustry(initialIndustry);
+  gridViewBtn.click(); // Default to grid view
+});
+</script>
+<script id="chartsScript">
+document.addEventListener("DOMContentLoaded", function () {
+  // Integration Chart
+  const integrationChart = echarts.init(
+    document.getElementById("integrationChart"),
+  );
+  const integrationOption = {
+    animation: false,
+    tooltip: {
+      trigger: "item",
+      backgroundColor: "rgba(255, 255, 255, 0.9)",
+      borderColor: "#f0f0f0",
+      textStyle: {
+        color: "#1f2937",
+      },
+    },
+    legend: {
+      top: "bottom",
+      textStyle: {
+        color: "#1f2937",
+      },
+    },
+    series: [
+      {
+        name: "Integration Benefits",
+        type: "pie",
+        radius: ["40%", "70%"],
+        avoidLabelOverlap: false,
+        itemStyle: {
+          borderRadius: 8,
+          borderColor: "#fff",
+          borderWidth: 2,
+        },
+        label: {
+          show: false,
+          position: "center",
+        },
+        emphasis: {
+          label: {
+            show: true,
+            fontSize: "18",
+            fontWeight: "bold",
+            color: "#1f2937",
+          },
+        },
+        labelLine: {
+          show: false,
+        },
+        data: [
+          {
+            value: 35,
+            name: "Operational Efficiency",
+            itemStyle: { color: "rgba(87, 181, 231, 1)" },
+          },
+          {
+            value: 25,
+            name: "Cost Reduction",
+            itemStyle: { color: "rgba(141, 211, 199, 1)" },
+          },
+          {
+            value: 20,
+            name: "Enhanced Security",
+            itemStyle: { color: "rgba(251, 191, 114, 1)" },
+          },
+          {
+            value: 20,
+            name: "Customer Experience",
+            itemStyle: { color: "rgba(252, 141, 98, 1)" },
+          },
+        ],
+      },
+    ],
+  };
+  integrationChart.setOption(integrationOption);
+  // Regional Chart
+  const regionalChart = echarts.init(document.getElementById("regionalChart"));
+  const regionalOption = {
+    animation: false,
+    tooltip: {
+      trigger: "axis",
+      backgroundColor: "rgba(255, 255, 255, 0.9)",
+      borderColor: "#f0f0f0",
+      textStyle: {
+        color: "#1f2937",
+      },
+    },
+    legend: {
+      data: [
+        "Hospitality",
+        "Retail",
+        "Healthcare",
+        "Manufacturing",
+        "Agriculture",
+        "Financial",
+      ],
+      textStyle: {
+        color: "#1f2937",
+      },
+    },
+    grid: {
+      left: "3%",
+      right: "4%",
+      bottom: "3%",
+      containLabel: true,
+    },
+    xAxis: {
+      type: "category",
+      boundaryGap: false,
+      data: ["2020", "2021", "2022", "2023", "2024", "2025"],
+      axisLabel: {
+        color: "#1f2937",
+      },
+    },
+    yAxis: {
+      type: "value",
+      axisLabel: {
+        color: "#1f2937",
+      },
+    },
+    series: [
+      {
+        name: "Hospitality",
+        type: "line",
+        stack: "Total",
+        smooth: true,
+        lineStyle: {
+          width: 0,
+        },
+        showSymbol: false,
+        areaStyle: {
+          opacity: 0.8,
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {
+              offset: 0,
+              color: "rgba(87, 181, 231, 0.8)",
+            },
+            {
+              offset: 1,
+              color: "rgba(87, 181, 231, 0.1)",
+            },
+          ]),
+        },
+        emphasis: {
+          focus: "series",
+        },
+        data: [120, 132, 145, 160, 178, 195],
+      },
+      {
+        name: "Retail",
+        type: "line",
+        stack: "Total",
+        smooth: true,
+        lineStyle: {
+          width: 0,
+        },
+        showSymbol: false,
+        areaStyle: {
+          opacity: 0.8,
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {
+              offset: 0,
+              color: "rgba(141, 211, 199, 0.8)",
+            },
+            {
+              offset: 1,
+              color: "rgba(141, 211, 199, 0.1)",
+            },
+          ]),
+        },
+        emphasis: {
+          focus: "series",
+        },
+        data: [110, 125, 140, 155, 170, 185],
+      },
+      {
+        name: "Healthcare",
+        type: "line",
+        stack: "Total",
+        smooth: true,
+        lineStyle: {
+          width: 0,
+        },
+        showSymbol: false,
+        areaStyle: {
+          opacity: 0.8,
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {
+              offset: 0,
+              color: "rgba(251, 191, 114, 0.8)",
+            },
+            {
+              offset: 1,
+              color: "rgba(251, 191, 114, 0.1)",
+            },
+          ]),
+        },
+        emphasis: {
+          focus: "series",
+        },
+        data: [90, 105, 125, 140, 160, 175],
+      },
+      {
+        name: "Manufacturing",
+        type: "line",
+        stack: "Total",
+        smooth: true,
+        lineStyle: {
+          width: 0,
+        },
+        showSymbol: false,
+        areaStyle: {
+          opacity: 0.8,
+          color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [
+            {
+              offset: 0,
+              color: "rgba(252, 141, 98, 0.8)",
+            },
+            {
+              offset: 1,
+              color: "rgba(252, 141, 98, 0.1)",
+            },
+          ]),
+        },
+        emphasis: {
+          focus: "series",
+        },
+        data: [80, 95, 110, 130, 150, 165],
+      },
+    ],
+  };
+  regionalChart.setOption(regionalOption);
+  // Handle resize
+  window.addEventListener("resize", function () {
+    integrationChart.resize();
+    regionalChart.resize();
+  });
+});
+</script>
+<script id="backToTopScript">
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTopBtn = document.getElementById("backToTop");
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 500) {
+      backToTopBtn.classList.add("visible");
+    } else {
+      backToTopBtn.classList.remove("visible");
+    }
+  });
+  backToTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});
+</script>
+</body>
+</html>

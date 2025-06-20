@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Fuel Management Solutions | TechSolutions</title>
     <script src="https://cdn.tailwindcss.com/3.4.16"></script>
-
+    <link rel="shortcut icon" href="./ww.png" type="image/png">
     
 
     <script>
@@ -261,9 +261,13 @@
         <i class="ri-store-2-line w-5 h-5 mr-3"></i>
         Warehousing
         </a>
+          <a href="./hospitality.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-hotel-line w-5 h-5 mr-3"></i>
+    Hospitality
+  </a>
         </div>
         </div>
-        <a href="#industries" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+        <a href="./industry.html" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
         <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
         </nav>
         <div class="flex items-center space-x-4">
@@ -351,9 +355,10 @@
         <a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
         <a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
         <a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
+         <a href="./hospitality.html" class="block py-2 text-gray-700 hover:text-primary">Hospitality</a>
         </div>
         </div>
-        <a href="#industries" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
+        <a href="./industry.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
         <a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
         <div class="mt-4">
         <button class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
@@ -361,6 +366,17 @@
         </nav>
         </div>
         </header>
+        <div class="bg-gray-100 pt-20">
+          <div class="container mx-auto px-4 py-3">
+          <div class="flex items-center text-sm text-gray-500">
+          <a href="/index.html" class="hover:text-primary">Home</a>
+          <i class="ri-arrow-right-s-line mx-2"></i>
+          <a href="/" class="hover:text-primary">Solutions</a>
+          <i class="ri-arrow-right-s-line mx-2"></i>
+          <span class="text-primary font-medium">Fuel Management</span>
+          </div>
+          </div>
+          </div>
     <!-- Hero Section -->
     <section class="hero-section w-full min-h-[600px] relative">
       <div class="hero-overlay absolute inset-0"></div>
@@ -2015,43 +2031,70 @@ compliance.
         </div>
       </div>
     </section>
+    <style>
+  #backToTop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  #backToTop.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  @media (max-width: 768px) {
+    #backToTop {
+      bottom: 1rem;
+      right: 1rem;
+      width: 3rem;
+      height: 3rem; pointer-events: none;
+    transition: opacity 0.3s;
+    }
+  }
+</style>
+<button id="backToTop" class="back-to-top bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
+  <i class="ri-arrow-up-line text-xl"></i>
+  </button>
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white pt-16 pb-8">
+    <footer class="bg-orange-500 text-white pt-16 pb-8" animation="fadeIn">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           <!-- Company Info -->
           <div>
             <a
               href="#"
-              class="text-2xl font-['Pacifico'] text-white mb-6 inline-block"
-              >logo</a
+              class="text-2xl font-['Righteous'] text-white mb-6 inline-block"
+              >Pitch forward</a
             >
-            <p class="text-gray-400 mb-6">
+            <p class="text-black-100 mb-6">
               Providing enterprise-grade technology solutions that drive
               innovation and efficiency since 2005.
             </p>
             <div class="flex space-x-4">
               <a
                 href="#"
-                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300"
+                class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
               >
                 <i class="ri-linkedin-fill"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300"
+                class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
               >
                 <i class="ri-twitter-x-fill"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300"
+                class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
               >
                 <i class="ri-facebook-fill"></i>
               </a>
               <a
                 href="#"
-                class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300"
+                class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
               >
                 <i class="ri-instagram-fill"></i>
               </a>
@@ -2063,44 +2106,44 @@ compliance.
             <ul class="space-y-3">
               <li>
                 <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition duration-300"
-                  >About Us</a
+                  href="./hospitality.html"
+                  class="text-black-100 hover:text-white transition duration-300"
+                  >Hospitality</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition duration-300"
-                  >Services</a
+                  href="./Fuel-Management-Feature-Details.html"
+                  class="text-black-100 hover:text-white transition duration-300"
+                  >Fuel</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition duration-300"
+                  href="./industry.html"
+                  class="text-black-100 hover:text-white transition duration-300"
                   >Industries</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition duration-300"
-                  >Case Studies</a
+                  href="./Mining-Technology-Solutions.html"
+                  class="text-black-100 hover:text-white transition duration-300"
+                  >Mining</a
                 >
               </li>
               <li>
                 <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition duration-300"
-                  >Careers</a
+                  href="./Fleet-Management-Feature-Driver.html"
+                  class="text-black-100 hover:text-white transition duration-300"
+                  >Drivers </a
                 >
               </li>
               <li>
                 <a
-                  href="#"
-                  class="text-gray-400 hover:text-white transition duration-300"
-                  >Contact</a
+                  href="./Fleet-Management-Feature-Details poc.html"
+                  class="text-black-100 hover:text-white transition duration-300"
+                  >Radio</a
                 >
               </li>
             </ul>
@@ -2111,24 +2154,32 @@ compliance.
             <ul class="space-y-3">
               <li class="flex items-start">
                 <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
-                  <i class="ri-map-pin-line text-primary"></i>
+                  <i class="ri-map-pin-line text-white"></i>
                 </div>
-                <span class="text-gray-400"
-                  >1250 Technology Plaza, Suite 400<br />San Francisco, CA
-                  94105</span
+                <span class="text-black-400"
+                  >
+                  Products
+                  Services
+                  About Us
+                  Contact
+                  Contact Us
+                  The Piano, Brookside drive,<br />Westlands, Nairobi, Kenya.
+                </span
                 >
               </li>
               <li class="flex items-center">
                 <div class="w-5 h-5 flex items-center justify-center mr-3">
-                  <i class="ri-phone-line text-primary"></i>
+                  <i class="ri-phone-line text-white"></i>
                 </div>
-                <span class="text-gray-400">+1 (415) 555-0123</span>
+                <span class="text-black-100">(+254) 707 586837</span>
               </li>
               <li class="flex items-center">
                 <div class="w-5 h-5 flex items-center justify-center mr-3">
-                  <i class="ri-mail-line text-primary"></i>
+                  <i class="ri-mail-line text-white"></i>
                 </div>
-                <span class="text-gray-400">info@techsolutions.com</span>
+                <span class="text-black-100">
+                  contact@pitchforwardgroup.com
+                  </span>
               </li>
             </ul>
           </div>
@@ -2137,7 +2188,7 @@ compliance.
             <h3 class="text-lg font-semibold mb-6">
               Subscribe to Our Newsletter
             </h3>
-            <p class="text-gray-400 mb-4">
+            <p class="text-white-400 mb-4">
               Stay updated with the latest technology trends and solutions.
             </p>
             <form class="mb-4">
@@ -2145,7 +2196,7 @@ compliance.
                 <input
                   type="email"
                   placeholder="Your email address"
-                  class="bg-gray-800 text-white px-4 py-3 w-full border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary"
+                  class="bg-white-600 text-black-100 px-4 py-3 w-full border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary"
                 />
                 <button
                   type="submit"
@@ -2157,39 +2208,39 @@ compliance.
             </form>
             <div class="flex items-center space-x-4">
               <div class="w-10 h-6 flex items-center justify-center">
-                <i class="ri-visa-fill text-2xl text-gray-400"></i>
+                <i class="ri-visa-fill text-2xl text-white-100"></i>
               </div>
               <div class="w-10 h-6 flex items-center justify-center">
-                <i class="ri-mastercard-fill text-2xl text-gray-400"></i>
+                <i class="ri-mastercard-fill text-2xl text-white-100"></i>
               </div>
               <div class="w-10 h-6 flex items-center justify-center">
-                <i class="ri-paypal-fill text-2xl text-gray-400"></i>
+                <i class="ri-paypal-fill text-2xl text-white-100"></i>
               </div>
               <div class="w-10 h-6 flex items-center justify-center">
-                <i class="ri-apple-fill text-2xl text-gray-400"></i>
+                <i class="ri-apple-fill text-2xl text-whit-500"></i>
               </div>
             </div>
           </div>
         </div>
-        <div class="border-t border-gray-800 pt-8">
+        <div class="border-t border-white-800 pt-8">
           <div class="flex flex-col md:flex-row justify-between items-center">
-            <p class="text-gray-500 text-sm mb-4 md:mb-0">
+            <p class="text-white-500 text-sm mb-4 md:mb-0">
               © 2025 TechSolutions. All rights reserved.
             </p>
             <div class="flex space-x-6">
               <a
                 href="#"
-                class="text-gray-500 text-sm hover:text-white transition duration-300"
+                class="text-white-500 text-sm hover:text-white transition duration-300"
                 >Privacy Policy</a
               >
               <a
                 href="#"
-                class="text-gray-500 text-sm hover:text-white transition duration-300"
+                class="text-white-500 text-sm hover:text-white transition duration-300"
                 >Terms of Service</a
               >
               <a
                 href="#"
-                class="text-gray-500 text-sm hover:text-white transition duration-300"
+                class="text-white-500 text-sm hover:text-white transition duration-300"
                 >Cookie Policy</a
               >
             </div>
@@ -2462,5 +2513,23 @@ compliance.
       updateHeader();
   });
   </script>
+  <script id="backToTopScript">
+document.addEventListener("DOMContentLoaded", function () {
+  const backToTopBtn = document.getElementById("backToTop");
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 500) {
+      backToTopBtn.classList.add("visible");
+    } else {
+      backToTopBtn.classList.remove("visible");
+    }
+  });
+  backToTopBtn.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth",
+    });
+  });
+});
+</script>
   </body>
 </html>

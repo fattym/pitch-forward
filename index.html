@@ -1,5 +1,6 @@
+
+
 <!DOCTYPE html>
-<html style="overflow-x: hidden;"></html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -11,104 +12,265 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
-
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+<link rel="shortcut icon" href="./ww.png" type="image/png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
-<link rel="stylesheet" href="style.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+}
+@keyframes fadeInUp {
+from {
+opacity: 0;
+transform: translateY(20px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+@keyframes fadeInLeft {
+from {
+opacity: 0;
+transform: translateX(-20px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+@keyframes fadeInRight {
+from {
+opacity: 0;
+transform: translateX(20px);
+}
+to {
+opacity: 1;
+transform: translateX(0);
+}
+}
+@keyframes scaleIn {
+from {
+opacity: 0;
+transform: scale(0.9);
+}
+to {
+opacity: 1;
+transform: scale(1);
+}
+}
+.animate-fadeInUp {
+animation: fadeInUp 0.6s ease-out forwards;
+}
+.animate-fadeInLeft {
+animation: fadeInLeft 0.6s ease-out forwards;
+}
+.animate-fadeInRight {
+animation: fadeInRight 0.6s ease-out forwards;
+}
+.animate-scaleIn {
+animation: scaleIn 0.5s ease-out forwards;
+}
+.animate-delay-100 {
+animation-delay: 100ms;
+}
+.animate-delay-200 {
+animation-delay: 200ms;
+}
+.animate-delay-300 {
+animation-delay: 300ms;
+}
+.animate-delay-400 {
+animation-delay: 400ms;
+}
+.group:hover .group-hover\:block {
+display: block;
+}
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=modern%20technology%20infrastructure%20with%20server%20racks%2C%20network%20cables%2C%20and%20digital%20displays%20in%20a%20sleek%2C%20futuristic%20environment%20with%20blue%20lighting.%20The%20image%20should%20have%20a%20gradient%20from%20dark%20blue%20to%20lighter%20blue%20on%20the%20left%20side%2C%20transitioning%20to%20a%20clear%20view%20of%20technology%20on%20the%20right.%20The%20left%20side%20should%20have%20enough%20space%20for%20text%20overlay%20with%20good%20contrast.&width=1920&height=800&seq=hero123&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(0,20,50,0.85) 0%, rgba(0,20,50,0.7) 50%, rgba(0,20,50,0.4) 100%);
+}
+.service-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.testimonial-card {
+box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.industry-card {
+transition: transform 0.3s ease;
+}
+.industry-card:hover {
+transform: translateY(-5px);
+}
+.cta-section {
+background-image: url('https://readdy.ai/api/search-image?query=abstract%20technology%20background%20with%20subtle%20blue%20circuit%20patterns%20and%20digital%20elements%2C%20providing%20a%20clean%20backdrop%20for%20text%20overlay.%20The%20image%20should%20be%20light%20and%20airy%20with%20low%20saturation%2C%20creating%20a%20professional%20and%20modern%20feel%20without%20being%20distracting.&width=1920&height=600&seq=cta456&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #0056b3;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+input:focus, button:focus {
+outline: none;
+ring: 2px;
+ring-color: #0056b3;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #0056b3;
+border-color: #0056b3;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+top: 3px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.carousel-container {
+scroll-behavior: smooth;
+}
+</style>
 </head>
 <body class="bg-gray-50">
 <!-- Header Navigation -->
 <header class="bg-white shadow-sm fixed w-full z-50">
-<div class="container mx-auto px-4 py-3 flex items-center justify-between">
-
-    <div class="flex items-center">
-      <a href="./index.html" class="text-2xl font-['Righteous'] text-primary">Pitch Forward</a >
-    </div>
-    
-<nav class="hidden md:flex space-x-8">
-<a href="./index.html" id="homeLink" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
-<div class="relative" id="solutionsDropdown">
-<button id="solutionsBtn" class="nav-link text-gray-700 hover:text-primary font-medium flex items-center" aria-expanded="false" aria-haspopup="true">
-Solutions
-<i class="ri-arrow-down-s-line ml-1"></i>
-</button>
-<div id="solutionsMenu" class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden" role="menu" aria-labelledby="solutionsBtn">
-<a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-<i class="ri-footprint-line w-5 h-5 mr-3"></i>
-Fleet Management
-</a>
-<a href="./Fuel-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-<i class="ri-gas-station-line w-5 h-5 mr-3"></i>
-Fuel Management
-</a>
-<a href="./Logistics-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-<i class="ri-truck-line w-5 h-5 mr-3"></i>
-Logistics Management
-</a>
-<a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-<i class="ri-phone-line w-5 h-5 mr-3"></i>
-Telecommunication
-</a>
-<a href="./Security-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-<i class="ri-shield-keyhole-line w-5 h-5 mr-3"></i>
-Security
-</a>
-<a href="./Data-&-Power-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-<i class="ri-database-2-line w-5 h-5 mr-3"></i>
-Data & Power
-</a>
-<a href="./Internet-&-Connectivity-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-<i class="ri-wifi-line w-5 h-5 mr-3"></i>
-Internet & Connectivity
-</a>
-<a href="./Mining-Technology-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-<i class="ri-mine-line w-5 h-5 mr-3"></i>
-Mining
-</a>
-<a href="./Warehousing-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-<i class="ri-store-2-line w-5 h-5 mr-3"></i>
-Warehousing
-</a>
-</div>
-</div>
-<a href="#industries" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
-<a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
-</nav>
-<div class="flex items-center space-x-4">
-
-<button id="contactUsBtn" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
-<div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
-<div class="bg-white rounded-lg w-full max-w-xl mx-4 relative">
-<button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
-<i class="ri-close-line text-2xl"></i>
-</button>
-
-<div class="max-h-[100vh] overflow-x-auto p-4 md:p-8">
-
-<h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
-<form id="contactForm" action="" method="POST">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-<div>
-<label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-<input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
-</div>
-<div>
-<label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-<input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
-</div>
-<div>
-<label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-<input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
-</div>
-<div>
-<label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
-<input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
-</div>
-</div>
-<div class="mb-4">
-<label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
-<select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary pr-8">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+  
+      <div class="flex items-center">
+        <a href="./index.html" class="text-2xl font-['Righteous'] text-primary">Pitch Forward</a >
+      </div>
+      
+  <nav class="hidden md:flex space-x-8">
+  <a href="./index.html" id="homeLink" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+  <div class="relative" id="solutionsDropdown">
+  <button id="solutionsBtn" class="nav-link text-gray-700 hover:text-primary font-medium flex items-center" aria-expanded="false" aria-haspopup="true">
+  Solutions
+  <i class="ri-arrow-down-s-line ml-1"></i>
+  </button>
+  <div id="solutionsMenu" class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden" role="menu" aria-labelledby="solutionsBtn">
+  <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-footprint-line w-5 h-5 mr-3"></i>
+  Fleet Management
+  </a>
+  <a href="./Fuel-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-gas-station-line w-5 h-5 mr-3"></i>
+  Fuel Management
+  </a>
+  <a href="./Logistics-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-truck-line w-5 h-5 mr-3"></i>
+  Logistics Management
+  </a>
+  <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-phone-line w-5 h-5 mr-3"></i>
+  Telecommunication
+  </a>
+  <a href="./Security-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-shield-keyhole-line w-5 h-5 mr-3"></i>
+  Security
+  </a>
+  <a href="./Data-&-Power-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-database-2-line w-5 h-5 mr-3"></i>
+  Data & Power
+  </a>
+  <a href="./Internet-&-Connectivity-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-wifi-line w-5 h-5 mr-3"></i>
+  Internet & Connectivity
+  </a>
+  <a href="./Mining-Technology-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-mine-line w-5 h-5 mr-3"></i>
+  Mining
+  </a>
+  <a href="./Warehousing-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-store-2-line w-5 h-5 mr-3"></i>
+  Warehousing
+  </a>
+  <a href="./hospitality.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-hotel-line w-5 h-5 mr-3"></i>
+    Hospitality
+  </a>
+  </div>
+  </div>
+  <a href="./industry.html" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+  <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
+  </nav>
+  <div class="flex items-center space-x-4">
+  <div class="relative hidden md:block">
+  <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm focus:border-primary">
+  <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+  <i class="ri-search-line"></i>
+  </div>
+  </div>
+  <button id="contactUsBtn" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+  <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
+  <div class="bg-white rounded-lg w-full max-w-xl mx-4 relative">
+  <button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+  <i class="ri-close-line text-2xl"></i>
+  </button>
+  
+  <div class="max-h-[100vh] overflow-x-auto p-4 md:p-8">
+  
+  <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
+  <form id="contactForm" action="" method="POST">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+  <div>
+  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+  <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+  </div>
+  <div>
+  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+  <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+  </div>
+  <div>
+  <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+  <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+  </div>
+  <div>
+  <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+  <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+  </div>
+  </div>
+  <div class="mb-4">
+  <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
+  <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary pr-8">
+  <option value="">Select a service</option>
   <option value="">Select a service</option>
   <option value="fleet">Fleet Management</option>
   <option value="fuel">Fuel Management</option>
@@ -120,51 +282,53 @@ Warehousing
   <option value="mining">Mining</option>
   <option value="warehousing">Warehousing</option>
   <option value="other">Other</option>
-</select>
-</div>
-<div class="mb-6">
-<label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-<textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
-</div>
-<button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Submit</button>
-</form>
-</div>
-</div>
-</div>
-<button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
-<i class="ri-menu-line text-xl"></i>
-</button>
-</div>
-</div>
-<!-- Mobile Menu -->
-<div id="mobileMenu" class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-lg">
-<nav class="container mx-auto px-4 py-4">
-<a href="index.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
-<div class="relative">
-<button id="mobileSolutionsBtn" class="w-full flex items-center justify-between py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">
-Solutions
-<i class="ri-arrow-down-s-line"></i>
-</button>
-<div id="mobileSolutionsMenu" class="hidden bg-gray-50 px-4 py-2">
-<a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Fleet Management</a>
-<a href="./Fuel-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Fuel Management</a>
-<a href="./Logistics-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Logistics Management</a>
-<a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Telecommunication</a>
-<a href="./Security-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Security</a>
-<a href="./Data-&-Power-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Data & Power</a>
-<a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
-<a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
-<a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
-</div>
-</div>
-<a href="#industries" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
-<a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
-<div class="mt-4">
-<button class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
-</div>
-</nav>
-</div>
-</header>
+  </select>
+  </div>
+  <div class="mb-6">
+  <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+  <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
+  </div>
+  <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Submit</button>
+  </form>
+  </div>
+  </div>
+  </div>
+  <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
+  <i class="ri-menu-line text-xl"></i>
+  </button>
+  </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-lg">
+  <nav class="container mx-auto px-4 py-4">
+  <a href="index.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
+  <div class="relative">
+  <button id="mobileSolutionsBtn" class="w-full flex items-center justify-between py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">
+  Solutions
+  <i class="ri-arrow-down-s-line"></i>
+  </button>
+  <div id="mobileSolutionsMenu" class="hidden bg-gray-50 px-4 py-2">
+  <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Fleet Management</a>
+  <a href="./Fuel-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Fuel Management</a>
+  <a href="./Logistics-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Logistics Management</a>
+  <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Telecommunication</a>
+  <a href="./Security-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Security</a>
+  <a href="./Data-&-Power-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Data & Power</a>
+  <a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
+  <a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
+  <a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
+
+  <a href="./hospitality.html" class="block py-2 text-gray-700 hover:text-primary">Hospitality</a>
+  </div>
+  </div>
+  <a href="./industry.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
+  <a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
+  <div class="mt-4">
+  <button class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+  </div>
+  </nav>
+  </div>
+  </header>
 <!-- Hero Section -->
 <section class="hero-section w-full min-h-screen relative">
 <div class="hero-overlay absolute inset-0"></div>
@@ -195,89 +359,132 @@ Solutions
 </div>
 </div>
 </div>
+
 </div>
 </section>
 <!-- Core Services Section -->
-<section id="services" class="py-20 bg-white">
+<section id="services" class="py-20 bg-gradient-to-b from-white to-gray-50">
 <div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">Our Core Technology Solutions</h2>
-<p class="text-lg text-gray-600 max-w-3xl mx-auto">Comprehensive enterprise-grade services designed to optimize your operations, enhance security, and drive business growth.</p>
+<div class="text-center mb-16 animate-fadeInUp">
+<span class="text-primary font-semibold mb-2 inline-block">WHAT WE OFFER</span>
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Our Core Technology Solutions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Empowering businesses with cutting-edge technology solutions that drive innovation, enhance efficiency, and ensure sustainable growth.</p>
 </div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 relative">
 <!-- Service Card 1 -->
-<div class="service-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 opacity-0 animate-fadeInUp">
-<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<div class="service-card group bg-white rounded-xl p-8 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 opacity-0 animate-fadeInUp relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-500">
 <i class="ri-robot-line text-primary text-2xl"></i>
 </div>
-<h3 class="text-xl font-semibold mb-3">Business Automation</h3>
-<p class="text-gray-600 mb-6">Streamline operations with intelligent workflow automation, reducing manual tasks and increasing productivity by up to 40%.</p>
-<a href="./Warehousing-Solutions-Overview.html" class="text-primary font-medium flex items-center">
-Learn More
-<i class="ri-arrow-right-line ml-2"></i>
+<h3 class="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">Business Automation</h3>
+<p class="text-gray-600 mb-6">Transform your operations with AI-powered workflow automation, reducing manual tasks and boosting productivity by up to 40%.</p>
+<div class="flex items-center justify-between">
+<a href="#" class="text-primary font-medium flex items-center group/link">
+<span class="group-hover/link:mr-4 transition-all duration-300">Learn More</span>
+<i class="ri-arrow-right-line ml-2 transform group-hover/link:translate-x-2 transition-transform duration-300"></i>
 </a>
+<span class="text-sm text-gray-400">40% Efficiency ↑</span>
+</div>
+</div>
 </div>
 <!-- Service Card 2 -->
-<div class="service-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 opacity-0 animate-fadeInUp">
-<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<div class="service-card group bg-white rounded-xl p-8 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 opacity-0 animate-fadeInUp relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-500">
 <i class="ri-phone-line text-primary text-2xl"></i>
 </div>
-<h3 class="text-xl font-semibold mb-3">IP Telephony</h3>
-<p class="text-gray-600 mb-6">Advanced communication systems that integrate voice, video, and messaging for seamless collaboration across your organization.</p>
-<a href="./Telecommunication-Solutions-Overview.html" class="text-primary font-medium flex items-center">
-Learn More
-<i class="ri-arrow-right-line ml-2"></i>
+<h3 class="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">IP Telephony</h3>
+<p class="text-gray-600 mb-6">Next-gen communication hub integrating voice, video, and messaging for seamless global collaboration and team connectivity.</p>
+<div class="flex items-center justify-between">
+<a href="#" class="text-primary font-medium flex items-center group/link">
+<span class="group-hover/link:mr-4 transition-all duration-300">Learn More</span>
+<i class="ri-arrow-right-line ml-2 transform group-hover/link:translate-x-2 transition-transform duration-300"></i>
 </a>
+<span class="text-sm text-gray-400">99.9% Uptime</span>
+</div>
+</div>
 </div>
 <!-- Service Card 3 -->
-<div class="service-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 opacity-0 animate-fadeInUp">
-<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<div class="service-card group bg-white rounded-xl p-8 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 opacity-0 animate-fadeInUp relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-500">
 <i class="ri-shield-keyhole-line text-primary text-2xl"></i>
 </div>
-<h3 class="text-xl font-semibold mb-3">Integrated Security</h3>
-<p class="text-gray-600 mb-6">Comprehensive physical and digital security solutions that protect your assets, data, and personnel with 24/7 monitoring.</p>
-<a href="./Security-Solutions-Overview.html" class="text-primary font-medium flex items-center">
-Learn More
-<i class="ri-arrow-right-line ml-2"></i>
+<h3 class="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">Integrated Security</h3>
+<p class="text-gray-600 mb-6">Advanced threat protection combining AI-powered digital security with smart physical access control for 24/7 asset protection.</p>
+<div class="flex items-center justify-between">
+<a href="#" class="text-primary font-medium flex items-center group/link">
+<span class="group-hover/link:mr-4 transition-all duration-300">Learn More</span>
+<i class="ri-arrow-right-line ml-2 transform group-hover/link:translate-x-2 transition-transform duration-300"></i>
 </a>
+<span class="text-sm text-gray-400">-85% Threats</span>
+</div>
+</div>
 </div>
 <!-- Service Card 4 -->
-<div class="service-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 opacity-0 animate-fadeInUp">
-<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<div class="service-card group bg-white rounded-xl p-8 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 opacity-0 animate-fadeInUp relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-500">
 <i class="ri-server-line text-primary text-2xl"></i>
 </div>
-<h3 class="text-xl font-semibold mb-3">Mining </h3>
-<p class="text-gray-600 mb-6">In partnership with leading mining companies in Tanzania and South Africa, we offer premium quality minerals for global export.</p>
-<a href="./Mining-Technology-Solutions.html" class="text-primary font-medium flex items-center">
-Learn More
-<i class="ri-arrow-right-line ml-2"></i>
+<h3 class="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">Data Center Solutions</h3>
+<p class="text-gray-600 mb-6">Cloud-ready data centers featuring high availability, smart scaling, and green technology for sustainable, reliable operations.</p>
+<div class="flex items-center justify-between">
+<a href="#" class="text-primary font-medium flex items-center group/link">
+<span class="group-hover/link:mr-4 transition-all duration-300">Learn More</span>
+<i class="ri-arrow-right-line ml-2 transform group-hover/link:translate-x-2 transition-transform duration-300"></i>
 </a>
+<span class="text-sm text-gray-400">100% Redundancy</span>
+</div>
+</div>
 </div>
 <!-- Service Card 5 -->
-<div class="service-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 opacity-0 animate-fadeInUp">
-<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
+<div class="service-card group bg-white rounded-xl p-8 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 opacity-0 animate-fadeInUp relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-500">
 <i class="ri-wifi-line text-primary text-2xl"></i>
 </div>
-<h3 class="text-xl font-semibold mb-3">Internet Connectivity</h3>
-<p class="text-gray-600 mb-6">High-speed, reliable internet solutions with 99.99% uptime guarantee, including fiber optic and wireless options.</p>
-<a href="./Internet-&-Connectivity-Solutions.html" class="text-primary font-medium flex items-center">
-Learn More
-<i class="ri-arrow-right-line ml-2"></i>
+<h3 class="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">Internet Connectivity</h3>
+<p class="text-gray-600 mb-6">Ultra-fast fiber optic networks with smart routing and 99.99% uptime guarantee for uninterrupted business operations.</p>
+<div class="flex items-center justify-between">
+<a href="#" class="text-primary font-medium flex items-center group/link">
+<span class="group-hover/link:mr-4 transition-all duration-300">Learn More</span>
+<i class="ri-arrow-right-line ml-2 transform group-hover/link:translate-x-2 transition-transform duration-300"></i>
 </a>
+<span class="text-sm text-gray-400">10Gb/s Speed</span>
+</div>
+</div>
 </div>
 <!-- Service Card 6 -->
-<div class="service-card bg-white rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-lg transition-all duration-300 opacity-0 animate-fadeInUp">
-<div class="w-16 h-16 flex items-center justify-center bg-blue-50 rounded-lg mb-6">
-<i class="ri-gas-station-line  text-primary text-2xl"></i>
+<div class="service-card group bg-white rounded-xl p-8 hover:shadow-xl transition-all duration-500 transform hover:-translate-y-2 opacity-0 animate-fadeInUp relative overflow-hidden">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+<div class="relative z-10">
+<div class="w-16 h-16 flex items-center justify-center bg-primary/10 rounded-xl mb-6 group-hover:scale-110 transition-transform duration-500">
+<i class="ri-battery-charge-line text-primary text-2xl"></i>
 </div>
-<h3 class="text-xl font-semibold mb-3">Fluid Monitoring</h3>
-<p class="text-gray-600 mb-6">Automate tracking of fuel, oil, and water levels across your fleet. Use
-  data-driven maintenance to reduce breakdowns and avoid penalties.</p>
-<a href="./Fuel-Management-Feature-Details.html" class="text-primary font-medium flex items-center">
-Learn More
-<i class="ri-arrow-right-line ml-2"></i>
+<h3 class="text-xl font-semibold mb-3 group-hover:text-primary transition-colors duration-300">Power Infrastructure</h3>
+<p class="text-gray-600 mb-6">Smart power management with green energy integration, providing reliable backup and reducing carbon footprint.</p>
+<div class="flex items-center justify-between">
+<a href="#" class="text-primary font-medium flex items-center group/link">
+<span class="group-hover/link:mr-4 transition-all duration-300">Learn More</span>
+<i class="ri-arrow-right-line ml-2 transform group-hover/link:translate-x-2 transition-transform duration-300"></i>
 </a>
+<span class="text-sm text-gray-400">30% Cost ↓</span>
 </div>
+</div>
+</div>
+</div>
+<div class="mt-16 text-center">
+<a href="#" class="inline-flex items-center justify-center bg-primary/10 text-primary px-8 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition-all duration-300 group">
+<span>View All Solutions</span>
+<i class="ri-arrow-right-line ml-2 transform group-hover:translate-x-2 transition-transform duration-300"></i>
+</a>
 </div>
 </div>
 </section>
@@ -325,6 +532,12 @@ Learn More
 <p class="text-xl font-semibold mb-2">Cost Reduction</p>
 <p class="text-gray-600">Lower operational costs through optimized technology infrastructure.</p>
 </div>
+</div>
+<div class="mt-16 text-center">
+<a href="#" class="inline-flex items-center justify-center bg-primary/10 text-primary px-8 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition-all duration-300 group">
+<span>View All Solutions</span>
+<i class="ri-arrow-right-line ml-2 transform group-hover:translate-x-2 transition-transform duration-300"></i>
+</a>
 </div>
 </div>
 </section>
@@ -513,6 +726,50 @@ Learn More
 </div>
 </div>
 </div>
+<!-- Industry Card 9: Hospitality -->
+<div class="industry-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-white rounded-lg overflow-hidden shadow-sm">
+  <div class="h-48 overflow-hidden">
+    <img src="https://images.unsplash.com/photo-1512061942530-e6a4e9a5cf27?q=80&w=869&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Hospitality Industry" class="w-full h-full object-cover object-top">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-3">Hospitality</h3>
+    <p class="text-gray-600 mb-4">Smart guest management, digital check-in, and integrated security for hotels and resorts.</p>
+    <div class="flex items-center text-sm text-gray-500 mb-1">
+      <i class="ri-check-line text-primary mr-2"></i>
+      <span>Seamless guest experience</span>
+    </div>
+    <div class="flex items-center text-sm text-gray-500 mb-1">
+      <i class="ri-check-line text-primary mr-2"></i>
+      <span>Automated check-in/out</span>
+    </div>
+    <div class="flex items-center text-sm text-gray-500">
+      <i class="ri-check-line text-primary mr-2"></i>
+      <span>Property Management System </span>
+    </div>
+  </div>
+</div>
+<!-- Industry Card 10: Mining -->
+<div class="industry-card flex-shrink-0 w-full sm:w-1/2 md:w-1/3 lg:w-1/4 bg-white rounded-lg overflow-hidden shadow-sm">
+  <div class="h-48 overflow-hidden">
+    <img src="https://readdy.ai/api/search-image?query=bauxite%20mining%20operation%20with%20rich%20red-brown%20ore%20deposits%2C%20professional%20industrial%20photography%2C%20clear%20view%20of%20mineral%20quality%2C%20natural%20lighting&width=600&height=400&seq=bauxite1&orientation=landscape" alt="Mining Industry" class="w-full h-full object-cover object-top">
+  </div>
+  <div class="p-6">
+    <h3 class="text-xl font-semibold mb-3">Mining</h3>
+    <p class="text-gray-600 mb-4">Remote monitoring, safety automation, and asset tracking for mining operations.</p>
+    <div class="flex items-center text-sm text-gray-500 mb-1">
+      <i class="ri-check-line text-primary mr-2"></i>
+      <span>Real-time equipment tracking</span>
+    </div>
+    <div class="flex items-center text-sm text-gray-500 mb-1">
+      <i class="ri-check-line text-primary mr-2"></i>
+      <span>Automated safety alerts</span>
+    </div>
+    <div class="flex items-center text-sm text-gray-500">
+      <i class="ri-check-line text-primary mr-2"></i>
+      <span>Operational efficiency</span>
+    </div>
+  </div>
+</div>
 </div>
 <!-- Navigation Arrows -->
 <button id="prevBtn" class="absolute left-0 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-white rounded-full shadow-md flex items-center justify-center z-10 -ml-5 focus:outline-none">
@@ -533,8 +790,41 @@ Learn More
 <button class="w-3 h-3 rounded-full bg-gray-300 transition-colors duration-300"></button>
 <button class="w-3 h-3 rounded-full bg-gray-300 transition-colors duration-300"></button>
 </div>
+<div class="mt-16 text-center">
+<a href="#" class="inline-flex items-center justify-center bg-primary/10 text-primary px-8 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition-all duration-300 group">
+<span>View All Solutions</span>
+<i class="ri-arrow-right-line ml-2 transform group-hover:translate-x-2 transition-transform duration-300"></i>
+</a>
+</div>
 </div>
 </section>
+<style>
+  #backToTop {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 50;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+  }
+  #backToTop.visible {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  @media (max-width: 768px) {
+    #backToTop {
+      bottom: 1rem;
+      right: 1rem;
+      width: 3rem;
+      height: 3rem; pointer-events: none;
+    transition: opacity 0.3s;
+    }
+  }
+</style>
+<button id="backToTop" class="back-to-top bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
+  <i class="ri-arrow-up-line text-xl"></i>
+  </button>
 <!-- Call-to-Action Section -->
 <section class="cta-section py-20 relative">
 <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/70"></div>
@@ -546,193 +836,215 @@ Learn More
 <a href="./Consultation-Scheduling-Page.html" data-readdy="true">
 <button class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300">Schedule Consultation</button>
 </a>
-<button class="bg-transparent text-white border border-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-white/10 transition duration-300">Download Brochure</button>
+<a href="./Pitch  Profile (1).pdf" download>
+  <button class="bg-transparent text-white border border-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-white/10 transition duration-300">
+    Download Brochure
+  </button>
+</a>
+
 </div>
+</div>
+<div class="mt-16 text-center">
+<a href="./" class="inline-flex items-center justify-center bg-primary/10 text-primary px-8 py-3 !rounded-button font-medium hover:bg-primary hover:text-white transition-all duration-300 group">
+<span>View All Solutions</span>
+<i class="ri-arrow-right-line ml-2 transform group-hover:translate-x-2 transition-transform duration-300"></i>
+</a>
 </div>
 </div>
 </section>
+
+
 <!-- Footer -->
-<footer class="bg-gray-900 text-white pt-16 pb-8">
-    <div class="container mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
-        <!-- Company Info -->
-        <div>
+
+<footer class="bg-orange-500 text-white pt-16 pb-8" animation="fadeIn">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <!-- Company Info -->
+      <div>
+        <a
+          href="#"
+          class="text-2xl font-['Righteous'] text-white mb-6 inline-block"
+          >Pitch forward</a
+        >
+        <p class="text-black-100 mb-6">
+          Providing enterprise-grade technology solutions that drive
+          innovation and efficiency since 2005.
+        </p>
+        <div class="flex space-x-4">
           <a
             href="#"
-            class="text-2xl font-['Righteous'] text-white mb-6 inline-block"
-            >Pitch forward</a
+            class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
           >
-          <p class="text-gray-400 mb-6">
-            Providing enterprise-grade technology solutions that drive
-            innovation and efficiency since 2005.
-          </p>
-          <div class="flex space-x-4">
-            <a
-              href="#"
-              class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300"
-            >
-              <i class="ri-linkedin-fill"></i>
-            </a>
-            <a
-              href="#"
-              class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300"
-            >
-              <i class="ri-twitter-x-fill"></i>
-            </a>
-            <a
-              href="#"
-              class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300"
-            >
-              <i class="ri-facebook-fill"></i>
-            </a>
-            <a
-              href="#"
-              class="w-10 h-10 flex items-center justify-center bg-gray-800 rounded-full hover:bg-primary transition duration-300"
-            >
-              <i class="ri-instagram-fill"></i>
-            </a>
-          </div>
-        </div>
-        <!-- Quick Links -->
-        <div>
-          <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
-          <ul class="space-y-3">
-            <li>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-white transition duration-300"
-                >About Us</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-white transition duration-300"
-                >Services</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-white transition duration-300"
-                >Industries</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-white transition duration-300"
-                >Case Studies</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-white transition duration-300"
-                >Careers</a
-              >
-            </li>
-            <li>
-              <a
-                href="#"
-                class="text-gray-400 hover:text-white transition duration-300"
-                >Contact</a
-              >
-            </li>
-          </ul>
-        </div>
-        <!-- Contact Info -->
-        <div>
-          <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
-          <ul class="space-y-3">
-            <li class="flex items-start">
-              <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
-                <i class="ri-map-pin-line text-primary"></i>
-              </div>
-              <span class="text-gray-400"
-                >1250 Technology Plaza, Suite 400<br />San Francisco, CA
-                94105</span
-              >
-            </li>
-            <li class="flex items-center">
-              <div class="w-5 h-5 flex items-center justify-center mr-3">
-                <i class="ri-phone-line text-primary"></i>
-              </div>
-              <span class="text-gray-400">+1 (415) 555-0123</span>
-            </li>
-            <li class="flex items-center">
-              <div class="w-5 h-5 flex items-center justify-center mr-3">
-                <i class="ri-mail-line text-primary"></i>
-              </div>
-              <span class="text-gray-400">info@techsolutions.com</span>
-            </li>
-          </ul>
-        </div>
-        <!-- Newsletter -->
-        <div>
-          <h3 class="text-lg font-semibold mb-6">
-            Subscribe to Our Newsletter
-          </h3>
-          <p class="text-gray-400 mb-4">
-            Stay updated with the latest technology trends and solutions.
-          </p>
-          <form class="mb-4">
-            <div class="flex">
-              <input
-                type="email"
-                placeholder="Your email address"
-                class="bg-gray-800 text-white px-4 py-3 w-full border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary"
-              />
-              <button
-                type="submit"
-                class="bg-primary text-white px-4 py-3 !rounded-r-lg !rounded-l-none whitespace-nowrap hover:bg-primary/90 transition duration-300"
-              >
-                Subscribe
-              </button>
-            </div>
-          </form>
-          <div class="flex items-center space-x-4">
-            <div class="w-10 h-6 flex items-center justify-center">
-              <i class="ri-visa-fill text-2xl text-gray-400"></i>
-            </div>
-            <div class="w-10 h-6 flex items-center justify-center">
-              <i class="ri-mastercard-fill text-2xl text-gray-400"></i>
-            </div>
-            <div class="w-10 h-6 flex items-center justify-center">
-              <i class="ri-paypal-fill text-2xl text-gray-400"></i>
-            </div>
-            <div class="w-10 h-6 flex items-center justify-center">
-              <i class="ri-apple-fill text-2xl text-gray-400"></i>
-            </div>
-          </div>
+            <i class="ri-linkedin-fill"></i>
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
+          >
+            <i class="ri-twitter-x-fill"></i>
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
+          >
+            <i class="ri-facebook-fill"></i>
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
+          >
+            <i class="ri-instagram-fill"></i>
+          </a>
         </div>
       </div>
-      <div class="border-t border-gray-800 pt-8">
-        <div class="flex flex-col md:flex-row justify-between items-center">
-          <p class="text-gray-500 text-sm mb-4 md:mb-0">
-            © 2025 TechSolutions. All rights reserved.
-          </p>
-          <div class="flex space-x-6">
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+        <ul class="space-y-3">
+          <li>
             <a
-              href="#"
-              class="text-gray-500 text-sm hover:text-white transition duration-300"
-              >Privacy Policy</a
+              href="./hospitality.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Hospitality</a
             >
+          </li>
+          <li>
             <a
-              href="#"
-              class="text-gray-500 text-sm hover:text-white transition duration-300"
-              >Terms of Service</a
+              href="./Fuel-Management-Feature-Details.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Fuel</a
             >
+          </li>
+          <li>
             <a
-              href="#"
-              class="text-gray-500 text-sm hover:text-white transition duration-300"
-              >Cookie Policy</a
+              href="./industry.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Industries</a
             >
+          </li>
+          <li>
+            <a
+              href="./Mining-Technology-Solutions.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Mining</a
+            >
+          </li>
+          <li>
+            <a
+              href="./Fleet-Management-Feature-Driver.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Drivers </a
+            >
+          </li>
+          <li>
+            <a
+              href="./Fleet-Management-Feature-Details poc.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Radio</a
+            >
+          </li>
+        </ul>
+      </div>
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+              <i class="ri-map-pin-line text-white"></i>
+            </div>
+            <span class="text-black-400"
+              >
+              Products
+              Services
+              About Us
+              Contact
+              Contact Us
+              The Piano, Brookside drive,<br />Westlands, Nairobi, Kenya.
+            </span
+            >
+          </li>
+          <li class="flex items-center">
+            <div class="w-5 h-5 flex items-center justify-center mr-3">
+              <i class="ri-phone-line text-white"></i>
+            </div>
+            <span class="text-black-100">(+254) 707 586837</span>
+          </li>
+          <li class="flex items-center">
+            <div class="w-5 h-5 flex items-center justify-center mr-3">
+              <i class="ri-mail-line text-white"></i>
+            </div>
+            <span class="text-black-100">
+              contact@pitchforwardgroup.com
+              </span>
+          </li>
+        </ul>
+      </div>
+      <!-- Newsletter -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">
+          Subscribe to Our Newsletter
+        </h3>
+        <p class="text-white-400 mb-4">
+          Stay updated with the latest technology trends and solutions.
+        </p>
+        <form class="mb-4">
+          <div class="flex">
+            <input
+              type="email"
+              placeholder="Your email address"
+              class="bg-white-600 text-black-100 px-4 py-3 w-full border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+            <button
+              type="submit"
+              class="bg-primary text-white px-4 py-3 !rounded-r-lg !rounded-l-none whitespace-nowrap hover:bg-primary/90 transition duration-300"
+            >
+              Subscribe
+            </button>
+          </div>
+        </form>
+        <div class="flex items-center space-x-4">
+          <div class="w-10 h-6 flex items-center justify-center">
+            <i class="ri-visa-fill text-2xl text-white-100"></i>
+          </div>
+          <div class="w-10 h-6 flex items-center justify-center">
+            <i class="ri-mastercard-fill text-2xl text-white-100"></i>
+          </div>
+          <div class="w-10 h-6 flex items-center justify-center">
+            <i class="ri-paypal-fill text-2xl text-white-100"></i>
+          </div>
+          <div class="w-10 h-6 flex items-center justify-center">
+            <i class="ri-apple-fill text-2xl text-whit-500"></i>
           </div>
         </div>
       </div>
     </div>
-  </footer>
+    <div class="border-t border-white-800 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-white-500 text-sm mb-4 md:mb-0">
+          © 2025 TechSolutions. All rights reserved.
+        </p>
+        <div class="flex space-x-6">
+          <a
+            href="#"
+            class="text-white-500 text-sm hover:text-white transition duration-300"
+            >Privacy Policy</a
+          >
+          <a
+            href="#"
+            class="text-white-500 text-sm hover:text-white transition duration-300"
+            >Terms of Service</a
+          >
+          <a
+            href="#"
+            class="text-white-500 text-sm hover:text-white transition duration-300"
+            >Cookie Policy</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
 <script id="animationScript">
 document.addEventListener('DOMContentLoaded', function() {
 const observerOptions = {
@@ -971,7 +1283,34 @@ icon.classList.remove('ri-close-line');
 });
 });
 });
-
 </script>
+<script id="backToTopScript">
+  document.addEventListener("DOMContentLoaded", function () {
+    const backToTopBtn = document.getElementById("backToTop");
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 500) {
+        backToTopBtn.classList.add("visible");
+      } else {
+        backToTopBtn.classList.remove("visible");
+      }
+    });
+    backToTopBtn.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  });
+  window.addEventListener("resize", function () {
+    // Always show on mobile if scrolled at all
+    if (window.innerWidth <= 768 && window.scrollY > 50) {
+      backToTopBtn.classList.add("visible");
+    } else if (window.scrollY > 500) {
+      backToTopBtn.classList.add("visible");
+    } else {
+      backToTopBtn.classList.remove("visible");
+    }
+  });
+  </script>
 </body>
 </html>
