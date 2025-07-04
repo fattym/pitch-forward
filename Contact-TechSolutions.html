@@ -1,0 +1,702 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us - TechSolutions</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0056b3',secondary:'#00a3e0'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: #0056b3;
+  box-shadow: 0 0 0 3px rgba(0, 86, 179, 0.1);
+}
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.faq-item input[type="checkbox"] {
+  display: none;
+}
+.faq-item input[type="checkbox"] + label .icon-plus {
+  display: block;
+}
+.faq-item input[type="checkbox"] + label .icon-minus {
+  display: none;
+}
+.faq-item input[type="checkbox"]:checked + label .icon-plus {
+  display: none;
+}
+.faq-item input[type="checkbox"]:checked + label .icon-minus {
+  display: block;
+}
+.faq-item input[type="checkbox"]:checked ~ .faq-answer {
+  max-height: 1000px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  opacity: 1;
+}
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  opacity: 0;
+}
+.custom-checkbox {
+  position: relative;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border: 2px solid #d1d5db;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+.custom-checkbox.checked {
+  background-color: #0056b3;
+  border-color: #0056b3;
+}
+.custom-checkbox.checked::after {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+</style>
+</head>
+<body>
+<!-- Header Navigation -->
+<header class="bg-white shadow-sm fixed w-full z-50">
+<div class="container mx-auto px-4 py-3 flex items-center justify-between">
+<div class="flex items-center">
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-2xl font-['Pacifico'] text-primary">logo</a>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+<a href="#" class="nav-link text-gray-700 hover:text-primary font-medium">Services</a>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/07a7c283-a6b0-4d09-a7dd-9ae0932837f9" data-readdy="true" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+<a href="#" class="nav-link text-gray-700 hover:text-primary font-medium">Testimonials</a>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/123a469c-af59-4945-b5e3-a81e6972b15a" data-readdy="true" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
+<a href="#" class="nav-link text-primary font-medium border-b-2 border-primary">Contact Us</a>
+</nav>
+<div class="flex items-center space-x-4">
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/123a469c-af59-4945-b5e3-a81e6972b15a" data-readdy="true" class="hidden md:inline-block border border-primary text-primary px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary hover:text-white transition duration-300">Back to About Us</a>
+<button class="md:hidden w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line text-xl"></i>
+</button>
+</div>
+</div>
+</header>
+
+<!-- Breadcrumb -->
+<div class="bg-white pt-20">
+<div class="container mx-auto px-4 py-3">
+<div class="flex items-center text-sm text-gray-500">
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="hover:text-primary">Home</a>
+<div class="w-4 h-4 flex items-center justify-center mx-1">
+<i class="ri-arrow-right-s-line"></i>
+</div>
+<span class="text-gray-700 font-medium">Contact Us</span>
+</div>
+</div>
+</div>
+
+<!-- Hero Section -->
+<section class="relative overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img src="https://readdy.ai/api/search-image?query=modern%20professional%20office%20environment%20with%20natural%20lighting%2C%20clean%20design%2C%20collaborative%20workspace%20with%20glass%20partitions%2C%20subtle%20blue%20accents%2C%20tech%20company%20atmosphere%2C%20left%20side%20with%20clean%20white%20space%20for%20text%20overlay%2C%20right%20side%20showing%20office%20details&width=1920&height=500&seq=contact-hero&orientation=landscape" alt="Contact TechSolutions" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40"></div>
+</div>
+<div class="container mx-auto px-4 py-20 relative z-10">
+<div class="max-w-2xl text-white">
+<h1 class="text-4xl md:text-5xl font-bold mb-6">Get in Touch</h1>
+<p class="text-xl mb-8">Have questions about our services or want to discuss how we can help your business? Our team is ready to assist you with tailored technology solutions.</p>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/123a469c-af59-4945-b5e3-a81e6972b15a" data-readdy="true" class="inline-block bg-white text-primary px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300">Back to About Us</a>
+</div>
+</div>
+</section>
+
+<!-- Contact Form and Quick Contact Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+<div>
+<h2 class="text-3xl font-bold mb-6 text-gray-900">Send Us a Message</h2>
+<p class="text-lg text-gray-700 mb-8">Fill out the form below and our team will get back to you within 24 hours.</p>
+<form id="contactForm" class="space-y-6">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label for="fullName" class="block text-gray-700 font-medium mb-2">Full Name *</label>
+<input type="text" id="fullName" name="fullName" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-800" placeholder="Enter your full name">
+</div>
+<div>
+<label for="email" class="block text-gray-700 font-medium mb-2">Email Address *</label>
+<input type="email" id="email" name="email" required class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-800" placeholder="Enter your email address">
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<div>
+<label for="phone" class="block text-gray-700 font-medium mb-2">Phone Number</label>
+<input type="tel" id="phone" name="phone" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-800" placeholder="Enter your phone number">
+</div>
+<div>
+<label for="company" class="block text-gray-700 font-medium mb-2">Company Name</label>
+<input type="text" id="company" name="company" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-800" placeholder="Enter your company name">
+</div>
+</div>
+<div>
+<label for="message" class="block text-gray-700 font-medium mb-2">Message *</label>
+<textarea id="message" name="message" required rows="5" class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded text-gray-800 resize-none" placeholder="Tell us about your project or inquiry"></textarea>
+</div>
+<div class="flex items-start">
+<div class="custom-checkbox" id="privacyCheckbox"></div>
+<label for="privacyCheckbox" class="ml-3 text-gray-700">I agree to the <a href="#" class="text-primary hover:underline">Privacy Policy</a> and consent to having my data processed.</label>
+</div>
+<button type="submit" class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Submit Message</button>
+</form>
+</div>
+<div>
+<h2 class="text-3xl font-bold mb-6 text-gray-900">Quick Contact</h2>
+<p class="text-lg text-gray-700 mb-8">Need immediate assistance? Reach out to us directly through these channels.</p>
+<div class="space-y-8">
+<div class="flex items-start">
+<div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+<i class="ri-phone-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2 text-gray-900">Call Us</h3>
+<p class="text-gray-700 mb-1">Global Support: +1 (800) 555-0123</p>
+<p class="text-gray-700">Emergency Support: +1 (800) 555-0199</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+<i class="ri-mail-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2 text-gray-900">Email Us</h3>
+<p class="text-gray-700 mb-1">General Inquiries: <a href="mailto:info@techsolutions.com" class="text-primary hover:underline">info@techsolutions.com</a></p>
+<p class="text-gray-700">Sales: <a href="mailto:sales@techsolutions.com" class="text-primary hover:underline">sales@techsolutions.com</a></p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+<i class="ri-time-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2 text-gray-900">Business Hours</h3>
+<p class="text-gray-700 mb-1">Monday - Friday: 8:00 AM - 6:00 PM (Local Time)</p>
+<p class="text-gray-700">24/7 Emergency Support Available</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mr-4 flex-shrink-0">
+<i class="ri-global-line text-primary text-xl"></i>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-2 text-gray-900">Global Support</h3>
+<p class="text-gray-700 mb-1">Support available in multiple languages</p>
+<p class="text-gray-700">Response time: Within 24 hours</p>
+</div>
+</div>
+</div>
+<div class="mt-10">
+<h3 class="text-xl font-semibold mb-4 text-gray-900">Connect With Us</h3>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-100 hover:bg-primary hover:text-white transition-colors">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Office Locations Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4 text-gray-900">Our Global Offices</h2>
+<p class="text-lg text-gray-700 max-w-3xl mx-auto">With offices around the world, we're ready to serve you wherever you are.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="h-48 bg-gray-200 relative">
+<img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="San Francisco Office Location" class="w-full h-full object-cover">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3 text-gray-900">San Francisco (Headquarters)</h3>
+<div class="space-y-3 text-gray-700">
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-map-pin-line"></i>
+</div>
+<p>101 Market Street, Suite 1500, San Francisco, CA 94105, USA</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-phone-line"></i>
+</div>
+<p>+1 (415) 555-0123</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-mail-line"></i>
+</div>
+<p>sf@techsolutions.com</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-time-line"></i>
+</div>
+<p>Monday - Friday: 9:00 AM - 6:00 PM PT</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="h-48 bg-gray-200 relative">
+<img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="London Office Location" class="w-full h-full object-cover">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3 text-gray-900">London</h3>
+<div class="space-y-3 text-gray-700">
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-map-pin-line"></i>
+</div>
+<p>30 St Mary Axe, London EC3A 8BF, United Kingdom</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-phone-line"></i>
+</div>
+<p>+44 (0) 20 7123 4567</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-mail-line"></i>
+</div>
+<p>london@techsolutions.com</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-time-line"></i>
+</div>
+<p>Monday - Friday: 9:00 AM - 5:30 PM GMT</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="h-48 bg-gray-200 relative">
+<img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="Singapore Office Location" class="w-full h-full object-cover">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3 text-gray-900">Singapore</h3>
+<div class="space-y-3 text-gray-700">
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-map-pin-line"></i>
+</div>
+<p>1 Raffles Place, #20-61 Tower 2, Singapore 048616</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-phone-line"></i>
+</div>
+<p>+65 6123 4567</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-mail-line"></i>
+</div>
+<p>singapore@techsolutions.com</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-time-line"></i>
+</div>
+<p>Monday - Friday: 9:00 AM - 6:00 PM SGT</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-8">
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3 text-gray-900">Sydney</h3>
+<div class="space-y-3 text-gray-700">
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-map-pin-line"></i>
+</div>
+<p>123 Pitt Street, Sydney NSW 2000, Australia</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-phone-line"></i>
+</div>
+<p>+61 2 8123 4567</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-mail-line"></i>
+</div>
+<p>sydney@techsolutions.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3 text-gray-900">New York</h3>
+<div class="space-y-3 text-gray-700">
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-map-pin-line"></i>
+</div>
+<p>350 Fifth Avenue, Suite 4100, New York, NY 10118</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-phone-line"></i>
+</div>
+<p>+1 (212) 555-0123</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-mail-line"></i>
+</div>
+<p>nyc@techsolutions.com</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3 text-gray-900">Tokyo</h3>
+<div class="space-y-3 text-gray-700">
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-map-pin-line"></i>
+</div>
+<p>Marunouchi Building, 2-4-1 Marunouchi, Chiyoda-ku, Tokyo</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-phone-line"></i>
+</div>
+<p>+81 3 1234 5678</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-mail-line"></i>
+</div>
+<p>tokyo@techsolutions.com</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- FAQ Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4 text-gray-900">Frequently Asked Questions</h2>
+<p class="text-lg text-gray-700 max-w-3xl mx-auto">Find answers to common questions about our services, support, and processes.</p>
+</div>
+<div class="max-w-4xl mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h3 class="text-xl font-semibold mb-4 text-gray-900">General Inquiries</h3>
+<div class="space-y-4">
+<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+<input type="checkbox" id="faq1" class="faq-toggle">
+<label for="faq1" class="flex justify-between items-center p-4 cursor-pointer bg-white hover:bg-gray-50">
+<span class="font-medium text-gray-900">How quickly can you respond to inquiries?</span>
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-add-line icon-plus"></i>
+<i class="ri-subtract-line icon-minus"></i>
+</div>
+</label>
+<div class="faq-answer px-4 text-gray-700">
+<p>We typically respond to all inquiries within 24 hours during business days. For urgent matters, we have an expedited response process to address your needs as quickly as possible.</p>
+</div>
+</div>
+<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+<input type="checkbox" id="faq2" class="faq-toggle">
+<label for="faq2" class="flex justify-between items-center p-4 cursor-pointer bg-white hover:bg-gray-50">
+<span class="font-medium text-gray-900">Do you offer services internationally?</span>
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-add-line icon-plus"></i>
+<i class="ri-subtract-line icon-minus"></i>
+</div>
+</label>
+<div class="faq-answer px-4 text-gray-700">
+<p>Yes, TechSolutions operates globally with offices in 12 countries. We provide services to clients worldwide and have experience working across different regions, languages, and regulatory environments.</p>
+</div>
+</div>
+<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+<input type="checkbox" id="faq3" class="faq-toggle">
+<label for="faq3" class="flex justify-between items-center p-4 cursor-pointer bg-white hover:bg-gray-50">
+<span class="font-medium text-gray-900">How do I schedule a consultation?</span>
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-add-line icon-plus"></i>
+<i class="ri-subtract-line icon-minus"></i>
+</div>
+</label>
+<div class="faq-answer px-4 text-gray-700">
+<p>You can schedule a consultation by filling out our contact form, calling our main number, or emailing us directly. Our team will arrange a meeting with the appropriate specialist based on your needs.</p>
+</div>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4 text-gray-900">Services & Support</h3>
+<div class="space-y-4">
+<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+<input type="checkbox" id="faq4" class="faq-toggle">
+<label for="faq4" class="flex justify-between items-center p-4 cursor-pointer bg-white hover:bg-gray-50">
+<span class="font-medium text-gray-900">What industries do you specialize in?</span>
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-add-line icon-plus"></i>
+<i class="ri-subtract-line icon-minus"></i>
+</div>
+</label>
+<div class="faq-answer px-4 text-gray-700">
+<p>We specialize in several industries including finance, healthcare, manufacturing, retail, and education. Our team has deep expertise in these sectors, understanding their unique challenges and regulatory requirements.</p>
+</div>
+</div>
+<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+<input type="checkbox" id="faq5" class="faq-toggle">
+<label for="faq5" class="flex justify-between items-center p-4 cursor-pointer bg-white hover:bg-gray-50">
+<span class="font-medium text-gray-900">Do you offer emergency support?</span>
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-add-line icon-plus"></i>
+<i class="ri-subtract-line icon-minus"></i>
+</div>
+</label>
+<div class="faq-answer px-4 text-gray-700">
+<p>Yes, we provide 24/7 emergency support for critical issues. Our dedicated emergency response team is available around the clock to address urgent technical problems and minimize downtime.</p>
+</div>
+</div>
+<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+<input type="checkbox" id="faq6" class="faq-toggle">
+<label for="faq6" class="flex justify-between items-center p-4 cursor-pointer bg-white hover:bg-gray-50">
+<span class="font-medium text-gray-900">What is your project implementation process?</span>
+<div class="w-6 h-6 flex items-center justify-center">
+<i class="ri-add-line icon-plus"></i>
+<i class="ri-subtract-line icon-minus"></i>
+</div>
+</label>
+<div class="faq-answer px-4 text-gray-700">
+<p>Our implementation process follows a structured methodology: initial consultation, requirements gathering, solution design, development, testing, deployment, and ongoing support. We maintain clear communication throughout and adapt our approach to meet your specific needs.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 text-center">
+<p class="text-gray-700">Can't find what you're looking for? <a href="#" class="text-primary font-medium hover:underline">Check our knowledge base</a> or <a href="#" class="text-primary font-medium hover:underline">contact our support team</a>.</p>
+</div>
+</div>
+</section>
+
+<!-- CTA Section -->
+<section class="py-16 bg-blue-50">
+<div class="container mx-auto px-4">
+<div class="max-w-4xl mx-auto text-center">
+<h2 class="text-3xl font-bold mb-6 text-gray-900">Ready to Transform Your Business?</h2>
+<p class="text-xl text-gray-700 mb-8">Let's discuss how our technology solutions can help you achieve your business goals and drive innovation.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<a href="#" class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Schedule a Consultation</a>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/123a469c-af59-4945-b5e3-a81e6972b15a" data-readdy="true" class="border border-primary text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary hover:text-white transition duration-300">Learn More About Us</a>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">logo</a>
+<p class="text-gray-400 mb-6">Empowering businesses through innovative technology solutions since 2005.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+<li><a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/07a7c283-a6b0-4d09-a7dd-9ae0932837f9" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Industries</a></li>
+<li><a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/123a469c-af59-4945-b5e3-a81e6972b15a" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+<li><a href="#" class="text-white font-medium">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Services</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cloud Solutions</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cybersecurity</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">IT Consulting</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Software Development</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Data Analytics</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Managed IT Services</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+<p class="text-gray-400 mb-4">Stay updated with our latest news and offers.</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Your email address" class="px-4 py-2 w-full rounded-l-lg text-gray-900 border-none">
+<button type="submit" class="bg-primary text-white px-4 py-2 rounded-r-lg whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Subscribe</button>
+</div>
+</form>
+<p class="text-gray-400 text-sm">By subscribing, you agree to our Privacy Policy.</p>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 TechSolutions. All rights reserved.</p>
+<div class="flex items-center space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+
+<script id="mobileMenuScript">
+document.addEventListener('DOMContentLoaded', function() {
+  const menuButton = document.querySelector('.ri-menu-line').parentElement;
+  const nav = document.querySelector('nav');
+  
+  menuButton.addEventListener('click', function() {
+    nav.classList.toggle('hidden');
+    nav.classList.toggle('flex');
+    nav.classList.toggle('flex-col');
+    nav.classList.toggle('absolute');
+    nav.classList.toggle('top-16');
+    nav.classList.toggle('right-0');
+    nav.classList.toggle('bg-white');
+    nav.classList.toggle('w-full');
+    nav.classList.toggle('p-4');
+    nav.classList.toggle('shadow-md');
+    nav.classList.toggle('z-50');
+  });
+});
+</script>
+
+<script id="contactFormScript">
+document.addEventListener('DOMContentLoaded', function() {
+  const privacyCheckbox = document.getElementById('privacyCheckbox');
+  const contactForm = document.getElementById('contactForm');
+  let isChecked = false;
+  
+  privacyCheckbox.addEventListener('click', function() {
+    isChecked = !isChecked;
+    if(isChecked) {
+      privacyCheckbox.classList.add('checked');
+    } else {
+      privacyCheckbox.classList.remove('checked');
+    }
+  });
+  
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if(!isChecked) {
+      alert('Please agree to the Privacy Policy to submit the form.');
+      return;
+    }
+    
+    // Form validation
+    const fullName = document.getElementById('fullName').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    if(!fullName || !email || !message) {
+      alert('Please fill in all required fields.');
+      return;
+    }
+    
+    // Form submission logic would go here
+    alert('Thank you for your message! We will get back to you within 24 hours.');
+    contactForm.reset();
+    privacyCheckbox.classList.remove('checked');
+    isChecked = false;
+  });
+});
+</script>
+
+<script id="faqToggleScript">
+document.addEventListener('DOMContentLoaded', function() {
+  const faqToggles = document.querySelectorAll('.faq-toggle');
+  
+  faqToggles.forEach(toggle => {
+    toggle.addEventListener('change', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      faqItems.forEach(item => {
+        const itemToggle = item.querySelector('.faq-toggle');
+        if(itemToggle !== toggle) {
+          itemToggle.checked = false;
+        }
+      });
+    });
+  });
+});
+</script>
+
+</body>
+</html>

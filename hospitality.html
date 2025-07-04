@@ -10,13 +10,20 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
 <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
 <link rel="shortcut icon" href="./ww.png" type="image/png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
@@ -148,204 +155,482 @@ transform: translateX(26px);
 <body class="bg-gray-50">
 <!-- Header Navigation -->
 <header class="bg-white shadow-sm fixed w-full z-50">
-    <div class="container mx-auto px-4 py-3 flex items-center justify-between">
-    
-        <div class="flex items-center">
-          <a href="./index.html" class="text-2xl font-['Righteous'] text-primary">Pitch Forward</a >
-        </div>
-        
-    <nav class="hidden md:flex space-x-8">
-    <a href="./index.html" id="homeLink" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
-    <div class="relative" id="solutionsDropdown">
-    <button id="solutionsBtn" class="nav-link text-gray-700 hover:text-primary font-medium flex items-center" aria-expanded="false" aria-haspopup="true">
-    Solutions
-    <i class="ri-arrow-down-s-line ml-1"></i>
-    </button>
-    <div id="solutionsMenu" class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden" role="menu" aria-labelledby="solutionsBtn">
-    <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-    <i class="ri-footprint-line w-5 h-5 mr-3"></i>
-    Fleet Management
-    </a>
-    <a href="./Fuel-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-    <i class="ri-gas-station-line w-5 h-5 mr-3"></i>
-    Fuel Management
-    </a>
-    <a href="./Logistics-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-    <i class="ri-truck-line w-5 h-5 mr-3"></i>
-    Logistics Management
-    </a>
-    <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-    <i class="ri-phone-line w-5 h-5 mr-3"></i>
-    Telecommunication
-    </a>
-    <a href="./Security-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-    <i class="ri-shield-keyhole-line w-5 h-5 mr-3"></i>
-    Security
-    </a>
-    <a href="./Data-&-Power-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-    <i class="ri-database-2-line w-5 h-5 mr-3"></i>
-    Data & Power
-    </a>
-    <a href="./Internet-&-Connectivity-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-    <i class="ri-wifi-line w-5 h-5 mr-3"></i>
-    Internet & Connectivity
-    </a>
-    <a href="./Mining-Technology-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-    <i class="ri-mine-line w-5 h-5 mr-3"></i>
-    Mining
-    </a>
-    <a href="./Warehousing-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-    <i class="ri-store-2-line w-5 h-5 mr-3"></i>
-    Warehousing
-    </a>
-    <a href="./hospitality.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
-      <i class="ri-hotel-line w-5 h-5 mr-3"></i>
-      Hospitality
-    </a>
-    </div>
-    </div>
-    <a href="./industry.html" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
-    <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
-    </nav>
-    <div class="flex items-center space-x-4">
-    <div class="relative hidden md:block">
-    <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm focus:border-primary">
-    <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
-    <i class="ri-search-line"></i>
-    </div>
-    </div>
-    <button id="contactUsBtn" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
-    <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
-    <div class="bg-white rounded-lg w-full max-w-xl mx-4 relative">
-    <button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
-    <i class="ri-close-line text-2xl"></i>
-    </button>
-    
-    <div class="max-h-[100vh] overflow-x-auto p-4 md:p-8">
-    
-    <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
-    <form id="contactForm" action="" method="POST">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
-    <div>
-    <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
-    <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
-    </div>
-    <div>
-    <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
-    <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
-    </div>
-    <div>
-    <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
-    <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
-    </div>
-    <div>
-    <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
-    <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
-    </div>
-    </div>
-    <div class="mb-4">
-    <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
-    <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary pr-8">
-    <option value="">Select a service</option>
-    <option value="">Select a service</option>
-    <option value="fleet">Fleet Management</option>
-    <option value="fuel">Fuel Management</option>
-    <option value="logistics">Logistics Management</option>
-    <option value="telecommunication">Telecommunication</option>
-    <option value="security">Security</option>
-    <option value="data-power">Data &amp; Power</option>
-    <option value="internet-connectivity">Internet &amp; Connectivity</option>
-    <option value="mining">Mining</option>
-    <option value="warehousing">Warehousing</option>
-    <option value="other">Other</option>
-    </select>
-    </div>
-    <div class="mb-6">
-    <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
-    <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
-    </div>
-    <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Submit</button>
-    </form>
-    </div>
-    </div>
-    </div>
-    <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
-    <i class="ri-menu-line text-xl"></i>
-    </button>
-    </div>
-    </div>
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-lg">
-    <nav class="container mx-auto px-4 py-4">
-    <a href="index.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
-    <div class="relative">
-    <button id="mobileSolutionsBtn" class="w-full flex items-center justify-between py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">
-    Solutions
-    <i class="ri-arrow-down-s-line"></i>
-    </button>
-    <div id="mobileSolutionsMenu" class="hidden bg-gray-50 px-4 py-2">
-    <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Fleet Management</a>
-    <a href="./Fuel-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Fuel Management</a>
-    <a href="./Logistics-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Logistics Management</a>
-    <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Telecommunication</a>
-    <a href="./Security-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Security</a>
-    <a href="./Data-&-Power-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Data & Power</a>
-    <a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
-    <a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
-    <a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
   
-    <a href="./hospitality.html" class="block py-2 text-gray-700 hover:text-primary">Hospitality</a>
-    </div>
-    </div>
-    <a href="./industry.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
-    <a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
-    <div class="mt-4">
-    <button class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
-    </div>
-    </nav>
-    </div>
-    </header>
-    <div class="bg-gray-100 pt-20">
-      <div class="container mx-auto px-4 py-3">
-      <div class="flex items-center text-sm text-gray-600">
-      <a href="#" class="hover:text-primary">Home</a>
-      <i class="ri-arrow-right-s-line mx-2"></i>
-      <a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="hover:text-primary">Solutions</a>
-      <i class="ri-arrow-right-s-line mx-2"></i>
-      <span class="text-primary font-medium">Hospitality</span>
+      <div class="flex items-center">
+        <a href="./index.html" class="text-2xl font-['Righteous'] text-primary">Pitch Forward</a >
       </div>
-      </div>
-      </div>
+      
+  <nav class="hidden md:flex space-x-8">
+  <a href="./index.html" id="homeLink" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+  <div class="relative" id="solutionsDropdown">
+  <button id="solutionsBtn" class="nav-link text-gray-700 hover:text-primary font-medium flex items-center" aria-expanded="false" aria-haspopup="true">
+  Solutions
+  <i class="ri-arrow-down-s-line ml-1"></i>
+  </button>
+  <div id="solutionsMenu" class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden" role="menu" aria-labelledby="solutionsBtn">
+  <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-footprint-line w-5 h-5 mr-3"></i>
+  Fleet Management
+  </a>
+  <a href="./Fuel-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-gas-station-line w-5 h-5 mr-3"></i>
+  Fuel Management
+  </a>
+  <a href="./Logistics-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-truck-line w-5 h-5 mr-3"></i>
+  Logistics Management
+  </a>
+  <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-phone-line w-5 h-5 mr-3"></i>
+  Telecommunication
+  </a>
+  <a href="./Security-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-shield-keyhole-line w-5 h-5 mr-3"></i>
+  Security
+  </a>
+  <a href="./Data-&-Power-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-database-2-line w-5 h-5 mr-3"></i>
+  Data & Power
+  </a>
+  <a href="./Internet-&-Connectivity-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-wifi-line w-5 h-5 mr-3"></i>
+  Internet & Connectivity
+  </a>
+  <a href="./Mining-Technology-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-mine-line w-5 h-5 mr-3"></i>
+  Mining
+  </a>
+  <a href="./Warehousing-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-store-2-line w-5 h-5 mr-3"></i>
+  Warehousing
+  </a>
+  <a href="./hospitality.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-hotel-line w-5 h-5 mr-3"></i>
+    Hospitality
+  </a>
+  </div>
+  </div>
+  <a href="./industry.html" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+  <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
+  </nav>
+  <div class="flex items-center space-x-4">
+  <div class="relative hidden md:block">
+  <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm focus:border-primary">
+  <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+  <i class="ri-search-line"></i>
+  </div>
+  </div>
+  <button id="contactUsBtn" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+  <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
+  <div class="bg-white rounded-lg w-full max-w-xl mx-4 relative">
+  <button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+  <i class="ri-close-line text-2xl"></i>
+  </button>
+  
+  <div class="max-h-[100vh] overflow-x-auto p-4 md:p-8">
+  
+  <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
+  <form id="contactForm" action="" method="POST">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+  <div>
+  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+  <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+  </div>
+  <div>
+  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+  <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+  </div>
+  <div>
+  <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+  <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+  </div>
+  <div>
+  <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+  <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+  </div>
+  </div>
+  <div class="mb-4">
+  <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
+  <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary pr-8">
+  <option value="">Select a service</option>
+  <option value="">Select a service</option>
+  <option value="fleet">Fleet Management</option>
+  <option value="fuel">Fuel Management</option>
+  <option value="logistics">Logistics Management</option>
+  <option value="telecommunication">Telecommunication</option>
+  <option value="security">Security</option>
+  <option value="data-power">Data &amp; Power</option>
+  <option value="internet-connectivity">Internet &amp; Connectivity</option>
+  <option value="mining">Mining</option>
+  <option value="warehousing">Warehousing</option>
+  <option value="other">Other</option>
+  </select>
+  </div>
+  <div class="mb-6">
+  <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+  <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
+  </div>
+  <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Submit</button>
+  </form>
+  </div>
+  </div>
+  </div>
+  <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
+  <i class="ri-menu-line text-xl"></i>
+  </button>
+  </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-lg">
+  <nav class="container mx-auto px-4 py-4">
+  <a href="index.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
+  <div class="relative">
+  <button id="mobileSolutionsBtn" class="w-full flex items-center justify-between py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">
+  Solutions
+  <i class="ri-arrow-down-s-line"></i>
+  </button>
+  <div id="mobileSolutionsMenu" class="hidden bg-gray-50 px-4 py-2">
+  <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Fleet Management</a>
+  <a href="./Fuel-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Fuel Management</a>
+  <a href="./Logistics-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Logistics Management</a>
+  <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Telecommunication</a>
+  <a href="./Security-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Security</a>
+  <a href="./Data-&-Power-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Data & Power</a>
+  <a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
+  <a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
+  <a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
+
+  <a href="./hospitality.html" class="block py-2 text-gray-700 hover:text-primary">Hospitality</a>
+  </div>
+  </div>
+  <a href="./industry.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
+  <a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
+  <div class="mt-4">
+  <button class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+  </div>
+  </nav>
+  </div>
+  </header>
+  
 <!-- Hero Section -->
-<section class="hero-section w-full min-h-[60vh] relative">
-<div class="hero-overlay absolute inset-0"></div>
-<div class="container mx-auto px-4 h-full flex items-center relative z-10 py-20">
-<div class="w-full md:w-1/2 text-white pt-16">
-<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/35e5ddaf-4080-498f-aa5c-bf9075e012b4" data-readdy="true" class="inline-flex items-center text-white/80 hover:text-white mb-6 transition duration-300">
-<i class="ri-arrow-left-line mr-2"></i>
-<span>Back to Solutions</span>
-</a>
-<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">Hospitality Management Solutions</h1>
-<p class="text-lg sm:text-xl mb-8 opacity-90">Transform your hotel operations with our comprehensive management system designed to enhance guest experiences and streamline operations.</p>
-<div class="flex flex-col sm:flex-row gap-4">
-<button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 text-lg">Book a Demo</button>
-<button class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300 text-lg">View Pricing</button>
-</div>
-</div>
-</div>
+ 
+<section class="hero-section w-full min-h-[80vh] relative">
+
+  <div class="hero-overlay absolute inset-0">
+  
+  </div> 
+  
+  
+  <div
+    class="container mx-auto px-4 h-full flex items-center relative z-10 py-20"
+  >
+    <div class="w-full md:w-1/2 text-white pt-16">
+      <h1
+        class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6 animate-fadeInLeft"
+      >
+        Smart Hospitality Management Solutions
+      </h1>
+      <p
+        class="text-lg sm:text-xl mb-8 opacity-90 animate-fadeInLeft animate-delay-200"
+      >
+        Elevate your guest experience with seamless digital check-in, smart
+        room management, and integrated security systems designed
+        specifically for hotels and resorts.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4">
+        <button
+          class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 text-lg animate-fadeInLeft animate-delay-300"
+        >
+          Request Quote
+        </button>
+        <button
+          class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300 text-lg animate-fadeInLeft animate-delay-400"
+        >
+          Book Demo
+        </button>
+      </div>
+      <div class="mt-12 flex flex-wrap items-center gap-6">
+        <div class="flex items-center">
+          <div
+            class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3"
+          >
+            <i class="ri-user-smile-line text-white"></i>
+          </div>
+          <span class="text-sm md:text-base"
+            >Seamless Guest Experience</span
+          >
+        </div>
+        <div class="flex items-center">
+          <div
+            class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3"
+          >
+            <i class="ri-timer-line text-white"></i>
+          </div>
+          <span class="text-sm md:text-base">Automated Check-in/out</span>
+        </div>
+        <div class="flex items-center">
+          <div
+            class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-3"
+          >
+            <i class="ri-home-gear-line text-white"></i>
+          </div>
+          <span class="text-sm md:text-base"
+            >Property Management System</span
+          >
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+<section class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-primary font-semibold mb-2 inline-block"
+          >PROPERTY MANAGEMENT</span
+        >
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Comprehensive Property Management System
+        </h2>
+        <p class="text-lg text-gray-600 mb-8">
+          Our integrated PMS provides a single platform to manage all
+          aspects of your property operations, from reservations to
+          reporting.
+        </p>
+        <div class="space-y-4">
+          <div class="flex items-start">
+            <div
+              class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg mr-4 mt-1 flex-shrink-0"
+            >
+              <i class="ri-calendar-check-line text-primary"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">
+                Reservation Management
+              </h3>
+              <p class="text-gray-600">
+                Centralized booking system with real-time inventory updates
+                across all channels, reducing overbookings by 98%.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div
+              class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg mr-4 mt-1 flex-shrink-0"
+            >
+              <i class="ri-hotel-bed-line text-primary"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">Room Inventory</h3>
+              <p class="text-gray-600">
+                Dynamic room allocation with maintenance tracking and
+                housekeeping integration for optimal occupancy rates.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div
+              class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg mr-4 mt-1 flex-shrink-0"
+            >
+              <i class="ri-bill-line text-primary"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">
+                Billing & Invoicing
+              </h3>
+              <p class="text-gray-600">
+                Automated charging, payment processing, and detailed folio
+                management with multiple currency support.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-start">
+            <div
+              class="w-10 h-10 flex items-center justify-center bg-primary/10 rounded-lg mr-4 mt-1 flex-shrink-0"
+            >
+              <i class="ri-line-chart-line text-primary"></i>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-1">
+                Reports & Analytics
+              </h3>
+              <p class="text-gray-600">
+                Comprehensive business intelligence with customizable
+                dashboards for data-driven decision making.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-100 rounded-xl p-6 shadow-sm">
+        <img
+          src="https://readdy.ai/api/search-image?query=modern%2520hotel%2520property%2520management%2520system%2520dashboard%2520displayed%2520on%2520a%2520large%2520monitor%2520in%2520a%2520hotel%2520reception%2520area.%2520The%2520dashboard%2520shows%2520room%2520availability%252C%2520guest%2520information%252C%2520and%2520analytics%2520with%2520a%2520clean%2520blue%2520and%2520white%2520interface.%2520The%2520image%2520should%2520show%2520a%2520professional%2520hotel%2520staff%2520member%2520using%2520the%2520system%2520in%2520an%2520elegant%2520hotel%2520lobby%2520environment.&width=600&height=500&seq=pms_dashboard&orientation=landscape"
+          alt="Property Management System Dashboard"
+          class="w-full h-auto rounded-lg shadow-md"
+        />
+      </div>
+    </div>
+  </div>
+</section>   <section class="py-20 bg-white">
+  <div class="container mx-auto px-4">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <span class="text-primary font-semibold mb-2 inline-block"
+          >CAPABILITIES</span
+        >
+        <h2 class="text-3xl md:text-4xl font-bold mb-6">
+          Comprehensive Hotel Management Features
+        </h2>
+        <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+          Our platform offers a complete suite of tools designed to
+          streamline every aspect of your hotel operations.
+        </p>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <!-- Booking Engine -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 text-center"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4 mx-auto"
+          >
+            <i class="ri-calendar-check-line text-primary text-2xl"></i>
+          </div>
+          <h4 class="text-lg font-semibold mb-2">Booking Engine</h4>
+          <p class="text-gray-600 text-sm">
+            Direct bookings with real-time availability
+          </p>
+        </div>
+        <!-- Digital Key -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 text-center"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4 mx-auto"
+          >
+            <i class="ri-key-2-line text-primary text-2xl"></i>
+          </div>
+          <h4 class="text-lg font-semibold mb-2">Digital Key</h4>
+          <p class="text-gray-600 text-sm">Secure mobile room access</p>
+        </div>
+        <!-- Embedded Payments -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 text-center"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4 mx-auto"
+          >
+            <i class="ri-wallet-3-line text-primary text-2xl"></i>
+          </div>
+          <h4 class="text-lg font-semibold mb-2">Embedded Payments</h4>
+          <p class="text-gray-600 text-sm">Seamless payment processing</p>
+        </div>
+        <!-- Check-in Kiosk -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 text-center"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4 mx-auto"
+          >
+            <i class="ri-smartphone-line text-primary text-2xl"></i>
+          </div>
+          <h4 class="text-lg font-semibold mb-2">Check-in Kiosk</h4>
+          <p class="text-gray-600 text-sm">Self-service check-in options</p>
+        </div>
+        <!-- Housekeeping Software -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 text-center"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4 mx-auto"
+          >
+            <i class="ri-home-gear-line text-primary text-2xl"></i>
+          </div>
+          <h4 class="text-lg font-semibold mb-2">Housekeeping</h4>
+          <p class="text-gray-600 text-sm">Efficient room management</p>
+        </div>
+        <!-- Virtual Concierge -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 text-center"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4 mx-auto"
+          >
+            <i class="ri-message-3-line text-primary text-2xl"></i>
+          </div>
+          <h4 class="text-lg font-semibold mb-2">Virtual Concierge</h4>
+          <p class="text-gray-600 text-sm">24/7 guest assistance</p>
+        </div>
+        <!-- Reservation Management -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 text-center"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4 mx-auto"
+          >
+            <i class="ri-calendar-todo-line text-primary text-2xl"></i>
+          </div>
+          <h4 class="text-lg font-semibold mb-2">Reservations</h4>
+          <p class="text-gray-600 text-sm">Complete booking management</p>
+        </div>
+        <!-- Multi-property -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 text-center"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4 mx-auto"
+          >
+            <i class="ri-building-line text-primary text-2xl"></i>
+          </div>
+          <h4 class="text-lg font-semibold mb-2">Multi-property</h4>
+          <p class="text-gray-600 text-sm">Centralized chain management</p>
+        </div>
+        <!-- Front Desk Software -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 text-center"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4 mx-auto"
+          >
+            <i class="ri-service-line text-primary text-2xl"></i>
+          </div>
+          <h4 class="text-lg font-semibold mb-2">Front Desk</h4>
+          <p class="text-gray-600 text-sm">Streamlined guest services</p>
+        </div>
+        <!-- Events Management -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 text-center"
+        >
+          <div
+            class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4 mx-auto"
+          >
+            <i class="ri-calendar-event-line text-primary text-2xl"></i>
+          </div>
+          <h4 class="text-lg font-semibold mb-2">Events</h4>
+          <p class="text-gray-600 text-sm">Complete event planning tools</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- Feature Navigation -->
 <section class="bg-white sticky top-16 z-40 shadow-sm">
 <div class="container mx-auto px-4">
-<div class="flex flex-wrap justify-center gap-2 py-4">
-<button class="tab-button px-4 py-2 !rounded-full whitespace-nowrap text-gray-700 hover:bg-gray-100 font-medium active" data-tab="smart-guest">Smart Guest Management</button>
-<button class="tab-button px-4 py-2 !rounded-full whitespace-nowrap text-gray-700 hover:bg-gray-100 font-medium" data-tab="digital-checkin">Digital Check-in/out</button>
-<button class="tab-button px-4 py-2 !rounded-full whitespace-nowrap text-gray-700 hover:bg-gray-100 font-medium" data-tab="integrated-security">Integrated Security</button>
-<button class="tab-button px-4 py-2 !rounded-full whitespace-nowrap text-gray-700 hover:bg-gray-100 font-medium" data-tab="integration">Integration Capabilities</button>
-<button class="tab-button px-4 py-2 !rounded-full whitespace-nowrap text-gray-700 hover:bg-gray-100 font-medium" data-tab="case-studies">Case Studies</button>
+<div class="overflow-x-auto">
+<div class="flex flex-nowrap md:flex-wrap justify-start md:justify-center gap-2 py-4 px-4 md:px-0 min-w-max md:min-w-0">
+<button class="tab-button px-4 py-2 !rounded-full whitespace-nowrap text-gray-700 hover:bg-gray-100 font-medium active text-sm md:text-base" data-tab="smart-guest">Smart Guest Management</button>
+<button class="tab-button px-4 py-2 !rounded-full whitespace-nowrap text-gray-700 hover:bg-gray-100 font-medium text-sm md:text-base" data-tab="digital-checkin">Digital Check-in/out</button>
+<button class="tab-button px-4 py-2 !rounded-full whitespace-nowrap text-gray-700 hover:bg-gray-100 font-medium text-sm md:text-base" data-tab="integrated-security">Integrated Security</button>
+<button class="tab-button px-4 py-2 !rounded-full whitespace-nowrap text-gray-700 hover:bg-gray-100 font-medium text-sm md:text-base" data-tab="integration">Integration Capabilities</button>
+<button class="tab-button px-4 py-2 !rounded-full whitespace-nowrap text-gray-700 hover:bg-gray-100 font-medium text-sm md:text-base" data-tab="case-studies">Case Studies</button>
+</div>
 </div>
 </div>
 </section>
+
+
 <!-- Smart Guest Management Tab -->
 <section id="smart-guest" class="tab-content active py-16 bg-white">
 <div class="container mx-auto px-4">
@@ -1570,6 +1855,7 @@ Comprehensive data flow architecture showing real-time synchronization between a
 </div>
 </div>
 </section>
+
 <!-- Pricing Section -->
 <section class="py-20 bg-gray-50">
 <div class="container mx-auto px-4">
@@ -1585,7 +1871,7 @@ Comprehensive data flow architecture showing real-time synchronization between a
 <h3 class="text-xl font-bold mb-2">Essential</h3>
 <p class="text-gray-600 mb-6">Perfect for small boutique properties</p>
 <div class="flex items-end mb-6">
-<span class="text-4xl font-bold">$12</span>
+<span class="text-4xl font-bold">__</span>
 <span class="text-gray-500 ml-2">/ room / month</span>
 </div>
 <ul class="space-y-3 mb-8">
@@ -1626,7 +1912,7 @@ Comprehensive data flow architecture showing real-time synchronization between a
 <span class="text-gray-400">Custom Branding</span>
 </li>
 </ul>
-<button class="w-full bg-gray-100 text-gray-800 px-6 py-3 !rounded-button font-medium hover:bg-gray-200 transition duration-300">Get Started</button>
+<button class="w-full bg-gray-100 text-gray-800 px-6 py-3 !rounded-button font-medium hover:bg-gray-200 transition duration-300">Request Quote</button>
 </div>
 </div>
 <!-- Professional Plan -->
@@ -1636,7 +1922,7 @@ Comprehensive data flow architecture showing real-time synchronization between a
 <h3 class="text-xl font-bold mb-2">Professional</h3>
 <p class="text-gray-600 mb-6">Ideal for mid-sized hotels</p>
 <div class="flex items-end mb-6">
-<span class="text-4xl font-bold">$24</span>
+<span class="text-4xl font-bold">__</span>
 <span class="text-gray-500 ml-2">/ room / month</span>
 </div>
 <ul class="space-y-3 mb-8">
@@ -1677,7 +1963,7 @@ Comprehensive data flow architecture showing real-time synchronization between a
 <span class="text-gray-400">Custom Branding</span>
 </li>
 </ul>
-<button class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Get Started</button>
+<button class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Request Quote</button>
 </div>
 </div>
 <!-- Enterprise Plan -->
@@ -1686,7 +1972,7 @@ Comprehensive data flow architecture showing real-time synchronization between a
 <h3 class="text-xl font-bold mb-2">Enterprise</h3>
 <p class="text-gray-600 mb-6">For large hotels and chains</p>
 <div class="flex items-end mb-6">
-<span class="text-4xl font-bold">$36</span>
+<span class="text-4xl font-bold">__</span>
 <span class="text-gray-500 ml-2">/ room / month</span>
 </div>
 <ul class="space-y-3 mb-8">
@@ -1763,7 +2049,6 @@ Comprehensive data flow architecture showing real-time synchronization between a
 <h2 class="text-3xl md:text-4xl font-bold mb-6">Solutions for Every Property Type</h2>
 <p class="text-lg text-gray-600 max-w-3xl mx-auto">Our hospitality management system is designed to meet the unique needs of different property types and management roles.</p>
 </div>
-
 <div class="mb-20">
 <h3 class="text-2xl font-semibold mb-8 text-center">Property Types</h3>
 <div class="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -1774,7 +2059,6 @@ Comprehensive data flow architecture showing real-time synchronization between a
 <h4 class="text-lg font-semibold mb-2">Hotels</h4>
 <p class="text-gray-600">Full-service solutions for hotels of all sizes</p>
 </div>
-
 <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
 <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
 <i class="ri-home-8-line text-primary text-2xl"></i>
@@ -1782,7 +2066,6 @@ Comprehensive data flow architecture showing real-time synchronization between a
 <h4 class="text-lg font-semibold mb-2">Hostels</h4>
 <p class="text-gray-600">Streamlined management for hostel operations</p>
 </div>
-
 <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
 <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
 <i class="ri-car-line text-primary text-2xl"></i>
@@ -1790,7 +2073,6 @@ Comprehensive data flow architecture showing real-time synchronization between a
 <h4 class="text-lg font-semibold mb-2">Motels</h4>
 <p class="text-gray-600">Efficient solutions for roadside properties</p>
 </div>
-
 <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
 <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
 <i class="ri-hotel-line text-primary text-2xl"></i>
@@ -1798,7 +2080,6 @@ Comprehensive data flow architecture showing real-time synchronization between a
 <h4 class="text-lg font-semibold mb-2">Small Hotels</h4>
 <p class="text-gray-600">Tailored systems for boutique properties</p>
 </div>
-
 <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
 <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
 <i class="ri-home-4-line text-primary text-2xl"></i>
@@ -1806,7 +2087,6 @@ Comprehensive data flow architecture showing real-time synchronization between a
 <h4 class="text-lg font-semibold mb-2">Alternative Accommodation</h4>
 <p class="text-gray-600">Flexible solutions for unique properties</p>
 </div>
-
 <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
 <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
 <i class="ri-building-4-line text-primary text-2xl"></i>
@@ -1816,7 +2096,6 @@ Comprehensive data flow architecture showing real-time synchronization between a
 </div>
 </div>
 </div>
-
 <div>
 <h3 class="text-2xl font-semibold mb-8 text-center">Management Roles</h3>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -1840,7 +2119,6 @@ Comprehensive data flow architecture showing real-time synchronization between a
 </li>
 </ul>
 </div>
-
 <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
 <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
 <i class="ri-plug-2-line text-primary text-2xl"></i>
@@ -1861,7 +2139,6 @@ Comprehensive data flow architecture showing real-time synchronization between a
 </li>
 </ul>
 </div>
-
 <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
 <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
 <i class="ri-money-dollar-circle-line text-primary text-2xl"></i>
@@ -1882,7 +2159,6 @@ Comprehensive data flow architecture showing real-time synchronization between a
 </li>
 </ul>
 </div>
-
 <div class="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300">
 <div class="w-12 h-12 flex items-center justify-center bg-primary/10 rounded-lg mb-4">
 <i class="ri-restaurant-line text-primary text-2xl"></i>
@@ -1908,7 +2184,6 @@ Comprehensive data flow architecture showing real-time synchronization between a
 </div>
 </div>
 </section>
-
 <!-- Contact Section -->
 <section class="py-20 bg-white">
 <div class="container mx-auto px-4">
@@ -2013,33 +2288,6 @@ Comprehensive data flow architecture showing real-time synchronization between a
 </div>
 </div>
 </section>
-<style>
-  #backToTop {
-    position: fixed;
-    bottom: 2rem;
-    right: 2rem;
-    z-index: 50;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.3s;
-  }
-  #backToTop.visible {
-    opacity: 1;
-    pointer-events: auto;
-  }
-  @media (max-width: 768px) {
-    #backToTop {
-      bottom: 1rem;
-      right: 1rem;
-      width: 3rem;
-      height: 3rem; pointer-events: none;
-    transition: opacity 0.3s;
-    }
-  }
-</style>
-<button id="backToTop" class="back-to-top bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
-  <i class="ri-arrow-up-line text-xl"></i>
-  </button>
 <!-- Footer -->
 <footer class="bg-orange-500 text-white pt-16 pb-8" animation="fadeIn">
   <div class="container mx-auto px-4">
@@ -2394,24 +2642,6 @@ successMessage.remove();
 }, 5000);
 }, 1000);
 });
-});
-</script>
-<script id="backToTopScript">
-document.addEventListener("DOMContentLoaded", function () {
-  const backToTopBtn = document.getElementById("backToTop");
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 500) {
-      backToTopBtn.classList.add("visible");
-    } else {
-      backToTopBtn.classList.remove("visible");
-    }
-  });
-  backToTopBtn.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
 });
 </script>
 </body>

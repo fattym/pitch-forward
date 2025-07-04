@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us - TechSolutions</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0056b3',secondary:'#00a3e0'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Inter', sans-serif;
+background-color: #f9fafb;
+}
+.timeline-connector {
+position: absolute;
+left: 50%;
+top: 0;
+bottom: 0;
+width: 2px;
+background-color: #e5e7eb;
+transform: translateX(-50%);
+z-index: 0;
+}
+.timeline-item {
+position: relative;
+z-index: 1;
+}
+.timeline-dot {
+position: absolute;
+left: 50%;
+top: 2rem;
+width: 20px;
+height: 20px;
+background-color: #0056b3;
+border-radius: 50%;
+transform: translateX(-50%);
+z-index: 2;
+}
+</style>
+</head>
+<body>
+<!-- Header Navigation -->
+<header class="bg-white shadow-sm fixed w-full z-50">
+<div class="container mx-auto px-4 py-3 flex items-center justify-between">
+<div class="flex items-center">
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-2xl font-['Pacifico'] text-primary">logo</a>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+<a href="#" class="nav-link text-gray-700 hover:text-primary font-medium">Services</a>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/07a7c283-a6b0-4d09-a7dd-9ae0932837f9" data-readdy="true" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+<a href="#" class="nav-link text-gray-700 hover:text-primary font-medium">Testimonials</a>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/e35eff1e-a160-47dc-a618-f1debe65fcb6" data-readdy="true" class="nav-link text-primary font-medium border-b-2 border-primary">About Us</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+<button class="md:hidden w-10 h-10 flex items-center justify-center">
+<i class="ri-menu-line text-xl"></i>
+</button>
+</div>
+</div>
+</header>
+<!-- Hero Section -->
+<section class="pt-20 relative overflow-hidden">
+<div class="absolute inset-0 z-0">
+<img src="https://readdy.ai/api/search-image?query=professional%20modern%20office%20environment%20with%20soft%20natural%20lighting%2C%20clean%20architectural%20elements%2C%20tech%20company%20workspace%20with%20glass%20walls%20and%20open%20collaborative%20areas%2C%20subtle%20blue%20accents%2C%20minimal%20design%20aesthetic%2C%20high-end%20corporate%20atmosphere&width=1920&height=600&seq=about-hero&orientation=landscape" alt="About TechSolutions" class="w-full h-full object-cover object-top">
+<div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/40"></div>
+</div>
+<div class="container mx-auto px-4 py-20 relative z-10">
+<div class="max-w-2xl text-white">
+<h1 class="text-4xl md:text-5xl font-bold mb-6">About TechSolutions</h1>
+<p class="text-xl mb-8">Pioneering technology solutions since 2005. We're dedicated to transforming businesses through innovative IT services and solutions that drive growth and efficiency.</p>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/67fc781b-db14-49ab-bd65-78b7bbba49ec" data-readdy="true" class="inline-block bg-white text-primary px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300">Contact Us</a>
+</div>
+</div>
+</section>
+<!-- Company Overview Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div class="order-2 lg:order-1">
+<h2 class="text-3xl font-bold mb-6 text-gray-900">Our Mission & Vision</h2>
+<p class="text-lg text-gray-700 mb-6">Founded in 2005, TechSolutions has grown from a small IT consulting firm to a global technology leader with offices in 12 countries. Our mission is to empower businesses through technology, providing innovative solutions that drive efficiency, security, and growth.</p>
+<p class="text-lg text-gray-700 mb-6">We believe technology should work for people, not the other way around. That's why we focus on creating intuitive, powerful solutions that solve real business challenges and create meaningful impact.</p>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/e35eff1e-a160-47dc-a618-f1debe65fcb6" data-readdy="true" class="inline-flex items-center text-primary font-medium hover:underline">
+Learn More
+<div class="w-5 h-5 flex items-center justify-center ml-1">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+<div class="order-1 lg:order-2">
+<img src="https://readdy.ai/api/search-image?query=modern%20corporate%20office%20with%20diverse%20team%20of%20professionals%20collaborating%2C%20bright%20open%20workspace%20with%20glass%20walls%2C%20tech%20company%20environment%2C%20people%20working%20together%20on%20digital%20projects%2C%20professional%20business%20setting%20with%20subtle%20blue%20accents&width=600&height=400&seq=about-overview&orientation=landscape" alt="TechSolutions Office" class="w-full h-auto rounded-lg shadow-lg">
+</div>
+</div>
+</div>
+</section>
+<!-- Core Values Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4 text-gray-900">Our Core Values</h2>
+<p class="text-lg text-gray-700 max-w-3xl mx-auto">These principles guide everything we do, from how we develop our products to how we serve our clients and engage with our communities.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-5">
+<i class="ri-lightbulb-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3 text-gray-900">Innovation</h3>
+<p class="text-gray-700">We constantly push boundaries and explore new technologies to deliver cutting-edge solutions that keep our clients ahead of the curve.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-5">
+<i class="ri-shield-check-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3 text-gray-900">Integrity</h3>
+<p class="text-gray-700">We operate with transparency and honesty in all our dealings, building trust with our clients, partners, and employees.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-5">
+<i class="ri-team-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3 text-gray-900">Collaboration</h3>
+<p class="text-gray-700">We believe in the power of teamwork and partnership, working closely with our clients to achieve shared goals and success.</p>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow">
+<div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center mb-5">
+<i class="ri-customer-service-2-line text-primary text-2xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3 text-gray-900">Excellence</h3>
+<p class="text-gray-700">We are committed to delivering exceptional quality in everything we do, exceeding expectations and setting new standards of excellence.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Leadership Team Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4 text-gray-900">Our Leadership Team</h2>
+<p class="text-lg text-gray-700 max-w-3xl mx-auto">Meet the visionaries and experts who guide our company's strategy and growth, bringing decades of combined experience in technology and business.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20confident%20male%20CEO%20in%20his%2050s%20with%20salt%20and%20pepper%20hair%2C%20wearing%20a%20modern%20navy%20blue%20suit%20with%20light%20blue%20shirt%2C%20no%20tie%2C%20neutral%20background%2C%20natural%20lighting%2C%20professional%20corporate%20portrait&width=400&height=400&seq=ceo-portrait&orientation=squarish" alt="Michael Richardson" class="w-full h-64 object-cover object-top">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-1 text-gray-900">Michael Richardson</h3>
+<p class="text-primary font-medium mb-3">Chief Executive Officer</p>
+<p class="text-gray-700 mb-4">With over 25 years in the technology sector, Michael has led TechSolutions from a startup to an industry leader, focusing on innovation and strategic growth.</p>
+<div class="flex space-x-3">
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+<i class="ri-linkedin-fill text-gray-600"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+<i class="ri-twitter-fill text-gray-600"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20female%20CTO%20in%20her%2040s%20with%20medium%20length%20black%20hair%2C%20wearing%20a%20modern%20professional%20outfit%20with%20a%20blue%20blazer%2C%20confident%20expression%2C%20neutral%20background%2C%20natural%20lighting%2C%20professional%20corporate%20portrait&width=400&height=400&seq=cto-portrait&orientation=squarish" alt="Sarah Chen" class="w-full h-64 object-cover object-top">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-1 text-gray-900">Sarah Chen</h3>
+<p class="text-primary font-medium mb-3">Chief Technology Officer</p>
+<p class="text-gray-700 mb-4">Sarah leads our technology strategy and R&D initiatives, bringing extensive experience from her previous roles at Microsoft and Oracle, with a focus on AI and cloud solutions.</p>
+<div class="flex space-x-3">
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+<i class="ri-linkedin-fill text-gray-600"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+<i class="ri-github-fill text-gray-600"></i>
+</a>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20a%20male%20COO%20in%20his%20late%2040s%20with%20short%20brown%20hair%2C%20wearing%20a%20light%20gray%20suit%20with%20white%20shirt%2C%20professional%20smile%2C%20neutral%20background%2C%20natural%20lighting%2C%20professional%20corporate%20portrait&width=400&height=400&seq=coo-portrait&orientation=squarish" alt="David Martinez" class="w-full h-64 object-cover object-top">
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-1 text-gray-900">David Martinez</h3>
+<p class="text-primary font-medium mb-3">Chief Operations Officer</p>
+<p class="text-gray-700 mb-4">David oversees our global operations, ensuring efficient delivery of services and solutions to clients worldwide, with a background in business transformation and operational excellence.</p>
+<div class="flex space-x-3">
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+<i class="ri-linkedin-fill text-gray-600"></i>
+</a>
+<a href="#" class="w-8 h-8 flex items-center justify-center rounded-full bg-gray-100 hover:bg-gray-200 transition-colors">
+<i class="ri-twitter-fill text-gray-600"></i>
+</a>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-10">
+<a href="#" class="inline-block border border-primary text-primary px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary hover:text-white transition duration-300">View Full Team</a>
+</div>
+</div>
+</section>
+<!-- Company Timeline Section -->
+<section class="py-16 bg-gray-50 relative">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4 text-gray-900">Our Journey</h2>
+<p class="text-lg text-gray-700 max-w-3xl mx-auto">From our humble beginnings to becoming a global technology leader, explore the key milestones that have shaped our company's growth and success.</p>
+</div>
+<div class="relative">
+<div class="timeline-connector"></div>
+<div class="space-y-12">
+<div class="timeline-item grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="md:text-right md:pr-12">
+<div class="bg-white p-6 rounded-lg shadow-sm inline-block">
+<h3 class="text-xl font-semibold mb-2 text-primary">2005</h3>
+<h4 class="text-lg font-medium mb-3 text-gray-900">Company Founded</h4>
+<p class="text-gray-700">TechSolutions was founded by Michael Richardson and a small team of technology experts with a vision to transform how businesses leverage technology.</p>
+</div>
+</div>
+<div class="timeline-dot hidden md:block"></div>
+<div class="md:pl-12"></div>
+</div>
+<div class="timeline-item grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="md:pr-12"></div>
+<div class="timeline-dot hidden md:block"></div>
+<div class="md:pl-12">
+<div class="bg-white p-6 rounded-lg shadow-sm inline-block">
+<h3 class="text-xl font-semibold mb-2 text-primary">2010</h3>
+<h4 class="text-lg font-medium mb-3 text-gray-900">International Expansion</h4>
+<p class="text-gray-700">Opened our first international offices in London and Singapore, beginning our global expansion to better serve clients worldwide.</p>
+</div>
+</div>
+</div>
+<div class="timeline-item grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="md:text-right md:pr-12">
+<div class="bg-white p-6 rounded-lg shadow-sm inline-block">
+<h3 class="text-xl font-semibold mb-2 text-primary">2015</h3>
+<h4 class="text-lg font-medium mb-3 text-gray-900">Cloud Solutions Launch</h4>
+<p class="text-gray-700">Launched our comprehensive suite of cloud solutions, helping businesses transition to more flexible and scalable IT infrastructure.</p>
+</div>
+</div>
+<div class="timeline-dot hidden md:block"></div>
+<div class="md:pl-12"></div>
+</div>
+<div class="timeline-item grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="md:pr-12"></div>
+<div class="timeline-dot hidden md:block"></div>
+<div class="md:pl-12">
+<div class="bg-white p-6 rounded-lg shadow-sm inline-block">
+<h3 class="text-xl font-semibold mb-2 text-primary">2018</h3>
+<h4 class="text-lg font-medium mb-3 text-gray-900">AI & Machine Learning Division</h4>
+<p class="text-gray-700">Established our AI and Machine Learning division to develop cutting-edge solutions for data analysis, automation, and predictive analytics.</p>
+</div>
+</div>
+</div>
+<div class="timeline-item grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="md:text-right md:pr-12">
+<div class="bg-white p-6 rounded-lg shadow-sm inline-block">
+<h3 class="text-xl font-semibold mb-2 text-primary">2022</h3>
+<h4 class="text-lg font-medium mb-3 text-gray-900">Forbes Technology Leader Award</h4>
+<p class="text-gray-700">Recognized as a global technology leader by Forbes, highlighting our commitment to innovation and excellence in IT solutions.</p>
+</div>
+</div>
+<div class="timeline-dot hidden md:block"></div>
+<div class="md:pl-12"></div>
+</div>
+<div class="timeline-item grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="md:pr-12"></div>
+<div class="timeline-dot hidden md:block"></div>
+<div class="md:pl-12">
+<div class="bg-white p-6 rounded-lg shadow-sm inline-block">
+<h3 class="text-xl font-semibold mb-2 text-primary">2025</h3>
+<h4 class="text-lg font-medium mb-3 text-gray-900">Sustainable Technology Initiative</h4>
+<p class="text-gray-700">Launched our Sustainable Technology Initiative, committed to developing eco-friendly solutions and achieving carbon neutrality by 2030.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Office Locations Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4 text-gray-900">Where to Find Us</h2>
+<p class="text-lg text-gray-700 max-w-3xl mx-auto">With offices across the globe, we're positioned to serve clients wherever they are, providing local expertise with global capabilities.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="h-48 bg-gray-200 relative">
+<img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="San Francisco Office Location" class="w-full h-full object-cover">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3 text-gray-900">San Francisco (Headquarters)</h3>
+<div class="space-y-3 text-gray-700">
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-map-pin-line"></i>
+</div>
+<p>101 Market Street, Suite 1500, San Francisco, CA 94105, USA</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-phone-line"></i>
+</div>
+<p>+1 (415) 555-0123</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-mail-line"></i>
+</div>
+<p>sf@techsolutions.com</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-time-line"></i>
+</div>
+<p>Monday - Friday: 9:00 AM - 6:00 PM PT</p>
+</div>
+</div>
+</div>
+</div>
+<div class="bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition-shadow">
+<div class="h-48 bg-gray-200 relative">
+<img src="https://public.readdy.ai/gen_page/map_placeholder_1280x720.png" alt="London Office Location" class="w-full h-full object-cover">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-semibold mb-3 text-gray-900">London</h3>
+<div class="space-y-3 text-gray-700">
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-map-pin-line"></i>
+</div>
+<p>30 St Mary Axe, London EC3A 8BF, United Kingdom</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-phone-line"></i>
+</div>
+<p>+44 (0) 20 7123 4567</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-mail-line"></i>
+</div>
+<p>london@techsolutions.com</p>
+</div>
+<div class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mr-3 mt-1 text-primary">
+<i class="ri-time-line"></i>
+</div>
+<p>Monday - Friday: 9:00 AM - 5:30 PM GMT</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="text-center mt-8">
+<a href="#" class="inline-block bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">View All Locations</a>
+</div>
+</div>
+</section>
+<!-- Company Culture Section -->
+<section class="py-16 bg-blue-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4 text-gray-900">Our Culture</h2>
+<p class="text-lg text-gray-700 max-w-3xl mx-auto">At TechSolutions, we foster an environment of innovation, collaboration, and continuous learning, where every team member is empowered to make a difference.</p>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mb-10">
+<img src="https://readdy.ai/api/search-image?query=modern%20tech%20office%20with%20diverse%20team%20collaborating%2C%20open%20workspace%20with%20natural%20light%2C%20people%20working%20together%20on%20digital%20projects%2C%20casual%20professional%20environment&width=300&height=300&seq=culture-1&orientation=squarish" alt="Team Collaboration" class="w-full h-48 object-cover object-top rounded-lg shadow-sm">
+<img src="https://readdy.ai/api/search-image?query=tech%20company%20team%20building%20outdoor%20activity%2C%20diverse%20group%20of%20professionals%20enjoying%20team%20event%2C%20casual%20setting%2C%20sunny%20day&width=300&height=300&seq=culture-2&orientation=squarish" alt="Team Building" class="w-full h-48 object-cover object-top rounded-lg shadow-sm">
+<img src="https://readdy.ai/api/search-image?query=modern%20tech%20office%20breakroom%20with%20employees%20relaxing%2C%20casual%20conversation%2C%20bright%20space%20with%20comfortable%20seating%2C%20coffee%20area&width=300&height=300&seq=culture-3&orientation=squarish" alt="Office Life" class="w-full h-48 object-cover object-top rounded-lg shadow-sm">
+<img src="https://readdy.ai/api/search-image?query=professional%20development%20workshop%20in%20tech%20company%2C%20diverse%20team%20learning%20together%2C%20interactive%20training%20session%2C%20modern%20conference%20room&width=300&height=300&seq=culture-4&orientation=squarish" alt="Professional Development" class="w-full h-48 object-cover object-top rounded-lg shadow-sm">
+</div>
+<div class="bg-white p-8 rounded-lg shadow-sm">
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 mb-6 md:mb-0 md:pr-8">
+<h3 class="text-2xl font-semibold mb-4 text-gray-900">What Our Team Says</h3>
+<div class="space-y-6">
+<div class="bg-gray-50 p-4 rounded-lg">
+<p class="text-gray-700 italic mb-3">"Working at TechSolutions has been the highlight of my career. The culture of innovation and support has allowed me to grow both professionally and personally."</p>
+<div class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20female%20software%20engineer%20in%20her%2030s%2C%20casual%20professional%20attire%2C%20neutral%20background%2C%20natural%20lighting&width=100&height=100&seq=employee-1&orientation=squarish" alt="Jennifer Wilson" class="w-10 h-10 rounded-full mr-3 object-cover object-top">
+<div>
+<p class="font-medium text-gray-900">Jennifer Wilson</p>
+<p class="text-sm text-gray-600">Senior Software Engineer</p>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 p-4 rounded-lg">
+<p class="text-gray-700 italic mb-3">"The collaborative environment and focus on continuous learning make TechSolutions an incredible place to work. I'm challenged every day to think creatively and solve complex problems."</p>
+<div class="flex items-center">
+<img src="https://readdy.ai/api/search-image?query=professional%20headshot%20of%20male%20product%20manager%20in%20his%2040s%2C%20business%20casual%20attire%2C%20neutral%20background%2C%20natural%20lighting&width=100&height=100&seq=employee-2&orientation=squarish" alt="Robert Chen" class="w-10 h-10 rounded-full mr-3 object-cover object-top">
+<div>
+<p class="font-medium text-gray-900">Robert Chen</p>
+<p class="text-sm text-gray-600">Product Manager</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md:w-1/2">
+<h3 class="text-2xl font-semibold mb-4 text-gray-900">Our Benefits</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full mr-3 flex-shrink-0 mt-1">
+<i class="ri-health-book-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Comprehensive Healthcare</h4>
+<p class="text-gray-600">Medical, dental, and vision coverage for employees and dependents</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full mr-3 flex-shrink-0 mt-1">
+<i class="ri-book-open-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Learning & Development</h4>
+<p class="text-gray-600">Annual stipend for courses, conferences, and certifications</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full mr-3 flex-shrink-0 mt-1">
+<i class="ri-calendar-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Flexible Work</h4>
+<p class="text-gray-600">Remote work options and flexible scheduling</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full mr-3 flex-shrink-0 mt-1">
+<i class="ri-heart-line text-primary"></i>
+</div>
+<div>
+<h4 class="font-medium text-gray-900">Wellness Programs</h4>
+<p class="text-gray-600">Gym memberships, mental health resources, and wellness activities</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Career Opportunities Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+<div>
+<h2 class="text-3xl font-bold mb-4 text-gray-900">Join Our Team</h2>
+<p class="text-lg text-gray-700 mb-6">We're always looking for talented individuals who are passionate about technology and innovation to join our growing team. At TechSolutions, you'll have the opportunity to work on cutting-edge projects, collaborate with industry experts, and make a real impact.</p>
+<p class="text-lg text-gray-700 mb-8">Explore our current openings and find your next career opportunity with us.</p>
+<a href="#" class="inline-block bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">View Current Openings</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="bg-gray-50 p-6 rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+<i class="ri-code-s-slash-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2 text-gray-900">Engineering</h3>
+<p class="text-gray-700 mb-4">Software Engineers, DevOps Engineers, Security Engineers, and more</p>
+<a href="#" class="text-primary font-medium hover:underline">5 open positions</a>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+<i class="ri-customer-service-2-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2 text-gray-900">Client Success</h3>
+<p class="text-gray-700 mb-4">Account Managers, Client Success Specialists, Support Engineers</p>
+<a href="#" class="text-primary font-medium hover:underline">3 open positions</a>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+<i class="ri-line-chart-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2 text-gray-900">Sales & Marketing</h3>
+<p class="text-gray-700 mb-4">Sales Representatives, Digital Marketers, Content Strategists</p>
+<a href="#" class="text-primary font-medium hover:underline">4 open positions</a>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-full mb-4">
+<i class="ri-product-hunt-line text-primary text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-2 text-gray-900">Product</h3>
+<p class="text-gray-700 mb-4">Product Managers, UX/UI Designers, Product Analysts</p>
+<a href="#" class="text-primary font-medium hover:underline">2 open positions</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-gray-900 text-white pt-16 pb-8">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+<div>
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-2xl font-['Pacifico'] text-white mb-4 inline-block">logo</a>
+<p class="text-gray-400 mb-6">Empowering businesses through innovative technology solutions since 2005.</p>
+<div class="flex space-x-4">
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+<i class="ri-linkedin-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+<i class="ri-twitter-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+<i class="ri-facebook-fill"></i>
+</a>
+<a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-primary transition-colors">
+<i class="ri-instagram-fill"></i>
+</a>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Quick Links</h3>
+<ul class="space-y-3">
+<li><a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Services</a></li>
+<li><a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/07a7c283-a6b0-4d09-a7dd-9ae0932837f9" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">Industries</a></li>
+<li><a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/e35eff1e-a160-47dc-a618-f1debe65fcb6" data-readdy="true" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Services</h3>
+<ul class="space-y-3">
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cloud Solutions</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Cybersecurity</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">IT Consulting</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Software Development</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Data Analytics</a></li>
+<li><a href="#" class="text-gray-400 hover:text-white transition-colors">Managed IT Services</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-lg font-semibold mb-4">Subscribe</h3>
+<p class="text-gray-400 mb-4">Stay updated with our latest news and offers.</p>
+<form class="mb-4">
+<div class="flex">
+<input type="email" placeholder="Your email address" class="px-4 py-2 w-full rounded-l-lg text-gray-900 border-none">
+<button type="submit" class="bg-primary text-white px-4 py-2 rounded-r-lg whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Subscribe</button>
+</div>
+</form>
+<p class="text-gray-400 text-sm">By subscribing, you agree to our Privacy Policy.</p>
+</div>
+</div>
+<div class="border-t border-gray-800 pt-8">
+<div class="flex flex-col md:flex-row justify-between items-center">
+<p class="text-gray-400 text-sm mb-4 md:mb-0">&copy; 2025 TechSolutions. All rights reserved.</p>
+<div class="flex items-center space-x-4">
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Privacy Policy</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Terms of Service</a>
+<a href="#" class="text-gray-400 hover:text-white transition-colors text-sm">Cookie Policy</a>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script id="mobileMenuScript">
+document.addEventListener('DOMContentLoaded', function() {
+const menuButton = document.querySelector('.ri-menu-line').parentElement;
+const nav = document.querySelector('nav');
+menuButton.addEventListener('click', function() {
+nav.classList.toggle('hidden');
+nav.classList.toggle('flex');
+nav.classList.toggle('flex-col');
+nav.classList.toggle('absolute');
+nav.classList.toggle('top-16');
+nav.classList.toggle('right-0');
+nav.classList.toggle('bg-white');
+nav.classList.toggle('w-full');
+nav.classList.toggle('p-4');
+nav.classList.toggle('shadow-md');
+nav.classList.toggle('z-50');
+});
+});
+</script>
+</body>
+</html>
