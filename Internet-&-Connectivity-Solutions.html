@@ -9,15 +9,22 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+rel="stylesheet"
+/>
 <link rel="shortcut icon" href="./ww.png" type="image/png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
-font-family: 'Inter', sans-serif;
-}
+      font-family: 'Lato', sans-serif;
+      }
+      h1, h2, h3, h4, .font-heading {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 0.025em;
+      }
 .hero-section {
 background-image: url('https://readdy.ai/api/search-image?query=modern%2520server%2520room%2520with%2520fiber%2520optic%2520cables%2520glowing%2520with%2520blue%2520light%252C%2520network%2520switches%2520and%2520routers%2520in%2520a%2520clean%2520data%2520center.%2520The%2520image%2520has%2520a%2520gradient%2520from%2520dark%2520blue%2520to%2520lighter%2520blue%2520on%2520the%2520left%2520side%252C%2520transitioning%2520to%2520clear%2520view%2520of%2520technology%2520infrastructure%2520on%2520the%2520right.%2520Professional%2520lighting%2520creates%2520a%2520high-tech%2520atmosphere%2520with%2520excellent%2520contrast%2520for%2520text%2520overlay.&width=1920&height=800&seq=connectivity123&orientation=landscape');
 background-size: cover;
@@ -217,7 +224,7 @@ background-repeat: no-repeat;
                 </div>
             </div>
             <a href="./industry.html" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
-            <a href="#about" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
+            <a href="About-Our-Company.html" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
         </nav>
         <div class="flex items-center space-x-4">
             <div class="relative hidden md:block">
@@ -303,7 +310,7 @@ background-repeat: no-repeat;
                 </div>
             </div>
             <a href="./industry.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
-            <a href="#about" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
+            <a href="About-Our-Company.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
             <div class="mt-4">
                 <!-- Contact Us Button in mobile menu triggers modal -->
                 <button id="mobileContactUsBtn" class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
@@ -1060,137 +1067,7 @@ Partner Network
 </div>
 </section> -->
 <!-- Contact Section -->
-<section class="py-20 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">Get Connected Today</h2>
-<p class="text-lg text-gray-600 max-w-3xl mx-auto">Contact our team to discuss your connectivity needs and find the perfect solution for your business.</p>
-</div>
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-<!-- Contact Form -->
-<div class="bg-white rounded-lg shadow-sm p-8">
-<h3 class="text-2xl font-semibold mb-6">Request Information</h3>
-<form>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-<div>
-<label for="firstName" class="block text-gray-700 mb-2">First Name</label>
-<input type="text" id="firstName" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20">
-</div>
-<div>
-<label for="lastName" class="block text-gray-700 mb-2">Last Name</label>
-<input type="text" id="lastName" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20">
-</div>
-</div>
-<div class="mb-6">
-<label for="email" class="block text-gray-700 mb-2">Business Email</label>
-<input type="email" id="email" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20">
-</div>
-<div class="mb-6">
-<label for="company" class="block text-gray-700 mb-2">Company Name</label>
-<input type="text" id="company" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20">
-</div>
-<div class="mb-6">
-<label for="phone" class="block text-gray-700 mb-2">Phone Number</label>
-<input type="tel" id="phone" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20">
-</div>
-<div class="mb-6">
-<label for="service" class="block text-gray-700 mb-2">Interested Service</label>
-<div class="relative">
-<select id="service" class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:border-primary focus:ring-2 focus:ring-primary/20 pr-8">
-    <option value="">Select a service</option>
-    <option value="fleet">Fleet Management</option>
-    <option value="fuel">Fuel Management</option>
-    <option value="logistics">Logistics Management</option>
-    <option value="telecommunication">Telecommunication</option>
-    <option value="security">Security</option>
-    <option value="data-power">Data &amp; Power</option>
-    <option value="internet-connectivity">Internet &amp; Connectivity</option>
-    <option value="mining">Mining</option>
-    <option value="warehousing">Warehousing</option>
-    <option value="other">Other</option>
-</select>
-<div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-<i class="ri-arrow-down-s-line text-gray-500"></i>
-</div>
-</div>
-</div>
-<div class="mb-6">
-<label for="message" class="block text-gray-700 mb-2">Additional Information</label>
-<textarea id="message" rows="4" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20"></textarea>
-</div>
-<div class="mb-6 flex items-start">
-<input type="checkbox" id="consent" class="custom-checkbox mt-1">
-<label for="consent" class="ml-3 text-gray-600 text-sm">I consent to TechSolutions processing my data to contact me about my inquiry. I understand I can unsubscribe at any time.</label>
-</div>
-<button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 w-full md:w-auto">Submit Request</button>
-</form>
-</div>
-<!-- Contact Information -->
-<div>
-<div class="bg-white rounded-lg shadow-sm p-8 mb-8">
-<h3 class="text-2xl font-semibold mb-6">Technical Support</h3>
-<p class="text-gray-600 mb-6">Our technical support team is available 24/7 to assist with any connectivity issues or questions.</p>
-<div class="space-y-4">
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-4 text-primary">
-<i class="ri-phone-line"></i>
-</div>
-<div>
-<h4 class="font-semibold">Support Hotline</h4>
-<p class="text-gray-600">+1 (800) 555-0123</p>
-<p class="text-sm text-gray-500">Available 24/7</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-4 text-primary">
-<i class="ri-mail-line"></i>
-</div>
-<div>
-<h4 class="font-semibold">Email Support</h4>
-<p class="text-gray-600">support@techsolutions.com</p>
-<p class="text-sm text-gray-500">Response within 1 hour</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-blue-50 rounded-full mr-4 text-primary">
-<i class="ri-message-2-line"></i>
-</div>
-<div>
-<h4 class="font-semibold">Live Chat</h4>
-<p class="text-gray-600">Available on our customer portal</p>
-<p class="text-sm text-gray-500">Instant technical assistance</p>
-</div>
-</div>
-</div>
-</div>
-<div class="bg-white rounded-lg shadow-sm p-8">
-<h3 class="text-2xl font-semibold mb-6">Schedule a Consultation</h3>
-<p class="text-gray-600 mb-6">Book a free consultation with our connectivity experts to discuss your specific requirements.</p>
-<div class="mb-6">
-<label for="consultDate" class="block text-gray-700 mb-2">Preferred Date</label>
-<input type="date" id="consultDate" class="w-full px-4 py-3 border border-gray-300 rounded focus:border-primary focus:ring-2 focus:ring-primary/20">
-</div>
-<div class="mb-6">
-<label for="consultTime" class="block text-gray-700 mb-2">Preferred Time</label>
-<div class="relative">
-<select id="consultTime" class="w-full px-4 py-3 border border-gray-300 rounded appearance-none focus:border-primary focus:ring-2 focus:ring-primary/20 pr-8">
-<option value="">Select a time</option>
-<option value="9am">9:00 AM - 10:00 AM</option>
-<option value="11am">11:00 AM - 12:00 PM</option>
-<option value="1pm">1:00 PM - 2:00 PM</option>
-<option value="3pm">3:00 PM - 4:00 PM</option>
-</select>
-<div class="absolute right-3 top-1/2 transform -translate-y-1/2 pointer-events-none">
-<i class="ri-arrow-down-s-line text-gray-500"></i>
-</div>
-</div>
-</div>
-<button class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 w-full">Book Consultation</button>
-</div>
-</div>
-</div>
-</div>
-</section>
+
 <!-- FAQ Section -->
 <section class="py-20 bg-white">
 <div class="container mx-auto px-4">
@@ -1380,6 +1257,16 @@ Access Calculator
   <i class="ri-arrow-up-line text-xl"></i>
   </button>
 <!-- Footer -->
+ 
+<div class="fixed right-6 bottom-6 z-50">
+  <a
+    href="https://wa.me/+254707586837"
+    target="_blank"
+    class="w-14 h-14 flex items-center justify-center bg-[#25D366] hover:bg-[#128C7E] rounded-full shadow-lg transition-colors"
+  >
+    <i class="ri-whatsapp-fill text-white text-2xl"></i>
+  </a>
+</div>
 <footer class="bg-orange-500 text-white pt-16 pb-8" animation="fadeIn">
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -1906,22 +1793,50 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 <script id="backToTopScript">
-document.addEventListener("DOMContentLoaded", function () {
-  const backToTopBtn = document.getElementById("backToTop");
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 500) {
+  document.addEventListener("DOMContentLoaded", function () {
+    const backToTopBtn = document.getElementById("backToTop");
+    // Move button to left side
+    backToTopBtn.style.right = "auto";
+    backToTopBtn.style.left = "2rem";
+    // Responsive: adjust for mobile
+    function updatePosition() {
+      if (window.innerWidth <= 768) {
+        backToTopBtn.style.left = "1rem";
+        backToTopBtn.style.right = "auto";
+      } else {
+        backToTopBtn.style.left = "2rem";
+        backToTopBtn.style.right = "auto";
+      }
+    }
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    const backToTopBtn = document.getElementById("backToTop");
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 500) {
+        backToTopBtn.classList.add("visible");
+      } else {
+        backToTopBtn.classList.remove("visible");
+      }
+    });
+    backToTopBtn.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  });
+  window.addEventListener("resize", function () {
+    // Always show on mobile if scrolled at all
+    if (window.innerWidth <= 768 && window.scrollY > 50) {
+      backToTopBtn.classList.add("visible");
+    } else if (window.scrollY > 500) {
       backToTopBtn.classList.add("visible");
     } else {
       backToTopBtn.classList.remove("visible");
     }
   });
-  backToTopBtn.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
-});
-</script>
+  </script>
 </body>
 </html>

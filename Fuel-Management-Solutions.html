@@ -31,7 +31,10 @@
     </script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+    <link
+href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+rel="stylesheet"
+/>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css"
@@ -40,7 +43,11 @@
     <style>
       :where([class^="ri-"])::before { content: "\f3c2"; }
       body {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Lato', sans-serif;
+      }
+      h1, h2, h3, h4, .font-heading {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 0.025em;
       }
       .group:hover .group-hover\:block {
       display: block;
@@ -1693,7 +1700,7 @@ compliance.
               </div>
             </div>
             <div class="w-full lg:w-7/12 p-8 lg:p-12">
-              <form>
+              <!-- <form>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
                   <div>
                     <label class="block text-gray-700 mb-2" for="companyName"
@@ -1903,7 +1910,7 @@ compliance.
                 >
                   Request Consultation
                 </button>
-              </form>
+              </form> -->
             </div>
           </div>
         </div>
@@ -2059,6 +2066,15 @@ compliance.
   <i class="ri-arrow-up-line text-xl"></i>
   </button>
     <!-- Footer -->
+    <div class="fixed right-6 bottom-6 z-50">
+      <a
+        href="https://wa.me/+254707586837"
+        target="_blank"
+        class="w-14 h-14 flex items-center justify-center bg-[#25D366] hover:bg-[#128C7E] rounded-full shadow-lg transition-colors"
+      >
+        <i class="ri-whatsapp-fill text-white text-2xl"></i>
+      </a>
+    </div>
     <footer class="bg-orange-500 text-white pt-16 pb-8" animation="fadeIn">
       <div class="container mx-auto px-4">
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -2513,23 +2529,51 @@ compliance.
       updateHeader();
   });
   </script>
-  <script id="backToTopScript">
-document.addEventListener("DOMContentLoaded", function () {
-  const backToTopBtn = document.getElementById("backToTop");
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 500) {
+<script id="backToTopScript">
+  document.addEventListener("DOMContentLoaded", function () {
+    const backToTopBtn = document.getElementById("backToTop");
+    // Move button to left side
+    backToTopBtn.style.right = "auto";
+    backToTopBtn.style.left = "2rem";
+    // Responsive: adjust for mobile
+    function updatePosition() {
+      if (window.innerWidth <= 768) {
+        backToTopBtn.style.left = "1rem";
+        backToTopBtn.style.right = "auto";
+      } else {
+        backToTopBtn.style.left = "2rem";
+        backToTopBtn.style.right = "auto";
+      }
+    }
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    const backToTopBtn = document.getElementById("backToTop");
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 500) {
+        backToTopBtn.classList.add("visible");
+      } else {
+        backToTopBtn.classList.remove("visible");
+      }
+    });
+    backToTopBtn.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  });
+  window.addEventListener("resize", function () {
+    // Always show on mobile if scrolled at all
+    if (window.innerWidth <= 768 && window.scrollY > 50) {
+      backToTopBtn.classList.add("visible");
+    } else if (window.scrollY > 500) {
       backToTopBtn.classList.add("visible");
     } else {
       backToTopBtn.classList.remove("visible");
     }
   });
-  backToTopBtn.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
-});
-</script>
+  </script>
   </body>
 </html>

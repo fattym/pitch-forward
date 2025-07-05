@@ -8,15 +8,22 @@
 <script>tailwind.config={theme:{extend:{colors:{primary:'#0056b3',secondary:'#00a87d'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+rel="stylesheet"
+/>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
-font-family: 'Inter', sans-serif;
-}
+      font-family: 'Lato', sans-serif;
+      }
+      h1, h2, h3, h4, .font-heading {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 0.025em;
+      }
 .hero-section {
 background-image: url('https://readdy.ai/api/search-image?query=modern%2520luxury%2520car%2520fuel%2520tank%2520with%2520digital%2520fuel%2520gauge%2520display%252C%2520showing%2520real-time%2520fuel%2520consumption%2520data.%2520The%2520scene%2520features%2520high-tech%2520LED%2520lighting%2520and%2520sleek%2520metallic%2520finishes%252C%2520with%2520a%2520professional%2520dark%2520gradient%2520on%2520the%2520left%2520side%2520for%2520text%2520overlay.%2520The%2520image%2520emphasizes%2520advanced%2520automotive%2520technology%2520and%2520fuel%2520efficiency%2520monitoring&width=1920&height=800&seq=fuel_tank_hero&orientation=landscape');
 background-size: cover;
@@ -1393,142 +1400,7 @@ Learn More
 </div>
 </section>
 <!-- Contact Form Section -->
-<section class="py-20 bg-white">
-<div class="container mx-auto px-4">
-<div class="max-w-4xl mx-auto">
-<div class="text-center mb-12">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">Get in Touch</h2>
-<p class="text-lg text-gray-600">Have questions about our real-time tracking solution? Fill out the form below and our team will contact you shortly.</p>
-</div>
-<div class="bg-white rounded-lg shadow-md overflow-hidden">
-<div class="grid grid-cols-1 md:grid-cols-3">
-<div class="bg-primary text-white p-8 md:col-span-1">
-<h3 class="text-xl font-semibold mb-6">Contact Information</h3>
-<div class="space-y-6">
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
-<i class="ri-map-pin-line text-white"></i>
-</div>
-<div>
-<h4 class="font-medium">Address</h4>
-<p class="text-white/80 text-sm">1250 Technology Plaza, Suite 400<br>San Francisco, CA 94105</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
-<i class="ri-phone-line text-white"></i>
-</div>
-<div>
-<h4 class="font-medium">Phone</h4>
-<p class="text-white/80 text-sm">+1 (415) 555-0123</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
-<i class="ri-mail-line text-white"></i>
-</div>
-<div>
-<h4 class="font-medium">Email</h4>
-<p class="text-white/80 text-sm">fleet@techsolutions.com</p>
-</div>
-</div>
-</div>
-<div class="mt-12">
-<h4 class="font-medium mb-4">Follow Us</h4>
-<div class="flex space-x-4">
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30 transition duration-300">
-<i class="ri-linkedin-fill text-white"></i>
-</a>
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30 transition duration-300">
-<i class="ri-twitter-x-fill text-white"></i>
-</a>
-<a href="#" class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full hover:bg-white/30 transition duration-300">
-<i class="ri-facebook-fill text-white"></i>
-</a>
-</div>
-</div>
-</div>
-<div class="p-8 md:col-span-2">
-<form>
-<div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-6">
-<div>
-<label for="firstName" class="block text-gray-700 text-sm font-medium mb-2">First Name *</label>
-<input type="text" id="firstName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
-</div>
-<div>
-<label for="lastName" class="block text-gray-700 text-sm font-medium mb-2">Last Name *</label>
-<input type="text" id="lastName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
-</div>
-<div>
-<label for="companyName" class="block text-gray-700 text-sm font-medium mb-2">Company Name *</label>
-<input type="text" id="companyName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
-</div>
-<div>
-<label for="jobTitle" class="block text-gray-700 text-sm font-medium mb-2">Job Title</label>
-<input type="text" id="jobTitle" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary">
-</div>
-<div>
-<label for="email" class="block text-gray-700 text-sm font-medium mb-2">Email Address *</label>
-<input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
-</div>
-<div>
-<label for="phone" class="block text-gray-700 text-sm font-medium mb-2">Phone Number *</label>
-<input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary" required>
-</div>
-</div>
-<div class="mb-6">
-<label for="fleetSize" class="block text-gray-700 text-sm font-medium mb-2">Fleet Size *</label>
-<select id="fleetSize" class="custom-select w-full px-4 py-2 border border-gray-300 rounded focus:border-primary pr-8" required>
-<option value="" disabled selected>Select fleet size</option>
-<option value="1-10">1-10 vehicles</option>
-<option value="11-25">11-25 vehicles</option>
-<option value="26-50">26-50 vehicles</option>
-<option value="51-100">51-100 vehicles</option>
-<option value="101-500">101-500 vehicles</option>
-<option value="500+">500+ vehicles</option>
-</select>
-</div>
-<div class="mb-6">
-<label for="interest" class="block text-gray-700 text-sm font-medium mb-2">I'm interested in: *</label>
-<div class="space-y-3">
-<div class="flex items-center">
-<input type="checkbox" id="interest1" class="custom-checkbox">
-<label for="interest1" class="ml-3 text-gray-700">Real-time Vehicle Tracking</label>
-</div>
-<div class="flex items-center">
-<input type="checkbox" id="interest2" class="custom-checkbox">
-<label for="interest2" class="ml-3 text-gray-700">Driver Behavior Monitoring</label>
-</div>
-<div class="flex items-center">
-<input type="checkbox" id="interest3" class="custom-checkbox">
-<label for="interest3" class="ml-3 text-gray-700">Fuel Consumption Monitoring</label>
-</div>
-<div class="flex items-center">
-<input type="checkbox" id="interest4" class="custom-checkbox">
-<label for="interest4" class="ml-3 text-gray-700">Maintenance Scheduling</label>
-</div>
-</div>
-</div>
-<div class="mb-6">
-<label for="message" class="block text-gray-700 text-sm font-medium mb-2">Additional Information</label>
-<textarea id="message" rows="4" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary resize-none"></textarea>
-</div>
-<div class="mb-8">
-<div class="flex items-start">
-<input type="checkbox" id="consent" class="custom-checkbox mt-1">
-<label for="consent" class="ml-3 text-gray-600 text-sm">
-I consent to TechSolutions processing my personal data in accordance with the <a href="#" class="text-primary hover:underline">Privacy Policy</a>. *
-</label>
-</div>
-</div>
-<button type="submit" class="w-full bg-primary text-white py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Submit Inquiry</button>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+
 <style>
   #backToTop {
     position: fixed;
@@ -1556,6 +1428,15 @@ I consent to TechSolutions processing my personal data in accordance with the <a
 <button id="backToTop" class="back-to-top bg-primary text-white w-12 h-12 rounded-full flex items-center justify-center shadow-lg">
   <i class="ri-arrow-up-line text-xl"></i>
   </button>
+  <div class="fixed right-6 bottom-6 z-50">
+    <a
+      href="https://wa.me/+254707586837"
+      target="_blank"
+      class="w-14 h-14 flex items-center justify-center bg-[#25D366] hover:bg-[#128C7E] rounded-full shadow-lg transition-colors"
+    >
+      <i class="ri-whatsapp-fill text-white text-2xl"></i>
+    </a>
+  </div>
 <!-- Footer -->
 <footer class="bg-orange-500 text-white pt-16 pb-8" animation="fadeIn">
   <div class="container mx-auto px-4">
@@ -2134,22 +2015,50 @@ document.addEventListener('DOMContentLoaded', function() {
  */
 </script>
 <script id="backToTopScript">
-document.addEventListener("DOMContentLoaded", function () {
-  const backToTopBtn = document.getElementById("backToTop");
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 500) {
+  document.addEventListener("DOMContentLoaded", function () {
+    const backToTopBtn = document.getElementById("backToTop");
+    // Move button to left side
+    backToTopBtn.style.right = "auto";
+    backToTopBtn.style.left = "2rem";
+    // Responsive: adjust for mobile
+    function updatePosition() {
+      if (window.innerWidth <= 768) {
+        backToTopBtn.style.left = "1rem";
+        backToTopBtn.style.right = "auto";
+      } else {
+        backToTopBtn.style.left = "2rem";
+        backToTopBtn.style.right = "auto";
+      }
+    }
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    const backToTopBtn = document.getElementById("backToTop");
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 500) {
+        backToTopBtn.classList.add("visible");
+      } else {
+        backToTopBtn.classList.remove("visible");
+      }
+    });
+    backToTopBtn.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  });
+  window.addEventListener("resize", function () {
+    // Always show on mobile if scrolled at all
+    if (window.innerWidth <= 768 && window.scrollY > 50) {
+      backToTopBtn.classList.add("visible");
+    } else if (window.scrollY > 500) {
       backToTopBtn.classList.add("visible");
     } else {
       backToTopBtn.classList.remove("visible");
     }
   });
-  backToTopBtn.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
-});
-</script>
+  </script>
 </body>
 </html>

@@ -10,7 +10,10 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
 
-<link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+<link
+href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+rel="stylesheet"
+/>
 <link rel="shortcut icon" href="./ww.png" type="image/png">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
@@ -18,8 +21,12 @@
 <style>
 :where([class^="ri-"])::before { content: "\f3c2"; }
 body {
-font-family: 'Inter', sans-serif;
-}
+      font-family: 'Lato', sans-serif;
+      }
+      h1, h2, h3, h4, .font-heading {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 0.025em;
+      }
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -346,7 +353,7 @@ display: block;
 <p class="text-lg sm:text-xl md:text-2xl mb-8 opacity-90 animate-fadeInUp animate-delay-100">From VoIP to Radio Communication - Enterprise-Grade Solutions</p>
 <div class="flex flex-col sm:flex-row gap-4 animate-fadeInUp animate-delay-200">
 <button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300 text-lg">Get Started</button>
-<button class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300 text-lg">Schedule Demo</button>
+<button onclick="window.location.href='Consultation-Scheduling-Page.html';" class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300 text-lg">Schedule Demo</button>
 </div>
 <div class="mt-12 flex items-center space-x-6">
 <div class="flex items-center">
@@ -3070,390 +3077,718 @@ display: block;
 </div>
 </section>
 <!-- Case Studies Section -->
-<section class="py-20 bg-gray-50">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">Success Stories</h2>
-<p class="text-lg text-gray-600 max-w-3xl mx-auto">See how our telecommunication solutions have transformed operations for organizations across industries.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-<!-- Case Study 1 -->
-<div class="case-card bg-white rounded-lg overflow-hidden animate-fadeInUp">
-<div class="h-48 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=modern%2520logistics%2520company%2520office%2520with%2520dispatch%2520center%2520showing%2520screens%2520with%2520tracking%2520maps%2520and%2520communication%2520systems.%2520Professional%2520environment%2520with%2520staff%2520using%2520communication%2520equipment%2520in%2520a%2520corporate%2520setting.&width=600&height=400&seq=logistics_case123&orientation=landscape" alt="Logistics Company Case Study" class="w-full h-full object-cover object-top">
-</div>
-<div class="p-6">
-<div class="flex items-center mb-4">
-<span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-xs font-medium">Logistics</span>
-<span class="ml-2 text-sm text-gray-500">National Logistics Inc.</span>
-</div>
-<h3 class="text-xl font-semibold mb-3">Nationwide Fleet Communication Overhaul</h3>
-<p class="text-gray-600 mb-4">Implemented POC radio solution for 500+ vehicles across 48 states, replacing outdated two-way radio system.</p>
-<div class="space-y-2 mb-4">
-<div class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
-<i class="ri-checkbox-circle-line text-green-600"></i>
-</div>
-<p class="text-sm text-gray-700">42% reduction in coordination delays</p>
-</div>
-<div class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
-<i class="ri-checkbox-circle-line text-green-600"></i>
-</div>
-<p class="text-sm text-gray-700">$380,000 annual operational savings</p>
-</div>
-<div class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
-<i class="ri-checkbox-circle-line text-green-600"></i>
-</div>
-<p class="text-sm text-gray-700">18-month ROI achieved</p>
-</div>
-</div>
-<a href="#" class="text-primary font-medium flex items-center text-sm">
-Read Full Case Study
-<i class="ri-arrow-right-line ml-2"></i>
-</a>
-</div>
-</div>
-<!-- Case Study 2 -->
-<div class="case-card bg-white rounded-lg overflow-hidden animate-fadeInUp">
-<div class="h-48 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=modern%2520hospital%2520setting%2520with%2520medical%2520staff%2520using%2520communication%2520devices%252C%2520showing%2520healthcare%2520professionals%2520coordinating%2520care%2520with%2520mobile%2520devices%2520and%2520communication%2520systems%2520in%2520a%2520clinical%2520environment.&width=600&height=400&seq=healthcare_case123&orientation=landscape" alt="Healthcare Case Study" class="w-full h-full object-cover object-top">
-</div>
-<div class="p-6">
-<div class="flex items-center mb-4">
-<span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-xs font-medium">Healthcare</span>
-<span class="ml-2 text-sm text-gray-500">Regional Medical Center</span>
-</div>
-<h3 class="text-xl font-semibold mb-3">Unified Communications for Patient Care</h3>
-<p class="text-gray-600 mb-4">Deployed integrated VoIP and secure messaging platform across 3 hospital campuses with 2,000+ staff members.</p>
-<div class="space-y-2 mb-4">
-<div class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
-<i class="ri-checkbox-circle-line text-green-600"></i>
-</div>
-<p class="text-sm text-gray-700">23% improvement in response times</p>
-</div>
-<div class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
-<i class="ri-checkbox-circle-line text-green-600"></i>
-</div>
-<p class="text-sm text-gray-700">HIPAA-compliant secure messaging</p>
-</div>
-<div class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
-<i class="ri-checkbox-circle-line text-green-600"></i>
-</div>
-<p class="text-sm text-gray-700">Integration with EHR system</p>
-</div>
-</div>
-<a href="#" class="text-primary font-medium flex items-center text-sm">
-Read Full Case Study
-<i class="ri-arrow-right-line ml-2"></i>
-</a>
-</div>
-</div>
-<!-- Case Study 3 -->
-<div class="case-card bg-white rounded-lg overflow-hidden animate-fadeInUp">
-<div class="h-48 overflow-hidden">
-<img src="https://readdy.ai/api/search-image?query=modern%2520construction%2520site%2520with%2520workers%2520using%2520communication%2520devices%252C%2520showing%2520a%2520large%2520commercial%2520construction%2520project%2520with%2520staff%2520coordinating%2520via%2520radio%2520and%2520mobile%2520devices%2520in%2520a%2520professional%2520construction%2520environment.&width=600&height=400&seq=construction_case123&orientation=landscape" alt="Construction Case Study" class="w-full h-full object-cover object-top">
-</div>
-<div class="p-6">
-<div class="flex items-center mb-4">
-<span class="bg-blue-100 text-primary px-3 py-1 rounded-full text-xs font-medium">Construction</span>
-<span class="ml-2 text-sm text-gray-500">Summit Builders Group</span>
-</div>
-<h3 class="text-xl font-semibold mb-3">Multi-Site Construction Communication</h3>
-<p class="text-gray-600 mb-4">Implemented rugged POC devices across 12 active construction sites with centralized dispatch and management.</p>
-<div class="space-y-2 mb-4">
-<div class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
-<i class="ri-checkbox-circle-line text-green-600"></i>
-</div>
-<p class="text-sm text-gray-700">35% reduction in safety incidents</p>
-</div>
-<div class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
-<i class="ri-checkbox-circle-line text-green-600"></i>
-</div>
-<p class="text-sm text-gray-700">Improved coordination between sites</p>
-</div>
-<div class="flex items-start">
-<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2">
-<i class="ri-checkbox-circle-line text-green-600"></i>
-</div>
-<p class="text-sm text-gray-700">Integration with project management software</p>
-</div>
-</div>
-<a href="#" class="text-primary font-medium flex items-center text-sm">
-Read Full Case Study
-<i class="ri-arrow-right-line ml-2"></i>
-</a>
-</div>
-</div>
-</div>
-</div>
-</section>
+
 <!-- Equipment & Devices Section -->
 <section class="py-20 bg-white">
-<div class="container mx-auto px-4">
-<div class="text-center mb-16">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">Equipment & Devices</h2>
-<p class="text-lg text-gray-600 max-w-3xl mx-auto">High-quality, durable communication devices designed for various environments and use cases.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-<!-- Device 1 -->
-<div class="bg-white rounded-lg p-6 shadow-sm animate-fadeIn">
-<div class="h-48 mb-4 flex items-center justify-center">
-<img src="https://readdy.ai/api/search-image?query=professional%2520rugged%2520push-to-talk%2520radio%2520handset%2520with%2520display%2520screen%2520and%2520keypad%252C%2520showing%2520a%2520modern%2520POC%2520radio%2520device%2520on%2520a%2520clean%2520white%2520background.%2520The%2520device%2520should%2520look%2520durable%2520and%2520professional%2520for%2520business%2520use.&width=300&height=300&seq=radio_device1&orientation=squarish" alt="POC Radio Handset" class="max-h-full">
-</div>
-<h3 class="text-lg font-semibold mb-2">TechPro PTX-500</h3>
-<p class="text-gray-600 mb-4">Professional-grade POC radio handset with 4G/LTE connectivity.</p>
-<div class="space-y-1 mb-4">
-<div class="flex items-center text-sm text-gray-700">
-<i class="ri-check-line text-primary mr-2"></i>
-<span>IP67 water/dust resistant</span>
-</div>
-<div class="flex items-center text-sm text-gray-700">
-<i class="ri-check-line text-primary mr-2"></i>
-<span>16-hour battery life</span>
-</div>
-<div class="flex items-center text-sm text-gray-700">
-<i class="ri-check-line text-primary mr-2"></i>
-<span>Emergency button</span>
-</div>
-</div>
-<button class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">View Specifications</button>
-</div>
-<!-- Device 2 -->
-<div class="bg-white rounded-lg p-6 shadow-sm animate-fadeIn">
-<div class="h-48 mb-4 flex items-center justify-center">
-<img src="https://readdy.ai/api/search-image?query=modern%2520VoIP%2520desk%2520phone%2520with%2520color%2520display%2520screen%2520and%2520multiple%2520line%2520buttons%252C%2520showing%2520a%2520professional%2520office%2520telephone%2520on%2520a%2520clean%2520white%2520background.%2520The%2520device%2520should%2520look%2520sleek%2520and%2520modern%2520for%2520business%2520use.&width=300&height=300&seq=voip_phone1&orientation=squarish" alt="VoIP Desk Phone" class="max-h-full">
-</div>
-<h3 class="text-lg font-semibold mb-2">VoiceConnect VP-200</h3>
-<p class="text-gray-600 mb-4">Executive VoIP desk phone with 4.3" color display and HD audio.</p>
-<div class="space-y-1 mb-4">
-<div class="flex items-center text-sm text-gray-700">
-<i class="ri-check-line text-primary mr-2"></i>
-<span>8 programmable line keys</span>
-</div>
-<div class="flex items-center text-sm text-gray-700">
-<i class="ri-check-line text-primary mr-2"></i>
-<span>Built-in Bluetooth</span>
-</div>
-<div class="flex items-center text-sm text-gray-700">
-<i class="ri-check-line text-primary mr-2"></i>
-<span>Power over Ethernet</span>
-</div>
-</div>
-<button class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">View Specifications</button>
-</div>
-<!-- Device 3 -->
-<div class="bg-white rounded-lg p-6 shadow-sm animate-fadeIn">
-<div class="h-48 mb-4 flex items-center justify-center">
-<img src="https://readdy.ai/api/search-image?query=professional%2520wireless%2520headset%2520with%2520microphone%2520boom%252C%2520showing%2520a%2520modern%2520office%2520headset%2520on%2520a%2520clean%2520white%2520background.%2520The%2520device%2520should%2520look%2520comfortable%2520and%2520professional%2520for%2520business%2520use.&width=300&height=300&seq=headset1&orientation=squarish" alt="Wireless Headset" class="max-h-full">
-</div>
-<h3 class="text-lg font-semibold mb-2">AudioPro WH-100</h3>
-<p class="text-gray-600 mb-4">Professional wireless headset with noise-cancelling microphone.</p>
-<div class="space-y-1 mb-4">
-<div class="flex items-center text-sm text-gray-700">
-<i class="ri-check-line text-primary mr-2"></i>
-<span>12-hour talk time</span>
-</div>
-<div class="flex items-center text-sm text-gray-700">
-<i class="ri-check-line text-primary mr-2"></i>
-<span>100ft wireless range</span>
-</div>
-<div class="flex items-center text-sm text-gray-700">
-<i class="ri-check-line text-primary mr-2"></i>
-<span>Active noise cancellation</span>
-</div>
-</div>
-<button class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">View Specifications</button>
-</div>
-<!-- Device 4 -->
-<div class="bg-white rounded-lg p-6 shadow-sm animate-fadeIn">
-<div class="h-48 mb-4 flex items-center justify-center">
-<img src="https://readdy.ai/api/search-image?query=professional%2520conference%2520room%2520speakerphone%2520with%2520touch%2520controls%252C%2520showing%2520a%2520modern%2520conference%2520calling%2520device%2520on%2520a%2520clean%2520white%2520background.%2520The%2520device%2520should%2520look%2520sleek%2520and%2520professional%2520for%2520business%2520use.&width=300&height=300&seq=conference1&orientation=squarish" alt="Conference Speakerphone" class="max-h-full">
-</div>
-<h3 class="text-lg font-semibold mb-2">ConferenceHub CH-300</h3>
-<p class="text-gray-600 mb-4">Premium conference room speakerphone with 360° audio pickup.</p>
-<div class="space-y-1 mb-4">
-<div class="flex items-center text-sm text-gray-700">
-<i class="ri-check-line text-primary mr-2"></i>
-<span>20ft voice capture range</span>
-</div>
-<div class="flex items-center text-sm text-gray-700">
-<i class="ri-check-line text-primary mr-2"></i>
-<span>USB/Bluetooth connectivity</span>
-</div>
-<div class="flex items-center text-sm text-gray-700">
-<i class="ri-check-line text-primary mr-2"></i>
-<span>Echo cancellation</span>
-</div>
-</div>
-<button class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">View Specifications</button>
-</div>
-</div>
-<div class="mt-12 text-center">
-<button class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Download Equipment Catalog</button>
-</div>
-</div>
+  <div class="container mx-auto px-4">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4">
+        Equipment & Devices
+      </h2>
+      <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+        High-quality, durable communication devices designed for various
+        environments and use cases.
+      </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+      <!-- Device 1 -->
+      <div class="bg-white rounded-lg p-6 shadow-sm animate-fadeIn">
+        <div class="h-48 mb-4 flex items-center justify-center">
+          <img
+            src="https://readdy.ai/api/search-image?query=professional%2520rugged%2520push-to-talk%2520radio%2520handset%2520with%2520display%2520screen%2520and%2520keypad%252C%2520showing%2520a%2520modern%2520POC%2520radio%2520device%2520on%2520a%2520clean%2520white%2520background.%2520The%2520device%2520should%2520look%2520durable%2520and%2520professional%2520for%2520business%2520use.&width=300&height=300&seq=radio_device1&orientation=squarish"
+            alt="POC Radio Handset"
+            class="max-h-full"
+          />
+        </div>
+        <h3 class="text-lg font-semibold mb-2">TechPro PTX-500</h3>
+        <p class="text-gray-600 mb-4">
+          Professional-grade POC radio handset with 4G/LTE connectivity.
+        </p>
+        <div class="space-y-1 mb-4">
+          <div class="flex items-center text-sm text-gray-700">
+            <i class="ri-check-line text-primary mr-2"></i>
+            <span>IP67 water/dust resistant</span>
+          </div>
+          <div class="flex items-center text-sm text-gray-700">
+            <i class="ri-check-line text-primary mr-2"></i>
+            <span>16-hour battery life</span>
+          </div>
+          <div class="flex items-center text-sm text-gray-700">
+            <i class="ri-check-line text-primary mr-2"></i>
+            <span>Emergency button</span>
+          </div>
+        </div>
+        <button
+          id="specBtn1"
+          class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300"
+          onclick="toggleDeviceView(this)"
+        >
+          View Specifications
+        </button>
+        <!-- Specifications Modal -->
+        <div
+          id="specModal"
+          class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center"
+        >
+          <div
+            class="bg-white rounded-lg w-full max-w-4xl mx-4 relative animate-scaleIn"
+          >
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold" id="specModalTitle">
+                  Device Specifications
+                </h3>
+                <button
+                  id="closeSpecModal"
+                  class="text-gray-400 hover:text-gray-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 rounded-full p-1"
+                >
+                  <i class="ri-close-line text-2xl"></i>
+                </button>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">
+                      Physical Specifications
+                    </h4>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center justify-between">
+                        <span>Dimensions</span>
+                        <span>125 x 60 x 25 mm</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Weight</span>
+                        <span>280g (with battery)</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Display</span>
+                        <span>2.4" Color LCD</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Durability</span>
+                        <span>IP67 rated</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">
+                      Battery & Power
+                    </h4>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center justify-between">
+                        <span>Battery Type</span>
+                        <span>Li-ion 3600mAh</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Talk Time</span>
+                        <span>Up to 16 hours</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Standby Time</span>
+                        <span>Up to 400 hours</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Charging Time</span>
+                        <span>3 hours</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">Connectivity</h4>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center justify-between">
+                        <span>Network</span>
+                        <span>4G LTE/5G Ready</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Wi-Fi</span>
+                        <span>802.11 a/b/g/n/ac</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Bluetooth</span>
+                        <span>5.0 BLE</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>GPS</span>
+                        <span>GPS/GLONASS/Galileo</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">
+                      Features & Certifications
+                    </h4>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span>Emergency Alert Button</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span>Man Down Detection</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span>Noise Cancellation</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span>MIL-STD-810G Certified</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="border-t border-gray-200 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4"
+              >
+                <a
+                  href="#"
+                  class="flex items-center text-primary hover:text-primary/80"
+                >
+                  <i class="ri-file-download-line mr-2"></i>
+                  <span>Download Full Specifications (PDF)</span>
+                </a>
+                <button
+                  id="requestQuoteBtn"
+                  class="bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300"
+                >
+                  Request Quote
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Device 2 -->
+      <div class="bg-white rounded-lg p-6 shadow-sm animate-fadeIn">
+        <div class="h-48 mb-4 flex items-center justify-center">
+          <img
+            src="https://readdy.ai/api/search-image?query=modern%2520VoIP%2520desk%2520phone%2520with%2520color%2520display%2520screen%2520and%2520multiple%2520line%2520buttons%252C%2520showing%2520a%2520professional%2520office%2520telephone%2520on%2520a%2520clean%2520white%2520background.%2520The%2520device%2520should%2520look%2520sleek%2520and%2520modern%2520for%2520business%2520use.&width=300&height=300&seq=voip_phone1&orientation=squarish"
+            alt="VoIP Desk Phone"
+            class="max-h-full"
+          />
+        </div>
+        <h3 class="text-lg font-semibold mb-2">VoiceConnect VP-200</h3>
+        <p class="text-gray-600 mb-4">
+          Executive VoIP desk phone with 4.3" color display and HD audio.
+        </p>
+        <div class="space-y-1 mb-4">
+          <div class="flex items-center text-sm text-gray-700">
+            <i class="ri-check-line text-primary mr-2"></i>
+            <span>8 programmable line keys</span>
+          </div>
+          <div class="flex items-center text-sm text-gray-700">
+            <i class="ri-check-line text-primary mr-2"></i>
+            <span>Built-in Bluetooth</span>
+          </div>
+          <div class="flex items-center text-sm text-gray-700">
+            <i class="ri-check-line text-primary mr-2"></i>
+            <span>Power over Ethernet</span>
+          </div>
+        </div>
+        <button
+          id="specBtn1"
+          class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300"
+          onclick="toggleDeviceView(this)"
+        >
+          View Specifications
+        </button>
+        <!-- Specifications Modal -->
+        <div
+          id="specModal"
+          class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center"
+        >
+          <div
+            class="bg-white rounded-lg w-full max-w-4xl mx-4 relative animate-scaleIn"
+          >
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold" id="specModalTitle">
+                  Device Specifications
+                </h3>
+                <button
+                  id="closeSpecModal"
+                  class="text-gray-400 hover:text-gray-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 rounded-full p-1"
+                >
+                  <i class="ri-close-line text-2xl"></i>
+                </button>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">
+                      Physical Specifications
+                    </h4>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center justify-between">
+                        <span>Dimensions</span>
+                        <span>125 x 60 x 25 mm</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Weight</span>
+                        <span>280g (with battery)</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Display</span>
+                        <span>2.4" Color LCD</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Durability</span>
+                        <span>IP67 rated</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">
+                      Battery & Power
+                    </h4>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center justify-between">
+                        <span>Battery Type</span>
+                        <span>Li-ion 3600mAh</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Talk Time</span>
+                        <span>Up to 16 hours</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Standby Time</span>
+                        <span>Up to 400 hours</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Charging Time</span>
+                        <span>3 hours</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">Connectivity</h4>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center justify-between">
+                        <span>Network</span>
+                        <span>4G LTE/5G Ready</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Wi-Fi</span>
+                        <span>802.11 a/b/g/n/ac</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Bluetooth</span>
+                        <span>5.0 BLE</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>GPS</span>
+                        <span>GPS/GLONASS/Galileo</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">
+                      Features & Certifications
+                    </h4>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span>Emergency Alert Button</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span>Man Down Detection</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span>Noise Cancellation</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span>MIL-STD-810G Certified</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="border-t border-gray-200 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4"
+              >
+                <a
+                  href="#"
+                  class="flex items-center text-primary hover:text-primary/80"
+                >
+                  <i class="ri-file-download-line mr-2"></i>
+                  <span>Download Full Specifications (PDF)</span>
+                </a>
+                <button
+                  id="requestQuoteBtn"
+                  class="bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300"
+                >
+                  Request Quote
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Device 3 -->
+      <div class="bg-white rounded-lg p-6 shadow-sm animate-fadeIn">
+        <div class="h-48 mb-4 flex items-center justify-center">
+          <img
+            src="https://readdy.ai/api/search-image?query=professional%2520wireless%2520headset%2520with%2520microphone%2520boom%252C%2520showing%2520a%2520modern%2520office%2520headset%2520on%2520a%2520clean%2520white%2520background.%2520The%2520device%2520should%2520look%2520comfortable%2520and%2520professional%2520for%2520business%2520use.&width=300&height=300&seq=headset1&orientation=squarish"
+            alt="Wireless Headset"
+            class="max-h-full"
+          />
+        </div>
+        <h3 class="text-lg font-semibold mb-2">AudioPro WH-100</h3>
+        <p class="text-gray-600 mb-4">
+          Professional wireless headset with noise-cancelling microphone.
+        </p>
+        <div class="space-y-1 mb-4">
+          <div class="flex items-center text-sm text-gray-700">
+            <i class="ri-check-line text-primary mr-2"></i>
+            <span>12-hour talk time</span>
+          </div>
+          <div class="flex items-center text-sm text-gray-700">
+            <i class="ri-check-line text-primary mr-2"></i>
+            <span>100ft wireless range</span>
+          </div>
+          <div class="flex items-center text-sm text-gray-700">
+            <i class="ri-check-line text-primary mr-2"></i>
+            <span>Active noise cancellation</span>
+          </div>
+        </div>
+        <button
+          id="specBtn1"
+          class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300"
+          onclick="toggleDeviceView(this)"
+        >
+          View Specifications
+        </button>
+        <!-- Specifications Modal -->
+        <div
+          id="specModal"
+          class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center"
+        >
+          <div
+            class="bg-white rounded-lg w-full max-w-4xl mx-4 relative animate-scaleIn"
+          >
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold" id="specModalTitle">
+                  Device Specifications
+                </h3>
+                <button
+                  id="closeSpecModal"
+                  class="text-gray-400 hover:text-gray-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 rounded-full p-1"
+                >
+                  <i class="ri-close-line text-2xl"></i>
+                </button>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">
+                      Physical Specifications
+                    </h4>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center justify-between">
+                        <span>Dimensions</span>
+                        <span>125 x 60 x 25 mm</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Weight</span>
+                        <span>280g (with battery)</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Display</span>
+                        <span>2.4" Color LCD</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Durability</span>
+                        <span>IP67 rated</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">
+                      Battery & Power
+                    </h4>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center justify-between">
+                        <span>Battery Type</span>
+                        <span>Li-ion 3600mAh</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Talk Time</span>
+                        <span>Up to 16 hours</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Standby Time</span>
+                        <span>Up to 400 hours</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Charging Time</span>
+                        <span>3 hours</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">Connectivity</h4>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center justify-between">
+                        <span>Network</span>
+                        <span>4G LTE/5G Ready</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Wi-Fi</span>
+                        <span>802.11 a/b/g/n/ac</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Bluetooth</span>
+                        <span>5.0 BLE</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>GPS</span>
+                        <span>GPS/GLONASS/Galileo</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">
+                      Features & Certifications
+                    </h4>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span>Emergency Alert Button</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span>Man Down Detection</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span>Noise Cancellation</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span>MIL-STD-810G Certified</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="border-t border-gray-200 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4"
+              >
+                <a
+                  href="#"
+                  class="flex items-center text-primary hover:text-primary/80"
+                >
+                  <i class="ri-file-download-line mr-2"></i>
+                  <span>Download Full Specifications (PDF)</span>
+                </a>
+                <button
+                  id="requestQuoteBtn"
+                  class="bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300"
+                >
+                  Request Quote
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Device 4 -->
+      <div class="bg-white rounded-lg p-6 shadow-sm animate-fadeIn">
+        <div class="h-48 mb-4 flex items-center justify-center">
+          <img
+            src="https://readdy.ai/api/search-image?query=professional%2520conference%2520room%2520speakerphone%2520with%2520touch%2520controls%252C%2520showing%2520a%2520modern%2520conference%2520calling%2520device%2520on%2520a%2520clean%2520white%2520background.%2520The%2520device%2520should%2520look%2520sleek%2520and%2520professional%2520for%2520business%2520use.&width=300&height=300&seq=conference1&orientation=squarish"
+            alt="Conference Speakerphone"
+            class="max-h-full"
+          />
+        </div>
+        <h3 class="text-lg font-semibold mb-2">ConferenceHub CH-300</h3>
+        <p class="text-gray-600 mb-4">
+          Premium conference room speakerphone with 360° audio pickup.
+        </p>
+        <div class="space-y-1 mb-4">
+          <div class="flex items-center text-sm text-gray-700">
+            <i class="ri-check-line text-primary mr-2"></i>
+            <span>20ft voice capture range</span>
+          </div>
+          <div class="flex items-center text-sm text-gray-700">
+            <i class="ri-check-line text-primary mr-2"></i>
+            <span>USB/Bluetooth connectivity</span>
+          </div>
+          <div class="flex items-center text-sm text-gray-700">
+            <i class="ri-check-line text-primary mr-2"></i>
+            <span>Echo cancellation</span>
+          </div>
+        </div>
+        <button
+          id="specBtn1"
+          class="w-full bg-primary text-white px-4 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300"
+          onclick="toggleDeviceView(this)"
+        >
+          View Specifications
+        </button>
+        <!-- Specifications Modal -->
+        <div
+          id="specModal"
+          class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center"
+        >
+          <div
+            class="bg-white rounded-lg w-full max-w-4xl mx-4 relative animate-scaleIn"
+          >
+            <div class="p-6">
+              <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-semibold" id="specModalTitle">
+                  Device Specifications
+                </h3>
+                <button
+                  id="closeSpecModal"
+                  class="text-gray-400 hover:text-gray-600 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50 rounded-full p-1"
+                >
+                  <i class="ri-close-line text-2xl"></i>
+                </button>
+              </div>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">
+                      Physical Specifications
+                    </h4>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center justify-between">
+                        <span>Dimensions</span>
+                        <span>125 x 60 x 25 mm</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Weight</span>
+                        <span>280g (with battery)</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Display</span>
+                        <span>2.4" Color LCD</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Durability</span>
+                        <span>IP67 rated</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">
+                      Battery & Power
+                    </h4>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center justify-between">
+                        <span>Battery Type</span>
+                        <span>Li-ion 3600mAh</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Talk Time</span>
+                        <span>Up to 16 hours</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Standby Time</span>
+                        <span>Up to 400 hours</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Charging Time</span>
+                        <span>3 hours</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+                <div>
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">Connectivity</h4>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-center justify-between">
+                        <span>Network</span>
+                        <span>4G LTE/5G Ready</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Wi-Fi</span>
+                        <span>802.11 a/b/g/n/ac</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>Bluetooth</span>
+                        <span>5.0 BLE</span>
+                      </li>
+                      <li class="flex items-center justify-between">
+                        <span>GPS</span>
+                        <span>GPS/GLONASS/Galileo</span>
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="mb-6">
+                    <h4 class="text-lg font-semibold mb-3">
+                      Features & Certifications
+                    </h4>
+                    <ul class="space-y-2 text-gray-600">
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span>Emergency Alert Button</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span>Man Down Detection</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span>Noise Cancellation</span>
+                      </li>
+                      <li class="flex items-start">
+                        <i class="ri-check-line text-primary mr-2 mt-1"></i>
+                        <span>MIL-STD-810G Certified</span>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              <div
+                class="border-t border-gray-200 mt-6 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4"
+              >
+                <a
+                  href="#"
+                  class="flex items-center text-primary hover:text-primary/80"
+                >
+                  <i class="ri-file-download-line mr-2"></i>
+                  <span>Download Full Specifications (PDF)</span>
+                </a>
+                <button
+                  id="requestQuoteBtn"
+                  class="bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300"
+                >
+                  Request Quote
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mt-12 text-center">
+      <button
+        class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300"
+      >
+        Download Equipment Catalog
+      </button>
+    </div>
+  </div>
 </section>
 <!-- Pricing Options Section -->
 
 <!-- Contact Form Section -->
-<section class="py-20 bg-white">
-<div class="container mx-auto px-4">
-<div class="max-w-5xl mx-auto">
-<div class="text-center mb-12">
-<h2 class="text-3xl md:text-4xl font-bold mb-4">Contact Our Telecommunication Experts</h2>
-<p class="text-lg text-gray-600 max-w-3xl mx-auto">Have questions about our solutions? Fill out the form below and one of our specialists will get back to you within 24 hours.</p>
-</div>
-<div class="bg-white rounded-lg shadow-sm overflow-hidden">
-<div class="grid grid-cols-1 lg:grid-cols-3">
-<div class="bg-primary text-white p-8">
-<h3 class="text-2xl font-semibold mb-6">Get in Touch</h3>
-<div class="space-y-6">
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
-<i class="ri-map-pin-line"></i>
-</div>
-<div>
-<h4 class="font-medium mb-1">Address</h4>
-<p class="opacity-80">The Piano, Brookside drive,<br>San Francisco, CA 94105</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
-<i class="ri-phone-line"></i>
-</div>
-<div>
-<h4 class="font-medium mb-1">Phone</h4>
-<p class="opacity-80">+1 (415) 555-0123</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
-<i class="ri-mail-line"></i>
-</div>
-<div>
-<h4 class="font-medium mb-1">Email</h4>
-<p class="opacity-80">contact@pitchforwardgroup.com</p>
-</div>
-</div>
-<div class="flex items-start">
-<div class="w-10 h-10 flex items-center justify-center bg-white/20 rounded-full mr-4 flex-shrink-0">
-<i class="ri-time-line"></i>
-</div>
-<div>
-<h4 class="font-medium mb-1">Support Hours</h4>
-<p class="opacity-80">24/7 Technical Support<br>8am-6pm PT Sales Inquiries</p>
-</div>
-</div>
-</div>
-</div>
-<div class="p-8 lg:col-span-2">
-<form>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-<div>
-<label class="block text-gray-700 mb-2" for="firstName">First Name*</label>
-<input type="text" id="firstName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none" required>
-</div>
-<div>
-<label class="block text-gray-700 mb-2" for="lastName">Last Name*</label>
-<input type="text" id="lastName" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none" required>
-</div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
-<div>
-<label class="block text-gray-700 mb-2" for="email">Email Address*</label>
-<input type="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none" required>
-</div>
-<div>
-<label class="block text-gray-700 mb-2" for="phone">Phone Number</label>
-<input type="tel" id="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none">
-</div>
-</div>
-<div class="mb-6">
-<label class="block text-gray-700 mb-2" for="company">Company Name*</label>
-<input type="text" id="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none" required>
-</div>
-<div class="mb-6">
-<label class="block text-gray-700 mb-2">Interested In (Select all that apply)</label>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-3">
-<div class="flex items-center">
-<input type="checkbox" id="voip" class="custom-checkbox mr-3">
-<label for="voip">VoIP Solutions</label>
-</div>
-<div class="flex items-center">
-<input type="checkbox" id="poc" class="custom-checkbox mr-3">
-<label for="poc">POC Radio Communication</label>
-</div>
-<div class="flex items-center">
-<input type="checkbox" id="ip" class="custom-checkbox mr-3">
-<label for="ip">IP Telephony Systems</label>
-</div>
-<div class="flex items-center">
-<input type="checkbox" id="unified" class="custom-checkbox mr-3">
-<label for="unified">Unified Communications</label>
-</div>
-<div class="flex items-center">
-<input type="checkbox" id="network" class="custom-checkbox mr-3">
-<label for="network">Network Infrastructure</label>
-</div>
-<div class="flex items-center">
-<input type="checkbox" id="callcenter" class="custom-checkbox mr-3">
-<label for="callcenter">Call Center Solutions</label>
-</div>
-</div>
-</div>
-<div class="mb-6">
-<label class="block text-gray-700 mb-2">Number of Users/Devices</label>
-<div class="flex items-center space-x-6">
-<div class="flex items-center">
-<input type="radio" id="size1" name="companySize" class="custom-radio mr-2">
-<label for="size1">1-10</label>
-</div>
-<div class="flex items-center">
-<input type="radio" id="size2" name="companySize" class="custom-radio mr-2">
-<label for="size2">11-50</label>
-</div>
-<div class="flex items-center">
-<input type="radio" id="size3" name="companySize" class="custom-radio mr-2">
-<label for="size3">51-200</label>
-</div>
-<div class="flex items-center">
-<input type="radio" id="size4" name="companySize" class="custom-radio mr-2">
-<label for="size4">201+</label>
-</div>
-</div>
-</div>
-<div class="mb-6">
-<label class="block text-gray-700 mb-2" for="message">Project Requirements*</label>
-<textarea id="message" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:outline-none" required></textarea>
-</div>
-<div class="mb-6">
-<label class="block text-gray-700 mb-2">Preferred Contact Method</label>
-<div class="flex items-center space-x-6">
-<div class="flex items-center">
-<input type="radio" id="contactEmail" name="contactMethod" class="custom-radio mr-2" checked>
-<label for="contactEmail">Email</label>
-</div>
-<div class="flex items-center">
-<input type="radio" id="contactPhone" name="contactMethod" class="custom-radio mr-2">
-<label for="contactPhone">Phone</label>
-</div>
-</div>
-</div>
-<button type="submit" class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Submit Inquiry</button>
-</form>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
+
 <!-- Technical Support Section -->
 <section class="py-20 bg-gray-50">
 <div class="container mx-auto px-4">
@@ -3657,6 +3992,15 @@ Read Full Case Study
   <i class="ri-arrow-up-line text-xl"></i>
   </button>
 <!-- Footer -->
+<div class="fixed right-6 bottom-6 z-50">
+  <a
+    href="https://wa.me/+254707586837"
+    target="_blank"
+    class="w-14 h-14 flex items-center justify-center bg-[#25D366] hover:bg-[#128C7E] rounded-full shadow-lg transition-colors"
+  >
+    <i class="ri-whatsapp-fill text-white text-2xl"></i>
+  </a>
+</div>
 <footer class="bg-orange-500 text-white pt-16 pb-8" animation="fadeIn">
   <div class="container mx-auto px-4">
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
@@ -4203,24 +4547,260 @@ myChart.resize();
         });
     });
     </script>
-  <script id="backToTopScript">
-document.addEventListener("DOMContentLoaded", function () {
-  const backToTopBtn = document.getElementById("backToTop");
-  window.addEventListener("scroll", function () {
-    if (window.scrollY > 500) {
+<script id="backToTopScript">
+  document.addEventListener("DOMContentLoaded", function () {
+    const backToTopBtn = document.getElementById("backToTop");
+    // Move button to left side
+    backToTopBtn.style.right = "auto";
+    backToTopBtn.style.left = "2rem";
+    // Responsive: adjust for mobile
+    function updatePosition() {
+      if (window.innerWidth <= 768) {
+        backToTopBtn.style.left = "1rem";
+        backToTopBtn.style.right = "auto";
+      } else {
+        backToTopBtn.style.left = "2rem";
+        backToTopBtn.style.right = "auto";
+      }
+    }
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+  });
+  document.addEventListener("DOMContentLoaded", function () {
+    const backToTopBtn = document.getElementById("backToTop");
+    window.addEventListener("scroll", function () {
+      if (window.scrollY > 500) {
+        backToTopBtn.classList.add("visible");
+      } else {
+        backToTopBtn.classList.remove("visible");
+      }
+    });
+    backToTopBtn.addEventListener("click", function () {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    });
+  });
+  window.addEventListener("resize", function () {
+    // Always show on mobile if scrolled at all
+    if (window.innerWidth <= 768 && window.scrollY > 50) {
+      backToTopBtn.classList.add("visible");
+    } else if (window.scrollY > 500) {
       backToTopBtn.classList.add("visible");
     } else {
       backToTopBtn.classList.remove("visible");
     }
   });
-  backToTopBtn.addEventListener("click", function () {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
+  </script>
+ 
+ <script id="quoteModalScript">
+  /* Toggle the Specifications Modal for a single item and hide the rest */
+  function toggleDeviceView(button) {
+    // Find the modal inside the same device card as the clicked button
+    const card = button.closest('.bg-white.rounded-lg');
+    const modal = card.querySelector('#specModal');
+    if (!modal) return;
+    const allCards = document.querySelectorAll('.grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4.gap-8 > .bg-white.rounded-lg');
+    if (modal.classList.contains('hidden')) {
+      // Hide all other cards except the current one
+      allCards.forEach(c => {
+        if (c !== card) c.style.display = 'none';
+      });
+      modal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+      // Make modal scrollable on mobile
+      if (window.innerWidth <= 768) {
+        modal.querySelector('.bg-white').style.maxHeight = '90vh';
+        modal.querySelector('.bg-white').style.overflowY = 'auto';
+      } else {
+        modal.querySelector('.bg-white').style.maxHeight = '';
+        modal.querySelector('.bg-white').style.overflowY = '';
+      }
+      // Optional: focus the close button for accessibility
+      const closeBtn = modal.querySelector('#closeSpecModal');
+      if (closeBtn) closeBtn.focus();
+    } else {
+      // Show all cards again
+      allCards.forEach(c => c.style.display = '');
+      modal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+  }
+  // Hide modal when clicking the close button or outside the modal content
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('.bg-white.rounded-lg').forEach(card => {
+      const modal = card.querySelector('#specModal');
+      const closeBtn = card.querySelector('#closeSpecModal');
+      if (modal && closeBtn) {
+        closeBtn.addEventListener('click', function () {
+          // Show all cards again
+          document.querySelectorAll('.grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4.gap-8 > .bg-white.rounded-lg').forEach(c => c.style.display = '');
+          modal.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+        });
+        modal.addEventListener('click', function (e) {
+          if (e.target === modal) {
+            // Show all cards again
+            document.querySelectorAll('.grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4.gap-8 > .bg-white.rounded-lg').forEach(c => c.style.display = '');
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+          }
+        });
+      }
     });
   });
-});
-</script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const getQuoteBtn = document.getElementById("getQuoteBtn");
+    const specBtns = document.querySelectorAll('[id^="specBtn"]');
+    const specModal = document.getElementById("specModal");
+    function toggleDeviceView(button) {
+      const deviceCards = document.querySelectorAll(
+        ".grid.grid-cols-1.md\\:grid-cols-2.lg\\:grid-cols-4.gap-8 > div",
+      );
+      const currentCard = button.closest(".bg-white.rounded-lg");
+      deviceCards.forEach((card) => {
+        if (card !== currentCard) {
+          if (card.style.display !== "none") {
+            card.style.opacity = "1";
+            card.style.transition = "opacity 0.3s ease-out";
+            setTimeout(() => {
+              card.style.opacity = "0";
+            }, 0);
+            setTimeout(() => {
+              card.style.display = "none";
+            }, 300);
+          } else {
+            card.style.display = "";
+            card.style.opacity = "0";
+            setTimeout(() => {
+              card.style.opacity = "1";
+            }, 0);
+          }
+        }
+      });
+      if (currentCard.classList.contains("expanded")) {
+        currentCard.classList.remove("expanded");
+        button.textContent = "View Specifications";
+        deviceCards.forEach((card) => {
+          if (card !== currentCard) {
+            card.style.display = "";
+            card.style.opacity = "0";
+            setTimeout(() => {
+              card.style.opacity = "1";
+            }, 0);
+          }
+        });
+      } else {
+        currentCard.classList.add("expanded");
+        button.textContent = "Show All Devices";
+      }
+    }
+    const closeSpecModal = document.getElementById("closeSpecModal");
+    const requestQuoteBtn = document.getElementById("requestQuoteBtn");
+    const specModalTitle = document.getElementById("specModalTitle");
+    // Show specifications modal
+    function showSpecModal(deviceName) {
+      specModal.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+      if (deviceName) {
+        specModalTitle.textContent = deviceName + " Specifications";
+      }
+    }
+    // Hide specifications modal
+    function hideSpecModal() {
+      const specModal = document.getElementById("specModal");
+      const modalContent = specModal.querySelector(".bg-white");
+      let openingButton = document.activeElement;
+      modalContent.classList.add("animate-fadeOut");
+      setTimeout(() => {
+        specModal.classList.add("hidden");
+        document.body.style.overflow = "";
+        modalContent.classList.remove("animate-fadeOut");
+        // Return focus to the button that opened the modal
+        if (openingButton && openingButton.id.startsWith("specBtn")) {
+          openingButton.focus();
+        }
+      }, 200);
+    }
+    // Event listeners for specifications modal
+    specBtns.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const deviceName = this.closest("div").querySelector("h3").textContent;
+        showSpecModal(deviceName);
+      });
+    });
+    closeSpecModal.addEventListener("click", hideSpecModal);
+    requestQuoteBtn.addEventListener("click", () => {
+      hideSpecModal();
+      showModal(quoteModal);
+    });
+    // Close spec modal when clicking outside
+    specModal.addEventListener("click", (e) => {
+      if (e.target === specModal) {
+        hideSpecModal();
+      }
+    });
+    // Prevent modal content clicks from closing the modal
+    specModal.querySelector(".bg-white").addEventListener("click", (e) => {
+      e.stopPropagation();
+    });
+    // Close spec modal on escape key
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && !specModal.classList.contains("hidden")) {
+        hideSpecModal();
+      }
+    });
+    const quoteModal = document.getElementById("quoteModal");
+    const confirmationModal = document.getElementById("confirmationModal");
+    const closeQuoteModal = document.getElementById("closeQuoteModal");
+    const cancelQuoteBtn = document.getElementById("cancelQuoteBtn");
+    const closeConfirmationBtn = document.getElementById("closeConfirmationBtn");
+    const quoteForm = document.getElementById("quoteForm");
+    function showModal(modal) {
+      modal.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+    }
+    function hideModal(modal) {
+      modal.classList.add("hidden");
+      document.body.style.overflow = "";
+    }
+    function hideAllModals() {
+      hideModal(quoteModal);
+      hideModal(confirmationModal);
+    }
+    getQuoteBtn.addEventListener("click", () => showModal(quoteModal));
+    closeQuoteModal.addEventListener("click", () => hideModal(quoteModal));
+    cancelQuoteBtn.addEventListener("click", () => hideModal(quoteModal));
+    closeConfirmationBtn.addEventListener("click", () =>
+      hideModal(confirmationModal),
+    );
+    // Close modals when clicking outside
+    [quoteModal, confirmationModal].forEach((modal) => {
+      modal.addEventListener("click", (e) => {
+        if (e.target === modal) {
+          hideAllModals();
+        }
+      });
+    });
+    // Handle form submission
+    quoteForm.addEventListener("submit", function (e) {
+      e.preventDefault();
+      // Here you would typically send the form data to your server
+      // For now, we'll just show the confirmation
+      hideModal(quoteModal);
+      showModal(confirmationModal);
+      // Reset form
+      quoteForm.reset();
+    });
+    // Close modals on escape key
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") {
+        hideAllModals();
+      }
+    });
+  });
 
+</script>
 </body>
 </html>
