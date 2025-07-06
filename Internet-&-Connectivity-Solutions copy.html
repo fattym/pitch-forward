@@ -1,0 +1,2052 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiber Optic Solutions - TechSolutions</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#0056b3',secondary:'#00a3e0'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="shortcut icon" href="./ww.png" type="image/png">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<link
+href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Lato:wght@300;400;700&display=swap"
+rel="stylesheet"
+/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/echarts/5.5.0/echarts.min.js"></script>
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+      font-family: 'Lato', sans-serif;
+      }
+      h1, h2, h3, h4, .font-heading {
+      font-family: 'Playfair Display', serif;
+      letter-spacing: 0.025em;
+      }
+.hero-section {
+background-image: url('https://readdy.ai/api/search-image?query=modern%20fiber%20optic%20cables%20with%20blue%20light%20glowing%20through%20them%2C%20arranged%20in%20a%20high-tech%20data%20center%20environment.%20The%20image%20shows%20detailed%20close-up%20of%20fiber%20connections%20with%20professional%20lighting%20creating%20a%20futuristic%20atmosphere.%20The%20left%20side%20has%20a%20dark%20blue%20gradient%20that%20transitions%20smoothly%20to%20show%20the%20technology%20infrastructure%20on%20the%20right.%20High%20contrast%20for%20text%20overlay.&width=1920&height=600&seq=fiberdetail123&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.hero-overlay {
+background: linear-gradient(90deg, rgba(0,20,50,0.9) 0%, rgba(0,20,50,0.8) 50%, rgba(0,20,50,0.6) 100%);
+}
+.feature-card {
+transition: all 0.3s ease;
+}
+.feature-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.nav-link {
+position: relative;
+}
+.nav-link::after {
+content: '';
+position: absolute;
+width: 0;
+height: 2px;
+bottom: -2px;
+left: 0;
+background-color: #0056b3;
+transition: width 0.3s ease;
+}
+.nav-link:hover::after {
+width: 100%;
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #d1d5db;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #0056b3;
+border-color: #0056b3;
+}
+.custom-checkbox:checked::after {
+content: '';
+position: absolute;
+top: 3px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.testimonial-card {
+transition: all 0.3s ease;
+}
+.testimonial-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.tab-active {
+color: #0056b3;
+border-bottom: 2px solid #0056b3;
+}
+.tab-inactive {
+color: #6b7280;
+border-bottom: 2px solid transparent;
+}
+.tab-content {
+display: none;
+}
+.tab-content.active {
+display: block;
+}
+.faq-item.active .faq-answer {
+display: block;
+}
+.faq-item.active .faq-icon-plus {
+display: none;
+}
+.faq-item.active .faq-icon-minus {
+display: block;
+}
+.faq-item .faq-icon-minus {
+display: none;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Header Navigation -->
+<header class="bg-white shadow-sm fixed w-full z-50">
+  <div class="container mx-auto px-4 py-3 flex items-center justify-between">
+  
+      <div class="flex items-center">
+        <a href="./index.html" class="text-2xl font-['Righteous'] text-primary">Pitch Forward</a >
+      </div>
+      
+  <nav class="hidden md:flex space-x-8">
+  <a href="./index.html" id="homeLink" class="nav-link text-gray-700 hover:text-primary font-medium">Home</a>
+  <div class="relative" id="solutionsDropdown">
+  <button id="solutionsBtn" class="nav-link text-gray-700 hover:text-primary font-medium flex items-center" aria-expanded="false" aria-haspopup="true">
+  Solutions
+  <i class="ri-arrow-down-s-line ml-1"></i>
+  </button>
+  <div id="solutionsMenu" class="absolute top-full left-0 mt-2 w-64 bg-white rounded-lg shadow-lg py-2 hidden" role="menu" aria-labelledby="solutionsBtn">
+  <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-footprint-line w-5 h-5 mr-3"></i>
+  Fleet Management
+  </a>
+  <a href="./Fuel-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-gas-station-line w-5 h-5 mr-3"></i>
+  Fuel Management
+  </a>
+  <a href="./Logistics-Management-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-truck-line w-5 h-5 mr-3"></i>
+  Logistics Management
+  </a>
+  <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-phone-line w-5 h-5 mr-3"></i>
+  Telecommunication
+  </a>
+  <a href="./Security-Solutions-Overview.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-shield-keyhole-line w-5 h-5 mr-3"></i>
+  Security
+  </a>
+  <a href="./Data-&-Power-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-database-2-line w-5 h-5 mr-3"></i>
+  Data & Power
+  </a>
+  <a href="./Internet-&-Connectivity-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-wifi-line w-5 h-5 mr-3"></i>
+  Internet & Connectivity
+  </a>
+  <a href="./Mining-Technology-Solutions.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-mine-line w-5 h-5 mr-3"></i>
+  Mining
+  </a>
+  <a href="./Warehousing-Solutions-Overview.html" data-readdy="true" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+  <i class="ri-store-2-line w-5 h-5 mr-3"></i>
+  Warehousing
+  </a>
+  <a href="./hospitality.html" class="flex items-center px-4 py-2 text-gray-700 hover:bg-gray-50">
+    <i class="ri-hotel-line w-5 h-5 mr-3"></i>
+    Hospitality
+  </a>
+  </div>
+  </div>
+  <a href="./industry.html" class="nav-link text-gray-700 hover:text-primary font-medium">Industries</a>
+  <a href="./About-Our-Company.html" class="nav-link text-gray-700 hover:text-primary font-medium">About Us</a>
+  </nav>
+  <div class="flex items-center space-x-4">
+  <div class="relative hidden md:block">
+  <input type="text" placeholder="Search..." class="pl-10 pr-4 py-2 rounded-full border border-gray-300 text-sm focus:border-primary">
+  <div class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5 flex items-center justify-center text-gray-400">
+  <i class="ri-search-line"></i>
+  </div>
+  </div>
+  <button id="contactUsBtn" class="bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+  <div id="contactModal" class="fixed inset-0 bg-black/50 z-50 hidden flex items-center justify-center">
+  <div class="bg-white rounded-lg w-full max-w-xl mx-4 relative">
+  <button id="closeModalBtn" class="absolute right-4 top-4 text-gray-500 hover:text-gray-700">
+  <i class="ri-close-line text-2xl"></i>
+  </button>
+  
+  <div class="max-h-[100vh] overflow-x-auto p-4 md:p-8">
+  
+  <h3 class="text-2xl font-semibold mb-6">Contact Us</h3>
+  <form id="contactForm" action="" method="POST">
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
+  <div>
+  <label for="name" class="block text-sm font-medium text-gray-700 mb-1">Name</label>
+  <input type="text" id="name" name="name" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+  </div>
+  <div>
+  <label for="email" class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+  <input type="email" id="email" name="email" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+  </div>
+  <div>
+  <label for="phone" class="block text-sm font-medium text-gray-700 mb-1">Phone Number</label>
+  <input type="tel" id="phone" name="phone" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+  </div>
+  <div>
+  <label for="company" class="block text-sm font-medium text-gray-700 mb-1">Company</label>
+  <input type="text" id="company" name="company" class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary">
+  </div>
+  </div>
+  <div class="mb-4">
+  <label for="service" class="block text-sm font-medium text-gray-700 mb-1">Service Interest</label>
+  <select id="service" name="service" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary pr-8">
+  <option value="">Select a service</option>
+  <option value="">Select a service</option>
+  <option value="fleet">Fleet Management</option>
+  <option value="fuel">Fuel Management</option>
+  <option value="logistics">Logistics Management</option>
+  <option value="telecommunication">Telecommunication</option>
+  <option value="security">Security</option>
+  <option value="data-power">Data &amp; Power</option>
+  <option value="internet-connectivity">Internet &amp; Connectivity</option>
+  <option value="mining">Mining</option>
+  <option value="warehousing">Warehousing</option>
+  <option value="other">Other</option>
+  </select>
+  </div>
+  <div class="mb-6">
+  <label for="message" class="block text-sm font-medium text-gray-700 mb-1">Message</label>
+  <textarea id="message" name="message" rows="4" required class="w-full px-4 py-2 border border-gray-300 rounded focus:border-primary focus:ring-1 focus:ring-primary"></textarea>
+  </div>
+  <button type="submit" class="w-full bg-primary text-white px-6 py-3 !rounded-button font-medium hover:bg-primary/90 transition duration-300">Submit</button>
+  </form>
+  </div>
+  </div>
+  </div>
+  <button id="mobileMenuBtn" class="md:hidden w-10 h-10 flex items-center justify-center">
+  <i class="ri-menu-line text-xl"></i>
+  </button>
+  </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="md:hidden hidden bg-white w-full absolute top-full left-0 shadow-lg">
+  <nav class="container mx-auto px-4 py-4">
+  <a href="index.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Home</a>
+  <div class="relative">
+  <button id="mobileSolutionsBtn" class="w-full flex items-center justify-between py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">
+  Solutions
+  <i class="ri-arrow-down-s-line"></i>
+  </button>
+  <div id="mobileSolutionsMenu" class="hidden bg-gray-50 px-4 py-2">
+  <a href="./Fleet-Management-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Fleet Management</a>
+  <a href="./Fuel-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Fuel Management</a>
+  <a href="./Logistics-Management-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Logistics Management</a>
+  <a href="./Telecommunication-Solutions-Overview.html" data-readdy="true" class="block py-2 text-gray-700 hover:text-primary">Telecommunication</a>
+  <a href="./Security-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Security</a>
+  <a href="./Data-&-Power-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Data & Power</a>
+  <a href="./Internet-&-Connectivity-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Internet & Connectivity</a>
+  <a href="./Mining-Technology-Solutions.html" class="block py-2 text-gray-700 hover:text-primary">Mining</a>
+  <a href="./Warehousing-Solutions-Overview.html" class="block py-2 text-gray-700 hover:text-primary">Warehousing</a>
+
+  <a href="./hospitality.html" class="block py-2 text-gray-700 hover:text-primary">Hospitality</a>
+  </div>
+  </div>
+  <a href="./industry.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">Industries</a>
+  <a href="About-Our-Company.html" class="block py-3 text-gray-700 hover:text-primary font-medium border-b border-gray-100">About Us</a>
+  <div class="mt-4">
+  <button class="w-full bg-primary text-white px-5 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Us</button>
+  </div>
+  </nav>
+  </div>
+  </header>
+<!-- Breadcrumb -->
+<div class="bg-gray-100 pt-20">
+<div class="container mx-auto px-4 py-3">
+<div class="flex items-center text-sm text-gray-600">
+<a href="./index.html" class="hover:text-primary">Home</a>
+<i class="ri-arrow-right-s-line mx-2"></i>
+<a href="./Internet-&-Connectivity-Solutions.html" data-readdy="true" class="hover:text-primary">Solutions</a>
+<i class="ri-arrow-right-s-line mx-2"></i>
+<a href="./Internet-&-Connectivity-Solutions.html" data-readdy="true" class="hover:text-primary">Internet & Connectivity</a>
+<i class="ri-arrow-right-s-line mx-2"></i>
+<span class="text-primary font-medium">Fiber Optic Solutions</span>
+</div>
+</div>
+</div>
+<!-- Hero Section -->
+<section class="hero-section w-full min-h-[500px] relative">
+<div class="hero-overlay absolute inset-0"></div>
+<div class="container mx-auto px-4 h-full flex items-center relative z-10 py-16">
+<div class="w-full md:w-3/5 text-white">
+<div class="flex items-center mb-6">
+<a href="https://readdy.ai/home/a8b0a5da-b596-44aa-80ab-ff5f1a31fa18/44033481-12d1-4992-a416-64f472647db6" data-readdy="true" class="flex items-center text-white/80 hover:text-white transition-colors">
+<i class="ri-arrow-left-line mr-2"></i>
+<span>Back to Internet & Connectivity Solutions</span>
+</a>
+</div>
+<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6">Enterprise-Grade Fiber Optic Solutions</h1>
+<p class="text-lg sm:text-xl mb-8 opacity-90">Ultra-fast dedicated fiber connections with speeds up to 10 Gbps, providing low-latency performance for data-intensive applications.</p>
+<div class="flex flex-wrap gap-4 mb-8">
+<div class="bg-white/10 px-4 py-2 rounded-lg flex items-center">
+<i class="ri-speed-line mr-2"></i>
+<span>Up to 10 Gbps</span>
+</div>
+<div class="bg-white/10 px-4 py-2 rounded-lg flex items-center">
+<i class="ri-timer-line mr-2"></i>
+<span>&lt; 5ms Latency</span>
+</div>
+<div class="bg-white/10 px-4 py-2 rounded-lg flex items-center">
+<i class="ri-shield-check-line mr-2"></i>
+<span>99.99% Uptime</span>
+</div>
+<div class="bg-white/10 px-4 py-2 rounded-lg flex items-center">
+<i class="ri-lock-line mr-2"></i>
+<span>Enterprise Security</span>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4">
+<button onclick="window.location.href='Consultation-Scheduling-Page.html';" class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Request Quote</button>
+<button onclick="window.location.href='Consultation-Scheduling-Page.html';" class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300">Schedule Consultation</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Overview Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="flex flex-col lg:flex-row gap-12">
+<div class="w-full lg:w-2/3">
+<h2 class="text-3xl font-bold mb-6">Fiber Optic Connectivity Overview</h2>
+<p class="text-gray-700 mb-6 text-lg">Our enterprise-grade fiber optic solutions deliver unmatched speed, reliability, and security for businesses that demand the highest performance from their network infrastructure. With dedicated bandwidth and symmetrical upload and download speeds, our fiber solutions ensure your critical applications perform optimally at all times.</p>
+<p class="text-gray-700 mb-8">Fiber optic technology uses light signals transmitted through glass fibers to deliver data at speeds far exceeding traditional copper-based connections. This technology provides inherent security advantages, greater bandwidth capacity, and superior resistance to electromagnetic interference and environmental factors.</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+<div class="bg-gray-50 p-6 rounded-lg">
+<h3 class="text-xl font-semibold mb-4">Key Advantages</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Symmetrical bandwidth up to 10 Gbps</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Ultra-low latency (< 5ms)</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>99.99% uptime guarantee with SLA</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Dedicated, unshared connections</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Scalable to grow with your business</span>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg">
+<h3 class="text-xl font-semibold mb-4">Ideal For</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-building-line"></i>
+</div>
+<span>Enterprise headquarters and data centers</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-cloud-line"></i>
+</div>
+<span>Cloud service providers and SaaS companies</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-hospital-line"></i>
+</div>
+<span>Healthcare facilities and telemedicine</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-bank-line"></i>
+</div>
+<span>Financial institutions and trading firms</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-movie-line"></i>
+</div>
+<span>Media production and broadcasting</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="bg-blue-50 p-6 rounded-lg border-l-4 border-primary">
+<h3 class="text-xl font-semibold mb-2">Did You Know?</h3>
+<p class="text-gray-700">Fiber optic cables transmit data at approximately 70% the speed of light, allowing information to travel around the world in just 0.2 seconds. Our enterprise fiber solutions leverage this technology to provide the fastest and most reliable connectivity available today.</p>
+</div>
+</div>
+<div class="w-full lg:w-1/3">
+<div class="bg-gray-50 p-8 rounded-lg shadow-sm sticky top-24">
+<h3 class="text-xl font-semibold mb-6">Request Information</h3>
+
+<div class="mt-8 pt-8 border-t border-gray-200">
+<h4 class="font-semibold mb-4">Need immediate assistance?</h4>
+<div class="flex items-center mb-4">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full mr-3 text-primary">
+<i class="ri-phone-line"></i>
+</div>
+<div>
+<p class="text-gray-500 text-sm">Call Sales</p>
+<p class="font-medium">
+(+254) 707 586837</p>
+</div>
+</div>
+<div class="flex items-center">
+<div class="w-10 h-10 flex items-center justify-center bg-blue-100 rounded-full mr-3 text-primary">
+<i class="ri-message-2-line"></i>
+</div>
+<div>
+<p class="text-gray-500 text-sm">Live Chat</p>
+<button class="text-primary font-medium">Start Chat</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Technical Specifications Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Technical Specifications</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our fiber optic solutions are built on enterprise-grade infrastructure designed for maximum performance, reliability, and security.</p>
+</div>
+<!-- Tabs Navigation -->
+<div class="flex justify-center mb-8 border-b border-gray-200">
+<button class="tab-btn tab-active px-6 py-3 font-medium" data-tab="performance">Performance</button>
+<button class="tab-btn tab-inactive px-6 py-3 font-medium" data-tab="network">Network Architecture</button>
+<button class="tab-btn tab-inactive px-6 py-3 font-medium" data-tab="security">Security Features</button>
+<button class="tab-btn tab-inactive px-6 py-3 font-medium" data-tab="sla">SLA Terms</button>
+</div>
+<!-- Tab Content -->
+<div class="bg-white rounded-lg shadow-sm p-8">
+<!-- Performance Tab -->
+<div id="performance-tab" class="tab-content active">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-gray-50">
+<th class="px-6 py-3 text-gray-700 font-semibold">Specification</th>
+<th class="px-6 py-3 text-gray-700 font-semibold">Business Fiber</th>
+<th class="px-6 py-3 text-gray-700 font-semibold">Enterprise Fiber</th>
+<th class="px-6 py-3 text-gray-700 font-semibold">Ultra Fiber</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200">
+<tr>
+<td class="px-6 py-4 font-medium">Bandwidth</td>
+<td class="px-6 py-4">100 Mbps - 1 Gbps</td>
+<td class="px-6 py-4">1 Gbps - 5 Gbps</td>
+<td class="px-6 py-4">5 Gbps - 10 Gbps</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Symmetrical</td>
+<td class="px-6 py-4">Yes</td>
+<td class="px-6 py-4">Yes</td>
+<td class="px-6 py-4">Yes</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Latency</td>
+<td class="px-6 py-4">< 10ms</td>
+<td class="px-6 py-4">< 7ms</td>
+<td class="px-6 py-4">< 5ms</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Jitter</td>
+<td class="px-6 py-4">< 2ms</td>
+<td class="px-6 py-4">< 1ms</td>
+<td class="px-6 py-4">< 0.5ms</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Packet Loss</td>
+<td class="px-6 py-4">< 0.1%</td>
+<td class="px-6 py-4">< 0.05%</td>
+<td class="px-6 py-4">< 0.01%</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Dedicated</td>
+<td class="px-6 py-4">Yes</td>
+<td class="px-6 py-4">Yes</td>
+<td class="px-6 py-4">Yes</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Burst Capability</td>
+<td class="px-6 py-4">Up to 10%</td>
+<td class="px-6 py-4">Up to 20%</td>
+<td class="px-6 py-4">Up to 30%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="mt-8">
+<h3 class="text-xl font-semibold mb-4">Performance Comparison</h3>
+<div id="performanceChart" class="w-full h-80"></div>
+</div>
+</div>
+<!-- Network Architecture Tab -->
+<div id="network-tab" class="tab-content hidden">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h3 class="text-xl font-semibold mb-4">Network Infrastructure</h3>
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium">Redundant Fiber Rings</span>
+<p class="text-gray-600 mt-1">Our network is built on multiple self-healing fiber rings that automatically reroute traffic in case of fiber cuts or equipment failures.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium">Carrier-Grade Equipment</span>
+<p class="text-gray-600 mt-1">We use only enterprise-class Cisco and Juniper networking equipment in our core and edge networks.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium">Multiple Tier 1 Peering</span>
+<p class="text-gray-600 mt-1">Direct peering with major Tier 1 providers ensures optimal routing and minimal hops to reach your destinations.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium">Diverse Path Routing</span>
+<p class="text-gray-600 mt-1">Physical diversity in fiber paths provides protection against outages due to construction or natural disasters.</p>
+</div>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4">Last Mile Delivery</h3>
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium">Dedicated Fiber Handoff</span>
+<p class="text-gray-600 mt-1">Direct fiber connection to your premises with no shared infrastructure in the last mile.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium">Enterprise-Grade CPE</span>
+<p class="text-gray-600 mt-1">High-performance customer premises equipment with redundant power supplies and modular interfaces.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium">Flexible Handoff Options</span>
+<p class="text-gray-600 mt-1">Multiple interface options including single-mode fiber, multi-mode fiber, copper, and various connector types.</p>
+</div>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-checkbox-circle-line"></i>
+</div>
+<div>
+<span class="font-medium">24/7 Proactive Monitoring</span>
+<p class="text-gray-600 mt-1">Continuous monitoring of your connection with automated alerts and rapid response to potential issues.</p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="mt-8 p-6 bg-gray-50 rounded-lg">
+<h3 class="text-xl font-semibold mb-4">Network Protocol Support</h3>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+<div class="bg-white p-4 rounded shadow-sm">
+<h4 class="font-medium mb-2">Layer 2</h4>
+<ul class="space-y-1 text-gray-700">
+<li>• Ethernet (10/100/1000/10G)</li>
+<li>• VLAN (802.1Q)</li>
+<li>• QinQ (802.1ad)</li>
+<li>• Link Aggregation (LACP)</li>
+<li>• Jumbo Frames (up to 9000 bytes)</li>
+</ul>
+</div>
+<div class="bg-white p-4 rounded shadow-sm">
+<h4 class="font-medium mb-2">Layer 3</h4>
+<ul class="space-y-1 text-gray-700">
+<li>• IPv4 and IPv6 dual-stack</li>
+<li>• BGP-4 routing</li>
+<li>• OSPF routing</li>
+<li>• Static routing</li>
+<li>• IP Multicast (PIM, IGMP)</li>
+</ul>
+</div>
+<div class="bg-white p-4 rounded shadow-sm">
+<h4 class="font-medium mb-2">Advanced Features</h4>
+<ul class="space-y-1 text-gray-700">
+<li>• MPLS</li>
+<li>• SD-WAN integration</li>
+<li>• Traffic shaping and QoS</li>
+<li>• IPsec VPN</li>
+<li>• DDoS mitigation</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<!-- Security Features Tab -->
+<div id="security-tab" class="tab-content hidden">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-gray-50 p-6 rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg mb-4 text-primary">
+<i class="ri-shield-line text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Physical Security</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Dedicated fiber strands</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Tamper-resistant infrastructure</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Secure equipment facilities</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">24/7 monitored infrastructure</span>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg mb-4 text-primary">
+<i class="ri-lock-line text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Network Security</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">DDoS protection services</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Traffic encryption options</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Private VLAN isolation</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">Advanced firewall services</span>
+</li>
+</ul>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg">
+<div class="w-12 h-12 flex items-center justify-center bg-blue-100 rounded-lg mb-4 text-primary">
+<i class="ri-file-shield-line text-xl"></i>
+</div>
+<h3 class="text-xl font-semibold mb-3">Compliance & Certifications</h3>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">ISO 27001 certified</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">HIPAA compliant infrastructure</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">PCI DSS compliant</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="text-gray-700">SOC 2 Type II audited</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="mt-8">
+<h3 class="text-xl font-semibold mb-4">Advanced Security Options</h3>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-gray-50">
+<th class="px-6 py-3 text-gray-700 font-semibold">Security Feature</th>
+<th class="px-6 py-3 text-gray-700 font-semibold">Business Fiber</th>
+<th class="px-6 py-3 text-gray-700 font-semibold">Enterprise Fiber</th>
+<th class="px-6 py-3 text-gray-700 font-semibold">Ultra Fiber</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200">
+<tr>
+<td class="px-6 py-4 font-medium">Basic DDoS Protection</td>
+<td class="px-6 py-4 text-center"><i class="ri-check-line text-primary"></i></td>
+<td class="px-6 py-4 text-center"><i class="ri-check-line text-primary"></i></td>
+<td class="px-6 py-4 text-center"><i class="ri-check-line text-primary"></i></td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Advanced DDoS Mitigation</td>
+<td class="px-6 py-4 text-center">Optional</td>
+<td class="px-6 py-4 text-center"><i class="ri-check-line text-primary"></i></td>
+<td class="px-6 py-4 text-center"><i class="ri-check-line text-primary"></i></td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Managed Firewall Service</td>
+<td class="px-6 py-4 text-center">Optional</td>
+<td class="px-6 py-4 text-center">Optional</td>
+<td class="px-6 py-4 text-center"><i class="ri-check-line text-primary"></i></td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Traffic Encryption</td>
+<td class="px-6 py-4 text-center">Optional</td>
+<td class="px-6 py-4 text-center"><i class="ri-check-line text-primary"></i></td>
+<td class="px-6 py-4 text-center"><i class="ri-check-line text-primary"></i></td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Intrusion Prevention System</td>
+<td class="px-6 py-4 text-center">—</td>
+<td class="px-6 py-4 text-center">Optional</td>
+<td class="px-6 py-4 text-center"><i class="ri-check-line text-primary"></i></td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Security Information & Event Management</td>
+<td class="px-6 py-4 text-center">—</td>
+<td class="px-6 py-4 text-center">Optional</td>
+<td class="px-6 py-4 text-center">Optional</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">24/7 Security Monitoring</td>
+<td class="px-6 py-4 text-center">—</td>
+<td class="px-6 py-4 text-center">Optional</td>
+<td class="px-6 py-4 text-center"><i class="ri-check-line text-primary"></i></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- SLA Terms Tab -->
+<div id="sla-tab" class="tab-content hidden">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+<div>
+<h3 class="text-xl font-semibold mb-4">Service Level Guarantees</h3>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-gray-50">
+<th class="px-6 py-3 text-gray-700 font-semibold">Metric</th>
+<th class="px-6 py-3 text-gray-700 font-semibold">Business</th>
+<th class="px-6 py-3 text-gray-700 font-semibold">Enterprise</th>
+<th class="px-6 py-3 text-gray-700 font-semibold">Ultra</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200">
+<tr>
+<td class="px-6 py-4 font-medium">Network Availability</td>
+<td class="px-6 py-4">99.9%</td>
+<td class="px-6 py-4">99.99%</td>
+<td class="px-6 py-4">99.999%</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Max Downtime (per year)</td>
+<td class="px-6 py-4">8.76 hours</td>
+<td class="px-6 py-4">52.6 minutes</td>
+<td class="px-6 py-4">5.26 minutes</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Mean Time to Respond</td>
+<td class="px-6 py-4">4 hours</td>
+<td class="px-6 py-4">2 hours</td>
+<td class="px-6 py-4">30 minutes</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Mean Time to Repair</td>
+<td class="px-6 py-4">8 hours</td>
+<td class="px-6 py-4">4 hours</td>
+<td class="px-6 py-4">2 hours</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div>
+<h3 class="text-xl font-semibold mb-4">SLA Credit Structure</h3>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-gray-50">
+<th class="px-6 py-3 text-gray-700 font-semibold">Availability</th>
+<th class="px-6 py-3 text-gray-700 font-semibold">Credit (% of MRC)</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200">
+<tr>
+<td class="px-6 py-4 font-medium">99.9% - 99.5%</td>
+<td class="px-6 py-4">5%</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">99.5% - 99.0%</td>
+<td class="px-6 py-4">10%</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">99.0% - 98.0%</td>
+<td class="px-6 py-4">15%</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">98.0% - 97.0%</td>
+<td class="px-6 py-4">20%</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Below 97.0%</td>
+<td class="px-6 py-4">25%</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="bg-gray-50 p-6 rounded-lg">
+<h3 class="text-xl font-semibold mb-4">SLA Terms & Conditions</h3>
+<div class="space-y-4">
+<div>
+<h4 class="font-medium mb-2">Measurement Period</h4>
+<p class="text-gray-700">SLA metrics are measured and calculated on a calendar month basis. Credits are applied to the following month's invoice.</p>
+</div>
+<div>
+<h4 class="font-medium mb-2">Exclusions</h4>
+<p class="text-gray-700">The following events are excluded from SLA calculations:</p>
+<ul class="list-disc pl-5 mt-2 text-gray-700 space-y-1">
+<li>Scheduled maintenance with at least 48 hours advance notice</li>
+<li>Force majeure events (natural disasters, acts of war, etc.)</li>
+<li>Issues with customer equipment or facilities</li>
+<li>Customer-caused outages or disruptions</li>
+<li>Emergency maintenance to prevent network-wide issues</li>
+</ul>
+</div>
+<div>
+<h4 class="font-medium mb-2">Credit Request Process</h4>
+<p class="text-gray-700">Customers must request SLA credits within 30 days of the incident by submitting a ticket through the customer portal or contacting their account manager. Credits will be applied to the next billing cycle.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Solution Comparison Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Solution Comparison</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">See how our fiber optic solutions compare to other connectivity options.</p>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-gray-50">
+<th class="px-6 py-4 text-gray-700 font-semibold">Feature</th>
+<th class="px-6 py-4 text-gray-700 font-semibold">TechSolutions Fiber</th>
+<th class="px-6 py-4 text-gray-700 font-semibold">Cable Broadband</th>
+<th class="px-6 py-4 text-gray-700 font-semibold">DSL</th>
+<th class="px-6 py-4 text-gray-700 font-semibold">Fixed Wireless</th>
+<th class="px-6 py-4 text-gray-700 font-semibold">Satellite</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-gray-200">
+<tr>
+<td class="px-6 py-4 font-medium">Maximum Speed</td>
+<td class="px-6 py-4 bg-blue-50">Up to 10 Gbps</td>
+<td class="px-6 py-4">Up to 1 Gbps</td>
+<td class="px-6 py-4">Up to 100 Mbps</td>
+<td class="px-6 py-4">Up to 1 Gbps</td>
+<td class="px-6 py-4">Up to 150 Mbps</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Symmetrical Speeds</td>
+<td class="px-6 py-4 bg-blue-50"><i class="ri-check-line text-primary"></i></td>
+<td class="px-6 py-4"><i class="ri-close-line text-red-500"></i></td>
+<td class="px-6 py-4"><i class="ri-close-line text-red-500"></i></td>
+<td class="px-6 py-4">Varies</td>
+<td class="px-6 py-4"><i class="ri-close-line text-red-500"></i></td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Latency</td>
+<td class="px-6 py-4 bg-blue-50">< 5ms</td>
+<td class="px-6 py-4">10-28ms</td>
+<td class="px-6 py-4">15-40ms</td>
+<td class="px-6 py-4">10-25ms</td>
+<td class="px-6 py-4">500-800ms</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Uptime SLA</td>
+<td class="px-6 py-4 bg-blue-50">99.99%</td>
+<td class="px-6 py-4">99.5%</td>
+<td class="px-6 py-4">99%</td>
+<td class="px-6 py-4">99.9%</td>
+<td class="px-6 py-4">99%</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Dedicated Bandwidth</td>
+<td class="px-6 py-4 bg-blue-50"><i class="ri-check-line text-primary"></i></td>
+<td class="px-6 py-4"><i class="ri-close-line text-red-500"></i></td>
+<td class="px-6 py-4"><i class="ri-close-line text-red-500"></i></td>
+<td class="px-6 py-4">Optional</td>
+<td class="px-6 py-4"><i class="ri-close-line text-red-500"></i></td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Weather Resistant</td>
+<td class="px-6 py-4 bg-blue-50"><i class="ri-check-line text-primary"></i></td>
+<td class="px-6 py-4">Partial</td>
+<td class="px-6 py-4">Partial</td>
+<td class="px-6 py-4"><i class="ri-close-line text-red-500"></i></td>
+<td class="px-6 py-4"><i class="ri-close-line text-red-500"></i></td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Distance Limitations</td>
+<td class="px-6 py-4 bg-blue-50">Up to 60 miles</td>
+<td class="px-6 py-4">Up to 1 mile</td>
+<td class="px-6 py-4">Up to 3 miles</td>
+<td class="px-6 py-4">Line of sight</td>
+<td class="px-6 py-4">None</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Scalability</td>
+<td class="px-6 py-4 bg-blue-50">Excellent</td>
+<td class="px-6 py-4">Limited</td>
+<td class="px-6 py-4">Poor</td>
+<td class="px-6 py-4">Moderate</td>
+<td class="px-6 py-4">Limited</td>
+</tr>
+<tr>
+<td class="px-6 py-4 font-medium">Security</td>
+<td class="px-6 py-4 bg-blue-50">Excellent</td>
+<td class="px-6 py-4">Good</td>
+<td class="px-6 py-4">Good</td>
+<td class="px-6 py-4">Moderate</td>
+<td class="px-6 py-4">Moderate</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<!-- Implementation Process Section -->
+<section class="py-16 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Implementation Process</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Our streamlined implementation process ensures a smooth transition to your new fiber connectivity solution.</p>
+</div>
+<div class="relative">
+<!-- Timeline Line -->
+<div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-gray-200 transform -translate-x-1/2"></div>
+<!-- Timeline Steps -->
+<div class="space-y-12 relative">
+<!-- Step 1 -->
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+<h3 class="text-xl font-semibold mb-2">Initial Consultation</h3>
+<p class="text-gray-600">Our team works with you to understand your connectivity needs, assess your current infrastructure, and recommend the optimal fiber solution.</p>
+<p class="text-gray-500 mt-2">Timeframe: 1-2 days</p>
+</div>
+<div class="md:w-12 h-12 flex items-center justify-center bg-primary rounded-full text-white text-xl font-bold relative z-10">1</div>
+<div class="md:w-1/2 md:pl-12 md:text-left"></div>
+</div>
+<!-- Step 2 -->
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right"></div>
+<div class="md:w-12 h-12 flex items-center justify-center bg-primary rounded-full text-white text-xl font-bold relative z-10">2</div>
+<div class="md:w-1/2 md:pl-12 md:text-left">
+<h3 class="text-xl font-semibold mb-2">Site Survey & Design</h3>
+<p class="text-gray-600">Our engineers conduct a comprehensive site survey to determine the optimal fiber path, equipment requirements, and installation approach.</p>
+<p class="text-gray-500 mt-2">Timeframe: 3-5 days</p>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+<h3 class="text-xl font-semibold mb-2">Proposal & Agreement</h3>
+<p class="text-gray-600">We provide a detailed proposal including technical specifications, implementation timeline, and pricing. Upon approval, we finalize the service agreement.</p>
+<p class="text-gray-500 mt-2">Timeframe: 1-3 days</p>
+</div>
+<div class="md:w-12 h-12 flex items-center justify-center bg-primary rounded-full text-white text-xl font-bold relative z-10">3</div>
+<div class="md:w-1/2 md:pl-12 md:text-left"></div>
+</div>
+<!-- Step 4 -->
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right"></div>
+<div class="md:w-12 h-12 flex items-center justify-center bg-primary rounded-full text-white text-xl font-bold relative z-10">4</div>
+<div class="md:w-1/2 md:pl-12 md:text-left">
+<h3 class="text-xl font-semibold mb-2">Permitting & Construction</h3>
+<p class="text-gray-600">We handle all necessary permits and begin construction of the fiber path to your location, including trenching, aerial installation, or utilizing existing conduits.</p>
+<p class="text-gray-500 mt-2">Timeframe: 15-45 days (varies by location)</p>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+<h3 class="text-xl font-semibold mb-2">Equipment Installation</h3>
+<p class="text-gray-600">Our technicians install and configure all necessary equipment at your premises, including fiber termination, routers, and any additional hardware.</p>
+<p class="text-gray-500 mt-2">Timeframe: 1-2 days</p>
+</div>
+<div class="md:w-12 h-12 flex items-center justify-center bg-primary rounded-full text-white text-xl font-bold relative z-10">5</div>
+<div class="md:w-1/2 md:pl-12 md:text-left"></div>
+</div>
+<!-- Step 6 -->
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right"></div>
+<div class="md:w-12 h-12 flex items-center justify-center bg-primary rounded-full text-white text-xl font-bold relative z-10">6</div>
+<div class="md:w-1/2 md:pl-12 md:text-left">
+<h3 class="text-xl font-semibold mb-2">Testing & Activation</h3>
+<p class="text-gray-600">We conduct comprehensive testing to ensure the connection meets all performance specifications before activating your service.</p>
+<p class="text-gray-500 mt-2">Timeframe: 1 day</p>
+</div>
+</div>
+<!-- Step 7 -->
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+<h3 class="text-xl font-semibold mb-2">Training & Handover</h3>
+<p class="text-gray-600">We provide training for your IT team on monitoring tools, support procedures, and best practices for maximizing your fiber connection.</p>
+<p class="text-gray-500 mt-2">Timeframe: 1 day</p>
+</div>
+<div class="md:w-12 h-12 flex items-center justify-center bg-primary rounded-full text-white text-xl font-bold relative z-10">7</div>
+<div class="md:w-1/2 md:pl-12 md:text-left"></div>
+</div>
+<!-- Step 8 -->
+<div class="flex flex-col md:flex-row items-center">
+<div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right"></div>
+<div class="md:w-12 h-12 flex items-center justify-center bg-primary rounded-full text-white text-xl font-bold relative z-10">8</div>
+<div class="md:w-1/2 md:pl-12 md:text-left">
+<h3 class="text-xl font-semibold mb-2">Ongoing Support & Monitoring</h3>
+<p class="text-gray-600">Our 24/7 support team continuously monitors your connection and provides proactive maintenance to ensure optimal performance.</p>
+<p class="text-gray-500 mt-2">Timeframe: Continuous</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-16 bg-white p-8 rounded-lg shadow-sm">
+<h3 class="text-xl font-semibold mb-6">Implementation Requirements Checklist</h3>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h4 class="font-medium mb-4 flex items-center">
+<div class="w-6 h-6 flex items-center justify-center bg-primary rounded-full text-white text-sm mr-2">
+<i class="ri-building-line"></i>
+</div>
+Facility Requirements
+</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3">
+<i class="ri-checkbox-blank-circle-line text-gray-400"></i>
+</div>
+<span class="text-gray-700">Secure equipment room or cabinet</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3">
+<i class="ri-checkbox-blank-circle-line text-gray-400"></i>
+</div>
+<span class="text-gray-700">Adequate power (120V/20A circuits)</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3">
+<i class="ri-checkbox-blank-circle-line text-gray-400"></i>
+</div>
+<span class="text-gray-700">Climate control (65-80°F, 45-55% humidity)</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3">
+<i class="ri-checkbox-blank-circle-line text-gray-400"></i>
+</div>
+<span class="text-gray-700">Rack space (2-4U minimum)</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3">
+<i class="ri-checkbox-blank-circle-line text-gray-400"></i>
+</div>
+<span class="text-gray-700">Building access for installation</span>
+</li>
+</ul>
+</div>
+<div>
+<h4 class="font-medium mb-4 flex items-center">
+<div class="w-6 h-6 flex items-center justify-center bg-primary rounded-full text-white text-sm mr-2">
+<i class="ri-file-list-3-line"></i>
+</div>
+Documentation Requirements
+</h4>
+<ul class="space-y-3">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3">
+<i class="ri-checkbox-blank-circle-line text-gray-400"></i>
+</div>
+<span class="text-gray-700">Property access authorization</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3">
+<i class="ri-checkbox-blank-circle-line text-gray-400"></i>
+</div>
+<span class="text-gray-700">Building owner approval (if leased)</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3">
+<i class="ri-checkbox-blank-circle-line text-gray-400"></i>
+</div>
+<span class="text-gray-700">Technical contact information</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3">
+<i class="ri-checkbox-blank-circle-line text-gray-400"></i>
+</div>
+<span class="text-gray-700">IP addressing requirements</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3">
+<i class="ri-checkbox-blank-circle-line text-gray-400"></i>
+</div>
+<span class="text-gray-700">Service level agreement</span>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Pricing Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Pricing Options</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Flexible pricing plans designed to meet your business connectivity needs and budget.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Business Fiber Plan -->
+<div class="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 transition-all duration-300 hover:shadow-md">
+<div class="bg-gray-50 p-6 text-center">
+<h3 class="text-xl font-semibold">Business Fiber</h3>
+<div class="mt-4">
+<button class="text-primary font-medium hover:text-primary/90">Contact for Pricing</button>
+</div>
+<p class="text-gray-600 mt-2">For small to medium businesses</p>
+</div>
+<div class="p-6">
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>100 Mbps - 1 Gbps dedicated bandwidth</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>99.9% uptime SLA</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>8 static IP addresses</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Basic DDoS protection</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>24/7 technical support</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>4-hour response time</span>
+</li>
+</ul>
+<div class="mt-6 pt-6 border-t border-gray-200">
+<p class="text-sm text-gray-600 mb-4">Installation fee will be quoted based on requirements</p>
+<button  onclick="window.location.href='Consultation-Scheduling-Page.html';"  class="w-full bg-gray-100 text-gray-800 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-200 transition duration-300">Request Quote</button>
+</div>
+</div>
+</div>
+<!-- Enterprise Fiber Plan -->
+<div class="bg-white rounded-lg overflow-hidden shadow-md border-2 border-primary relative transform scale-105">
+<div class="absolute top-0 right-0 bg-primary text-white text-xs font-bold px-3 py-1">MOST POPULAR</div>
+<div class="bg-primary p-6 text-center text-white">
+<h3 class="text-xl font-semibold">Enterprise Fiber</h3>
+<div class="mt-4">
+<button class="text-white font-medium hover:text-white/90">Contact for Pricing</button>
+</div>
+<p class="text-white/80 mt-2">For medium to large enterprises</p>
+</div>
+<div class="p-6">
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>1 Gbps - 5 Gbps dedicated bandwidth</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>99.99% uptime SLA</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>16 static IP addresses</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Advanced DDoS protection</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>24/7 priority technical support</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>2-hour response time</span>
+</li>
+</ul>
+<div class="mt-6 pt-6 border-t border-gray-200">
+<p class="text-sm text-gray-600 mb-4">Installation fee will be quoted based on requirements</p>
+<button onclick="window.location.href='Consultation-Scheduling-Page.html';"  class="w-full bg-primary text-white py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Request Quote</button>
+</div>
+</div>
+</div>
+<!-- Ultra Fiber Plan -->
+<div class="bg-white rounded-lg overflow-hidden shadow-sm border border-gray-200 transition-all duration-300 hover:shadow-md">
+<div class="bg-gray-50 p-6 text-center">
+<h3 class="text-xl font-semibold">Ultra Fiber</h3>
+<div class="mt-4">
+<button class="text-primary font-medium hover:text-primary/90">Contact for Pricing</button>
+</div>
+<p class="text-gray-600 mt-2">For large enterprises & data centers</p>
+</div>
+<div class="p-6">
+<ul class="space-y-4">
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>5 Gbps - 10 Gbps dedicated bandwidth</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>99.999% uptime SLA</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>/27 IP block (32 addresses)</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Premium DDoS protection & SIEM</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>24/7 dedicated account manager</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 flex items-center justify-center mt-0.5 mr-3 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>30-minute response time</span>
+</li>
+</ul>
+<div class="mt-6 pt-6 border-t border-gray-200">
+<p class="text-sm text-gray-600 mb-4">Installation fee will be quoted based on requirements</p>
+<button onclick="window.location.href='Consultation-Scheduling-Page.html';" class="w-full bg-gray-100 text-gray-800 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-200 transition duration-300">Request Quote</button>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-12 bg-gray-50 p-8 rounded-lg">
+<h3 class="text-xl font-semibold mb-6">Custom Solutions</h3>
+<div class="flex flex-col md:flex-row items-start gap-8">
+<div class="md:w-2/3">
+<p class="text-gray-700 mb-4">Need a tailored fiber solution for your specific business requirements? Our custom fiber solutions can be designed to meet your exact specifications, including:</p>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-6">
+<ul class="space-y-2">
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Multi-location connectivity</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Dark fiber options</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Wavelength services</span>
+</li>
+</ul>
+<ul class="space-y-2">
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Redundant connections</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Custom SLA terms</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center mr-2 text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span>Specialized security requirements</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="md:w-1/3 bg-white p-6 rounded-lg shadow-sm">
+<h4 class="font-semibold mb-4">Request Custom Quote</h4>
+
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Customer Testimonials Section -->
+
+<!-- FAQ Section -->
+<section class="py-16 bg-white">
+<div class="container mx-auto px-4">
+<div class="text-center mb-12">
+<h2 class="text-3xl font-bold mb-4">Frequently Asked Questions</h2>
+<p class="text-lg text-gray-600 max-w-3xl mx-auto">Find answers to common questions about our fiber optic connectivity solutions.</p>
+</div>
+<div class="max-w-3xl mx-auto">
+<div class="space-y-4">
+<!-- FAQ Item 1 -->
+<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-toggle w-full flex items-center justify-between p-6 bg-gray-50 text-left">
+<span class="text-lg font-semibold">What is the difference between shared and dedicated fiber?</span>
+<div class="faq-icon-plus w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-add-line"></i>
+</div>
+<div class="faq-icon-minus w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-subtract-line"></i>
+</div>
+</button>
+<div class="faq-answer hidden p-6 border-t border-gray-200">
+<p class="text-gray-700">Shared fiber connections divide bandwidth among multiple customers, similar to traditional cable or DSL services. This means your actual speeds can vary based on network congestion, especially during peak usage times.</p>
+<p class="text-gray-700 mt-2">Our dedicated fiber solutions provide a fixed bandwidth exclusively for your business, ensuring consistent performance 24/7 regardless of what other users are doing. With dedicated fiber, you receive the full bandwidth you pay for with symmetrical upload and download speeds, making it ideal for businesses with critical connectivity needs.</p>
+</div>
+</div>
+<!-- FAQ Item 2 -->
+<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-toggle w-full flex items-center justify-between p-6 bg-gray-50 text-left">
+<span class="text-lg font-semibold">How long does fiber installation typically take?</span>
+<div class="faq-icon-plus w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-add-line"></i>
+</div>
+<div class="faq-icon-minus w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-subtract-line"></i>
+</div>
+</button>
+<div class="faq-answer hidden p-6 border-t border-gray-200">
+<p class="text-gray-700">Installation timeframes vary depending on your location and existing infrastructure. For locations where our fiber network is already present, installation typically takes 2-3 weeks from contract signing to service activation.</p>
+<p class="text-gray-700 mt-2">For locations requiring new fiber construction, the process can take 30-90 days depending on permitting requirements, construction complexity, and local regulations. During your initial consultation, we'll provide a specific timeline based on your location and requirements.</p>
+</div>
+</div>
+<!-- FAQ Item 3 -->
+<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-toggle w-full flex items-center justify-between p-6 bg-gray-50 text-left">
+<span class="text-lg font-semibold">What happens if there's a service outage?</span>
+<div class="faq-icon-plus w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-add-line"></i>
+</div>
+<div class="faq-icon-minus w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-subtract-line"></i>
+</div>
+</button>
+<div class="faq-answer hidden p-6 border-t border-gray-200">
+<p class="text-gray-700">Our network is designed with multiple redundancies to minimize the risk of outages. In the rare event of a service disruption, our 24/7 monitoring systems typically detect issues before they impact your business, allowing our team to begin resolution immediately.</p>
+<p class="text-gray-700 mt-2">If you experience a service issue, our technical support team is available 24/7/365 via phone, email, or our customer portal. Our SLAs guarantee specific response and resolution times based on your service tier, and we provide service credits for any downtime that exceeds our guaranteed uptime percentage.</p>
+</div>
+</div>
+<!-- FAQ Item 4 -->
+<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-toggle w-full flex items-center justify-between p-6 bg-gray-50 text-left">
+<span class="text-lg font-semibold">Can I upgrade my bandwidth as my business grows?</span>
+<div class="faq-icon-plus w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-add-line"></i>
+</div>
+<div class="faq-icon-minus w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-subtract-line"></i>
+</div>
+</button>
+<div class="faq-answer hidden p-6 border-t border-gray-200">
+<p class="text-gray-700">Yes, our fiber solutions are designed to scale with your business. In most cases, bandwidth upgrades can be implemented remotely without requiring equipment changes or service interruptions.</p>
+<p class="text-gray-700 mt-2">Our fiber infrastructure supports speeds from 100 Mbps to 10 Gbps, allowing for seamless upgrades as your needs evolve. You can request bandwidth changes through your account manager or our customer portal, and most upgrades can be completed within 24-48 hours.</p>
+</div>
+</div>
+<!-- FAQ Item 5 -->
+<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-toggle w-full flex items-center justify-between p-6 bg-gray-50 text-left">
+<span class="text-lg font-semibold">What security features are included with fiber connectivity?</span>
+<div class="faq-icon-plus w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-add-line"></i>
+</div>
+<div class="faq-icon-minus w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-subtract-line"></i>
+</div>
+</button>
+<div class="faq-answer hidden p-6 border-t border-gray-200">
+<p class="text-gray-700">Fiber optic connections offer inherent security advantages over traditional copper-based connections, as they're extremely difficult to tap without detection. Beyond this physical security, our fiber solutions include:</p>
+<ul class="list-disc pl-5 mt-2 text-gray-700 space-y-1">
+<li>Basic DDoS protection on all service tiers</li>
+<li>Advanced DDoS mitigation options</li>
+<li>Optional managed firewall services</li>
+<li>Traffic encryption capabilities</li>
+<li>24/7 network monitoring for security threats</li>
+<li>Compliance with industry standards (HIPAA, PCI DSS, etc.)</li>
+</ul>
+<p class="text-gray-700 mt-2">Our Enterprise and Ultra tiers include enhanced security features, and we offer additional security services that can be tailored to your specific requirements.</p>
+</div>
+</div>
+<!-- FAQ Item 6 -->
+<div class="faq-item border border-gray-200 rounded-lg overflow-hidden">
+<button class="faq-toggle w-full flex items-center justify-between p-6 bg-gray-50 text-left">
+<span class="text-lg font-semibold">Do you offer Service Level Agreements (SLAs)?</span>
+<div class="faq-icon-plus w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-add-line"></i>
+</div>
+<div class="faq-icon-minus w-6 h-6 flex items-center justify-center text-primary">
+<i class="ri-subtract-line"></i>
+</div>
+</button>
+<div class="faq-answer hidden p-6 border-t border-gray-200">
+<p class="text-gray-700">Yes, all our fiber solutions include comprehensive SLAs that guarantee specific performance metrics, including:</p>
+<ul class="list-disc pl-5 mt-2 text-gray-700 space-y-1">
+<li>Network availability (99.9% to 99.999% depending on service tier)</li>
+<li>Latency guarantees</li>
+<li>Packet delivery</li>
+<li>Mean time to respond</li>
+<li>Mean time to repair</li>
+</ul>
+<p class="text-gray-700 mt-2">If we fail to meet these guarantees, you'll receive service credits according to our SLA terms. Our Enterprise and Ultra tiers include more stringent SLAs with higher uptime guarantees and faster response times.</p>
+</div>
+</div>
+</div>
+<div class="mt-12 text-center">
+<p class="text-gray-700 mb-4">Still have questions about our fiber optic solutions?</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button onclick="window.location.href='Consultation-Scheduling-Page.html';"class="bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-primary/90 transition duration-300">Contact Sales</button>
+<button onclick="window.location.href='Consultation-Scheduling-Page.html';" class="bg-gray-100 text-gray-800 px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-200 transition duration-300">View Technical Documentation</button>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+
+<!-- Resources Section -->
+
+<!-- Call-to-Action Section -->
+<section class="py-16 bg-primary">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center text-white">
+<h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Connectivity?</h2>
+<p class="text-xl mb-8">Experience the difference that enterprise-grade fiber connectivity can make for your business.</p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-white text-primary px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition duration-300">Request Quote</button>
+<a href="./Consultation-Scheduling-Page.html" data-readdy="true">
+<button class="bg-transparent text-white border border-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-white/10 transition duration-300">Back to Solutions</button>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-orange-500 text-white pt-16 pb-8" animation="fadeIn">
+  <div class="container mx-auto px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+      <!-- Company Info -->
+      <div>
+        <a
+          href="#"
+          class="text-2xl font-['Righteous'] text-white mb-6 inline-block"
+          >Pitch forward</a
+        >
+        <p class="text-black-100 mb-6">
+          Providing enterprise-grade technology solutions that drive
+          innovation and efficiency since 2005.
+        </p>
+        <div class="flex space-x-4">
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
+          >
+            <i class="ri-linkedin-fill"></i>
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
+          >
+            <i class="ri-twitter-x-fill"></i>
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
+          >
+            <i class="ri-facebook-fill"></i>
+          </a>
+          <a
+            href="#"
+            class="w-10 h-10 flex items-center justify-center bg-primary rounded-full hover:bg-primary transition duration-300"
+          >
+            <i class="ri-instagram-fill"></i>
+          </a>
+        </div>
+      </div>
+      <!-- Quick Links -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Quick Links</h3>
+        <ul class="space-y-3">
+          <li>
+            <a
+              href="./hospitality.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Hospitality</a
+            >
+          </li>
+          <li>
+            <a
+              href="./Fuel-Management-Feature-Details.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Fuel</a
+            >
+          </li>
+          <li>
+            <a
+              href="./industry.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Industries</a
+            >
+          </li>
+          <li>
+            <a
+              href="./Mining-Technology-Solutions.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Mining</a
+            >
+          </li>
+          <li>
+            <a
+              href="./Fleet-Management-Feature-Driver.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Drivers </a
+            >
+          </li>
+          <li>
+            <a
+              href="./Fleet-Management-Feature-Details poc.html"
+              class="text-black-100 hover:text-white transition duration-300"
+              >Radio</a
+            >
+          </li>
+        </ul>
+      </div>
+      <!-- Contact Info -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">Contact Us</h3>
+        <ul class="space-y-3">
+          <li class="flex items-start">
+            <div class="w-5 h-5 flex items-center justify-center mt-1 mr-3">
+              <i class="ri-map-pin-line text-white"></i>
+            </div>
+            <span class="text-black-400"
+              >
+              Products
+              Services
+              About Us
+              Contact
+              Contact Us
+              The Piano, Brookside drive,<br />Westlands, Nairobi, Kenya.
+            </span
+            >
+          </li>
+          <li class="flex items-center">
+            <div class="w-5 h-5 flex items-center justify-center mr-3">
+              <i class="ri-phone-line text-white"></i>
+            </div>
+            <span class="text-black-100">(+254) 707 586837</span>
+          </li>
+          <li class="flex items-center">
+            <div class="w-5 h-5 flex items-center justify-center mr-3">
+              <i class="ri-mail-line text-white"></i>
+            </div>
+            <span class="text-black-100">
+              contact@pitchforwardgroup.com
+              </span>
+          </li>
+        </ul>
+      </div>
+      <!-- Newsletter -->
+      <div>
+        <h3 class="text-lg font-semibold mb-6">
+          Subscribe to Our Newsletter
+        </h3>
+        <p class="text-white-400 mb-4">
+          Stay updated with the latest technology trends and solutions.
+        </p>
+        <form class="mb-4">
+          <div class="flex">
+            <input
+              type="email"
+              placeholder="Your email address"
+              class="bg-white-600 text-black-100 px-4 py-3 w-full border-none rounded-l-lg focus:outline-none focus:ring-2 focus:ring-primary"
+            />
+            <button
+              type="submit"
+              class="bg-primary text-white px-4 py-3 !rounded-r-lg !rounded-l-none whitespace-nowrap hover:bg-primary/90 transition duration-300"
+            >
+              Subscribe
+            </button>
+          </div>
+        </form>
+        <div class="flex items-center space-x-4">
+          <div class="w-10 h-6 flex items-center justify-center">
+            <i class="ri-visa-fill text-2xl text-white-100"></i>
+          </div>
+          <div class="w-10 h-6 flex items-center justify-center">
+            <i class="ri-mastercard-fill text-2xl text-white-100"></i>
+          </div>
+          <div class="w-10 h-6 flex items-center justify-center">
+            <i class="ri-paypal-fill text-2xl text-white-100"></i>
+          </div>
+          <div class="w-10 h-6 flex items-center justify-center">
+            <i class="ri-apple-fill text-2xl text-whit-500"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="border-t border-white-800 pt-8">
+      <div class="flex flex-col md:flex-row justify-between items-center">
+        <p class="text-white-500 text-sm mb-4 md:mb-0">
+          © 2025 TechSolutions. All rights reserved.
+        </p>
+        <div class="flex space-x-6">
+          <a
+            href="#"
+            class="text-white-500 text-sm hover:text-white transition duration-300"
+            >Privacy Policy</a
+          >
+          <a
+            href="#"
+            class="text-white-500 text-sm hover:text-white transition duration-300"
+            >Terms of Service</a
+          >
+          <a
+            href="#"
+            class="text-white-500 text-sm hover:text-white transition duration-300"
+            >Cookie Policy</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script id="mobileMenuScript">
+document.addEventListener('DOMContentLoaded', function() {
+const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+const mobileSolutionsBtn = document.getElementById('mobileSolutionsBtn');
+const mobileSolutionsMenu = document.getElementById('mobileSolutionsMenu');
+mobileMenuBtn.addEventListener('click', function() {
+mobileMenu.classList.toggle('hidden');
+const icon = mobileMenuBtn.querySelector('i');
+icon.classList.toggle('ri-menu-line');
+icon.classList.toggle('ri-close-line');
+});
+mobileSolutionsBtn.addEventListener('click', function() {
+mobileSolutionsMenu.classList.toggle('hidden');
+const icon = mobileSolutionsBtn.querySelector('i');
+icon.classList.toggle('ri-arrow-down-s-line');
+icon.classList.toggle('ri-arrow-up-s-line');
+});
+document.addEventListener('click', function(event) {
+if (!mobileMenu.contains(event.target) && !mobileMenuBtn.contains(event.target)) {
+mobileMenu.classList.add('hidden');
+const icon = mobileMenuBtn.querySelector('i');
+icon.classList.add('ri-menu-line');
+icon.classList.remove('ri-close-line');
+}
+});
+});
+</script>
+<script id="stickyHeaderScript">
+document.addEventListener('DOMContentLoaded', function() {
+const header = document.querySelector('header');
+const solutionsBtn = document.getElementById('solutionsBtn');
+const solutionsMenu = document.getElementById('solutionsMenu');
+let isDropdownOpen = false;
+function toggleDropdown() {
+isDropdownOpen = !isDropdownOpen;
+solutionsMenu.classList.toggle('hidden');
+solutionsBtn.setAttribute('aria-expanded', isDropdownOpen);
+}
+solutionsBtn.addEventListener('click', function(e) {
+e.stopPropagation();
+toggleDropdown();
+});
+document.addEventListener('click', function(e) {
+if (!solutionsBtn.contains(e.target) && isDropdownOpen) {
+toggleDropdown();
+}
+});
+function updateHeader() {
+if (window.scrollY > 50) {
+header.classList.add('shadow');
+} else {
+header.classList.remove('shadow');
+}
+}
+window.addEventListener('scroll', updateHeader);
+updateHeader();
+});
+</script>
+<script id="tabsScript">
+document.addEventListener('DOMContentLoaded', function() {
+const tabBtns = document.querySelectorAll('.tab-btn');
+tabBtns.forEach(btn => {
+btn.addEventListener('click', function() {
+// Remove active class from all tabs
+tabBtns.forEach(tab => {
+tab.classList.remove('tab-active');
+tab.classList.add('tab-inactive');
+});
+// Add active class to clicked tab
+this.classList.add('tab-active');
+this.classList.remove('tab-inactive');
+// Hide all tab content
+const tabContents = document.querySelectorAll('.tab-content');
+tabContents.forEach(content => {
+content.classList.remove('active');
+content.classList.add('hidden');
+});
+// Show the selected tab content
+const tabId = this.getAttribute('data-tab');
+const activeContent = document.getElementById(`${tabId}-tab`);
+activeContent.classList.add('active');
+activeContent.classList.remove('hidden');
+});
+});
+});
+</script>
+<script id="faqScript">
+document.addEventListener('DOMContentLoaded', function() {
+const faqToggles = document.querySelectorAll('.faq-toggle');
+faqToggles.forEach(toggle => {
+toggle.addEventListener('click', function() {
+const faqItem = this.parentElement;
+faqItem.classList.toggle('active');
+const answer = faqItem.querySelector('.faq-answer');
+answer.classList.toggle('hidden');
+});
+});
+});
+</script>
+<script id="performanceChartScript">
+document.addEventListener('DOMContentLoaded', function() {
+const chartDom = document.getElementById('performanceChart');
+if (chartDom) {
+const myChart = echarts.init(chartDom);
+const option = {
+animation: false,
+tooltip: {
+trigger: 'axis',
+backgroundColor: 'rgba(255, 255, 255, 0.8)',
+borderColor: '#eee',
+borderWidth: 1,
+textStyle: {
+color: '#333'
+}
+},
+legend: {
+data: ['Fiber', 'Cable', 'DSL', 'Wireless'],
+bottom: 0
+},
+grid: {
+left: '3%',
+right: '4%',
+bottom: '12%',
+top: '3%',
+containLabel: true
+},
+xAxis: {
+type: 'category',
+boundaryGap: false,
+data: ['Download Speed', 'Upload Speed', 'Latency', 'Reliability', 'Security'],
+axisLine: {
+lineStyle: {
+color: '#ddd'
+}
+},
+axisLabel: {
+color: '#666'
+}
+},
+yAxis: {
+type: 'value',
+axisLine: {
+show: false
+},
+axisLabel: {
+color: '#666'
+},
+splitLine: {
+lineStyle: {
+color: '#eee'
+}
+}
+},
+series: [
+{
+name: 'Fiber',
+type: 'line',
+stack: 'Total',
+smooth: true,
+lineStyle: {
+width: 3
+},
+symbol: 'none',
+areaStyle: {
+opacity: 0.1,
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(87, 181, 231, 0.2)'
+}, {
+offset: 1, color: 'rgba(87, 181, 231, 0.01)'
+}]
+}
+},
+emphasis: {
+focus: 'series'
+},
+color: 'rgba(87, 181, 231, 1)',
+data: [95, 95, 90, 95, 90]
+},
+{
+name: 'Cable',
+type: 'line',
+stack: 'Total',
+smooth: true,
+lineStyle: {
+width: 3
+},
+symbol: 'none',
+areaStyle: {
+opacity: 0.1,
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(141, 211, 199, 0.2)'
+}, {
+offset: 1, color: 'rgba(141, 211, 199, 0.01)'
+}]
+}
+},
+emphasis: {
+focus: 'series'
+},
+color: 'rgba(141, 211, 199, 1)',
+data: [70, 40, 65, 70, 65]
+},
+{
+name: 'DSL',
+type: 'line',
+stack: 'Total',
+smooth: true,
+lineStyle: {
+width: 3
+},
+symbol: 'none',
+areaStyle: {
+opacity: 0.1,
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(251, 191, 114, 0.2)'
+}, {
+offset: 1, color: 'rgba(251, 191, 114, 0.01)'
+}]
+}
+},
+emphasis: {
+focus: 'series'
+},
+color: 'rgba(251, 191, 114, 1)',
+data: [40, 30, 60, 65, 60]
+},
+{
+name: 'Wireless',
+type: 'line',
+stack: 'Total',
+smooth: true,
+lineStyle: {
+width: 3
+},
+symbol: 'none',
+areaStyle: {
+opacity: 0.1,
+color: {
+type: 'linear',
+x: 0,
+y: 0,
+x2: 0,
+y2: 1,
+colorStops: [{
+offset: 0, color: 'rgba(252, 141, 98, 0.2)'
+}, {
+offset: 1, color: 'rgba(252, 141, 98, 0.01)'
+}]
+}
+},
+emphasis: {
+focus: 'series'
+},
+color: 'rgba(252, 141, 98, 1)',
+data: [60, 60, 50, 45, 50]
+}
+]
+};
+myChart.setOption(option);
+window.addEventListener('resize', function() {
+myChart.resize();
+});
+}
+});
+</script>
+</body>
+</html>
